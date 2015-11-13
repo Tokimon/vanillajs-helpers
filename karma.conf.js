@@ -1,7 +1,7 @@
 const istanbul = require( 'browserify-istanbul' );
 
-const testFiles = '**/*.unit.test.js',
-      nonTestFiles = '**/!(*.unit.test).js';
+const testFiles = 'lib/**/*.unit.test.js',
+      nonTestFiles = 'lib/**/!(*.unit.test).js';
 
 module.exports = function(config) {
   config.set({
@@ -25,8 +25,8 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      [`front/${testFiles}`] : ['browserify'],
-      [`front/${nonTestFiles}`] : ['browserify', 'sourcemap', 'coverage']
+      [testFiles] : ['browserify'],
+      [nonTestFiles] : ['browserify', 'sourcemap', 'coverage']
     },
 
     // test results reporter to use
