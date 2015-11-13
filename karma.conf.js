@@ -1,7 +1,7 @@
 const istanbul = require( 'browserify-istanbul' );
 
-const testFiles = 'lib/**/*.unit.test.js',
-      nonTestFiles = 'lib/**/!(*.unit.test).js';
+const testFiles = 'lib/**/*.spec.js',
+      nonTestFiles = 'lib/**/!(*.spec).js';
 
 module.exports = function(config) {
   config.set({
