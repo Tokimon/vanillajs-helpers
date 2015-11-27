@@ -21,6 +21,8 @@
     "browserify-shim": "^3.8.11",
     "chai": "^3.4.0",
     "chai-as-promised": "^5.1.0",
+    "gulp": "^3.9.0",
+    "gulp-browserify": "^0.5.1",
     "istanbul": "gotwarlost/istanbul.git#source-map",
     "karma": "^0.13.15",
     "karma-browserify": "^4.4.0",
@@ -31,7 +33,8 @@
     "karma-coverage": "douglasduteil/karma-coverage#next",
     "karma-mocha": "^0.2.0",
     "karma-sourcemap-loader": "^0.3.6",
-    "mocha": "^2.3.3"
+    "mocha": "^2.3.3",
+    "require-dir": "^0.3.0"
   },
   "browser": {},
   "browserify-shim": {},

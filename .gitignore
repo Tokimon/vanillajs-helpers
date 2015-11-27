@@ -25,3 +25,6 @@ node_modules
 
 # JetBrains project folder
 .idea
+
+# Project files
+demo/js/*.js
