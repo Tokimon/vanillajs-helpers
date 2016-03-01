@@ -1,5 +1,12 @@
 'use strict';
 
-import isString from '../../../lib/is/isString';
+import $ from '../../../vjs/vjs';
+import each from '../../../lib/iteration/each';
+import find from '../../../lib/dom/traversing/find';
+import isString from 'lodash/lang/isString';
 
-isString('string');
+$.initAction((selector) => { if( isString(selector) ) { return find(selector); }});
+
+
+
+window.$ = $;
