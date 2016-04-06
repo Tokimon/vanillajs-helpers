@@ -5,45 +5,13 @@
   "description": "API that includes convenience methods for coding vanilla JS",
   "author": "Toke Voltelen",
   "license": "MIT",
-  "scripts": {
-    "start": "babel karma.conf.js",
-    "test": "babel-node ./node_modules/.bin/karma start"
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://Tokimon@github.com/Tokimon/vanillajs-helpers.git"
   },
-  "repository": "https://github.com/Tokimon/vanillajs-helpers",
-  "dependencies": {
-    "lodash": "^4.5.1"
+  "bugs": {
+    "url": "https://github.com/Tokimon/vanillajs-helpers/issues"
   },
-  "devDependencies": {
-    "babel-cli": "^6.1.1",
-    "babel-core": "^6.0.20",
-    "babel-istanbul": "^0.4.1",
-    "babelify": "^7.2.0",
-    "browserify": "^12.0.1",
-    "browserify-istanbul": "^0.2.1",
-    "browserify-shim": "^3.8.11",
-    "chai": "^3.4.0",
-    "chai-as-promised": "^5.1.0",
-    "gulp": "^3.9.0",
-    "gulp-browserify": "^0.5.1",
-    "gulp-uglify": "^1.5.1",
-    "istanbul": "gotwarlost/istanbul.git#source-map",
-    "karma": "^0.13.15",
-    "karma-browserify": "^4.4.0",
-    "karma-chai": "^0.1.0",
-    "karma-chai-dom": "^1.1.0",
-    "karma-chai-plugins": "^0.6.0",
-    "karma-chrome-launcher": "^0.2.1",
-    "karma-coverage": "douglasduteil/karma-coverage#next",
-    "karma-mocha": "^0.2.0",
-    "karma-sourcemap-loader": "^0.3.6",
-    "mocha": "^2.3.3",
-    "require-dir": "^0.3.0"
-  },
-  "browser": {},
-  "browserify-shim": {},
-  "browserify": {
-    "transform": [
-      "browserify-shim"
-    ]
-  }
+  "homepage": "https://github.com/Tokimon/vanillajs-helpers#readme"
 }
