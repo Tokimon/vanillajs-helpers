@@ -1,12 +1,11 @@
-'use strict';
-
-import children from '../dom/children';
-import find from '../dom/find';
-import findOne from '../dom/findOne';
-import matchesSelector from '../dom/matchesSelector';
+import children from '../children';
+import find from '../find';
+import findOne from '../findOne';
+import matchesSelector from '../matchesSelector';
 
 export default {
   find,
   findOne,
-  children
+  children,
+  matchesSelector
 };

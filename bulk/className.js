@@ -1,9 +1,7 @@
-'use strict';
-
-import add from '../dom/attributes/addClass';
-import remove from '../dom/attributes/removeClass';
-import toggle from '../dom/attributes/toggleClass';
-import has from '../dom/attributes/hasClass';
+import add from '../addClass';
+import remove from '../removeClass';
+import toggle from '../toggleClass';
+import has from '../hasClass';
 
 export default {
   add,

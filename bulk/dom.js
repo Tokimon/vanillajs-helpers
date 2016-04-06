@@ -1,4 +1,3 @@
-'use strict';
 import attributes from './attributes';
 import manipulation from './manipulation';
 import traversing from './traversing';

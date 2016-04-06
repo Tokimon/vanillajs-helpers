@@ -1,11 +1,11 @@
-'use strict';
-
-import off from '../event/off';
-import on from '../event/on';
-import one from '../event/one';
-import trigger from '../event/trigger';
+import domReady from '../domReady';
+import off from '../off';
+import on from '../on';
+import one from '../one';
+import trigger from '../trigger';
 
 export default {
+  domReady,
   off,
   on,
   one,

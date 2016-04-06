@@ -1,14 +1,15 @@
-'use strict';
-
-import after from '../dom/after';
-import append from '../dom/append';
-import before from '../dom/before';
-import toDom from '../dom/toDom';
-import prepend from '../dom/prepend';
-import remove from '../dom/remove';
+import after from '../after';
+import append from '../append';
+import before from '../before';
+import prepend from '../prepend';
+import remove from '../remove';
+import toDom from '../toDom';
 
 export default {
-  find,
-  findOne,
-  children
+  after,
+  append,
+  before,
+  prepend,
+  remove,
+  toDom
 };

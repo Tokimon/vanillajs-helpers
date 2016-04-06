@@ -1,8 +1,6 @@
-'use strict';
-
 import className from './className';
-import attr from '../dom/attr';
-import data from '../dom/data';
+import attr from '../attr';
+import data from '../data';
 
 export default {
   attr,
