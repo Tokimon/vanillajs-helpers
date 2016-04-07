@@ -12,14 +12,11 @@ export default function metrix(node) {
 
     top: rect.top + vpScroll.top,
     left: rect.left + vpScroll.left,
-
-    // TODO: Verify right/bottom mesurements
-    right: rect.right + (vpScroll.width - vpScroll.left),
-    bottom: rect.bottom + (vpScroll.height - vpScroll.top),
+    right: rect.right + vpScroll.left,
+    bottom: rect.bottom + vpScroll.top,
 
     height: rect.height,
     width: rect.width,
-
     innerHeight: node.clientHeight,
     innerWidth: node.clientWidth
   };
