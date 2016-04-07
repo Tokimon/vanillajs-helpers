@@ -6,6 +6,6 @@ export default function viewportScroll() {
     top: window.pageYOffset  || Math.max(body.scrollTop, html.scrollTop),
     left: window.pageXOffset  || Math.max(body.scrollLeft, html.scrollLeft),
     width: Math.max(body.scrollWidth, html.scrollWidth),
-    height: Math.max(body.scrollHeight, html.scrollHeight),
+    height: Math.max(body.scrollHeight, html.scrollHeight)
   };
 }
