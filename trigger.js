@@ -1,8 +1,11 @@
 import words from './eachWord';
 
+// TODO: Add suport for triggering native event
+//  https://developer.mozilla.org/en-US/docs/Web/API/document.createEvent
+
 function _customEvent(evtName, data) {
-  if(!window.createEvent) {
-    return window.CustomEvent ? new CustomEvent(evtName, { detail: data }) : null;
+  if(window.CustomEvent) {
+    return new CustomEvent(evtName, { detail: data });
   }
 
   // IE uses the deprecated way of doing CustomEvents
