@@ -1,6 +1,11 @@
-import isString from '../../util/objectType';
+import isString from './objectType';
 
-export default function prepend(context, node) {
-  if(isString(node)) { context.insertAdjacentHTML('beforeend', node); }
-  else if(node.nodeType) { context.appendChild(node); }
+/**
+ * Append HTML Element or plain HTML into a given HTML Element
+ * @param  {HTMLElement} elm - The HTML Element in question
+ * @param  {String|HTMLElement} insertElm - HTML Element or String to append to the {elm}
+ */
+export default function append(elm, insertElm) {
+  if(isString(insertElm)) { elm.insertAdjacentHTML('beforeend', insertElm); }
+  else if(insertElm.nodeType) { elm.appendChild(insertElm); }
 }

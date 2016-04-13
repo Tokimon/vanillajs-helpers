@@ -1,6 +1,11 @@
 import isString from './objectType';
 
-export default function prepend(context, node) {
-  if(isString(node)) { context.insertAdjacentHTML('afterbegin', node); }
-  else if(node.nodeType) { context.insertBefore(context.firstChild, node); }
+/**
+ * Prepend HTML Element or plain HTML into a given HTML Element
+ * @param  {HTMLElement} elm - The HTML Element in question
+ * @param  {string|HTMLElement} insertElm - HTML Element or String to prepend to the {elm}
+ */
+export default function prepend(elm, insertElm) {
+  if(isString(insertElm)) { elm.insertAdjacentHTML('afterbegin', insertElm); }
+  else if(insertElm.nodeType) { elm.insertBefore(elm.firstChild, insertElm); }
 }
