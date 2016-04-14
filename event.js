@@ -50,8 +50,8 @@ export function getEvents(elm) {
 
 
 // Internal method to trigger all bound handlers to an event
-function triggerHandlers(e, target = e.target, elmEvents = getEvents(target), evtName = e.type) {
-  iterate(elmEvents[evtName].handlers, (handler) => {
+function triggerHandlers(e, handlers = [], target = e.target) {
+  iterate(handlers, (handler) => {
     if(handler.call(target, e) === false) {
       e.preventDefault();
       e.stopPropagation();
@@ -60,21 +60,33 @@ function triggerHandlers(e, target = e.target, elmEvents = getEvents(target), ev
 }
 
 // Internal function to determine the function to use when event is fired
-function callback(delegation) {
-  if(!delegation) { return (e) => triggerHandlers(e, e.currentTarget); }
+function callback(e) {
+  const elmEvents = getEvents(e.currentTarget);
+  if(!elmEvents) { return; }
 
-  return (e) => {
-    // The target matches the delegation selector, so execute the handler
-    if(matches(e.target, delegation)) { return triggerHandlers(e); }
+  const evt = elmEvents[e.type];
+  if(!evt) { return; }
 
-    // Taget is a child of the delegation selector target, so loop up the parents
-    // to find the right target
-    if(matches(e.target, `${delegation} *`)) {
-      let target = e.target.parentNode;
-      while(!matches(target, delegation)) { target = target.parentNode; }
-      triggerHandlers(e, target);
-    }
-  };
+  const handlers = evt.handlers;
+  const delegates = evt.delegates;
+
+  if(handlers) { triggerHandlers(e, handlers, e.currentTarget); }
+
+  if(delegates) {
+    let target = e.target;
+    iterate(Object.keys(delegates), (delegation) => {
+      // The target matches the delegation selector, so execute the handler
+      if(matches(target, delegation)) { return triggerHandlers(e, delegates, target); }
+
+      // Taget is a child of the delegation selector target, so loop up the parents
+      // to find the right target
+      if(matches(target, `${delegation} *`)) {
+        target = target.parentNode;
+        while(!matches(target, delegation)) { target = target.parentNode; }
+        triggerHandlers(e, delegates, target);
+      }
+    });
+  }
 }
 
 // Internal helper function to iterate each part of a namespaced event name
@@ -109,18 +121,23 @@ export default function on(elm, eventNames, delegation, handler) {
   }
 
   const evts = getEvents(elm);
-  const cb = callback(evts, delegation);
 
   return words(eventNames, (evtName) => {
     // go through event and namespaces
     eachEventNamespace(evtName, (evt) => {
       // If it hasn't been registered yet, create the entry and bind the event handler
       if(!evts[evt]) {
-        evts[evt] = { cb, handlers: [handler] };
-        elm.addEventListener(evt, cb, true);
-      } else {
-        // If it exists just add the hendler to the collection
+        evts[evt] = { handlers: [], delegates: {} };
+        elm.addEventListener(evt, callback, true);
+      }
+
+      // If it exists just add the hendler to the collection
+      if(!delegation) {
         evts[evt].handlers.push(handler);
+      } else {
+        const delegates = evts[evt].delegates;
+        if(!delegates[delegation]) { delegates[delegation] = []; }
+        delegates[delegation].push(handler);
       }
     });
   });
@@ -140,20 +157,61 @@ export default function on(elm, eventNames, delegation, handler) {
  * @param  {Function} handler - [optional] Handler to unbind from the event(s)
  * @return {Number} - The number of event mentioned
  */
-export function off(elm, eventNames, handler) {
+export function off(elm, eventNames, delegation, handler) {
+  // If only handler has been given as argument in the place of the delegation
+  // selector, correct the variables
+  if(typeof delegation === 'function') {
+    handler = delegation;
+    delegation = undefined;
+  }
+
   const evts = getEvents(elm);
 
-  eventNames = eventNames ? eventNames : Object.keys(evts);
-  iterate(eventNames, (evtName) => {
+  iterate(eventNames || Object.keys(evts), (evtName) => {
     // go through event and namespaces
     eachEventNamespace(evtName, (evt) => {
       const evtObj = evts[evt];
-      evtObj.handlers = !handler ? [] : evtObj.handlers.filter((boundHandler) => handler !== boundHandler);
+
+      // if we are removing all event listeners from the object
+      if(!eventNames) {
+        evtObj.delegates = null;
+        evtObj.handlers = [];
+
+      // If we are removing a delegation
+      } else if(delegation) {
+        let delegates = evtObj.delegates[delegation];
+
+        if(!delegates) {
+          // If the handler is not defined, just remove all bound handlers,
+          // otherwise filter out (remove) the handler from the list
+          delegates = !handler ? [] : delegates.filter((boundHandler) => handler !== boundHandler);
+
+          // We have to actually delete (not just set to null) the delegation
+          // entry once it is empty, as we dont want it to show up as a key on
+          // the object (using Object.keys)
+          if(!delegates.length) {
+            delete evtObj.delegates[delegation];
+          } else {
+            evtObj.delegates[delegation] = delegates;
+          }
+
+          // Clear the delegates object if it has no entries
+          if(!Object.keys(evtObj.delegates).length) {
+            evtObj.delegates = null;
+          }
+        }
+
+      // If we are removing a specific event
+      } else {
+        // If the handler is not defined, just remove all bound handlers,
+        // otherwise filter out (remove) the handler from the list
+        evtObj.handlers = !handler ? [] : evtObj.handlers.filter((boundHandler) => handler !== boundHandler);
+      }
 
       // If there are no more handlers bound to the current event, remove the
       // event handler and empty the event entry
-      if(!evtObj.length) {
-        elm.removeEventListener(evt, evtObj.cb, true);
+      if(!evtObj.handlers.length && !evtObj.delegates) {
+        elm.removeEventListener(evt, callback, true);
         evts[evt] = null;
       }
     });
