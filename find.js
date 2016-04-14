@@ -10,13 +10,21 @@
 export default function find(selector, elm = document, first=false) {
   let m, nodes;
 
-  // classname(s)
-  if(m = /^[.\w-]+$/.exec(selector)) {
-    nodes = elm.getElementsByClassName(m[0].replace(/\./g, ' '));
+  // HTML tag
+  if(selector === 'html') {
+    nodes = document.documentElement;
+
+  // Body tag
+  } else if(selector === 'body') {
+    nodes = document.body;
 
   // Tag or ID
   } else if(m = /^(#)?([\w-]+)$/.exec(selector)) {
     nodes = elm[`getElement${m[1] ? 'ById' : 'sByTagName'}`](m[2]);
+
+  // classname(s)
+  } else if(m = /^[.\w-]+$/.exec(selector)) {
+    nodes = elm.getElementsByClassName(m[0].replace(/\./g, ' '));
 
   // name selection
   } else if(m = /^[\[]name=["']?([^'"\]]+)["']?[\]]$/i.exec(selector)) {
