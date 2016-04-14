@@ -2,8 +2,8 @@ import { isString } from './objectType';
 
 /**
  * Inserts HTML Element or plain HTML after a given HTML Element
- * @param  {HTMLElement} elm - The HTML Element in question
- * @param  {String|HTMLElement} insertElm - HTML Element or String to insert after the {elm}
+ * @param  {HTMLElement} elm - The HTML Element to insert after
+ * @param  {String|HTMLElement} insertElm - HTML Element or HTML to insert
  */
 export default function after(elm, insertElm) {
   const parent = elm.parentNode;

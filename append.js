@@ -1,7 +1,7 @@
 import isString from './objectType';
 
 /**
- * Append HTML Element or plain HTML into a given HTML Element
+ * Append HTML Element or plain HTML to the end of a given HTML Element
  * @param  {HTMLElement} elm - The HTML Element in question
  * @param  {String|HTMLElement} insertElm - HTML Element or String to append to the {elm}
  */
