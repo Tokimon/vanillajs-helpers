@@ -47,6 +47,7 @@ export function one(elm, eventNames, handler) {
 
 
 
+
 // Internal method to create the correct CustomEvent object
 // (IE 11- doesn't implement the object correctly)
 function customEvent(name, data) {
@@ -63,4 +64,17 @@ function customEvent(name, data) {
  */
 export function trigger(elm, eventNames, data) {
   return words(eventNames, (name) => elm.dispatchEvent(customEvent(name, data)));
+}
+
+
+
+
+/**
+ * Execute a given function once the document has finished loading
+ * @param  {Function} cb - Function to execute once the document has finished loading
+ */
+export default function domReady(cb) {
+  if(typeof cb !== 'function') { return; }
+  if(document.readyState === 'complete') { return cb(); }
+  on(document, 'DOMContentLoaded', cb());
 }
