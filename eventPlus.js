@@ -1,5 +1,5 @@
 import iterate, { words } from './iterate';
-import matches from './matchesSelector';
+import matches from './matches';
 import randomId from './randomId';
 import data from './data';
 
@@ -107,7 +107,7 @@ function eachEventNamespace(evtName, cb) {
  * data-eventlistid or the _eventlistid property)
  * @param  {HTMLElement} elm - HTML Element to bind the event to
  * @param  {String} eventNames - Space separated string of event names to bind the handler to
- * @param  {String} delegation - [optional] Delegation selector
+ * @param  {String} [delegation] - Delegation selector
  * @param  {Function} handler - Handler to bind
  * @return {Number} - The number of events listed
  */
@@ -152,9 +152,9 @@ export default function on(elm, eventNames, delegation, handler) {
  * (in order to remove all handlers on the element, all handlers must have been
  * bound via the 'on' method)
  * @param  {HTMLElement} elm - HTML Element to unbind the event from
- * @param  {String} eventNames - [optional] Space separated string of event names to unbind the handler from
- * @param  {String} delegation - [optional] Delegation selector to unbind
- * @param  {Function} handler - [optional] Handler to remove
+ * @param  {String} [eventNames] - Space separated string of event names to unbind the handler from
+ * @param  {String} [delegation] - Delegation selector to unbind
+ * @param  {Function} [handler] - Handler to remove
  * @return {Number} - The number of events listed
  */
 export function off(elm, eventNames, delegation, handler) {
@@ -167,7 +167,7 @@ export function off(elm, eventNames, delegation, handler) {
 
   const evts = getEvents(elm);
 
-  iterate(eventNames || Object.keys(evts), (evtName) => {
+  return iterate(eventNames || Object.keys(evts), (evtName) => {
     // go through event and namespaces
     eachEventNamespace(evtName, (evt) => {
       const evtObj = evts[evt];
@@ -226,7 +226,7 @@ export function off(elm, eventNames, delegation, handler) {
  * only trigger once
  * @param  {HTMLElement} elm - HTML Element to unbind the event from
  * @param  {String} eventNames - Space separated string of event names to bind the handler to
- * @param  {String} delegation - [optional] Delegation selector
+ * @param  {String} [delegation] - Delegation selector
  * @param  {Function} handler - Handler to bind to the event(s)
  * @return {Number} - The number of events listed
  */
@@ -240,18 +240,21 @@ export function one(elm, eventNames, delegation, handler) {
 
 
 
-// Internal method to create the correct CustomEvent object
-// (IE 11- doesn't implement the object correctly)
-function customEvent(name, data) {
-  if(typeof CustomEvent === 'function') { return new CustomEvent('evt', { detail: data }); }
-  return document.createEvent('CustomEvent').initCustomEvent(name, true, true, data);
-}
+// Determine the method to create the correct CustomEvent object
+// (IE 11 and below doesn't implement the object correctly)
+const customEvent = typeof CustomEvent === 'function' ?
+    (name, data) => new CustomEvent(name, { detail: data }) :
+    (name, data) => {
+      const evt = document.createEvent('CustomEvent');
+      evt.initCustomEvent(name, true, true, data);
+      return evt;
+    };
 
 /**
  * Trigger event handlers for one or more event names (space separated)
  * @param  {HTMLElement} elm - HTML Element to trigger the event from
  * @param  {String} eventNames - Space seperated string of event names to trigger
- * @param  {Object} data - Extra data to add to the triggered event
+ * @param  {Object} [data] - Extra data to add to the triggered event
  * @return {Number} - The number of events listed
  */
 export function trigger(elm, eventNames, data) {
@@ -270,3 +273,17 @@ export default function domReady(cb) {
   if(document.readyState === 'complete') { return cb(); }
   one(document, 'DOMContentLoaded', () => cb());
 }
+
+
+
+
+// export  all the different methods as a collection
+export default {
+  on,
+  one,
+  off,
+  trigger,
+  domReady,
+  eventListId,
+  getEvents
+};

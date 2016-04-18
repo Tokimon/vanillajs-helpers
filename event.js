@@ -1,5 +1,5 @@
 import { words } from './iterate';
-import matches from './matchesSelector';
+import matches from './matches';
 
 
 
@@ -76,12 +76,17 @@ export function one(elm, eventNames, delegation, handler) {
 
 
 
-// Internal method to create the correct CustomEvent object
-// (IE 11- doesn't implement the object correctly)
-function customEvent(name, data) {
-  if(typeof CustomEvent === 'function') { return new CustomEvent('evt', { detail: data }); }
-  return document.createEvent('CustomEvent').initCustomEvent(name, true, true, data);
-}
+// Determine the method to create the correct CustomEvent object
+// (IE 11 and below doesn't implement the object correctly)
+const customEvent = typeof CustomEvent === 'function' ?
+    (name, data) => new CustomEvent(name, { detail: data }) :
+    (name, data) => {
+      const evt = document.createEvent('CustomEvent');
+      evt.initCustomEvent(name, true, true, data);
+      return evt;
+    };
+
+
 
 /**
  * Trigger event handlers for one or more event names (seperated by space)
@@ -106,3 +111,15 @@ export default function domReady(cb) {
   if(document.readyState === 'complete') { return cb(); }
   one(document, 'DOMContentLoaded', () => cb());
 }
+
+
+
+
+// export  all the different methods as a collection
+export default {
+  on,
+  one,
+  off,
+  trigger,
+  domReady
+};
