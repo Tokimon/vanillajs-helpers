@@ -1,23 +1,21 @@
 import limitDecimals from './limitDecimals';
 
 /**
- * Formats a number with defined thousand and decimal seperator, and a decimal limit
+ * Formats a number with defined thousand and decimal separator, and a decimal limit
  * (see 'limitDecimals.js' for details on `decCount`)
  * @param  {Number} num - Number to format
- * @param  {Number|String=2} decCount - Decimal limit expression (see 'limitDecimals.js' for details)
- * @param  {Char='.'} sep - Thousand seperator
- * @param  {Char=','} dec - Decimal seperator
- * @return {String} - Formated number
+ * @param  {Number|String} [decCount=2] - Decimal limitation expression (see 'limitDecimals' for details)
+ * @param  {Char} [sep='.'] - Thousand separator
+ * @param  {Char} [dec=','] - Decimal separator
+ * @return {String} - Formatted number
  */
 export default function formatNumber(num, decCount=2, sep='.', dec=',') {
-  if(isNaN(num)) { num = 0; }
-
   // Format the number to the desired number of decimals and split.
   const parts = `${limitDecimals(num, decCount)}`.split('.');
 
-  // insert separator
+  // Insert separator
   parts[0] = parts[0].replace(/(\d)(?=(\d{3})+$)/g, `$1${sep}`);
 
-  // join with decimal delimiter
+  // Join with decimal delimiter
   return parts.join(dec);
 }

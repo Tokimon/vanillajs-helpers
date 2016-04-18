@@ -2,7 +2,7 @@ import formatNumber from './formatNumber';
 
 /**
  * Create a function that formats a number to a given currency format (eg. 1000 -> 1.000,00 €)
- * @param  {String='1.000,00 €'} thousand - Thousand descriptor template
+ * @param  {String} [thousand='1.000,00 €'] - Thousand descriptor template
  * @return {Function} Returns funtion that formats a give number into the given currency format
  */
 export default function currencyFormat(thousand = '1.000,00 €') {

@@ -5,7 +5,7 @@ import { camelCase } from './wordCasing';
  * Get/set the value of a 'data-' attribute on a given HTML Element
  * @param  {HTMLElement} elm - The HTML Element to fetch the data from
  * @param  {String} dataName - Name of the 'data-' attribute to handle (eg. id -> data-id)
- * @param  {String|Number} value - Optional value to insert into the 'data-' attribute
+ * @param  {String|Number} [value] - Value to insert into the 'data-' attribute
  * @return {String} - Data found in the 'data-' attribute (or the old value if {value} is defined)
  */
 export default function data(elm, dataName, value) {
