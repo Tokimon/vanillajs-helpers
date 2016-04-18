@@ -1,22 +1,19 @@
 /* eslint no-cond-assign: "off" */
 
 /**
- * Uses the correct method to find elements in the DOM from a given selector
- * @param  {String} selector - CSS query selector
- * @param  {HTMLElement=document} elm - The HTML Element from where to start the search
- * @param  {Boolean=false} first - Should the function only return the first found Element or All
+ * Takes a selector and determines the correct method to find matching HTML elements in the DOM.
+ * @param  {String} selector - CSS query selector to find elements from
+ * @param  {HTMLElement} [elm=document] - The HTML Element from where to start the search
+ * @param  {Boolean=false} [first=false] - Should the function only return the first or all found Elements
  * @return {Array<HTMLElement>|HTMLElement|NULL} - The found element(s) or null/empty array
  */
 export default function find(selector, elm = document, first=false) {
   let m, nodes;
+  const quickRef = { html: 'documentElement', body: 'body', img: 'images', form: 'forms', script: 'scripts', '*': 'all' };
 
-  // HTML tag
-  if(selector === 'html') {
-    nodes = document.documentElement;
-
-  // Body tag
-  } else if(selector === 'body') {
-    nodes = document.body;
+  // Quick references (html, body, img etc.)
+  if(elm === document && quickRef[selector]) {
+    nodes = elm[quickRef[selector]];
 
   // Tag or ID
   } else if(m = /^(#)?([\w-]+)$/.exec(selector)) {
@@ -39,11 +36,13 @@ export default function find(selector, elm = document, first=false) {
   return first ? (isNaN(nodes.length) ? nodes : nodes[0]) : [...nodes];
 }
 
+
+
+
 /**
- * Finds the first HTML Element from a given selector
- * (Shortcut for `find(selector, elm, true)`)
+ * Shortcut function to find(selector, elm, true). Returns the first found element.
  * @param  {String} selector - CSS query selector
- * @param  {HTMLElement=document} elm - The HTML Element from where to start the search
+ * @param  {HTMLElement} [elm=document] - The HTML Element from where to start the search
  * @return {HTMLElement|NULL} - The found element or null
  */
 export function findOne(selector, elm = document) {
