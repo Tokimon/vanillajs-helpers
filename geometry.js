@@ -59,7 +59,7 @@ export function scroll(elm = viewport) {
 
   return {
     top: elm.scrollTop,
-    topMax: elm.scrollHeight - elmSize.height,
+    maxTop: elm.scrollHeight - elmSize.height,
     left: elm.scrollLeft,
     leftMax: elm.scrollWidth - elmSize.width
   };
@@ -76,7 +76,7 @@ export function scroll(elm = viewport) {
  * @param  {Boolean} relative = false - Find the position relative to the offsetParent rather than the document
  * @return {Object} - the position information of the element
  */
-export function position(elm = viewport, relative = false) {
+export function position(elm = window) {
   // If element is winodw or the viewport, return the window position
   if(!elm.offsetParent) {
     const top = window.screenLeft || window.screenX || 0;
@@ -87,29 +87,32 @@ export function position(elm = viewport, relative = false) {
     return { top, left, right, bottom };
   }
 
-  // Return the position elative to the offset parent
-  if(relative) {
-    const parentSize = size(elm.offsetParent);
-    const elmSize = size(elm);
-
-    return {
-      top: elm.offsetTop,
-      left: elm.offsetLeft,
-      right: parentSize.innerWidth - elm.offsetLeft - elmSize.width,
-      bottom: parentSize.innerHeight - elm.offsetRight - elmSize.height
-    };
-  }
-
-  // Return the position relative to the document
   const rect = elm.getBoundingClientRect();
   const vpScroll = scroll();
   const vpSize = size();
+  const parentSize = size(elm.offsetParent);
+  const elmSize = size(elm);
 
   return {
     top: rect.top + vpScroll.top,
     left: rect.left + vpScroll.left,
     right: vpSize.width - rect.right - vpScroll.left,
-    bottom: vpSize.height - rect.bottom - vpScroll.top
+    bottom: vpSize.height - rect.bottom - vpScroll.top,
+
+    // TODO: Come up with a better name than parent - it can be misunderstood
+    parent: {
+      top: elm.offsetTop,
+      left: elm.offsetLeft,
+      right: parentSize.innerWidth - elm.offsetLeft - elmSize.width,
+      bottom: parentSize.innerHeight - elm.offsetRight - elmSize.height
+    },
+
+    viewport: {
+      top: rect.top,
+      left: rect.left,
+      right: vpSize.width - rect.right,
+      bottom: vpSize.height - rect.bottom
+    }
   };
 }
 
@@ -117,16 +120,15 @@ export function position(elm = viewport, relative = false) {
 
 
 /**
- * Find the size, position (relative/absolute) and scrolling information of a HTML element.
- * @param  {HTMLElement|window} [elm = viewport] - the HTML Element in question
- * @return {Object} - Object with the size, position and scrolling information
+ * Combines all geometry information into one object.
+ * @param  {HTMLElement|window} [elm = viewport] - The HTML element (or window) to find the information of
+ * @return {Object} - Object describing the scrolling, position and size of the element
  */
 export default function geometry(elm = viewport) {
   return Object.assign(
     {
       scroll: scroll(elm),
-      absolute: position(elm),
-      relative: position(elm, true)
+      position: position(elm)
     },
     size(elm)
   );
