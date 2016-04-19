@@ -1,8 +1,10 @@
 /**
- * Generate a random id of designated length (max 36 chars)
- * @param  {Number=36} length - Length of the generated ID
- * @return {String} The generated ID
+ * Generate a random id of designated length
+ * @param  {Number} [length=10] - Length of the generated ID
+ * @return {String} - A random generated string as a mix of characters and numbers
  */
-export default function randomId(length=36) {
-  return Math.random().toString(36).substr(2, length);
+export default function randomId(length=10) {
+  let id = '';
+  while(id.length < length) { id += Math.random().toString(36).substr(2); }
+  return id.substr(0, length);
 }
