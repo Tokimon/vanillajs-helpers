@@ -2,7 +2,7 @@ import { isString } from './objectType';
 
 /**
  * Inserts HTML Element or plain HTML before a given HTML Element
- * @param  {HTMLElement} elm - The HTML Element in question
+ * @param  {HTMLElement} elm - The HTML Element to insert {insertElm} before
  * @param  {String|HTMLElement} insertElm - HTML Element or String to insert before the {elm}
  */
 export default function before(elm, insertElm) {

@@ -24,7 +24,7 @@ export function remove(elm, ...classNames) {
 
 /**
  * Toggles (add/remove) one or multiple class names on a HTML Element
- * @param {HTMLElement} elm - HTML ELement in question
+ * @param {HTMLElement} elm - HTML Element to toggle class names from
  * @param {...String} classNames - Class names to toggle
  */
 export default function toggle(elm, ...classNames) {
@@ -36,7 +36,7 @@ export default function toggle(elm, ...classNames) {
 
 /**
  * Does all listed class names exist in the elements list of class names
- * @param  {HTML Element} elm - The HTML Element in question
+ * @param  {HTML Element} elm - HTML Element to test
  * @param  {...String} classNames - Class names to test
  * @return {Boolean} - All class name listed were found in the elements list of class names
  */
@@ -49,7 +49,7 @@ export function has(elm, ...classNames) {
 
 /**
  * Does one of the listed class names exist in the elements list of class names
- * @param  {HTML Element} elm - The HTML Element in question
+ * @param  {HTML Element} elm - HTML Element to test
  * @param  {...String} classNames - Class names to test
  * @return {Boolean} - Did one of the class name listed exist the elements list of class names
  */
