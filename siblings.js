@@ -1,8 +1,8 @@
 import children from './children';
 
 /**
- * Get all sibling elements of a HTML element
- * @param  {HTMLElement} elm - The HTMLElement to find siblings of
+ * Get all sibling elements of a given HTML element
+ * @param  {HTMLElement} elm - HTML element to find siblings of
  * @return {Array<HTMLElement>} - Collection of sibling elements
  */
 export default function siblings(elm) {
@@ -22,7 +22,7 @@ export function next(elm) {
 
   let sibling = elm.nextSibling;
   while(sibling && sibling.nodeType !== 1) { sibling = elm.nextSibling; }
-  return sibling;
+  return sibling.nodeType !== 1 ? null : sibling;
 }
 
 
@@ -38,5 +38,5 @@ export function prev(elm) {
 
   let sibling = elm.prevSibling;
   while(sibling && sibling.nodeType !== 1) { sibling = elm.prevSibling; }
-  return sibling;
+  return sibling.nodeType !== 1 ? null : sibling;
 }
