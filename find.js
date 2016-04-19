@@ -9,7 +9,16 @@
  */
 export default function find(selector, elm = document, first=false) {
   let m, nodes;
-  const quickRef = { html: 'documentElement', body: 'body', img: 'images', form: 'forms', script: 'scripts', '*': 'all' };
+  const quickRef = {
+    html: 'documentElement',
+    body: 'body',
+    img: 'images',
+    form: 'forms',
+    script: 'scripts',
+    embed: 'embeds',
+    stylesheet: 'styleSheets',
+    '*': 'all'
+  };
 
   // Quick references (html, body, img etc.)
   if(elm === document && quickRef[selector]) {
