@@ -6,12 +6,7 @@ import { isString } from './objectType';
  * @param  {String|HTMLElement} insertElm - HTML Element or HTML to insert
  */
 export default function after(elm, insertElm) {
-  const parent = elm.parentNode;
-
-  if(!parent) {
-    return console.error('You can only insert content after elements that are inside the DOM tree');
-  }
-
-  if(insertElm.nodeType) { parent.insertBefore(insertElm, elm.nextSibling); }
+  if(!elm.parentNode) { return; }
+  if(insertElm.nodeType) { elm.parentNode.insertBefore(insertElm, elm.nextSibling); }
   else if(isString(insertElm)) { elm.insertAdjacentHTML('afterend', insertElm); }
 }

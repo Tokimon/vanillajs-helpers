@@ -6,12 +6,7 @@ import { isString } from './objectType';
  * @param  {String|HTMLElement} insertElm - HTML Element or String to insert before the {elm}
  */
 export default function before(elm, insertElm) {
-  const parent = elm.parentNode;
-
-  if(!parent) {
-    return console.error('You can only insert content before elements that are inside the DOM tree');
-  }
-
-  if(insertElm.nodeType) { parent.insertBefore(insertElm, elm); }
+  if(!elm.parentNode) { return; }
+  if(insertElm.nodeType) { elm.parentNode.insertBefore(insertElm, elm); }
   else if(isString(insertElm)) { elm.insertAdjacentHTML('beforebegin', insertElm); }
 }
