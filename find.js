@@ -35,6 +35,10 @@ export default function find(selector, elm, first = false) {
   if(elm === document && quickRef[selector]) {
     nodes = elm[quickRef[selector]];
 
+  // Options on a select box
+  } else if(elm.options && selector === 'options') {
+    nodes = elm.options;
+
   // Tag or ID
   } else if(m = /^(#)?([\w-]+)$/.exec(selector)) {
     nodes = elm[`getElement${m[1] ? 'ById' : 'sByTagName'}`](m[2]);
