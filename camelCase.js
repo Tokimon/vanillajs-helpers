@@ -5,5 +5,5 @@
  * @return {String} - Transformed string
  */
 export function camelCase(str, separator = ' ') {
-  return str.replace(new RegExp(`${separator}+([a-z])`, 'gi'), (match, char) => char.toUpperCase());
+  return str.toLowerCase().replace(new RegExp(`${separator}+([a-z])`, 'gi'), (match, char) => char.toUpperCase());
 }
