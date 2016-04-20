@@ -1,5 +1,7 @@
 /* eslint no-cond-assign: "off" */
 
+import isBoolean from './isBoolean';
+
 /**
  * Takes a selector and determines the correct method to find matching HTML elements in the DOM.
  * @param  {String} selector - CSS query selector to find elements from
@@ -8,6 +10,12 @@
  * @return {Array<HTMLElement>|HTMLElement|NULL} - The found element(s) or null/empty array
  */
 export default function find(selector, elm = document, first=false) {
+  // Correct variables if 'elm' is omitted but 'first' isn't
+  if(isBoolean(elm)) {
+    first = elm;
+    elm = document;
+  }
+
   let m, nodes;
   const quickRef = {
     html: 'documentElement',
