@@ -9,14 +9,16 @@ import isBoolean from './isBoolean';
  * @param  {Boolean=false} [first=false] - Should the function only return the first or all found Elements
  * @return {Array<HTMLElement>|HTMLElement|NULL} - The found element(s) or null/empty array
  */
-export default function find(selector, elm = document, first=false) {
+export default function find(selector, elm, first = false) {
   // Correct variables if 'elm' is omitted but 'first' isn't
-  if(isBoolean(elm)) {
+  if(elm === true) {
     first = elm;
     elm = document;
-  }
+  } else if(!elm) { elm = document; }
 
   let m, nodes;
+
+  // References that are already on the document object
   const quickRef = {
     html: 'documentElement',
     body: 'body',
@@ -24,7 +26,8 @@ export default function find(selector, elm = document, first=false) {
     form: 'forms',
     script: 'scripts',
     embed: 'embeds',
-    stylesheet: 'styleSheets',
+    ':stylesheet': 'styleSheets',
+    ':link': 'links',
     '*': 'all'
   };
 
