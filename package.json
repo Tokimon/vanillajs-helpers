@@ -2,7 +2,7 @@
   "name": "vanillajs-helpers",
   "private": true,
   "version": "1.0.0",
-  "description": "API that includes convenience methods for coding vanilla JS",
+  "description": "Collection of convenience code snippets (helpers) that aims to make it a little easier to work with vanilla JS",
   "author": "Toke Voltelen",
   "license": "MIT",
   "scripts": {},
