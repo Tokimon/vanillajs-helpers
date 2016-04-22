@@ -230,7 +230,7 @@ export function off(elm, eventNames, delegation, handler) {
  * @param  {Function} handler - Handler to bind to the event(s)
  * @return {Number} - The number of events listed
  */
-export function one(elm, eventNames, delegation, handler) {
+export function once(elm, eventNames, delegation, handler) {
   return on(elm, eventNames, delegation, function _one(e) {
     off(elm, e.type, _one);
     return handler.call(this, e);
@@ -271,7 +271,7 @@ export function trigger(elm, eventNames, data) {
 export default function domReady(cb) {
   if(typeof cb !== 'function') { return; }
   if(document.readyState === 'complete') { return cb(); }
-  one(document, 'DOMContentLoaded', () => cb());
+  once(document, 'DOMContentLoaded', () => cb());
 }
 
 
@@ -280,7 +280,7 @@ export default function domReady(cb) {
 // export  all the different methods as a collection
 export default {
   on,
-  one,
+  once,
   off,
   trigger,
   domReady,
