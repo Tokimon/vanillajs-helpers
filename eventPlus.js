@@ -1,3 +1,5 @@
+import _on from './on';
+import _off from './off';
 import iterate from './iterate';
 import words from './eachWord';
 import matches from './matches';
@@ -116,8 +118,7 @@ export default function on(elm, eventNames, delegation, handler) {
   // If only handler has been given as argument in the place of the delegation
   // selector, correct the variables
   if(typeof delegation === 'function') {
-    handler = delegation;
-    delegation = undefined;
+    [handler, delegation] = [delegation, undefined];
   }
 
   const evts = getEvents(elm);
@@ -128,10 +129,9 @@ export default function on(elm, eventNames, delegation, handler) {
       // If it hasn't been registered yet, create the entry and bind the event handler
       if(!evts[evt]) {
         evts[evt] = { handlers: [], delegates: {} };
-        elm.addEventListener(evt, callback, true);
+        _on(evt, callback);
       }
 
-      // If it exists just add the hendler to the collection
       if(!delegation) {
         evts[evt].handlers.push(handler);
       } else {
@@ -212,79 +212,9 @@ export function off(elm, eventNames, delegation, handler) {
       // If there are no more handlers bound to the current event, remove the
       // event handler and empty the event entry
       if(!evtObj.handlers.length && !evtObj.delegates) {
-        elm.removeEventListener(evt, callback, true);
+        _off(evt, callback);
         evts[evt] = null;
       }
     });
   });
 }
-
-
-
-
-/**
- * Bind an event handler for one or more event names (space separated) that will
- * only trigger once
- * @param  {HTMLElement} elm - HTML Element to unbind the event from
- * @param  {String} eventNames - Space separated string of event names to bind the handler to
- * @param  {String} [delegation] - Delegation selector
- * @param  {Function} handler - Handler to bind to the event(s)
- * @return {Number} - The number of events listed
- */
-export function once(elm, eventNames, delegation, handler) {
-  return on(elm, eventNames, delegation, function _one(e) {
-    off(elm, e.type, _one);
-    return handler.call(this, e);
-  });
-}
-
-
-
-
-// Determine the method to create the correct CustomEvent object
-// (IE 11 and below doesn't implement the object correctly)
-const customEvent = typeof CustomEvent === 'function' ?
-    (name, data) => new CustomEvent(name, { detail: data }) :
-    (name, data) => {
-      const evt = document.createEvent('CustomEvent');
-      evt.initCustomEvent(name, true, true, data);
-      return evt;
-    };
-
-/**
- * Trigger event handlers for one or more event names (space separated)
- * @param  {HTMLElement} elm - HTML Element to trigger the event from
- * @param  {String} eventNames - Space seperated string of event names to trigger
- * @param  {Object} [data] - Extra data to add to the triggered event
- * @return {Number} - The number of events listed
- */
-export function trigger(elm, eventNames, data) {
-  return words(eventNames, (name) => elm.dispatchEvent(customEvent(name, data)));
-}
-
-
-
-
-/**
- * Execute a given function once the document has finished loading
- * @param  {Function} cb - Function to execute once the document has finished loading
- */
-export default function domReady(cb) {
-  if(typeof cb !== 'function') { return; }
-  if(document.readyState === 'complete') { return cb(); }
-  once(document, 'DOMContentLoaded', () => cb());
-}
-
-
-
-
-// export  all the different methods as a collection
-export default {
-  on,
-  once,
-  off,
-  trigger,
-  domReady,
-  eventListId,
-  getEvents
-};
