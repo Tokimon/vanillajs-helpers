@@ -1,3 +1,6 @@
+# Still under development
+The package is still untested and fails on certain script. Working on improving it.
+
 # Vanilla JS helpers
 This is a collection of simple, no dependency, vanilla JS snippets with the aim
 of making it easier to work with vanilla JS.
