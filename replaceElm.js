@@ -1,4 +1,5 @@
-import { isString } from './objectType';
+import isString from './isString';
+import isDOMChild from './isDOMChild';
 
 /**
  * Replace a given HTML Element with another HTML Element or plain HTML string
@@ -6,7 +7,7 @@ import { isString } from './objectType';
  * @param  {HTMLElement|String} replacement - HTML Element or plain HTML string to replace {elm}
  */
 export default function replaceElm(elm, replacement) {
-  if(!elm.parentNode || !replacement) { return; }
+  if(!isDOMChild(elm) || !replacement) { return; }
   if(isString(replacement)) { elm.outerHTML = replacement; }
-  else if(replacement.nodeType === 3) { elm.parentNode.replaceChild(elm, replacement); }
+  else if(replacement.nodeType) { elm.parentNode.replaceChild(elm, replacement); }
 }
