@@ -1,4 +1,5 @@
-import isString from './objectType';
+import isString from './isString';
+import isDOMElement from './isDOMElement';
 
 /**
  * Append HTML Element or plain HTML to the end of a given HTML Element
@@ -6,6 +7,7 @@ import isString from './objectType';
  * @param  {String|HTMLElement} insertElm - HTML Element or String to append to the {elm}
  */
 export default function append(elm, insertElm) {
+  if(!isDOMElement(elm)) { return; }
   if(isString(insertElm)) { elm.insertAdjacentHTML('beforeend', insertElm); }
   else if(insertElm.nodeType) { elm.appendChild(insertElm); }
 }

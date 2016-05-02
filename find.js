@@ -1,6 +1,6 @@
 /* eslint no-cond-assign: "off" */
 
-import isBoolean from './isBoolean';
+import isHTMLElement from './isHTMLElement';
 
 /**
  * Takes a selector and determines the correct method to find matching HTML elements in the DOM.
@@ -9,12 +9,12 @@ import isBoolean from './isBoolean';
  * @param  {Boolean=false} [first=false] - Should the function only return the first or all found Elements
  * @return {Array<HTMLElement>|HTMLElement|NULL} - The found element(s) or null/empty array
  */
-export default function find(selector, elm, first = false) {
+export default function find(selector, elm = document, first = false) {
   // Correct variables if 'elm' is omitted but 'first' isn't
-  if(elm === true) {
-    first = elm;
-    elm = document;
-  } else if(!elm) { elm = document; }
+  if(elm === true) { [elm, first] = [document, elm]; }
+
+  // 'elm' has to be either a HTMLElement or 'document'
+  if(!isHTMLElement(elm) || elm !== document) { return first ? null : []; }
 
   let m, nodes;
 
@@ -22,6 +22,7 @@ export default function find(selector, elm, first = false) {
   const quickRef = {
     html: 'documentElement',
     body: 'body',
+    head: 'head',
     img: 'images',
     form: 'forms',
     script: 'scripts',
@@ -58,17 +59,4 @@ export default function find(selector, elm, first = false) {
 
   if(!nodes) { return first ? null : []; }
   return first ? (isNaN(nodes.length) ? nodes : nodes[0]) : [...nodes];
-}
-
-
-
-
-/**
- * Shortcut function to find(selector, elm, true). Returns the first found element.
- * @param  {String} selector - CSS query selector
- * @param  {HTMLElement} [elm=document] - The HTML Element from where to start the search
- * @return {HTMLElement|NULL} - The found element or null
- */
-export function findOne(selector, elm = document) {
-  return find(selector, elm, true);
 }
