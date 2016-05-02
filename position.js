@@ -10,7 +10,7 @@ import size from './size';
  * @return {Object} - the position information of the element
  */
 export default function position(elm = window) {
-  // If element is winodw or the viewport, return the window position
+  // If element is window or the viewport, return the window position
   if(!elm.offsetParent) {
     const top = window.screenLeft || window.screenX || 0;
     const left = window.screenY || window.screenTop || 0;
