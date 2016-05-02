@@ -1,4 +1,5 @@
-import iterate, { words } from './iterate';
+import iterate from './iterate';
+import words from './eachWord';
 import matches from './matches';
 import randomId from './randomId';
 import data from './data';

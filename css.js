@@ -1,4 +1,4 @@
-import { isString } from './objectType';
+import isString from './isString';
 
 /**
  * Get current styling of a HTML element and optionally set given style first

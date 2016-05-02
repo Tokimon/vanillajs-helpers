@@ -1,4 +1,4 @@
-import { words } from './iterate';
+import words from './eachWord';
 import matches from './matches';
 
 
