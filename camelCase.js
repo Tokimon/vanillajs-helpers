@@ -4,6 +4,6 @@
  * @param {String=" "} separator - Separator between words
  * @return {String} - Transformed string
  */
-export function camelCase(str, separator = ' ') {
+export default function camelCase(str, separator = ' ') {
   return str.toLowerCase().replace(new RegExp(`${separator}+([a-z])`, 'gi'), (match, char) => char.toUpperCase());
 }

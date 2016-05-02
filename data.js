@@ -1,5 +1,5 @@
 import attr from './attr';
-import { camelCase } from './wordCasing';
+import camelCase from './camelCase';
 
 /**
  * Get/set the value of a 'data-' attribute on a given HTML Element
