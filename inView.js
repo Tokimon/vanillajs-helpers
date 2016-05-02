@@ -1,3 +1,5 @@
+import isDOMElement from './isDOMElement';
+
 /**
  * Determines whether the element is in the area of the viewport or not.
  * @param  {HTMLElement} elm - HTML element to test
@@ -9,6 +11,8 @@
  *                            where the element is compared to the viewport area
  */
 export default function inView(elm, threshold = 0) {
+  if(!isDOMElement(elm)) { return false; }
+
   const rect = elm.getBoundingClientRect();
   const vpWidth = window.innerWidth;
   const vpHeight = window.innerHeight;
