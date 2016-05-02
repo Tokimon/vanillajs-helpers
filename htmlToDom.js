@@ -1,4 +1,4 @@
-import { isString } from './objectType';
+import isString from './isString';
 
 /**
  * Convert HTML into DOM node(s)
