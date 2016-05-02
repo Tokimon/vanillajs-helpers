@@ -4,5 +4,5 @@
  * @return {Boolean} - Whether the object is a Boolean or not
  */
 export default function isBoolean(obj) {
-  return obj === true || obj === false;
+  return obj === true || obj === false || obj instanceof Boolean;
 }
