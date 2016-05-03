@@ -1,5 +1,5 @@
 import isString from './isString';
-import isDOMElement from './isDOMElement';
+import isHTMLElement from './isHTMLElement';
 
 /**
  * Prepend HTML Element or plain HTML into a given HTML Element
@@ -7,7 +7,7 @@ import isDOMElement from './isDOMElement';
  * @param  {string|HTMLElement} insertElm - HTML Element or String to prepend to the {elm}
  */
 export default function prepend(elm, insertElm) {
-  if(!isDOMElement(elm)) { return; }
+  if(!isHTMLElement(elm) || !insertElm) { return; }
   if(isString(insertElm)) { elm.insertAdjacentHTML('afterbegin', insertElm); }
-  else if(insertElm.nodeType) { elm.insertBefore(elm.firstChild, insertElm); }
+  else if(insertElm.nodeType) { elm.insertBefore(insertElm, elm.firstChild); }
 }
