@@ -1,4 +1,5 @@
 import isString from './isString';
+import isHTMLNode from './isHTMLNode';
 import isDOMChild from './isDOMChild';
 
 /**
@@ -7,11 +8,7 @@ import isDOMChild from './isDOMChild';
  * @param  {String|HTMLElement} insertElm - HTML Element or HTML to insert
  */
 export default function after(elm, insertElm) {
-  // 'elm' has to be a HTML element that exsists in the DOM and is not a DOM root element
-  if(!isDOMChild(elm) || !insertElm) { return; }
-
-  // Insert HTML element
-  if(insertElm.nodeType) { elm.parentNode.insertBefore(insertElm, elm.nextSibling); }
-  // Insert HTML
+  if(!isDOMChild(elm)) { return; }
+  if(isHTMLNode(insertElm)) { elm.parentNode.insertBefore(insertElm, elm.nextSibling); }
   else if(isString(insertElm)) { elm.insertAdjacentHTML('afterend', insertElm); }
 }
