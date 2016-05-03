@@ -1,5 +1,5 @@
 import isHTMLElement from './isHTMLElement';
 
-export default function isDOMRoot(obj) {
-  return isHTMLElement(obj, 'html', 'body', 'head');
+export default function isDOMRoot(elm) {
+  return isHTMLElement(elm, 'html', 'body', 'head');
 }
