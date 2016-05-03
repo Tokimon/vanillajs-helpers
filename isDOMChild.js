@@ -1,6 +1,5 @@
-import isDOMElement from './isDOMElement';
-import isDOMRoot from './isDOMRoot';
+import isHTMLElement from './isHTMLElement';
 
 export default function isDOMChild(elm) {
-  return isDOMElement(elm) && !isDOMRoot(elm);
+  return elm && isHTMLElement(elm.parentNode);
 }
