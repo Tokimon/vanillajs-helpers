@@ -14,7 +14,7 @@ export default function find(selector, elm = document, first = false) {
   if(elm === true) { [elm, first] = [document, elm]; }
 
   // 'elm' has to be either a HTMLElement or 'document'
-  if(!isHTMLElement(elm) || elm !== document) { return first ? null : []; }
+  if(!isHTMLElement(elm) || elm.nodeType === 9) { return first ? null : []; }
 
   let m, nodes;
 
@@ -39,6 +39,12 @@ export default function find(selector, elm = document, first = false) {
   // Options on a select box
   } else if(elm.options && selector === 'options') {
     nodes = elm.options;
+
+  } else if([':comment', ':text'].indexOf(selector) > -1) {
+    let node;
+    nodes = [];
+    const itr = document.createNodeIterator(elm, NodeFilter[`SHOW_${selector.substr(1).toUpperCase()}`], () => NodeFilter.FILTER_ACCEPT, false);
+    while(node = itr.nextNode()) { nodes.push(node); }
 
   // Tag or ID
   } else if(m = /^(#)?([\w-]+)$/.exec(selector)) {
