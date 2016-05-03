@@ -1,5 +1,6 @@
 import isString from './isString';
 import isDOMChild from './isDOMChild';
+
 /**
  * Inserts HTML Element or plain HTML before a given HTML Element
  * @param  {HTMLElement} elm - The HTML Element to insert {insertElm} before
@@ -7,7 +8,7 @@ import isDOMChild from './isDOMChild';
  */
 export default function before(elm, insertElm) {
   // 'elm' has to be a HTML element that exsists in the DOM and is not a DOM root element
-  if(!isDOMChild(elm)) { return; }
+  if(!isDOMChild(elm) || !insertElm) { return; }
 
   // Insert HTML element
   if(insertElm.nodeType) { elm.parentNode.insertBefore(insertElm, elm); }
