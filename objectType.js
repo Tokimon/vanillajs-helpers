@@ -4,6 +4,5 @@
  * @return {String} - Type representation (eg. [object String])
  */
 export default function objectType(obj) {
-  if(typeof obj === 'undefined') { return 'undefined'; }
-  return Object.prototype.toString.call(obj).match(/(\w+)\]$/)[1].toLowerCase();
+  return Object.prototype.toString.call(obj).toLowerCase().match(/(\w+)\]$/)[1];
 }
