@@ -7,6 +7,6 @@ import isHTMLElement from './isHTMLElement';
  */
 export default function children(elm = document.body) {
   if(!isHTMLElement(elm)) { return []; }
-  if(elm.children) { return [...elm.children]; }
-  return [...elm.childNodes].filter((child) => child.nodeType === 1);
+  if(elm.children) { return Array.from(elm.children); }
+  return Array.from(elm.childNodes).filter((child) => child.nodeType === 1);
 }

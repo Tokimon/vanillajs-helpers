@@ -64,5 +64,5 @@ export default function find(selector, elm = document, first = false) {
   }
 
   if(!nodes) { return first ? null : []; }
-  return first ? (isNaN(nodes.length) ? nodes : nodes[0]) : [...nodes];
+  return first ? (isNaN(nodes.length) ? nodes : nodes[0]) : Array.from(nodes);
 }
