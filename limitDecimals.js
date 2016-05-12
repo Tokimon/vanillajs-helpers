@@ -15,7 +15,10 @@
  * @param  {Number|String} decCount - Decimal count expression: [<|>]?n (eg. >2 or <5)
  * @return {String} As the decimal can contain extra 0 (zeroes) which would otherwise be cut away, the number is returned as a string
  */
-export default function limitDecimals(num, decCount) {
+export default function limitDecimals(num, decCount=2) {
+  num = parseFloat(num);
+  if(isNaN(num)) { num = 0; }
+
   const countMatch = /^([<>])?(\d+)/.exec(decCount);
   let parts = `${num}`.split('.');
   let decLen = parts[1] ? parts[1].length : 0;

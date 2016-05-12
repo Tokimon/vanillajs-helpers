@@ -1,3 +1,4 @@
+import isHTMLElement from './isHTMLElement';
 import isBoolean from './isBoolean';
 
 /**
@@ -6,6 +7,7 @@ import isBoolean from './isBoolean';
  * @param {...String} classNames - Class names to toggle
  */
 export default function toggle(elm, classNames, force) {
+  if(!isHTMLElement(elm)) { return; }
   if(!Array.isArray(classNames)) { classNames = [classNames]; }
-  return classNames.forEach(cn => elm.classList.toggle(cn, force));
+  classNames.forEach(cn => elm.classList.toggle(cn, force));
 }
