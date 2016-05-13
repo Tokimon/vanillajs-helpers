@@ -1,4 +1,4 @@
-import isDOMElement from './isDOMElement';
+import isChildElement from './isChildElement';
 
 /**
  * Test if a given HTML element is technically hidden ('display:none' or 'visibility: hidden').
@@ -6,7 +6,7 @@ import isDOMElement from './isDOMElement';
  * @return {Boolean} - Is the element technically hidden or not
  */
 export default function hidden(elm) {
-  if(!isDOMElement(elm)) { return true; }
+  if(!isChildElement(elm)) { return true; }
   if(!elm.offsetHeight && !elm.offsetWidth) { return true; }
   return getComputedStyle(elm).visibility === 'hidden';
 }
