@@ -8,7 +8,9 @@
  * @return {Number} - Number of iterated items
  */
 export default function iterate(iterable, cb) {
-  const len = iterable.length;
+  const len = iterable ? iterable.length : 0;
+  if(!len || !cb) { return 0; }
+
   let i = -1;
   while(++i < len && cb(iterable[i], i, iterable) !== false) {}
   return len;
