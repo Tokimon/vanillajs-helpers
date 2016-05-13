@@ -1,3 +1,4 @@
+import isString from './isString';
 import iterate from './iterate';
 
 /**
@@ -7,6 +8,7 @@ import iterate from './iterate';
  * @param  {String|RegExp} [separator=' '] - Separator char/regular expression to split the words by
  * @return {Number} - Number of words iterated
  */
-export function eachWord(phrase, cb, seperator = ' ') {
-  return iterate(phrase.split(seperator), cb);
+export default function eachWord(phrase, cb, separator = /[- _]/) {
+  const words = isString(phrase) ? phrase.split(separator) : [];
+  return cb ? iterate(words, cb) : words.length;
 }
