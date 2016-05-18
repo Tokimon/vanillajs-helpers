@@ -1,5 +1,6 @@
-import isHTMLElement from './isHTMLElement';
+import isDOMElement from './isDOMElement';
 import isString from './isString';
+import isArray from './isArray';
 
 /**
  * Does all listed class names exist in the elements list of class names
@@ -9,7 +10,7 @@ import isString from './isString';
  */
 export default function hasClass(elm, classNames, any = false) {
   if(isString(classNames)) { classNames = classNames.split(/\s+/) }
-  if(!isHTMLElement(elm) || !Array.isArray(classNames)) { return false; }
+  if(!isDOMElement(elm) || !isArray(classNames)) { return false; }
   return classNames[any ? 'some' : 'every']((cn) => elm.classList.contains(cn));
 }
 

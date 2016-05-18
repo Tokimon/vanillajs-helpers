@@ -1,5 +1,6 @@
-import isHTMLElement from './isHTMLElement';
+import isDOMElement from './isDOMElement';
 import isString from './isString';
+import isArray from './isArray';
 
 /**
  * Toggles (add/remove) one or multiple class names on a HTML Element
@@ -9,6 +10,6 @@ import isString from './isString';
  */
 export default function toggle(elm, classNames, force) {
   if(isString(classNames)) { classNames = classNames.split(/\s+/) }
-  if(!isHTMLElement(elm) || !Array.isArray(classNames)) { return false; }
+  if(!isDOMElement(elm) || !isArray(classNames)) { return false; }
   classNames.forEach((cn) => elm.classList.toggle(cn, force));
 }

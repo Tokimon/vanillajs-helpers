@@ -1,4 +1,4 @@
-import isHTMLElement from './isHTMLElement';
+import isDOMElement from './isDOMElement';
 import attr from './attr';
 import camelCase from './camelCase';
 import dashed from './dashed';
@@ -11,7 +11,7 @@ import dashed from './dashed';
  * @return {String|Boolean} - Data found in the 'data-' attribute - true if empty, false if undefined
  */
 export default function data(elm, dataName, value) {
-  if(!isHTMLElement(elm) || !dataName) { return false; }
+  if(!isDOMElement(elm) || !dataName) { return false; }
 
   if(value === true) { value = ''; }
 

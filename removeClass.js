@@ -1,5 +1,6 @@
-import isHTMLElement from './isHTMLElement';
+import isDOMElement from './isDOMElement';
 import isString from './isString';
+import isArray from './isArray';
 
 /**
  * Remove one or multiple class names from a HTML Element
@@ -8,6 +9,6 @@ import isString from './isString';
  */
 export default function removeCLass(elm, classNames) {
   if(isString(classNames)) { classNames = classNames.split(/\s+/); }
-  if(!isHTMLElement(elm) || !Array.isArray(classNames)) { return false; }
+  if(!isDOMElement(elm) || !isArray(classNames)) { return false; }
   classNames.forEach(cn => elm.classList.remove(cn));
 }

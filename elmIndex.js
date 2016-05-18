@@ -1,4 +1,4 @@
-import isChildElement from './isChildElement';
+import isDOMChildNode from './isDOMChildNode';
 import children from './children';
 
 /**
@@ -7,5 +7,5 @@ import children from './children';
  * @return {Number} - The index of {elm}
  */
 export default function elmIndex(elm) {
-  return isChildElement(elm) ? children(elm.parentNode).indexOf(elm) : -1;
+  return isDOMChildNode(elm) ? children(elm.parentNode).indexOf(elm) : -1;
 }

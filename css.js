@@ -1,4 +1,4 @@
-import isHTMLElement from './isHTMLElement';
+import isDOMElement from './isDOMElement';
 import type from './objectType';
 
 /**
@@ -9,7 +9,7 @@ import type from './objectType';
  * @return {Object|null} - Current styling on the element
  */
 export default function css(elm, pseudo, style) {
-  if(!isHTMLElement(elm)) { return null; }
+  if(!isDOMElement(elm)) { return null; }
 
   if(!/^[:]*(before|after)$/.test(pseudo)) {
     style = pseudo;

@@ -1,6 +1,6 @@
 import isString from './isString';
-import isHTMLNode from './isHTMLNode';
-import isHTMLContainer from './isHTMLContainer';
+import isDOMNode from './isDOMNode';
+import isDOMContainer from './isDOMContainer';
 
 /**
  * Append HTML Element or plain HTML to the end of a given HTML Element
@@ -8,7 +8,7 @@ import isHTMLContainer from './isHTMLContainer';
  * @param  {String|HTMLElement} insertElm - HTML Element or String to append to the {elm}
  */
 export default function append(elm, insertElm) {
-  if(!isHTMLContainer(elm)) { return; }
-  if(isHTMLNode(insertElm)) { elm.appendChild(insertElm); }
+  if(!isDOMContainer(elm)) { return; }
+  if(isDOMNode(insertElm)) { elm.appendChild(insertElm); }
   else if(isString(insertElm)) { elm.insertAdjacentHTML('beforeend', insertElm); }
 }

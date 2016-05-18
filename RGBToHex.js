@@ -1,3 +1,5 @@
+import isArray from './isArray';
+
 function hex(num = 0) { return (0 + num.toString(16)).substr(-2); }
 
 /**
@@ -8,6 +10,6 @@ function hex(num = 0) { return (0 + num.toString(16)).substr(-2); }
  * @return {String}         - Hex color representation ('#2fd466')
  */
 export default function RGBToHex(r, g, b) {
-  if(Array.isArray(r)) { [r, g, b] = r; }
+  if(isArray(r)) { [r, g, b] = r; }
   return `#${hex(r)}${hex(g)}${hex(b)}`;
 }

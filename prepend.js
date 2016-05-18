@@ -1,6 +1,6 @@
 import isString from './isString';
-import isHTMLNode from './isHTMLNode';
-import isHTMLContainer from './isHTMLContainer';
+import isDOMNode from './isDOMNode';
+import isDOMContainer from './isDOMContainer';
 
 /**
  * Prepend HTML Element or plain HTML into a given HTML Element
@@ -8,7 +8,7 @@ import isHTMLContainer from './isHTMLContainer';
  * @param  {string|HTMLElement} insertElm - HTML Element or String to prepend to the {elm}
  */
 export default function prepend(elm, insertElm) {
-  if(!isHTMLContainer(elm)) { return; }
-  if(isHTMLNode(insertElm)) { elm.insertBefore(insertElm, elm.firstChild); }
+  if(!isDOMContainer(elm)) { return; }
+  if(isDOMNode(insertElm)) { elm.insertBefore(insertElm, elm.firstChild); }
   else if(isString(insertElm)) { elm.insertAdjacentHTML('afterbegin', insertElm); }
 }

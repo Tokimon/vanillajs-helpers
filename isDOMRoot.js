@@ -1,5 +1,5 @@
-import isHTMLElement from './isHTMLElement';
+import inDOM from './inDOM';
 
 export default function isDOMRoot(elm) {
-  return isHTMLElement(elm, 'html');
+  return inDOM(elm) && !elm.parentElement;
 }

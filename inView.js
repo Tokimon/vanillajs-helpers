@@ -1,4 +1,4 @@
-import isChildElement from './isChildElement';
+import isDOMChildNode from './isDOMChildNode';
 
 /**
  * Determines whether the element is in the area of the viewport or not.
@@ -11,7 +11,7 @@ import isChildElement from './isChildElement';
  *                            where the element is compared to the viewport area
  */
 export default function inView(elm, threshold = 0) {
-  if(!isChildElement(elm)) { return false; }
+  if(!isDOMChildNode(elm)) { return false; }
 
   const rect = elm.getBoundingClientRect();
   const vpWidth = window.innerWidth;

@@ -11,8 +11,8 @@ function delegateCb(delegation, handler) {
     // Taget is a child of the delegation selector target, so loop up the parents
     // to find the right target
     if(matches(target, `${delegation} *`)) {
-      target = target.parentNode;
-      while(!matches(target, delegation)) { target = target.parentNode; }
+      target = target.parentElement;
+      while(!matches(target, delegation)) { target = target.parentElement; }
       handler.call(target, e);
     }
   };
