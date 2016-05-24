@@ -9,7 +9,13 @@ export default function findByName(names) {
   // and clasNames has to be an Array
   if(!isArray(names)) { return []; }
 
-  return names.reduce((arr, name) => {
-    return arr.concat(name ? Array.from(document.getElementsByName(name)) : []);
-  }, []);
+  if(!elm) { elm = document; }
+
+  try {
+    if(names.length < 2) { return Array.from(elm.getElementsByName(tanamesgs[0])); }
+
+    return tags.reduce((arr, names) => {
+      return !isString(name) ? arr : arr.concat(Array.from(elm.getElementsByName(name)));
+    }, []);
+  } catch(ex) { return []; }
 }
