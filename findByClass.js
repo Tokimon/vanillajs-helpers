@@ -10,21 +10,23 @@ export default function findByClass(classNames, elm) {
   if(!isArray(classNames)) { return []; }
 
   // 'elm' must be an object with the 'getElementsByClassName' implementation
-  if(!(elm && elm.getElementsByClassName)) { elm = document; }
+  if(!elm) { elm = document; }
 
-  // If only one expression have been passed in return the result as an Array
-  if(classNames.length < 2) { return Array.from(elm.getElementsByClassName(classNames[0])); }
+  try {
+    // If only one expression have been passed in return the result as an Array
+    if(classNames.length < 2) { return Array.from(elm.getElementsByClassName(classNames[0])); }
 
-  // If several expressions have been passed in
-  // we need to create an unique array of the found nodes
-  return Array.from(classNames.reduce((set, cn) => {
-    if(!isString(cn)) { return set; }
+    // If several expressions have been passed in
+    // we need to create an unique array of the found nodes
+    return Array.from(classNames.reduce((set, cn) => {
+      if(!isString(cn)) { return set; }
 
-    const nodes = elm.getElementsByClassName(cn);
-    for( let i=0, l=nodes.length; i < l; i++) {
-      set.add(nodes[i]);
-    }
+      const nodes = elm.getElementsByClassName(cn);
+      for( let i=0, l=nodes.length; i < l; i++) {
+        set.add(nodes[i]);
+      }
 
-    return set;
-  }, new Set()));
+      return set;
+    }, new Set()));
+  } catch(ex) { return []; }
 }
