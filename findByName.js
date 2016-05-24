@@ -1,5 +1,3 @@
-import isDOMElement from './isDOMElement';
-import isDOMDocument from './isDOMDocument';
 import isString from './isString';
 import isArray from './isArray';
 
