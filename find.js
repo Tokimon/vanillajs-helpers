@@ -1,102 +1,66 @@
 /* eslint no-cond-assign: "off" */
 
-import isDOMDocument from './isDOMDocument';
-import isFunction from './isFunction';
 import isString from './isString';
 import isArray from './isArray';
 
-// References that are already on the document object
-const quickRef = {
-  html: 'documentElement',
-  body: 'body',
-  head: 'head',
-  img: 'images',
-  form: 'forms',
-  script: 'scripts',
-  embed: 'embeds',
-  '*': 'all'
+const wildcards = {
+  ':stylesheet': { ref: 'styleSheets', q: 'link[rel="stylesheet"], link:not([rel]), style', f: (style) => style.sheet || null },
+  ':input': { q: 'input:not([type=button]):not([type=submit]):not([type=reset]):not([type=image]):not([type=hidden]), select, textarea' },
+  ':input-text': { q: 'input:not([type]), input[type=text], input[type=email], input[type=password], input[type=search], input[type=url], input[type=tel], textarea' },
+  ':input-date': { q: 'input[type=date], input[type=datetime], input[type=datetime-local], input[type=month], input[type=time], input[type=week]' },
+  ':input-number': { q: 'input[type=number], input[type=range]' },
+  ':radio': { q: 'input[type=radio]' },
+  ':checkbox': { q: 'input[type=checkbox]' },
+  ':button': { q: 'input[type=button], input[type=submit], input[type=reset], input[type=image], button' },
+  ':comment': { f: specialNodes('COMMENT') },
+  ':text': { f: specialNodes('TEXT') }
 };
 
-const wildcards = {
-  ':stylesheet': { doc: 'styleSheets' },
-  ':link': { doc: 'links', q: 'a[href]' },
-  ':radio': { q: 'input[type=radio]' },
-  ':checkbox': { q: 'input[type=checkbox]' }
-}
+function specialNodes(type) {
+  return (elm, first) => {
+    const nodes = [];
+    const filter = NodeFilter[`SHOW_${type}`];
+    // Unfortunately 'createNodeIterator' doesn't return ES6 a iterator object ([Symbol.terator]),
+    // so the while loop is necessary
+    const itr = document.createNodeIterator(elm, filter, () => NodeFilter.FILTER_ACCEPT, false);
 
-function querySelect(elm, query, first) {
-  if(first && elm.querySelector) { return [elm.querySelector(query)]; }
-  if(elm.querySelectorAll) { return Array.from(elm.querySelectorAll(query)); }
-  return [];
-}
-
-function _find(query, elm, first = false) {
-  // All falsy 'elm' values defaults to 'document'
-  if(!elm) { elm = document; }
-
-  // 'queries' has to be an Array
-  if(!isArray(queries)) {  return first ? null : []; }
-
-  let nodes = [], m;
-
-  // Quick references (html, body, img etc.)
-  if(quickRef[query]) {
-    nodes = isDOMDocument(elm) ? Array.from(document[quickRef[query]]) : querySelect(elm, query, first);
-
-  // Options on a select box
-  } else if(query === 'options') {
-    nodes = elm.options || querySelect(elm, query, first);
-
-  // ID, tag or wildcard
-  } else if(m = /^([#:])?([\w-]+)$/.exec(query)) {
-    // ID selection (if elm is specified then use querySelector)
-    if(m[1] === '#') {
-      nodes = isDOMDocument(elm) ? [document.getElementById(m[2])] : querySelect(elm, query, true);
-      nodes = nodes[0] ? nodes : [];
-
-    // Wildcard selection
-    } else if(m[1] === ':') {
-      // Wildcard selector
-      const wc = wildcards[query];
-
-      if(wc) {
-        if(isDOMDocument(elm) && wc.doc) { nodes = Array.from(document[wc.doc]); }
-        else if(wc.q) { nodes = querySelect(elm, wc.q, first); }
-
-      // Comment or text nodes
-      } else if([':comment', ':text'].indexOf(query) > -1) {
-        const filter = NodeFilter[`SHOW_${query.substr(1).toUpperCase()}`];
-        // Unfortunately 'createNodeIterator' doesn't return ES6 a iterator object ([Symbol.terator]),
-        // so the while loop is necessary
-        const itr = document.createNodeIterator(elm, filter, () => NodeFilter.FILTER_ACCEPT, false);
-
-        let node;
-        while(node = itr.nextNode()) {
-          nodes.push(node);
-          if(first) { break; }
-        }
-      }
-
-    // Tag selection
-    } else if(elm.getElementsByTagName) {
-      nodes = Array.from(elm.getElementsByTagName(m[2]));
+    let node;
+    while(node = itr.nextNode()) {
+      nodes.push(node);
+      if(first) { break; }
     }
 
-  // Classname(s)
-  } else if(m = /^(\.[\w-]+)+$/.exec(query)) {
-    if(elm.getElementsByClassName) { nodes = Array.from(elm.getElementsByClassName(m[0].substr(1).replace(/\./g, ' '))); }
+    return nodes;
+  };
+}
 
-  // Name(s) (if an element is defined use query selector instead)
-  } else if(m = /^\[name=["']?([^'"\]]+)["']?\]$/i.exec(query)) {
-    nodes = isDOMDocument(elm) ? Array.from(document.getElementsByName(m[1])) : querySelect(elm, query, first);
+function q(elm, query, first) {
+  return  first ? [elm.querySelector(query)] : Array.from(elm.querySelectorAll(query));
+}
 
-  // When all other check fails, use querySelector
+function _find(elm, query, first) {
+  let nodes = [], m;
+
+  // Wildcard selector
+  const wc = wildcards[query];
+
+  if(wc) {
+    if(wc.ref && typeof elm[wc.ref] !== 'undefined') {
+      nodes = Array.from(elm[wc.ref]);
+    } else if(wc.q) {
+      nodes = q(elm, wc.q);
+      if(wc.f) { nodes = Array.from(nodes).map(wc.f); }
+    } else if(wc.f) {
+      nodes = wc.f(elm, first);
+    }
   } else {
-    nodes = querySelect(elm, query, first);
+    nodes = q(elm, query, first);
   }
 
   return first ? nodes[0] || null : nodes;
 }
+
+
 
 
 /**
@@ -106,18 +70,28 @@ function _find(query, elm, first = false) {
  * @return {Array<HTMLElement>|HTMLElement|NULL} - The found element(s) or null/empty array
  */
 export default function find(queries, elm) {
-  if(!isArray(queries)) {
-    // Is it is a string split by comma (convert to Array) or fallback to empty array
-    queries = isString(queries) ? queries.split(/\s*,\s*/) : [];
+  if(!elm) { elm = document; }
+
+  if(isString(queries)){
+    try { return q(elm, queries); }
+    catch(ex) { queries = queries.split(/\s*,\s*/); }
+  } else if(isArray(queries)) {
+    try { return q(elm, queries.join(',')); }
+    catch(ex) {}
+  } else {
+    return [];
   }
 
-  if(queries.length < 2) { return _find(queries[0], elm); }
+  if(queries.length < 2) { return _find(elm, queries[0]); }
 
-  // If several expressions have been passed in
-  // we need to create an unique array of the found nodes
+  // We need to create an unique array of the found nodes
   return Array.from(queries.reduce((set, query) => {
-    if(!isString(query)) { return set; }
-    _find(query, elm).forEach((node) => set.add(node));
+    if(isString(query)) {
+      let res;
+      try { res = _find(elm, query); } catch(ex) { res = []; }
+      res.forEach((node) => node && set.add(node));
+    }
+
     return set;
   }, new Set()));
 }
@@ -131,13 +105,28 @@ export default function find(queries, elm) {
  * @param  {HTMLElement} [elm=document] - The HTML Element from where to start the search
  * @return {HTMLElement|NULL} - The found element or null
  */
-export default function findOne(queries, elm) {
-  if(!isArray(queries)) {
-    // Is it is a string split by comma (convert to Array) or fallback to empty array
-    queries = isString(queries) ? queries.split(/\s*,\s*/) : [];
+export function findOne(queries, elm) {
+  if(!elm) { elm = document; }
+
+  if(isString(queries)){
+    try { return q(elm, queries, true)[0] || null; }
+    catch(ex) { queries = queries.split(/\s*,\s*/); }
+  } else if(isArray(queries)) {
+    try { return q(elm, queries.join(','), true)[0] || null; }
+    catch(ex) {}
+  } else {
+    return null;
   }
 
-  let node = null;
-  queries.some((arr, query) => !!(node = _find(query, elm, true)));
+  // Just return the first found non-null node (or null if none at all was found)
+  let node = null, i=0;
+
+  while(!node) {
+    const query = queries[i++];
+    if(isString(query)) {
+      try { node = _find(elm, query, true); } catch(ex) { node = null; }
+    }
+  }
+
   return node;
 }
