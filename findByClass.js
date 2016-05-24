@@ -2,8 +2,8 @@ import isString from './isString';
 import isArray from './isArray';
 
 export default function findByClass(classNames, elm) {
-  // Is it is a string split by comma and/or space (convert to Array)
-  if(isString(classNames)) { classNames = classNames.split(/\s*,\s*/); }
+  // Is it is a string split by comma (convert to Array)
+  if(isString(classNames)) { classNames = classNames.replace(/\./g, ' ').split(/\s*[,]\s*/); }
 
   // 'elm' has have the 'getElementsByClassName' implementation
   // and 'clasNames' has to be an Array
