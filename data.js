@@ -25,8 +25,7 @@ export default function data(elm, dataName, value) {
     oldVal = attr(elm, `data-${dataName}`, value);
   } else {
     // Make sure the names are camel cased
-    dataName = camelCase(dataName);
-
+    dataName = camelCase({ numbers: false })(dataName);
     oldVal = elm.dataset[dataName];
     if(typeof value !== 'undefined') { elm.dataset[dataName] = value; }
   }

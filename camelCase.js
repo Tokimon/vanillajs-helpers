@@ -1,32 +1,18 @@
 import isObject from './isObject';
 import isString from './isString';
+import phrasify from './phrasify';
 
 function convert(opts, str = '') {
-  str = String(str)
-    // Make space around numbers
-    .replace(/(\d+)/g, ' $1 ')
-    // Make space before ant series of upper case letters (ex. abbreviations)
-    // - Turn them into a capitalized word if `opts.abbr` is false
-    .replace(/[A-Z]+/g, (m) => ` ${opts.abbr ? m : m[0] + m.substr(1).toLowerCase()}`)
-    // Trim non letters/numbers
-    .replace(/^[^a-z0-9]+|[^a-z0-9]+$/gi, '');
+  return phrasify({ numbers: opts.numbers })(str)
+    .split(/\s+/).map((word, i) => {
+      if((opts.abbr && /^[A-Z]+$/.test(word)) || !word) { return word; }
 
-  if(opts.upper) {
-    // If upper CamelCase, the make sure the first letter is upper cased
-    str = str.substr(0, 1).toUpperCase() + str.substr(1);
-  } else if(opts.abbr) {
-    // If we keep abbriviations but do not create a lower camelCase word,
-    // we should only make the first word lower case if it is not a longer
-    // series of upper case letters
-    str = str.replace(/^[A-Z]+/, (m) => m.length > 1 ? m : m.toLowerCase())
-  } else {
-    // If lower camelCase and we do not keep abbrivitaions,
-    // make sure the first word is always lower case
-    str = str.replace(/^\w+/i, (m) => m.toLowerCase());
-  }
+      word = word.toLowerCase();
+      if((i === 0 && opts.upper) || i > 0) { word = word[0].toUpperCase() + word.substr(1); }
 
-  // Combine the words again removing any non letter or digit and making the following letter upper case
-  return str.replace(/[^a-z0-9]+([a-z0-9])/gi, (m, char) => char.toUpperCase());
+      return word;
+    })
+    .join('');
 }
 
 /**
@@ -35,7 +21,7 @@ function convert(opts, str = '') {
  * @return {String|Function} - Transformed string or a transformer method
  */
 export default function camelCase(input = {}) {
-  let opts = { upper: false, abbr: false };
+  let opts = { upper: false, abbr: false, numbers: true };
   if(isObject(input)) { opts = Object.assign(opts, input); }
 
   // Use the 'bind' method here to avoid creating a function inside a function
