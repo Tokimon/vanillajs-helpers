@@ -1,4 +1,5 @@
 import isDOMChildNode from './isDOMChildNode';
+import inDOM from './inDOM';
 
 /**
  * Determines whether the element is in the area of the viewport or not.
@@ -11,21 +12,21 @@ import isDOMChildNode from './isDOMChildNode';
  *                            where the element is compared to the viewport area
  */
 export default function inView(elm, threshold = 0) {
-  if(!isDOMChildNode(elm)) { return false; }
+  if(!isDOMChildNode(elm) || !inDOM(elm)) { return false; }
 
   const rect = elm.getBoundingClientRect();
   const vpWidth = window.innerWidth;
   const vpHeight = window.innerHeight;
 
   // Determine if the element is on screen
-  const aboveView = rect.bottom - threshold < 0;
-  const belowView = rect.top - vpHeight + threshold >= 0;
-  const leftOfView = rect.right - threshold < 0;
-  const rightOfView = rect.left - vpWidth + threshold >= 0;
+  const above = rect.bottom - threshold <= 0;
+  const below = rect.top - vpHeight + threshold >= 0;
+  const left = rect.right - threshold <= 0;
+  const right = rect.left - vpWidth + threshold >= 0;
 
   // If it is on screen return true
-  if(!aboveView && !belowView && !leftOfView && !rightOfView) { return true; }
+  if(!above && !below && !left && !right) { return true; }
 
   // Otherwise return an object saying where the element is compared to the viewport
-  return { aboveView, belowView, leftOfView, rightOfView };
+  return { above, below, left, right };
 }
