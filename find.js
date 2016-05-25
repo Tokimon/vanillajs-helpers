@@ -119,9 +119,9 @@ export function findOne(queries, elm) {
   }
 
   // Just return the first found non-null node (or null if none at all was found)
-  let node = null, i=0;
-
-  while(!node) {
+  let node = null, i = 0, max = queries.length;
+  
+  while(!node && i < max) {
     const query = queries[i++];
     if(isString(query)) {
       try { node = _find(elm, query, true); } catch(ex) { node = null; }
