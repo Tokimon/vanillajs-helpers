@@ -9,7 +9,8 @@ export default function findByTagName(tags, elm) {
   // and clasNames has to be an Array
   if(!isArray(tags)) { return []; }
 
-  if(!elm) { elm = document; }
+  // 'elm' must be an object with the 'getElementsByTagName' implementation
+  if(!elm || !elm.getElementsByTagName) { elm = document; }
 
   try {
     if(classNames.length < 2) { return Array.from(elm.getElementsByTagName(tags[0])); }

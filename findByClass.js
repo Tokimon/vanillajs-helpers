@@ -10,7 +10,7 @@ export default function findByClass(classNames, elm) {
   if(!isArray(classNames)) { return []; }
 
   // 'elm' must be an object with the 'getElementsByClassName' implementation
-  if(!elm) { elm = document; }
+  if(!elm || !elm.getElementsByClassName) { elm = document; }
 
   try {
     // If only one expression have been passed in return the result as an Array
