@@ -1,5 +1,11 @@
 import scroll from './scroll';
 import size from './size';
+import isWindow from './isWindow';
+import isDOMElement from './isDOMElement';
+import isDOMDocument from './isDOMDocument';
+
+// TODO: Remember to test for positions in positioned tables and be sure to compensate for the
+// wrong offset it gives
 
 /**
  * Get the curernt position of a HTML element, either relative to the offsetParent
@@ -9,9 +15,13 @@ import size from './size';
  * @param  {Boolean} relative = false - Find the position relative to the offsetParent rather than the document
  * @return {Object} - the position information of the element
  */
-export default function position(elm = window) {
+export default function position(elm) {
+  if(!elm) { elm = window; }
+  if(isDOMElement(elm, 'html', 'body')) { elm = elm.ownerDocument; }
+  if(isDOMDocument(elm)) { elm = elm.defaultView; }
+
   // If element is window or the viewport, return the window position
-  if(!elm.offsetParent) {
+  if(isWindow(elm)) {
     const top = window.screenLeft || window.screenX || 0;
     const left = window.screenY || window.screenTop || 0;
     const right = window.screen.availWidth - left - window.outerWidth;
@@ -32,8 +42,7 @@ export default function position(elm = window) {
     right: vpSize.width - rect.right - vpScroll.left,
     bottom: vpSize.height - rect.bottom - vpScroll.top,
 
-    // TODO: Come up with a better name than parent - it can be misunderstood
-    parent: {
+    relative: {
       top: elm.offsetTop,
       left: elm.offsetLeft,
       right: parentSize.innerWidth - elm.offsetLeft - elmSize.width,
