@@ -6,5 +6,5 @@ import objectType from './objectType';
  * @return {Boolean} - Whether the object is a Number or not
  */
 export default function isNumber(obj) {
-  return typeof obj === 'number' || !isNaN(obj) || objectType(obj) === 'number';
+  return typeof obj === 'number' || objectType(obj) === 'number';
 }
