@@ -4,6 +4,7 @@
  * @param  {Number} [size=2] The length of each chunk
  * @return {Array} String split up in smaller string of the given size
  */
-export default function chunkString(str = '', size = 2) {
+export default function chunkString(str, size = 2) {
+  str = str || '';
   return (''+ str).match(new RegExp(`.{1,${size}}(?=\\B|$)`, 'g')) || [];
 }
