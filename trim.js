@@ -1,7 +1,6 @@
-import isString from './isString';
-
 export default function trim(str, char) {
-  if(!isString(str)) { return ''; }
-  if(!char) { return str.trim(); }
-  return str.replace(new RegExp(`^[${char}]+|[${char}]+$`, 'g'), '');
+  str = str || '';
+  if(!char) { return (''+ str).trim(); }
+  if(char.source) { char = char.source; }
+  return (''+ str).replace(new RegExp(`^${char}+|${char}+$`, 'g'), '');
 }
