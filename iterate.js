@@ -1,4 +1,5 @@
 /* eslint no-empty: "off" */
+import isFunction from './isFunction';
 
 /**
  * Iterate over an iteratable object (object with numeric entries and a length property)
@@ -8,8 +9,15 @@
  * @return {Number} - Number of iterated items
  */
 export default function iterate(iterable, cb) {
-  const len = iterable ? iterable.length : 0;
-  if(!len || !cb) { return 0; }
+  if(!isFunction(cb) || !iterable) { return 0; }
+
+  const len = iterable.length;
+
+  // Make a single iteration if the 'iterable' is not a iterable collection
+  if(typeof len === 'undefined') {
+    cb(iterable, 0, iterable);
+    return 1;
+  }
 
   let i = -1;
   while(++i < len && cb(iterable[i], i, iterable) !== false) {}
