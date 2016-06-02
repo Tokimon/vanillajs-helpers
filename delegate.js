@@ -1,7 +1,8 @@
+import on from './on';
 import matches from './matches';
 
 // Internal helper function to return a delegate function
-function delegateCb(delegation, handler) {
+export function delegateHandler(delegation, handler) {
   return (e) => {
     let target = e.target;
 
@@ -18,7 +19,9 @@ function delegateCb(delegation, handler) {
   };
 }
 
-export default function delegate(on) {
-  return (elm, eventNames, delegation, handler) =>
-            on(elm, eventNames, delegateCb(delegation, handler));
+export default function delegate(elm, eventNames, delegation, handler)  {
+  const delHandler = delegateHandler(delegation, handler);
+  on(elm, eventNames, delHandler);
+  // We return the delegation handler so you might unbind it again
+  return delhandler;
 }
