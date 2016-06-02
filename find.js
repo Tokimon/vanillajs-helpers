@@ -178,7 +178,7 @@ export default function find(queries, elm) {
 
     const nodes = _find(elm, query);
     if(nodes) {
-      iterate((!isCollection(nodes) ? [nodes] : nodes), (node) => set.add(node));
+      iterate((!isCollection(nodes) ? [nodes] : nodes), (node) => { node && set.add(node); });
     }
 
     return set;
