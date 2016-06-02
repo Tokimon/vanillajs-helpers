@@ -1,14 +1,19 @@
 import _on from './on';
 import _off from './off';
+import { delegateHandler } from './delegate';
 import iterate from './iterate';
 import words from './eachWord';
 import matches from './matches';
 import randomId from './randomId';
 import data from './data';
+import isFunction from './isFunction';
+import isObject from './isObject';
+import isString from './isObject';
+import isDOMNode from './isDOMNode';
 
 // The registry of bound events
 // (necessary for advanced event handling)
-const events = {};
+const events = new Map();
 
 
 
@@ -19,14 +24,17 @@ const events = {};
  * @return {String} - The elements event binding ID
  */
 export function eventListId(elm) {
+  const isNode = isDOMNode(elm);
+  if(!isNode && !isObject(elm)) { return null; }
+
   // On non HTML Elements (like window or document) we set a property instead of
   // using the data-eventlistid attribute
-  let id = elm.nodeType ? data(elm, 'eventlistid') : elm._eventlistid;
+  let id = isNode ? data(elm, 'eventlistid') : elm._eventlistid;
   if(id) { return id; }
 
   id = randomId(10);
 
-  if(elm.nodeType) { data(elm, 'eventlistid', id); }
+  if(isNode) { data(elm, 'eventlistid', id); }
   else { elm._eventlistid = id; }
 
   return id;
@@ -43,9 +51,10 @@ export function eventListId(elm) {
  * @return {Object} - Object containing all events bound to the element
  */
 export function getEvents(elm) {
-  const id = eventListId(elm);
-  if(events[id]) { events[id] = {}; }
-  return events[id];
+  const elmid = eventListId(elm);
+  if(!elmid) { return null; }
+  if(!events.has(elmid)) { events.set(elmid, new Map()); }
+  return events.get(elmid);
 }
 
 
@@ -57,6 +66,7 @@ function triggerHandlers(e, handlers = [], target = e.target) {
     if(handler.call(target, e) === false) {
       e.preventDefault();
       e.stopPropagation();
+      return false;
     }
   });
 }
@@ -64,30 +74,14 @@ function triggerHandlers(e, handlers = [], target = e.target) {
 // Internal function to determine the function to use when event is fired
 function callback(e) {
   const elmEvents = getEvents(e.currentTarget);
-  if(!elmEvents) { return; }
-
-  const evt = elmEvents[e.type];
-  if(!evt) { return; }
-
-  const handlers = evt.handlers;
-  const delegates = evt.delegates;
-
-  if(handlers) { triggerHandlers(e, handlers, e.currentTarget); }
-
-  if(delegates) {
-    let target = e.target;
-    iterate(Object.keys(delegates), (delegation) => {
-      // The target matches the delegation selector, so execute the handler
-      if(matches(target, delegation)) { return triggerHandlers(e, delegates, target); }
-
-      // Taget is a child of the delegation selector target, so loop up the parents
-      // to find the right target
-      if(matches(target, `${delegation} *`)) {
-        target = target.parentNode;
-        while(!matches(target, delegation)) { target = target.parentNode; }
-        triggerHandlers(e, delegates, target);
-      }
-    });
+  const evts = elmEvents ? elmEvents.get(e.type) : null;
+  if(evts) {
+    const { handlers, delegates } = evts;
+    // Normal handlers use the 'currentTarget' as the element
+    triggerHandlers(e, handlers, e.currentTarget);
+    // Delegates look at the target of the event to determine whether the element
+    // should trigger the event handler or not
+    triggerHandlers(e, [...delegates.values()].map((obj) => obj.cb));
   }
 }
 
@@ -101,8 +95,6 @@ function eachEventNamespace(evtName, cb) {
 }
 
 
-
-
 /**
  * Bind event handler for one or more event names (space separated).
  * (NOTE: in order to enable unbinding of delegates and all handlers for an event,
@@ -110,37 +102,57 @@ function eachEventNamespace(evtName, cb) {
  * data-eventlistid or the _eventlistid property)
  * @param  {HTMLElement} elm - HTML Element to bind the event to
  * @param  {String} eventNames - Space separated string of event names to bind the handler to
- * @param  {String} [delegation] - Delegation selector
+ * @param  {String} [delegation] - Optional delegation selector
  * @param  {Function} handler - Handler to bind
  * @return {Number} - The number of events listed
  */
 export default function on(elm, eventNames, delegation, handler) {
+  const evts = getEvents(elm);
+  if(!evts) { return elm; }
+
   // If only handler has been given as argument in the place of the delegation
   // selector, correct the variables
-  if(typeof delegation === 'function') {
-    [handler, delegation] = [delegation, undefined];
-  }
+  if(isFunction(delegation)) { [handler, delegation] = [delegation, undefined]; }
+  if(!isFunction(handler)) { return elm; }
 
-  const evts = getEvents(elm);
+  // Delegation handlers has to be stores separately to enable better unbinding control
+  // so we check if we are dealing with a delegate
+  const isDelegate = isString(delegation);
 
-  return words(eventNames, (evtName) => {
-    // go through event and namespaces
-    eachEventNamespace(evtName, (evt) => {
-      // If it hasn't been registered yet, create the entry and bind the event handler
-      if(!evts[evt]) {
-        evts[evt] = { handlers: [], delegates: {} };
-        _on(evt, callback);
-      }
+  words(eventNames, (evtName) => {
+    // Go through event and namespaces
+    eachEventNamespace(evtName, (evtNS) => {
+      // Get the current handlers and push the handler to it
+      // NOTE: We use arrays for handler collections over Set(), as functions
+      // are treated individually anyway, thus loosing the benefits of using Set()
+      const evt = evts.get(evtNS) || { handlers: [], delegates: new Map() };
 
-      if(!delegation) {
-        evts[evt].handlers.push(handler);
+      if(!isDelegate) {
+        // No delegate handlers we just add to the 'handlers' collection
+        evt.handlers.push(handler);
       } else {
-        const delegates = evts[evt].delegates;
-        if(!delegates[delegation]) { delegates[delegation] = []; }
-        delegates[delegation].push(handler);
+        // Delegates will have to be stored, with the selector and a callback function
+        // that triggers all the handlers if the delegation element is the correct one
+        const delegate = evt.delegates.get(delegation) || {
+          // CB is a delegation handler that triggers all the stored handlers
+          // if the delegation selector is met
+          cb: delegateHandler(delegation, (e) => { triggerHandlers(e, delegate.handlers); }),
+          handlers: []
+        };
+
+        // Add handler to the delegate
+        delegate.handlers.push(handler);
+        evt.delegates.set(delegation, delegate);
       }
+
+      evts.set(evtNS, evt);
+
+      // Bind the event if it is the first handler for this event
+      if(evts.size === 1) { _on(evt, callback); }
     });
   });
+
+  return elm;
 }
 
 
@@ -159,62 +171,51 @@ export default function on(elm, eventNames, delegation, handler) {
  * @return {Number} - The number of events listed
  */
 export function off(elm, eventNames, delegation, handler) {
-  // If only handler has been given as argument in the place of the delegation
-  // selector, correct the variables
-  if(typeof delegation === 'function') {
-    handler = delegation;
-    delegation = undefined;
-  }
-
   const evts = getEvents(elm);
+  if(!evts) { return elm; }
 
-  return iterate(eventNames || Object.keys(evts), (evtName) => {
-    // go through event and namespaces
-    eachEventNamespace(evtName, (evt) => {
-      const evtObj = evts[evt];
+  // If no events have been given, remove all event listeners
+  if(!eventNames) {
+    evts.forEach((evtObj, evtName) => _off(evtName, callback));
+    evts.clear();
+  } else {
+    // If only handler has been given as argument in the place of the delegation
+    // selector, correct the variables
+    if(isFunction(delegation)) { [handler, delegation] = [delegation, undefined]; }
 
-      // if we are removing all event listeners from the object
-      if(!eventNames) {
-        evtObj.delegates = null;
-        evtObj.handlers = [];
+    const removeAll = !isFunction(handler);
+    const removeDelegate = isString(delegation);
 
-      // If we are removing a delegation
-      } else if(delegation) {
-        let delegates = evtObj.delegates[delegation];
-
-        if(!delegates) {
-          // If the handler is not defined, just remove all bound handlers,
-          // otherwise filter out (remove) the handler from the list
-          delegates = !handler ? [] : delegates.filter((boundHandler) => handler !== boundHandler);
-
-          // We have to actually delete (not just set to null) the delegation
-          // entry once it is empty, as we dont want it to show up as a key on
-          // the object (using Object.keys)
-          if(!delegates.length) {
-            delete evtObj.delegates[delegation];
-          } else {
-            evtObj.delegates[delegation] = delegates;
-          }
-
-          // Clear the delegates object if it has no entries
-          if(!Object.keys(evtObj.delegates).length) {
-            evtObj.delegates = null;
-          }
+    words(eventNames, (evtName) => {
+      // go through event and namespaces
+      eachEventNamespace(evtName, (evtNS) => {
+        if(removeAll) {
+          evts.delete(evtNS);
+          _off(evtNS, callback);
+          return;
         }
 
-      // If we are removing a specific event
-      } else {
-        // If the handler is not defined, just remove all bound handlers,
-        // otherwise filter out (remove) the handler from the list
-        evtObj.handlers = !handler ? [] : evtObj.handlers.filter((boundHandler) => handler !== boundHandler);
-      }
+        const evt = evts.get(evtNS);
+        if(!evt) { return; }
 
-      // If there are no more handlers bound to the current event, remove the
-      // event handler and empty the event entry
-      if(!evtObj.handlers.length && !evtObj.delegates) {
-        _off(evt, callback);
-        evts[evt] = null;
-      }
+        if(!removeDelegate) {
+          evt.handlers = evt.handlers.filter((h) => h !== handler);
+        } else {
+          const delegate = evt.delegates.get(delegation);
+          if(!delegate) { return; }
+
+          // Remove the handler from the list of handlers
+          delegate.handlers = delegate.handlers.filter((h) => h !== handler);
+          // If there are no handlers left, remove the delegation cache.
+          if(delegate.handlers.length === 0) { evt.delegates.delete(delegation); }
+        }
+
+        // If there are no more handlers, remove all
+        if(evt.handlers.length === 0 && evet.delegates.has(delegatopn)) {
+          evts.delete(evtNS);
+          _off(evtNS, callback);
+        }
+      });
     });
-  });
+  }
 }
