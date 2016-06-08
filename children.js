@@ -6,7 +6,5 @@ import isDOMContainer from './isDOMContainer';
  * @return {Array<HTMLElement>} - List of found child HTML Elements
  */
 export default function children(elm = document.body) {
-  if(!isDOMContainer(elm)) { return []; }
-  if(elm.children) { return Array.from(elm.children); }
-  return Array.from(elm.childNodes).filter((child) => child.nodeType === 1);
+  return isDOMContainer(elm) ? Array.from(elm.children) : [];
 }

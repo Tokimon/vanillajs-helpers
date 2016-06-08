@@ -1,8 +1,11 @@
 /* eslint no-cond-assign: "off" */
 
+import objectType from './objectType';
+
 import iterate from './iterate';
 import isString from './isString';
 import isArray from './isArray';
+import isCollection from './isCollection';
 import isDOMNode from './isDOMNode';
 import isDOMDocument from './isDOMDocument';
 
@@ -140,9 +143,7 @@ function check(queries, elm) {
   return { string, array, multi, queries, elm };
 }
 
-function isCollection(node) {
-  return isArray(node) || (!isDOMNode(node) && typeof node.length !== 'undefined');
-}
+
 
 
 /**
@@ -162,7 +163,7 @@ export default function find(queries, elm) {
   if(!multi) {
     const nodes = _find(elm, queries);
     // Return the found nodes as an Array
-    return nodes ? (!isCollection(nodes) ? [nodes] : Array.from(nodes)) : [];
+    return nodes ? (!isCollection(nodes) || isDOMNode(nodes) ? [nodes] : Array.from(nodes)) : [];
   }
 
   // We have a multiple queries, so first we just try the query selector
@@ -174,11 +175,10 @@ export default function find(queries, elm) {
   // We need to create an unique array of the found nodes
   // (the Set objet will automatically filter out duplicates)
   return Array.from(queries.reduce((set, query) => {
-    if(!isString(query)) { return set; }
-
     const nodes = _find(elm, query);
+
     if(nodes) {
-      iterate((!isCollection(nodes) ? [nodes] : nodes), (node) => { node && set.add(node); });
+      iterate((!isCollection(nodes) || isDOMNode(nodes) ? [nodes] : nodes), (node) => { set.add(node); });
     }
 
     return set;
@@ -205,7 +205,7 @@ export function findOne(queries, elm) {
   if(!multi) {
     const node = _find(elm, queries, true);
     // Return the found nodes as an Array
-    return node ? (!isCollection(node) ? node : node[0] || null) : null;
+    return node ? (!isCollection(node) || isDOMNode(node) ? node : node[0] || null) : null;
   }
 
   // We have a multiple queries, so first we just try the query selector
@@ -219,12 +219,8 @@ export function findOne(queries, elm) {
   // Just return the first found non-null node (or null if none at all was found)
   while(!node && i < max) {
     const query = queries[i++];
-    if(isString(query)) {
-      try {
-        node = _find(elm, query, true);
-        if(isCollection(node)) { node = node[0] || null; }
-      } catch(ex) { node = null; }
-    }
+    node = _find(elm, query, true);
+    if(isCollection(node) && !isDOMNode(node)) { node = node[0] || null; }
   }
 
   return node;

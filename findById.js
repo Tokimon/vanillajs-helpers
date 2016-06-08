@@ -8,11 +8,11 @@ export default function findById(ids) {
   // 'ids' has to be an Array at this point
   if(!isArray(ids)) { return null; }
 
-  try {
-    // If we have only one query, just find and return that
-    if(ids.length < 2) { return document.getElementById(ids[0]); }
+  // If we have only one query, just find and return that
+  if(ids.length < 2) { return document.getElementById(ids[0]); }
 
-    // Search elements from each ID and filter out results that returned NULL
-    return ids.map((id) => isString(id) ? document.getElementById(id) : null).filter((elm) => !!elm);
-  } catch(ex) { return null; }
+  // Search elements from each ID and filter out results that returned NULL
+  return ids
+    .map((id) => document.getElementById(id))
+    .filter((elm) => !!elm);
 }
