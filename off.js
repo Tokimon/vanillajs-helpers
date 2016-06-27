@@ -9,7 +9,7 @@ import isFunction from './isFunction';
  * @return {HTMLElement} - The 'elm' or NULL
  */
 export default function off(elm, eventNames, handler) {
-  if(!elm || !isFunction(elm.addEventListener) || !isFunction(handler)) { return null; }
-  words(eventNames, (name) => elm.removeEventListener(name, handler, true));
+  if(!elm || !isFunction(elm.removeEventListener) || !isFunction(handler)) { return null; }
+  words(eventNames, (name) => elm.removeEventListener(name, handler, false));
   return elm;
 }

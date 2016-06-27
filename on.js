@@ -10,6 +10,6 @@ import isFunction from './isFunction';
  */
 export default function on(elm, eventNames, handler) {
   if(!elm || !isFunction(elm.addEventListener) || !isFunction(handler)) { return null; }
-  words(eventNames, (name) => elm.addEventListener(name, handler, true));
+  words(eventNames, (name) => elm.addEventListener(name, handler, false));
   return elm;
 }
