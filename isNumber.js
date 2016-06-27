@@ -1,10 +1,9 @@
-import objectType from './objectType';
-
 /**
- * Is the given object of type Number
+ * Is the given object is a finite Number
  * @param  {Object}  obj - Object to examine
  * @return {Boolean} - Whether the object is a Number or not
  */
 export default function isNumber(obj) {
-  return typeof obj === 'number' || objectType(obj) === 'number';
+  if(Number.isFinite) { return Number.isFinite(obj); }
+  return typeof obj === 'number' && isFinite(obj);
 }
