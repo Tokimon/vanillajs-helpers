@@ -1,8 +1,14 @@
-import on from './on';
+import _on from './on';
 import matches from './matches';
+import isString from './isString';
+import isFunction from './isFunction';
 
-// Internal helper function to return a delegate function
+
+
+
 export function delegateHandler(delegation, handler) {
+  if(!isString(delegation) || !isFunction(handler)) { return null; }
+
   return (e) => {
     let target = e.target;
 
@@ -19,9 +25,22 @@ export function delegateHandler(delegation, handler) {
   };
 }
 
-export default function delegate(elm, eventNames, delegation, handler)  {
-  const delHandler = delegateHandler(delegation, handler);
-  on(elm, eventNames, delHandler);
-  // We return the delegation handler so you might unbind it again
-  return delhandler;
+
+
+
+export function delegateBuilder(on = _on) {
+  if(!isFunction(on)) { return null; }
+
+  return (elm, eventNames, delegation, handler) => {
+    const delhandler = delegateHandler(delegation, handler);
+    on(elm, eventNames, delhandler);
+    // We return the delegation handler so you might unbind it again
+    return delhandler;
+  }
 }
+
+
+
+
+const delegate = delegateBuilder();
+export default delegate;
