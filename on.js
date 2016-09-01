@@ -1,4 +1,5 @@
 import words from './eachWord';
+import isArray from './isArray';
 import isFunction from './isFunction';
 
 /**
@@ -9,7 +10,12 @@ import isFunction from './isFunction';
  * @return {HTMLElement} - The 'elm' or NULL
  */
 export default function on(elm, eventNames, handler) {
-  if(!elm || !isFunction(elm.addEventListener) || !isFunction(handler)) { return null; }
-  words(eventNames, (name) => elm.addEventListener(name, handler, false));
+  if(!elm) { return null; }
+
+  if(isFunction(elm.addEventListener) && isFunction(handler)) {
+    if(isArray(eventNames)) { eventNames = eventNames.join(' '); }
+    words(eventNames, (name) => elm.addEventListener(name, handler, false));
+  }
+
   return elm;
 }
