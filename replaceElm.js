@@ -1,4 +1,5 @@
 import isString from './isString';
+import isDOMNode from './isDOMNode';
 import isDOMChildNode from './isDOMChildNode';
 
 /**
@@ -7,7 +8,7 @@ import isDOMChildNode from './isDOMChildNode';
  * @param  {HTMLElement|String} replacement - HTML Element or plain HTML string to replace {elm}
  */
 export default function replaceElm(elm, replacement) {
-  if(!isDOMChildNode(elm) || !replacement) { return; }
+  if(!isDOMChildNode(elm)) { return; }
   if(isString(replacement)) { elm.outerHTML = replacement; }
-  else if(replacement.nodeType) { elm.parentNode.replaceChild(elm, replacement); }
+  else if(isDOMNode(replacement)) { elm.parentNode.replaceChild(replacement, elm); }
 }
