@@ -1,8 +1,9 @@
-import isDOMDocument from 'isDOMDocument';
+import isDOMDocument from './isDOMDocument';
 
-export default function viewport(doc = document) {
+export default function viewport(doc) {
+  doc = doc || document;
   if(!isDOMDocument(doc)) {
-    doc = doc.ownerDocument || elm.document;
+    doc = doc.ownerDocument || doc.document;
     if(!doc) { return null; }
   }
 
