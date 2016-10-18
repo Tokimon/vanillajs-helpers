@@ -13,6 +13,7 @@ import inDOM from './inDOM';
  */
 export default function scroll(elm = window, scrollPos = null) {
   let isWin = isWindow(elm);
+  let view = elm;
 
   if(!isWin) {
     // If the element is a plain object, consider it as the scrollPos and correct variables
@@ -28,10 +29,10 @@ export default function scroll(elm = window, scrollPos = null) {
 
     // 'elm' has to be a DOM Element in th DOM or the window object
     if(!(isDOMElement(elm) && inDOM(elm)) || isWin) { return null; }
+  } else {
+    // If the view is a window/Frame use its viewport (for consitency)
+    view = viewport(view);
   }
-
-  // For window object we use its viewport element (scrollElement)
-  const view = isWin ? viewport(elm) : elm;
 
   // NOTE: We could use the 'pageXoffset'/'scollX' (and Y equivalents) values, but we
   // need the max scroll height of the content and the 'scrollMaxX' (and Y) are
