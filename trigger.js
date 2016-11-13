@@ -1,4 +1,6 @@
 import words from './eachWord';
+import isString from './isString';
+import isFunction from './isFunction';
 
 // Determine the method to create the correct CustomEvent object
 // (IE 11 and below doesn't implement the object correctly)
@@ -19,6 +21,12 @@ const customEvent = typeof CustomEvent === 'function' ?
  * @param  {Object} data - Extra data to add to the triggered event
  * @return {Number} - The number of event mentioned
  */
-export function trigger(elm, eventNames, data) {
-  return words(eventNames, (name) => elm.dispatchEvent(customEvent(name, data)));
+export default function trigger(elm, eventNames, data) {
+  if(!elm) { return null; }
+
+  if(isFunction(elm.dispatchEvent)) {
+    words(eventNames, (name) => elm.dispatchEvent(customEvent(name, data)));
+  }
+
+  return elm;
 }
