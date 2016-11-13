@@ -4,3 +4,15 @@ export default function trim(str, char) {
   if(char.source) { char = char.source; }
   return (''+ str).replace(new RegExp(`^${char}+|${char}+$`, 'g'), '');
 }
+
+export function trimLeft(str, char = '\\s') {
+  str = str || '';
+  if(char.source) { char = char.source; }
+  return (''+ str).replace(new RegExp(`^${char}+`, 'g'), '');
+}
+
+export function trimRight(str, char = '[\\s]') {
+  str = str || '';
+  if(char.source) { char = char.source; }
+  return (''+ str).replace(new RegExp(`${char}+$`, 'g'), '');
+}
