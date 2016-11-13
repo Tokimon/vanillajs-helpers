@@ -7,7 +7,7 @@ import isFunction from './isFunction';
 /**
  * Build a method that executes a given function once the document has finished loading
  * @param  {Function} once - The 'once' (single trigger event) method to use
- * @return {Function} - The 'domready' method using the given once method
+ * @return {Function} - The 'domReady' method using the given once method
  */
 export function domReadyBuilder(once = _once) {
   if(!isFunction(once)) { return null; }
