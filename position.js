@@ -4,9 +4,6 @@ import isWindow from './isWindow';
 import isDOMElement from './isDOMElement';
 import isDOMDocument from './isDOMDocument';
 
-// TODO: Remember to test for positions in positioned tables and be sure to compensate for the
-// wrong offset it gives
-
 /**
  * Get the curernt position of a HTML element, either relative to the offsetParent
  * or relative to the document. If the element is the viewport or the window, the
