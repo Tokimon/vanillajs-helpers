@@ -4,7 +4,6 @@
   "description": "Collection of convenience code snippets (helpers) that aims to make it a little easier to work with vanilla JS",
   "author": "Toke Voltelen",
   "license": "MIT",
-  "scripts": {},
   "scripts": {
     "cjs": "node ./tasks/cjs.js"
   },
@@ -15,5 +14,12 @@
   "bugs": {
     "url": "https://github.com/Tokimon/vanillajs-helpers/issues"
   },
-  "homepage": "https://github.com/Tokimon/vanillajs-helpers#readme"
+  "homepage": "https://github.com/Tokimon/vanillajs-helpers#readme",
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
+    "fs-promise": "^1.0.0",
+    "glob-promise": "^2.0.0",
+    "yargs": "^6.4.0"
+  }
 }
