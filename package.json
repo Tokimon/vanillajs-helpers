@@ -5,6 +5,9 @@
   "author": "Toke Voltelen",
   "license": "MIT",
   "scripts": {},
+  "scripts": {
+    "cjs": "node ./tasks/cjs.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://Tokimon@github.com/Tokimon/vanillajs-helpers.git"
