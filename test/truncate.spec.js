@@ -1,7 +1,7 @@
 /* eslint-env node, mocha, browser */
-/* global expect, $ */
 
-import truncate from 'vanillajs-helpers/truncate';
+import expect from './assets/chai';
+import truncate from '../truncate';
 
 describe('"truncate"', () => {
   it('Should return the given entry when it is not string or maxlength is not given or longer than entry', () => {

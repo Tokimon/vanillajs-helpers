@@ -1,7 +1,7 @@
 /* eslint-env node, mocha, browser */
-/* global expect, $ */
 
-import isString from 'vanillajs-helpers/isString';
+import expect from './assets/chai';
+import isString from '../isString';
 
 describe('"isString"', () => {
   it('Should return true for String values', () => {
@@ -14,5 +14,7 @@ describe('"isString"', () => {
     expect(isString(null)).to.be.false;
     expect(isString(9)).to.be.false;
     expect(isString()).to.be.false;
+    expect(isString({})).to.be.false;
+    expect(isString([])).to.be.false;
   });
 });

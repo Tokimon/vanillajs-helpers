@@ -1,7 +1,7 @@
 /* eslint-env node, mocha, browser */
-/* global expect, $ */
 
-import leadingZero from 'vanillajs-helpers/leadingZero';
+import expect from './assets/chai';
+import leadingZero from '../leadingZero';
 
 describe('"leadingZero"', () => {
   it('Should always return a string', () => {

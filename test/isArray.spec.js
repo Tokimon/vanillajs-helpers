@@ -1,7 +1,7 @@
 /* eslint-env node, mocha, browser */
-/* global expect, $ */
 
-import isArray from 'vanillajs-helpers/isArray';
+import expect from './assets/chai';
+import isArray from '../isArray';
 
 describe('"isArray"', () => {
   it('Should return true for Array values', () => {
@@ -12,7 +12,7 @@ describe('"isArray"', () => {
 
   it('Should return false for non Array values', () => {
     expect(isArray(null)).to.be.false;
-    expect(isArray({0:1, length:1})).to.be.false;
+    expect(isArray({0: 1, length: 1})).to.be.false;
     expect(isArray('Array')).to.be.false;
     expect(isArray()).to.be.false;
   });

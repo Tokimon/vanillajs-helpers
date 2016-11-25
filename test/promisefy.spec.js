@@ -1,14 +1,14 @@
 /* eslint-env node, mocha, browser */
-/* global expect, $ */
 
-import promisefy from 'vanillajs-helpers/promisefy';
+import expect from './assets/chai';
+import promisefy from '../promisefy';
 
 describe('"promisefy"', () => {
   it('Should make the method return a promise', () => {
     const cb = (arg, cb) => {
       if(!arg) { return cb('error'); }
       return cb(null, 'success');
-    }
+    };
 
     const promised = promisefy(cb);
     expect(promised).to.be.a('function');

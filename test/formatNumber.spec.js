@@ -1,7 +1,7 @@
 /* eslint-env node, mocha, browser */
-/* global expect, $ */
 
-import formatNumber from 'vanillajs-helpers/formatNumber';
+import expect from './assets/chai';
+import formatNumber from '../formatNumber';
 
 describe('"formatNumber"', () => {
   it('Should format number with a specific thousand seperator', () => {

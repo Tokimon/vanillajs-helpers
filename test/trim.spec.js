@@ -1,7 +1,7 @@
 /* eslint-env node, mocha, browser */
-/* global expect, $ */
 
-import trim, { trimLeft, trimRight } from 'vanillajs-helpers/trim';
+import expect from './assets/chai';
+import trim, { trimLeft, trimRight } from '../trim';
 
 describe('"trim"', () => {
   it('Should trim spaces and linebreaks from both ends of a string', () => {

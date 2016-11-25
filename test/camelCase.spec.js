@@ -1,6 +1,7 @@
 /* eslint-env node, mocha, browser */
-/* global expect, $ */
-import camelCase from 'vanillajs-helpers/camelCase';
+
+import expect from './assets/chai.js';
+import camelCase from '../camelCase';
 
 describe('"camelCase"', () => {
   describe('without defined settings', () => {
@@ -156,15 +157,5 @@ describe('"camelCase"', () => {
         expect(caser('Name')).to.equal('Name');
       });
     });
-
-
-
-
-
-
-
-
-
-
   });
 });

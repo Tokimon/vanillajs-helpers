@@ -1,6 +1,7 @@
 /* eslint-env node, mocha, browser */
-/* global expect, $ */
-import phrasify from 'vanillajs-helpers/phrasify';
+
+import expect from './assets/chai';
+import phrasify from '../phrasify';
 
 describe('"phrasify"', () => {
   describe('- without defined settings', () => {

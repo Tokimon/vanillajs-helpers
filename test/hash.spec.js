@@ -1,7 +1,7 @@
 /* eslint-env node, mocha, browser */
-/* global expect, $ */
 
-import hashCode, { hashString } from 'vanillajs-helpers/hash';
+import expect from './assets/chai';
+import hashCode, { hashString } from '../hash';
 
 describe('"hashCode"', () => {
   it('Should always return a positive hash code', () => {
@@ -23,7 +23,6 @@ describe('"hashCode"', () => {
     expect(hashCode(-0)).to.equal(hashCode(0));
   });
 });
-
 
 describe('"hasString"', () => {
   it('Should always return a string', () => {

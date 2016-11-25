@@ -1,7 +1,7 @@
 /* eslint-env node, mocha, browser */
-/* global expect, $ */
 
-import chunkString from 'vanillajs-helpers/chunkString';
+import expect from './assets/chai';
+import chunkString from '../chunkString';
 
 describe('"chunkString"', () => {
   it('Should return an array of strings', () => {

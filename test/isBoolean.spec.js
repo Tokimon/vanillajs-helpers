@@ -1,7 +1,7 @@
 /* eslint-env node, mocha, browser */
-/* global expect, $ */
 
-import isBoolean from 'vanillajs-helpers/isBoolean';
+import expect from './assets/chai';
+import isBoolean from '../isBoolean';
 
 describe('"isBoolean"', () => {
   it('Should return true for Boolean values', () => {

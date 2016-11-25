@@ -1,7 +1,7 @@
 /* eslint-env node, mocha, browser */
-/* global expect, $ */
 
-import randomId from 'vanillajs-helpers/randomId';
+import expect from './assets/chai';
+import randomId from '../randomId';
 
 describe('"randomId"', () => {
   it('Should generate a random id of default length', () => {

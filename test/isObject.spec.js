@@ -1,7 +1,7 @@
 /* eslint-env node, mocha, browser */
-/* global expect, $ */
 
-import isObject from 'vanillajs-helpers/isObject';
+import expect from './assets/chai';
+import isObject from '../isObject';
 
 describe('"isObject"', () => {
   it('Should return true for Function values', () => {
@@ -14,5 +14,6 @@ describe('"isObject"', () => {
     expect(isObject(null)).to.be.false;
     expect(isObject('Object')).to.be.false;
     expect(isObject()).to.be.false;
+    expect(isObject([])).to.be.false;
   });
 });

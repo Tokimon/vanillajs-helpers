@@ -1,7 +1,8 @@
 /* eslint-env node, mocha, browser */
-/* global expect, $ */
 
-import eachWord from 'vanillajs-helpers/eachWord';
+import sinon from 'sinon';
+import expect from './assets/chai';
+import eachWord from '../eachWord';
 
 describe('"eachWord"', () => {
   it('Should iterate a phrase with words separated by default characters ("_", "-" or " ")', () => {
@@ -32,7 +33,7 @@ describe('"eachWord"', () => {
 
   it('Should iterate a phrase using a regular expression', () => {
     const phrase = 'iterate over-this_phrase';
-    const regex = /[ -]+/
+    const regex = /[ -]+/;
     const expected = ['iterate', 'over', 'this_phrase'];
     const cb = sinon.spy();
 

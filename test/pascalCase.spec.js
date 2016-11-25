@@ -1,6 +1,7 @@
 /* eslint-env node, mocha, browser */
-/* global expect, $ */
-import pascalCase from 'vanillajs-helpers/pascalCase';
+
+import expect from './assets/chai';
+import pascalCase from '../pascalCase';
 
 describe('"pascalCase"', () => {
   it('Should convert a phrase into a PascalCased word', () => {

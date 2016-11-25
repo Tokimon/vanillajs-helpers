@@ -1,7 +1,7 @@
 /* eslint-env node, mocha, browser */
-/* global expect, $ */
 
-import objectType from 'vanillajs-helpers/objectType';
+import expect from './assets/chai';
+import objectType from '../objectType';
 
 describe('"objectType"', () => {
   it('Should return the name of the given object', () => {
@@ -10,6 +10,5 @@ describe('"objectType"', () => {
     expect(objectType()).to.equal('undefined');
     expect(objectType('')).to.equal('string');
     expect(objectType(0)).to.equal('number');
-    expect(objectType(document.body)).to.equal('htmlbodyelement');
   });
 });

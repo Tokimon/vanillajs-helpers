@@ -1,7 +1,7 @@
 /* eslint-env node, mocha, browser */
-/* global expect, $ */
 
-import isFunction from 'vanillajs-helpers/isFunction';
+import expect from './assets/chai';
+import isFunction from '../isFunction';
 
 describe('"isFunction"', () => {
   it('Should return true for Function values', () => {

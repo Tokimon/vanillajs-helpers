@@ -1,11 +1,12 @@
 /* eslint-env node, mocha, browser */
-/* global expect, $ */
 
-import iterate from 'vanillajs-helpers/iterate';
+import sinon from 'sinon';
+import expect from './assets/chai';
+import iterate from '../iterate';
 
 describe('"iterate"', () => {
   it('Should iterate an array', () => {
-    const arr = [1,2,3];
+    const arr = [1, 2, 3];
     const cb = sinon.spy();
 
     iterate(arr, cb);
@@ -17,10 +18,7 @@ describe('"iterate"', () => {
   });
 
   it('Should iterate an iterable collection (like NodeList)', () => {
-    const div = $.create('div');
-    div.innerHTML = '<b></b><b></b><b></b>';
-
-    const nodes = div.childNodes;
+    const nodes = { 0: 'one', 1: 'two', 2: 'three', length: 3 };
     const cb = sinon.spy();
 
     iterate(nodes, cb);
@@ -42,7 +40,7 @@ describe('"iterate"', () => {
   });
 
   it('Should break loop if false is returned', () => {
-    const arr = [1,2,3];
+    const arr = [1, 2, 3];
     const cb = sinon.stub();
     cb.onSecondCall().returns(false);
 
@@ -54,7 +52,7 @@ describe('"iterate"', () => {
   });
 
   it('Should return the length of the collection', () => {
-    expect(iterate([1,2,3], () => {})).to.equal(3);
+    expect(iterate([1, 2, 3], () => {})).to.equal(3);
   });
 
   it('Should return 0 if cb or iterable is not defined', () => {

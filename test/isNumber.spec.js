@@ -1,7 +1,7 @@
 /* eslint-env node, mocha, browser */
-/* global expect, $ */
 
-import isNumber from 'vanillajs-helpers/isNumber';
+import expect from './assets/chai';
+import isNumber from '../isNumber';
 
 describe('"isNumber"', () => {
   it('Should return true for Numeric values', () => {

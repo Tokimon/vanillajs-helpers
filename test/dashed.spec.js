@@ -1,7 +1,7 @@
 /* eslint-env node, mocha, browser */
-/* global expect, $ */
 
-import dashed from 'vanillajs-helpers/dashed';
+import expect from './assets/chai';
+import dashed from '../dashed';
 
 describe('"dashed"', () => {
   it('Should transform a phrase into a dashed phrase', () => {

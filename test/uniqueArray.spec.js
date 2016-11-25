@@ -1,7 +1,7 @@
 /* eslint-env node, mocha, browser */
-/* global expect, $ */
 
-import uniqueArray from 'vanillajs-helpers/uniqueArray';
+import expect from './assets/chai';
+import uniqueArray from '../uniqueArray';
 
 describe('"uniqueArray"', () => {
   it('Should ignore non array arguments', () => {
@@ -19,16 +19,16 @@ describe('"uniqueArray"', () => {
     expect(uniqueArray([])).to.be.an('array').and.to.have.lengthOf(0);
 
     // Numbers
-    expect(uniqueArray([1,2,1,3,3,2,1])).to.deep.equals([1,2,3]);
+    expect(uniqueArray([1, 2, 1, 3, 3, 2, 1])).to.deep.equals([1, 2, 3]);
 
     // Strings
     expect(uniqueArray(['a', 'c', 'b', 'c', 'a'])).to.deep.equals(['a', 'c', 'b']);
 
     // Mixed values
-    expect(uniqueArray([[1,2], 1, 'a', {}, {}])).to.deep.equals([[1,2], 1, 'a', {}, {}]);
+    expect(uniqueArray([[1, 2], 1, 'a', {}, {}])).to.deep.equals([[1, 2], 1, 'a', {}, {}]);
 
     // Doesn't perform deep check
-    expect(uniqueArray([[1,2,1], [1,2,2], [1,2,3]])).to.deep.equals([[1,2,1], [1,2,2], [1,2,3]]);
+    expect(uniqueArray([[1, 2, 1], [1, 2, 2], [1, 2, 3]])).to.deep.equals([[1, 2, 1], [1, 2, 2], [1, 2, 3]]);
 
     const obj = {};
     // Same object
