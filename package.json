@@ -16,10 +16,19 @@
   },
   "homepage": "https://github.com/Tokimon/vanillajs-helpers#readme",
   "devDependencies": {
+    "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
+    "babel-plugin-istanbul": "^3.0.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
+    "babel-preset-node5": "^11.1.0",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
     "fs-promise": "^1.0.0",
     "glob-promise": "^2.0.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.1.2",
+    "sinon": "^1.17.6",
+    "sinon-chai": "^2.8.0",
     "yargs": "^6.4.0"
   }
 }
