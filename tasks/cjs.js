@@ -7,7 +7,8 @@ const babelConfig = {
   plugins: [['transform-es2015-modules-commonjs', { strict: true, loose: false }]]
 };
 
-glob('./*.js')
+fs.remove(nPath.resolve('cjs'))
+  .then(() => glob('./*.js'))
   .then((files) =>
     Promise.all(
       files.map((file) =>
@@ -22,7 +23,7 @@ glob('./*.js')
       )
     )
   )
-  .then(() => { console.log('\nAll Done'); })
+  .then(() => { console.log('\nFiles sucessfully converted to CJS'); })
   .catch((err) => {
     console.error(err.messsage);
     console.error(err.stack);
