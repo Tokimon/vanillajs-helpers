@@ -16,6 +16,11 @@ const args = yargs
     describe: 'Add coverage report',
     type: 'boolean'
   })
+  .option('simple', {
+    alias: 's',
+    describe: 'Use a simple repoter',
+    type: 'boolean'
+  })
   .help()
   .alias('help', 'h')
   .argv;
@@ -36,7 +41,7 @@ require('babel-register')(babelConfig);
 
 const mochaConfig = {
   ui: 'bdd',
-  reporter: 'spec'
+  reporter: args.simple ? 'progress' : 'spec'
 };
 
 glob(nPath.resolve(`test/${tests}.spec.js`))
