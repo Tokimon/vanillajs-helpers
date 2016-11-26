@@ -6,7 +6,9 @@
   "license": "MIT",
   "scripts": {
     "test": "node ./tasks/tester.js",
-    "cjs": "node ./tasks/cjs.js"
+    "cjs": "node ./tasks/cjs.js",
+    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
+    "coveralls:win": "type ./coverage/lcov.info | node node_modules/.bin/coveralls"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,7 @@
     "babel-preset-node5": "^11.1.0",
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
+    "coveralls": "^2.11.15",
     "fs-promise": "^1.0.0",
     "glob-promise": "^2.0.0",
     "istanbul": "^0.4.5",
