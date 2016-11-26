@@ -1,18 +1,14 @@
-# Still under development
-The package is still untested and fails on certain script. Working on improving it.
-
-# Vanilla JS helpers
+# Vanilla JS helpers [![Coverage](https://coveralls.io/repos/github/Tokimon/vanillajs-helpers/badge.svg)](https://coveralls.io/builds/9005130)
 This is a collection of simple, no dependency, vanilla JS snippets with the aim
 of making it easier to work with vanilla JS.
 
-They is written in ES6 and the aim is to keep each snippet as simple as possible,
-thus giving less focus to cross browser compatibility. Most snippets should work
-in at least IE 9 (after conversion to ES5), but some use functionality, that might
-need to be polyfilled.
+They is written in ES6, since now both Node and most of the major browsers support this syntax,
+all scripts have however been converted into the CommonJS syntax and stored in the `./cjs` folder,
+should they whish to be used in a Node environment.
 
 Polyfills haven't been included as they exist in abundance on NPM, and since the
 need for polyfills are ever diminishing it is more future proof and clutter free
-when to leave them out.
+to leave them out.
 
 ## Documentation
 
@@ -21,87 +17,102 @@ of the [GitHub repository](https://github.com/Tokimon/vanillajs-helpers), but he
 
 ### Helpers
 
-- [after](https://github.com/Tokimon/vanillajs-helpers/wiki/after):
-Inserts HTML Element or plain HTML after a given HTML Element
-- [append](https://github.com/Tokimon/vanillajs-helpers/wiki/append):
-Append HTML Element or plain HTML to the end of a given HTML Element
-- [attr](https://github.com/Tokimon/vanillajs-helpers/wiki/attr):
-Get/set the value of an attribute on a given HTML Element
-- [before](https://github.com/Tokimon/vanillajs-helpers/wiki/before):
-Inserts HTML Element or plain HTML before a given HTML Element
 - [camelCase](https://github.com/Tokimon/vanillajs-helpers/wiki/camelCase):
-Transform a phrase into a camelCased word
-- [children](https://github.com/Tokimon/vanillajs-helpers/wiki/children):
-Find the children of a given HTML Element
-- [className](https://github.com/Tokimon/vanillajs-helpers/wiki/className):
-Methods to manipulate class names on a HTML element.
-- [css](https://github.com/Tokimon/vanillajs-helpers/wiki/css):
-Get/set the styling of a HTML element
+Turn a phrase or word with different casing into a `camelCased` word.
+- [chunkString](https://github.com/Tokimon/vanillajs-helpers/wiki/chunkString):
+Chop up a string into chunks of the desired length.
 - [currencyFormat](https://github.com/Tokimon/vanillajs-helpers/wiki/currencyFormat):
-Creates a function that formats a number to a given currency format
-- [data](https://github.com/Tokimon/vanillajs-helpers/wiki/data):
-Get/set the value of a 'data-' attribute on a given HTML Element
-- [elmIndex](https://github.com/Tokimon/vanillajs-helpers/wiki/elmIndex):
-Find the index of a HTML element amongst its siblings
-- [event](https://github.com/Tokimon/vanillajs-helpers/wiki/event):
-Collection of event handling methods (no caching).
-- [eventPlus](https://github.com/Tokimon/vanillajs-helpers/wiki/eventPlus):
-Collection of event handling methods (with caching).
-- [find](https://github.com/Tokimon/vanillajs-helpers/wiki/find):
-Find an element in the DOM
+Format a number into a specific currency format like: $ 1.000,00.
+- [dashed](https://github.com/Tokimon/vanillajs-helpers/wiki/dashed):
+Turn a phrase or word with different casing into a `dashed-lowercase-phrase`.
+- [eachWord](https://github.com/Tokimon/vanillajs-helpers/wiki/eachWord):
+Loop over each word in a phrase.
 - [formatNumber](https://github.com/Tokimon/vanillajs-helpers/wiki/formatNumber):
-Formats a number with defined thousand and decimal separator, and a decimal limit
-- [hidden](https://github.com/Tokimon/vanillajs-helpers/wiki/hidden):
-Test if a given HTML element is hidden
-- [htmlToDom](https://github.com/Tokimon/vanillajs-helpers/wiki/htmlToDom):
-Convert HTML into DOM node(s)
-- [inView](https://github.com/Tokimon/vanillajs-helpers/wiki/inView):
-Determines whether the element is in the area of the viewport or not
+Format a number acording to a given template like: 1.000,00
+- [hash](https://github.com/Tokimon/vanillajs-helpers/wiki/hash):
+Create a unique hash from a string.
 - [isArray](https://github.com/Tokimon/vanillajs-helpers/wiki/isArray):
-Indicates whether the object is an Array or not
+Tests if a given object is an Array
 - [isBoolean](https://github.com/Tokimon/vanillajs-helpers/wiki/isBoolean):
-Indicates whether the object is a Boolean or not
+Tests if a given object is a Boolean
+- [isCollection](https://github.com/Tokimon/vanillajs-helpers/wiki/isCollection):
+Tests if a given object is an Array or array like object (contains numeric entries and a length)
 - [isFunction](https://github.com/Tokimon/vanillajs-helpers/wiki/isFunction):
-Indicates whether the object is a Function or not
+Tests if a given object is a Function
+- [isNumber](https://github.com/Tokimon/vanillajs-helpers/wiki/isNumber):
+Tests if a given object is a Number
+- [isObject](https://github.com/Tokimon/vanillajs-helpers/wiki/isObject):
+Tests if a given object is an Object (plain object)
 - [isString](https://github.com/Tokimon/vanillajs-helpers/wiki/isString):
-Indicates whether the object is a String or not
-- [iterable](https://github.com/Tokimon/vanillajs-helpers/wiki/iterable):
-Transform an Array into an iterable object
+Tests if a given object is a String
 - [iterate](https://github.com/Tokimon/vanillajs-helpers/wiki/iterate):
-Iterate over an iteratable object
-- [limitDecimals](https://github.com/Tokimon/vanillajs-helpers/wiki/limitDecimals)
-Limit decimals of a floating number to specified length
-- [matches](https://github.com/Tokimon/vanillajs-helpers/wiki/matches)
-Determines whether or not a HTML Element matches a given CSS selector
+Iterate over entries in an array like object.
+- [leadingZero](https://github.com/Tokimon/vanillajs-helpers/wiki/leadingZero):
+Make sure a number is a string of a given length with empty slots filled up with zeroes (0), like: 007
+- [limitDecimals](https://github.com/Tokimon/vanillajs-helpers/wiki/limitDecimals):
+Limit decimals of a floating number to a given length.
 - [objectType](https://github.com/Tokimon/vanillajs-helpers/wiki/objectType):
-Returns the type of an object
+Determine what type a given object is (string, array, etc.)
 - [pascalCase](https://github.com/Tokimon/vanillajs-helpers/wiki/pascalCase):
-Transform a phrase into a PascalCased word
-- [position](https://github.com/Tokimon/vanillajs-helpers/wiki/position):
-Finds the current position of a HTML Element or window
-- [prefixed](https://github.com/Tokimon/vanillajs-helpers/wiki/prefixed):
-Adds vendor prefixes to a string
-- [prepend](https://github.com/Tokimon/vanillajs-helpers/wiki/prepend):
-Append HTML Element or plain HTML to the beginning of a given HTML Element
+Turn a phrase or word with different casing into a `PascalCased` word.
+- [phrasify](https://github.com/Tokimon/vanillajs-helpers/wiki/phrasify):
+Converts a word of a special casing or a phrase, into a space separated phrase.
+- [promisefy](https://github.com/Tokimon/vanillajs-helpers/wiki/promisefy):
+Converts a regular method using `(err, data)` type of callback into a method that returns a promise.
 - [randomId](https://github.com/Tokimon/vanillajs-helpers/wiki/randomId):
-Generate a random id of the desired length
-- [removeElm](https://github.com/Tokimon/vanillajs-helpers/wiki/removeElm):
-Remove a given HTML Element from the DOM
-- [replaceElm](https://github.com/Tokimon/vanillajs-helpers/wiki/replaceElm):
-Replace a given HTML Element with another HTML Element or plain HTML string
-- [scroll](https://github.com/Tokimon/vanillajs-helpers/wiki/scroll):
-Finds the current position of a HTML Element or window.
-- [siblings](https://github.com/Tokimon/vanillajs-helpers/wiki/siblings):
-Methods to find a HTML siblings
-- [size](https://github.com/Tokimon/vanillajs-helpers/wiki/size):
-Finds the size of a HTML Element or the window
-- [viewport](https://github.com/Tokimon/vanillajs-helpers/wiki/viewport):
-The HTML element determined as the viewport element
-- [visible](https://github.com/Tokimon/vanillajs-helpers/wiki/visible):
-Test if a given HTML element is visible (as in viewable) for the user.
+Generates a random id string of a given length.
+- [randomRGBColor](https://github.com/Tokimon/vanillajs-helpers/wiki/randomRGBColor):
+Gives a random RGB color
+- [RGBToHex](https://github.com/Tokimon/vanillajs-helpers/wiki/RGBToHex):
+Converts a RGB color to a HEX color (eg. [255, 0, 0] => #ff0000)
+- [snakeCase](https://github.com/Tokimon/vanillajs-helpers/wiki/snakeCase):
+Turn a phrase or word with different casing into a `snake_cased` word.
+- [trim](https://github.com/Tokimon/vanillajs-helpers/wiki/trim):
+Trims off trailing spaces (or defined char) on both sides of a string.
+- [truncate](https://github.com/Tokimon/vanillajs-helpers/wiki/truncate):
+Ensures a max length of a given string.
+- [uniqueArray](https://github.com/Tokimon/vanillajs-helpers/wiki/uniqueArray):
+Make sure an Array only contains unique values.
+
+## Installation
+
+```
+npm install vanillajs-helpers
+```
+
+## Usage
+
+```js
+// ES 6 Modules
+import camelCase from 'vanillajs-helpers/camelCase';
+camelCase('Camel cased phrase'); // camelCasedPhrase
+```
+
+```js
+// CommonJS Modules
+import camelCase from 'vanillajs-helpers/cjs/camelCase';
+camelCase('Camel cased phrase'); // camelCasedPhrase
+```
+
+## Running tests
+
+1. Download or fork the repo via: https://github.com/Tokimon/vanillajs-helpers.git
+
+2. Install dependencies:
+```
+npm install
+```
+
+3. Run tests:
+```
+npm run test
+```
+
+  - To test with coverage add `-c` or `--coverage` to the CLI call
+  - To use the (simple) progress reporter  add `-s` or `--simple` to the CLI call
 
 ## Something missing?
 
-If you find any bugs or missing functionality you would like to see included, feel
+If you have any questions, find any bugs or have ideas for missing functionality you would like to see included, feel
 free to add an issue in the [issue list](https://github.com/Tokimon/vanillajs-helpers/issues) or perhaps do a
-[PR](https://github.com/Tokimon/vanillajs-helpers/pulls) of a great snippet you created.
+[Pull Request](https://github.com/Tokimon/vanillajs-helpers/pulls) of a great snippet you created.
