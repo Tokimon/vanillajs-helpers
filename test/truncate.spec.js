@@ -4,7 +4,7 @@ import expect from './assets/chai';
 import truncate from '../truncate';
 
 describe('"truncate"', () => {
-  it('Should return the given entry when it is not string or maxlength is not given or longer than entry', () => {
+  it('Should return the given entry when it is not a string or maxlength is not given or longer than entry', () => {
     expect(truncate('This is not truncated')).to.equal('This is not truncated');
     expect(truncate(1234)).to.equal(1234);
     expect(truncate(1234567890, 5)).to.equal(1234567890);
