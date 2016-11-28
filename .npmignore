@@ -4,3 +4,4 @@ tasks
 coverage
 .travis.yml
 .coveralls.yml
+.eslintrc

@@ -6,8 +6,8 @@ import phrasify from './phrasify';
  * @param {String} str - String to transform
  * @return {String} - Transformed string
  */
- export default function dashed(str, spaceNumbers = false) {
-   return phrasify({ numbers: spaceNumbers })(str)
+export default function dashed(str, spaceNumbers = false) {
+  return phrasify({ numbers: spaceNumbers })(str)
     .toLowerCase()
     .replace(/\s+/g, '-');
- }
+}

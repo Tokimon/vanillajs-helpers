@@ -9,7 +9,7 @@ import limitDecimals from './limitDecimals';
  * @param  {Char} [dec=','] - Decimal separator
  * @return {String} - Formatted number
  */
-export default function formatNumber(num, decCount=2, sep='.', dec=',') {
+export default function formatNumber(num, decCount = 2, sep = '.', dec = ',') {
   // Format the number to the desired number of decimals and split.
   const parts = `${limitDecimals(num, decCount)}`.split('.');
 

@@ -15,7 +15,7 @@
  * @param  {Number|String} decCount - Decimal count expression: [<|>]?n (eg. >2 or <5)
  * @return {String} As the decimal can contain extra 0 (zeroes) which would otherwise be cut away, the number is returned as a string
  */
-export default function limitDecimals(num, decCount=2) {
+export default function limitDecimals(num, decCount = 2) {
   num = parseFloat(num);
   if(isNaN(num)) { num = 0; }
 
@@ -36,7 +36,7 @@ export default function limitDecimals(num, decCount=2) {
       decCount = decLen;
     } else {
       num = +num.toFixed(decCount);
-      parts =`${num}`.split('.');
+      parts = `${num}`.split('.');
       decLen = parts[1] ? parts[1].length : 0;
       decCount = decLen < decCount ? decLen : decCount;
     }
