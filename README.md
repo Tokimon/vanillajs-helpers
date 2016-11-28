@@ -1,4 +1,9 @@
-# Vanilla JS helpers [![Coverage](https://coveralls.io/repos/github/Tokimon/vanillajs-helpers/badge.svg)](https://coveralls.io/builds/9005130)
+# Vanilla JS helpers
+
+[![Build Status](https://travis-ci.org/Tokimon/vanillajs-helpers.svg?branch=master)](https://travis-ci.org/Tokimon/vanillajs-helpers)
+[![Coverage](https://coveralls.io/repos/github/Tokimon/vanillajs-helpers/badge.svg?branch=master)](https://coveralls.io/github/Tokimon/vanillajs-helpers)
+[![bitHound Overall Score](https://www.bithound.io/github/Tokimon/vanillajs-helpers/badges/score.svg)](https://www.bithound.io/github/Tokimon/vanillajs-helpers)
+
 This is a collection of simple, no dependency, vanilla JS snippets with the aim
 of making it easier to work with vanilla JS.
 
