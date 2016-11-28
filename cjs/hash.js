@@ -12,7 +12,7 @@ exports.hashString = hashString;
  */
 function hashCode(str) {
   // Math.abs added to make it a positive number
-  return Math.abs(`${ str || '' }`.split('').reduce((a, b) => {
+  return Math.abs(`${ str }`.split('').reduce((a, b) => {
     a = (a << 5) - a + b.charCodeAt(0);
     return a & a;
   }, 0));

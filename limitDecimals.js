@@ -9,7 +9,7 @@
  *         shortened down to this number.
  *
  * -  n = match this exact number of decimals, rounding longer decimals and adding
- * 				extra 0 (zeroes) to shorter ones.
+ *        extra 0 (zeroes) to shorter ones.
  *
  * @param  {Number} num - Floating number to limit decimals on.
  * @param  {Number|String} decCount - Decimal count expression: [<|>]?n (eg. >2 or <5)
