@@ -1,4 +1,4 @@
-/* eslint-env node, mocha, browser */
+/* eslint-env node, mocha */
 
 import expect from './assets/chai';
 import hashCode, { hashString } from '../hash';

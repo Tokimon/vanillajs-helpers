@@ -1,4 +1,4 @@
-/* eslint-env node, mocha, browser */
+/* eslint-env node, mocha */
 
 import sinon from 'sinon';
 import expect from './assets/chai';

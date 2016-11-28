@@ -1,4 +1,5 @@
-/* eslint-env node, mocha, browser */
+/* eslint-env node, mocha */
+/* eslint-disable no-new-wrappers */
 
 import sinon from 'sinon';
 
