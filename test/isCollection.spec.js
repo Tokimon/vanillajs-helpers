@@ -1,5 +1,5 @@
 /* eslint-env node, mocha */
-/* eslint-disable no-new-wrappers */
+/* eslint-disable no-array-constructor */
 
 import expect from './assets/chai';
 import isCollection from '../isCollection';
