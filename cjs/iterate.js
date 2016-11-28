@@ -29,6 +29,10 @@ function iterate(iterable, cb) {
   }
 
   let i = -1;
-  while (++i < len && cb(iterable[i], i, iterable) !== false) {}
+  while (++i < len) {
+    if (cb(iterable[i], i, iterable) === false) {
+      break;
+    }
+  }
   return len;
-} /* eslint no-empty: "off" */
+}
