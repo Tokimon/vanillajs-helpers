@@ -1,6 +1,9 @@
 /* eslint-env node, mocha, browser */
 
+import sinon from 'sinon';
+
 import expect from './assets/chai';
+
 import isNumber from '../isNumber';
 
 describe('"isNumber"', () => {
@@ -8,6 +11,18 @@ describe('"isNumber"', () => {
     expect(isNumber(9)).to.be.true;
     expect(isNumber(9.9)).to.be.true;
     expect(isNumber(Number('0'))).to.be.true;
+  });
+
+  it('Should fallback to traditional "isFinite" if "Number.isFinite" is not supported', () => {
+    const oldNumberIsFinite = Number.isFinite;
+    Number.isFinite = undefined;
+    sinon.spy(global, 'isFinite');
+
+    expect(isNumber(9)).to.be.true;
+    expect(isFinite).to.have.been.called;
+
+    global.isFinite.restore();
+    Number.isFinite = oldNumberIsFinite;
   });
 
   it('Should return false for non Numeric values', () => {
