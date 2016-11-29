@@ -22,6 +22,11 @@ of the [GitHub repository](https://github.com/Tokimon/vanillajs-helpers), but he
 
 ### Helpers
 
+These helpers a JS platform agnostic, for browser specific helpers check out:
+[vanillajs-browser-helpers](https://github.com/Tokimon/vanillajs-browser-helpers)
+
+**Helper list**
+
 - [camelCase](https://github.com/Tokimon/vanillajs-helpers/wiki/camelCase):
 Turn a phrase or word with different casing into a `camelCased` word.
 - [chunkString](https://github.com/Tokimon/vanillajs-helpers/wiki/chunkString):
