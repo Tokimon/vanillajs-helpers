@@ -15,17 +15,17 @@ Polyfills haven't been included as they exist in abundance on NPM, and since the
 need for polyfills are ever diminishing it is more future proof and clutter free
 to leave them out.
 
+**BROWSER HELPERS**
+
+These helpers a JS platform agnostic, for browser specific helpers check out:
+[vanillajs-browser-helpers](https://github.com/Tokimon/vanillajs-browser-helpers)
+
 ## Documentation
 
 Documentation is written in the [Wiki](https://github.com/Tokimon/vanillajs-helpers/wiki)
 of the [GitHub repository](https://github.com/Tokimon/vanillajs-helpers), but here below is an overview of the helpers available.
 
 ### Helpers
-
-These helpers a JS platform agnostic, for browser specific helpers check out:
-[vanillajs-browser-helpers](https://github.com/Tokimon/vanillajs-browser-helpers)
-
-**Helper list**
 
 - [camelCase](https://github.com/Tokimon/vanillajs-helpers/wiki/camelCase):
 Turn a phrase or word with different casing into a `camelCased` word.
