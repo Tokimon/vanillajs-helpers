@@ -5,3 +5,4 @@ coverage
 .travis.yml
 .coveralls.yml
 .eslintrc
+.eslintignore
