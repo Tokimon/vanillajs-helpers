@@ -15,9 +15,6 @@ fs.remove(nPath.resolve('cjs'))
     glob('./test/**/*.js')
   ]))
   .then((files) => files[0].concat(files[1]))
-  // .then((files) => {
-  //   files.forEach((file) => console.log(nPath.resolve(`cjs/${nPath.relative(process.cwd(), file)}`)));
-  // });
   .then((files) =>
     Promise.all(
       files.map((file) =>
