@@ -5,6 +5,7 @@
   "author": "Toke Voltelen",
   "license": "MIT",
   "scripts": {
+    "preversion": "npm run cjs",
     "test": "node ./tasks/tester.js",
     "cjs": "node ./tasks/cjs.js",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
