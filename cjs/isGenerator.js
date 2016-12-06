@@ -1,5 +1,6 @@
-'use strict';
-
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.default = isGenerator;
 exports.isGeneratorFunction = isGeneratorFunction;
 // TODO: The names are not quite accurate, should be refactored (isGeneratorFunction tests for generator in general fx)

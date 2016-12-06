@@ -1,5 +1,6 @@
-'use strict';
-
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.default = limitDecimals;
 /**
  * Limit decimals of a floating number to specified length. The length depends on

@@ -1,5 +1,6 @@
-"use strict";
-
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.default = objectType;
 /**
  * Returns the objects type definition name (eg. [object String] => "string")

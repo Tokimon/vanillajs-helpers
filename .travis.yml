@@ -3,7 +3,6 @@ node_js:
 - '7'
 - '6'
 - '5'
-- '4'
-install: npm install
-script: npm run test -- -sc
+install: npm install; npm run cjs
+script: npm run test -- -sc & npm run test -- -sr cjs
 after_success: npm run coveralls

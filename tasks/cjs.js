@@ -6,18 +6,25 @@ const glob = require('glob-promise');
 const babel = require('babel-core');
 
 const babelConfig = {
-  plugins: [['transform-es2015-modules-commonjs', { strict: true, loose: false }]]
+  plugins: [['transform-es2015-modules-commonjs', { strict: false, loose: false }]]
 };
 
 fs.remove(nPath.resolve('cjs'))
-  .then(() => glob('./*.js'))
+  .then(() => Promise.all([
+    glob('./*.js'),
+    glob('./test/**/*.js')
+  ]))
+  .then((files) => files[0].concat(files[1]))
+  // .then((files) => {
+  //   files.forEach((file) => console.log(nPath.resolve(`cjs/${nPath.relative(process.cwd(), file)}`)));
+  // });
   .then((files) =>
     Promise.all(
       files.map((file) =>
         fs.readFile(file)
           .then((code) =>
             fs.outputFile(
-              nPath.resolve(`cjs/${nPath.basename(file)}`),
+              nPath.resolve(`cjs/${nPath.relative(process.cwd(), file)}`),
               babel.transform(code, babelConfig).code
             )
           )

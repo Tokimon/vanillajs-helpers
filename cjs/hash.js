@@ -1,7 +1,8 @@
-'use strict';
-
-exports.default = hashCode;
-exports.hashString = hashString;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.hashCode = hashCode;
+exports.default = hash;
 // Shamelessly copied from:
 // http://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javascript-jquery
 
@@ -23,7 +24,7 @@ function hashCode(str) {
  * @param  {String} str - String to convert
  * @return {String} - The hashed string
  */
-function hashString(str) {
+function hash(str) {
   const code = hashCode(str);
   return code ? code.toString(36) : '';
 }

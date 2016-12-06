@@ -1,5 +1,6 @@
-"use strict";
-
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.default = promisefy;
 /**
  * Converts a callback based action into returning a Promise instead.

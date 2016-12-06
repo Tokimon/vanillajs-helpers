@@ -1,5 +1,6 @@
-'use strict';
-
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.default = dashed;
 
 var _phrasify = require('./phrasify');

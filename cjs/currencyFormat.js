@@ -1,5 +1,6 @@
-'use strict';
-
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.default = currencyFormat;
 
 var _formatNumber = require('./formatNumber');

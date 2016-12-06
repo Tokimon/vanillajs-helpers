@@ -1,5 +1,6 @@
-"use strict";
-
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.default = leadingZero;
 // TODO: Should use a generic fill method for strings (to be created)
 

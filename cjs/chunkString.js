@@ -1,5 +1,6 @@
-'use strict';
-
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.default = chunkString;
 /**
  * Split a String up into smaller strings of a give size (eg. 'ABCDEF' -> [AB,CD,EF])

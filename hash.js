@@ -6,7 +6,7 @@
  * @param  {String} str - String to convert
  * @return {Number} - A Numeric hash code generated from the string
  */
-export default function hashCode(str) {
+export function hashCode(str) {
   // Math.abs added to make it a positive number
   return Math.abs(`${str}`.split('').reduce((a, b) => {
     a = ((a << 5) - a) + b.charCodeAt(0);
@@ -21,7 +21,7 @@ export default function hashCode(str) {
  * @param  {String} str - String to convert
  * @return {String} - The hashed string
  */
-export function hashString(str) {
+export default function hash(str) {
   const code = hashCode(str);
   return code ? code.toString(36) : '';
 }
