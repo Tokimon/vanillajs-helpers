@@ -104,25 +104,12 @@ import camelCase from 'vanillajs-helpers/cjs/camelCase';
 camelCase('Camel cased phrase'); // camelCasedPhrase
 ```
 
-## Running tests
-
-1. Download or fork the repo via: https://github.com/Tokimon/vanillajs-helpers.git
-
-2. Install dependencies:
-```
-npm install
-```
-
-3. Run tests:
-```
-npm run test
-```
-
-  - To test with coverage add `-c` or `--coverage` to the CLI call
-  - To use the (simple) progress reporter  add `-s` or `--simple` to the CLI call
-
 ## Something missing?
 
 If you have any questions, find any bugs or have ideas for missing functionality you would like to see included, feel
 free to add an issue in the [issue list](https://github.com/Tokimon/vanillajs-helpers/issues) or perhaps do a
 [Pull Request](https://github.com/Tokimon/vanillajs-helpers/pulls) of a great snippet you created.
+
+## Testing
+
+Check out the [Testing docs](https://github.com/Tokimon/vanillajs-helpers/wiki/testing)
