@@ -1,6 +1,7 @@
 test
 cjs/test
 tasks
+specs
 .babelrc
 coverage
 .travis.yml
