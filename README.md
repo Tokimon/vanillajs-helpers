@@ -100,7 +100,7 @@ camelCase('Camel cased phrase'); // camelCasedPhrase
 
 ```js
 // CommonJS Modules
-import camelCase from 'vanillajs-helpers/cjs/camelCase';
+const camelCase = require('vanillajs-helpers/cjs/camelCase').default;
 camelCase('Camel cased phrase'); // camelCasedPhrase
 ```
 
