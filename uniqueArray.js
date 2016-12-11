@@ -6,6 +6,6 @@ import isArray from './isArray';
  * @return {[type]} - The given array with only unique values
  */
 export default function uniqueArray(arr) {
-  if(!isArray(arr)) { return arr; }
+  if(!isArray(arr)) { arr = arr ? [arr] : []; }
   return arr.filter((item, i, a) => a.indexOf(item) === i);
 }
