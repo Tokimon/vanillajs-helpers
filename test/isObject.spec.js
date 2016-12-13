@@ -9,6 +9,7 @@ describe('"isObject"', () => {
     expect(isObject({})).to.be.true;
     expect(isObject(new Object())).to.be.true;
     expect(isObject(Object.create({}))).to.be.true;
+    expect(isObject(new Promise(() => {}))).to.be.true;
   });
 
   it('Should return false for non Function values', () => {
@@ -16,5 +17,8 @@ describe('"isObject"', () => {
     expect(isObject('Object')).to.be.false;
     expect(isObject()).to.be.false;
     expect(isObject([])).to.be.false;
+    expect(isObject(123)).to.be.false;
+    expect(isObject(NaN)).to.be.false;
+    expect(isObject(undefined)).to.be.false;
   });
 });

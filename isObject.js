@@ -6,5 +6,7 @@ import objectType from './objectType';
  * @return {Boolean} - Whether the object is a String or not
  */
 export default function isObject(obj) {
-  return typeof obj === 'object' && objectType(obj) === 'object';
+  return typeof obj === 'object' &&
+    Object(obj) === obj &&
+    objectType(obj) === 'object';
 }
