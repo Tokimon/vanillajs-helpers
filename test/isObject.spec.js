@@ -9,7 +9,6 @@ describe('"isObject"', () => {
     expect(isObject({})).to.be.true;
     expect(isObject(new Object())).to.be.true;
     expect(isObject(Object.create({}))).to.be.true;
-    expect(isObject(new Promise(() => {}))).to.be.true;
   });
 
   it('Should return false for non Function values', () => {
