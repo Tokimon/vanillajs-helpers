@@ -1,12 +1,12 @@
-// TODO: The names are not quite accurate, should be refactored (isGeneratorFunction tests for generator in general fx)
+import isFunction from './isFunction';
 
 /**
  * Determine if the given object is a Generator(ish) object
  * @param  {Mixed} obj - Object to examine
  * @return {Boolean} - Whether or not the object is a Generator or not
  */
-export default function isGenerator(obj) {
-  return typeof obj.next === 'function' && typeof obj.throw === 'function';
+export function isGeneratorLike(obj) {
+  return isFunction(obj.next) && isFunction(obj.throw);
 }
 
 
@@ -15,14 +15,13 @@ export default function isGenerator(obj) {
  * @param  {Mixed} obj - Object to examine
  * @return {Boolean} - Whether or not the object is a Generator Funciton or not
  */
-export function isGeneratorFunction(obj) {
+export default function isGenerator(obj) {
   var constructor = obj.constructor;
 
   if(!constructor) { return false; }
-
   if(constructor.name === 'GeneratorFunction' || constructor.displayName === 'GeneratorFunction') {
     return true;
   }
 
-  return isGenerator(constructor.prototype);
+  return isGeneratorLike(constructor.prototype);
 }
