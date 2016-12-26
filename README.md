@@ -49,6 +49,8 @@ Tests if a given object is a Boolean
 Tests if a given object is an Array or array like object (contains numeric entries and a length)
 - [isFunction](https://github.com/Tokimon/vanillajs-helpers/wiki/isFunction):
 Tests if a given object is a Function
+- [isGenerator](https://github.com/Tokimon/vanillajs-helpers/wiki/isGenerator):
+Tests if a given object is a Generator function
 - [isNumber](https://github.com/Tokimon/vanillajs-helpers/wiki/isNumber):
 Tests if a given object is a Number
 - [isObject](https://github.com/Tokimon/vanillajs-helpers/wiki/isObject):
