@@ -11,7 +11,12 @@ describe('"snakeCase"', () => {
     expect(snake('LOOK! 99 air balloons')).to.equal('look_99_air_balloons');
     expect(snake('camelCase')).to.equal('camel_case');
     expect(snake('snake_case')).to.equal('snake_case');
-    expect(snake('data-value2')).to.equal('data_value_2');
+    expect(snake('data-value2input')).to.equal('data_value2input');
+  });
+
+  it('Should add "_" around numbers', () => {
+    expect(snake('LOOK! 99 air balloons', true)).to.equal('look_99_air_balloons');
+    expect(snake('data-value25input', true)).to.equal('data_value_25_input');
   });
 
   it('Should always turn inputs into strings', () => {

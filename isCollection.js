@@ -7,5 +7,6 @@ import isArray from './isArray';
  * @return {Boolean} - Whether the object is a collection or not
  */
 export default function isCollection(coll) {
-  return !!coll && (isArray(coll) || typeof coll.length !== 'undefined');
+  if(typeof coll === 'undefined' || coll === null) { return false; }
+  return isArray(coll) || typeof coll.length !== 'undefined';
 }

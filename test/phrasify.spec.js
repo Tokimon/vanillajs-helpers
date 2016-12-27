@@ -16,6 +16,7 @@ describe('"phrasify"', () => {
       expect(phrasify('bool2str')).to.equal('bool2str');
       expect(phrasify('word')).to.equal('word');
       expect(phrasify('Name')).to.equal('Name');
+      expect(phrasify('data-value25input')).to.equal('data value25input');
     });
   });
 
@@ -65,6 +66,7 @@ describe('"phrasify"', () => {
         expect(phraser('L337phraser')).to.equal('L 337 phraser');
         expect(phraser('007')).to.equal('007');
         expect(phraser('007bond')).to.equal('007 bond');
+        expect(phraser('data-value25input')).to.equal('data value 25 input');
       });
     });
   });

@@ -17,6 +17,7 @@ describe('"camelCase"', () => {
       expect(camelCase('snake_case')).to.equal('snakeCase');
       expect(camelCase('word')).to.equal('word');
       expect(camelCase('Name')).to.equal('name');
+      expect(camelCase('data-value25input')).to.equal('dataValue25Input');
     });
 
     it('Should keep empty strings empty', () => {
@@ -51,6 +52,7 @@ describe('"camelCase"', () => {
         expect(caser('snake_case')).to.equal('snakeCase');
         expect(caser('word')).to.equal('word');
         expect(caser('Name')).to.equal('name');
+        expect(camelCase('data-value25input')).to.equal('dataValue25Input');
       });
     });
 
@@ -87,6 +89,7 @@ describe('"camelCase"', () => {
         expect(caser('bool2str')).to.equal('bool2str');
         expect(caser('L337caser')).to.equal('l337caser');
         expect(caser('007bond')).to.equal('007bond');
+        expect(caser('data-value25input')).to.equal('dataValue25input');
       });
     });
 
