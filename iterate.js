@@ -1,4 +1,5 @@
 import isFunction from './isFunction';
+import isNumber from './isNumber';
 
 /**
  * Iterate over an iteratable object (object with numeric entries and a length property)
@@ -7,20 +8,21 @@ import isFunction from './isFunction';
  * @param  {Function} cb - Method to call on each iteration
  * @return {Number} - Number of iterated items
  */
-export default function iterate(iterable, cb) {
-  if(!isFunction(cb) || !iterable) { return 0; }
+export default function iterate(collection, cb) {
+  if(!isFunction(cb) || !collection) { return 0; }
 
-  const len = iterable.length;
+  const len = collection.length;
 
   // Make a single iteration if the 'iterable' is not a iterable collection
-  if(typeof len === 'undefined') {
-    cb(iterable, 0, iterable);
+  if(!isNumber(len)) {
+    cb(collection, 0, collection);
     return 1;
   }
 
   let i = -1;
   while(++i < len) {
-    if(cb(iterable[i], i, iterable) === false) { break; }
+    if(cb(collection[i], i, collection) === false) { break; }
   }
+
   return len;
 }

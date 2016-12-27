@@ -2,8 +2,8 @@ import isArray from './isArray';
 
 /**
  * Filter out any duplicate values from an array
- * @param  {Array}  [arr=[]] - Array that needs unique values
- * @return {[type]} - The given array with only unique values
+ * @param  {Array} arr - Array that needs unique values
+ * @return {Array} - An Array with only unique values
  */
 export default function uniqueArray(arr) {
   if(!isArray(arr)) { arr = arr ? [arr] : []; }

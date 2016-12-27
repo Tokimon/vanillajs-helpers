@@ -1,7 +1,7 @@
 /**
- * Trim given chars from boths sides of a string
+ * Trim given chars from both sides of a string
  * @param  {String} str - String to trim
- * @param  {String} char - Char to trim off
+ * @param  {String} [char] - Char to trim off
  * @return {String} - Trimmed string
  */
 export default function trim(str, char) {
@@ -32,7 +32,7 @@ export function trimLeft(str, char = '\\s') {
  * @param  {String} char - Char to trim off
  * @return {String} - Trimmed string
  */
-export function trimRight(str, char = '[\\s]') {
+export function trimRight(str, char = '\\s') {
   if(char.source) { char = char.source; }
   return `${str || ''}`.replace(new RegExp(`${char}+$`, 'g'), '');
 }

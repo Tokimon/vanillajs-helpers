@@ -3,7 +3,7 @@ import isFunction from './isFunction';
 /**
  * Determine if the given object is a Generator(ish) object
  * @param  {Mixed} obj - Object to examine
- * @return {Boolean} - Whether or not the object is a Generator or not
+ * @return {Boolean} - Whether or not the object is like a Generator or not
  */
 export function isGeneratorLike(obj) {
   return isFunction(obj.next) && isFunction(obj.throw);
@@ -13,7 +13,7 @@ export function isGeneratorLike(obj) {
 /**
  * Determine if the given object is a Generator Function
  * @param  {Mixed} obj - Object to examine
- * @return {Boolean} - Whether or not the object is a Generator Funciton or not
+ * @return {Boolean} - Whether or not the object is a Generator Function or not
  */
 export default function isGenerator(obj) {
   var constructor = obj.constructor;

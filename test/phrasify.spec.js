@@ -6,7 +6,7 @@ import phrasify from '../phrasify';
 describe('"phrasify"', () => {
   describe('- without defined settings', () => {
     it('Should convert a word or phrase into a space separated phrase', () => {
-      expect(phrasify('Convert PHRASE into normal phrase')).to.equal('Convert PHRASE into normal phrase');
+      expect(phrasify('Convert PHRASE into  normal phrase')).to.equal('Convert PHRASE into normal phrase');
       expect(phrasify('ABBR phrase')).to.equal('ABBR phrase');
       expect(phrasify('HTMLElement')).to.equal('HTML Element');
       expect(phrasify('LOOK! 99 air balloons')).to.equal('LOOK 99 air balloons');
@@ -26,7 +26,7 @@ describe('"phrasify"', () => {
 
     it('Should convert a word or phrase into a space separated phrase', () => {
       const phraser = phrasify();
-      expect(phraser('Convert PHRASE into normal phrase')).to.equal('Convert PHRASE into normal phrase');
+      expect(phraser('Convert PHRASE  into normal phrase')).to.equal('Convert PHRASE into normal phrase');
       expect(phraser('ABBR phrase')).to.equal('ABBR phrase');
       expect(phraser('HTMLElement')).to.equal('HTML Element');
       expect(phraser('LOOK! 99 air balloons')).to.equal('LOOK 99 air balloons');

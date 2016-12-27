@@ -12,6 +12,7 @@ describe('"isCollection"', () => {
 
   it('Should return true for objects with a length value', () => {
     expect(isCollection({ length: 0 })).to.be.true;
+    expect(isCollection('')).to.be.true;
   });
 
   it('Should return false for non Collections', () => {

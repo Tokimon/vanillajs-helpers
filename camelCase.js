@@ -16,8 +16,15 @@ function convert(opts, str = '') {
 }
 
 /**
+ * @typedef {Object} Settings
+ * @property {Boolean} numbers - Create space between numbers
+ * @property {Boolean} abbr - Keep abbreviations upper cased
+ * @property {Boolean} upper - Generate an upper cased CamelCase word
+ */
+
+/**
  * Transform a phrase into a camelCased word (eg. 'camel case' -> 'camelCase')
- * @param {String|Object} input - String to transform or settings for the transformer method
+ * @param {String|Settings} input - String to transform or settings for the transformer method
  * @return {String|Function} - Transformed string or a transformer method
  */
 export default function camelCase(input = {}) {

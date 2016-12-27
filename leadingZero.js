@@ -2,9 +2,9 @@
 
 /**
  * Makes sure a given number is a certain length and fills excess space with zeroes (0)
- * @param  {Mixed} num - The Number to add zeroes before
+ * @param  {Number|String} num - The Number to add zeroes before
  * @param  {Number} [len=2] - The Minimum length of the number
- * @return {String} - The Number converted into a string with zeroes added to it
+ * @return {String} - The Number with zeroes added before it
  */
 export default function leadingZero(num, len = 2) {
   len = Math.max(String(num).length, len);
