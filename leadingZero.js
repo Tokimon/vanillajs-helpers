@@ -1,5 +1,3 @@
-// TODO: Should use a generic fill method for strings (to be created)
-
 /**
  * Makes sure a given number is a certain length and fills excess space with zeroes (0)
  * @function leadingZero
