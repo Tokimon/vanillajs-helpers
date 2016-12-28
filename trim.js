@@ -1,8 +1,9 @@
 /**
  * Trim given chars from both sides of a string
+ * @function trim
  * @param  {String} str - String to trim
  * @param  {String} [char] - Char to trim off
- * @return {String} - Trimmed string
+ * @return {String} Trimmed string
  */
 export default function trim(str, char) {
   str = `${str || ''}`;
@@ -15,9 +16,10 @@ export default function trim(str, char) {
 
 /**
  * Trim given chars from the left side of a string
+ * @function trimLeft
  * @param  {String} str - String to trim
  * @param  {String} char - Char to trim off
- * @return {String} - Trimmed string
+ * @return {String} Trimmed string
  */
 export function trimLeft(str, char = '\\s') {
   if(char.source) { char = char.source; }
@@ -28,9 +30,10 @@ export function trimLeft(str, char = '\\s') {
 
 /**
  * Trim given chars from the right side of a string
+ * @function trimRight
  * @param  {String} str - String to trim
  * @param  {String} char - Char to trim off
- * @return {String} - Trimmed string
+ * @return {String} Trimmed string
  */
 export function trimRight(str, char = '\\s') {
   if(char.source) { char = char.source; }

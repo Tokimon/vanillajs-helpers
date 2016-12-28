@@ -15,14 +15,15 @@ function convert(opts, str = '') {
 }
 
 /**
- * @typedef {Object} Settings
+ * @typedef {Object} PhrasifySettings
  * @property {Boolean} numbers - Create space between numbers
  */
 
 /**
  * Transform phrase into a space separated phrase
- * @param {String|Settings} str - String to transform or settings for the transformer method
- * @return {String|Function} - Transformed string or a transformer method
+ * @function phrasify
+ * @param {String|PhrasifySettings} str - String to transform or settings for the transformer method
+ * @return {String|Function} Transformed string or a transformer method
  */
 export default function phrasify(input = {}) {
   let opts = { numbers: false };

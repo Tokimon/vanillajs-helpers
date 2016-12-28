@@ -11,6 +11,7 @@
  * -  n = match this exact number of decimals, rounding longer decimals and adding
  *        extra 0 (zeroes) to shorter ones.
  *
+ * @function limitDecimals
  * @param  {Number} num - Floating number to limit decimals on.
  * @param  {Number|String} decCount - Decimal count expression: [<|>]?n (eg. >2 or <5)
  * @return {String} As the decimal can contain extra 0 (zeroes) which would otherwise be cut away, the number is returned as a string

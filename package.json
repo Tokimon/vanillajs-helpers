@@ -9,6 +9,7 @@
     "test": "node ./tasks/tester.js",
     "cjs": "node ./tasks/cjs.js",
     "spec": "node ./tasks/spec.js",
+    "jsdoc": "node ./tasks/jsdoc.js",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "coveralls:win": "type ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "lint": "eslint"

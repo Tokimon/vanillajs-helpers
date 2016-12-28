@@ -4,9 +4,10 @@ import isNumber from './isNumber';
 /**
  * Iterate over an iteratable object (object with numeric entries and a length property)
  * use `return false` to break the loop prematurely.
+ * @function iterate
  * @param  {Object|Array} iterable - iterable (Array-like) object
  * @param  {Function} cb - Method to call on each iteration
- * @return {Number} - Number of iterated items
+ * @return {Number} Number of iterated items
  */
 export default function iterate(collection, cb) {
   if(!isFunction(cb) || !collection) { return 0; }

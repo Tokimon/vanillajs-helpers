@@ -3,8 +3,9 @@
 
 /**
  * Generates a unique hash code from a string
+ * @function hashCode
  * @param  {String} str - String to convert
- * @return {Number} - A Numeric hash code generated from the string
+ * @return {Number} A Numeric hash code generated from the string
  */
 export function hashCode(str) {
   // Math.abs added to make it a positive number
@@ -19,7 +20,7 @@ export function hashCode(str) {
 /**
  * Generates a unique hash string from a string
  * @param  {String} str - String to convert
- * @return {String} - The hashed string
+ * @return {String} The hashed string
  */
 export default function hash(str) {
   const code = hashCode(str);
