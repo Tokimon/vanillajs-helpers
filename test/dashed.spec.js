@@ -13,6 +13,7 @@ describe('"dashed"', () => {
     expect(dashed('camelCase')).to.equal('camel-case');
     expect(dashed('snake_case')).to.equal('snake-case');
     expect(dashed('data-value25input')).to.equal('data-value25input');
+    expect(dashed('/some/path/someWhere')).to.equal('some-path-some-where');
   });
 
   it('Should add "-" around numbers', () => {

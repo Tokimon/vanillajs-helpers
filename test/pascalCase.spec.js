@@ -13,6 +13,7 @@ describe('"pascalCase"', () => {
     expect(pascalCase('PascalCase')).to.equal('PascalCase');
     expect(pascalCase('snake_case')).to.equal('SnakeCase');
     expect(pascalCase('data-value25input')).to.equal('DataValue25Input');
+    expect(pascalCase('/some/path/someWhere')).to.equal('SomePathSomeWhere');
   });
 
   it('Should always turn inputs into strings', () => {

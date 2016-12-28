@@ -12,6 +12,7 @@ describe('"snakeCase"', () => {
     expect(snake('camelCase')).to.equal('camel_case');
     expect(snake('snake_case')).to.equal('snake_case');
     expect(snake('data-value2input')).to.equal('data_value2input');
+    expect(snake('/some/path/someWhere')).to.equal('some_path_some_where');
   });
 
   it('Should add "_" around numbers', () => {

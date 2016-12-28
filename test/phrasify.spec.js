@@ -17,6 +17,7 @@ describe('"phrasify"', () => {
       expect(phrasify('word')).to.equal('word');
       expect(phrasify('Name')).to.equal('Name');
       expect(phrasify('data-value25input')).to.equal('data value25input');
+      expect(phrasify('/some/path/someWhere')).to.equal('some path some Where');
     });
   });
 
