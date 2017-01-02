@@ -5,7 +5,7 @@
   "author": "Toke Voltelen",
   "license": "MIT",
   "scripts": {
-    "prepublish": "npm run cjs",
+    "prepublish": "npm run cjs && npm run es5",
     "test": "node ./tasks/tester.js",
     "cjs": "node ./tasks/cjs.js",
     "es5": "node ./tasks/es5.js",
