@@ -6,7 +6,9 @@ node_js:
 install:
   - npm install
   - npm run cjs
+  - npm run es5
 script:
   - npm run test -- -sc
   - npm run test -- -sr cjs
+  - npm run test -- -sr es5
 after_success: npm run coveralls

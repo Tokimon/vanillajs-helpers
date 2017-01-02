@@ -1,5 +1,6 @@
 test
 cjs/test
+es5/test
 tasks
 specs
 .babelrc
