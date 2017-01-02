@@ -41,5 +41,6 @@ jspm_packages
 
 # custom
 cjs
+es5
 specs
 jsdoc
