@@ -14,7 +14,7 @@ fs.readFile('./package.json', function(err, data) {
     )
   )
     .forEach(function(dependency) {
-      console.log('Upgrading ' + dependency);
-      cp.exec('yarn upgrade ' + dependency);
+      cp.exec(`yarn upgrade ${dependency}`);
+      console.log(`UPGRADED: ${dependency}`); // eslint-disable-line no-console
     });
 });
