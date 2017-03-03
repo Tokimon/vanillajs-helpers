@@ -1,4 +1,5 @@
 /* eslint-env node, mocha */
+/* eslint-disable no-unused-expressions */
 
 import expect from './assets/chai';
 import promisefy from '../promisefy';

@@ -1,5 +1,5 @@
 /* eslint-env node, mocha */
-/* eslint-disable no-new-wrappers */
+/* eslint-disable no-new-wrappers, no-unused-expressions */
 
 import expect from './assets/chai';
 
@@ -9,6 +9,7 @@ describe('"isGenerator"', () => {
   it('Should only return true for Generators', () => {
     expect(isGenerator(function *() {})).to.be.true;
     expect(isGenerator(function() {})).to.be.false;
+    expect(isGenerator({ next() {}, throw() {} })).to.be.false;
   });
 });
 

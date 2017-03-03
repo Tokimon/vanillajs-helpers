@@ -1,5 +1,5 @@
 /* eslint-env node, mocha */
-/* eslint-disable no-new-object */
+/* eslint-disable no-new-object, no-unused-expressions */
 
 import expect from './assets/chai';
 import isObject from '../isObject';
