@@ -29,6 +29,8 @@ of the [GitHub repository](https://github.com/Tokimon/vanillajs-helpers), but he
 
 - [camelCase](https://github.com/Tokimon/vanillajs-helpers/wiki/camelCase):
 Turn a phrase or word with different casing into a `camelCased` word.
+- [capitalize](https://github.com/Tokimon/vanillajs-helpers/wiki/capitalize):
+Capitalize Each Word In A Phrase.
 - [chunkString](https://github.com/Tokimon/vanillajs-helpers/wiki/chunkString):
 Chop up a string into chunks of the desired length.
 - [currencyFormat](https://github.com/Tokimon/vanillajs-helpers/wiki/currencyFormat):
