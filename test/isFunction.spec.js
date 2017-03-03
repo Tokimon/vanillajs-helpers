@@ -1,5 +1,5 @@
 /* eslint-env node, mocha */
-/* eslint-disable no-new-func */
+/* eslint-disable no-new-func, no-unused-expressions */
 
 import expect from './assets/chai';
 import isFunction from '../isFunction';

@@ -1,5 +1,5 @@
 /* eslint-env node, mocha */
-/* eslint-disable no-new-wrappers */
+/* eslint-disable no-new-wrappers, no-unused-expressions */
 
 import expect from './assets/chai';
 import isArray from '../isArray';
