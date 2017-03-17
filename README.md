@@ -2,7 +2,11 @@
 
 [![Build Status](https://travis-ci.org/Tokimon/vanillajs-helpers.svg?branch=master)](https://travis-ci.org/Tokimon/vanillajs-helpers)
 [![Coverage](https://coveralls.io/repos/github/Tokimon/vanillajs-helpers/badge.svg?branch=master)](https://coveralls.io/github/Tokimon/vanillajs-helpers)
+<br>
 [![bitHound Overall Score](https://www.bithound.io/github/Tokimon/vanillajs-helpers/badges/score.svg)](https://www.bithound.io/github/Tokimon/vanillajs-helpers)
+[![bitHound Code](https://www.bithound.io/github/Tokimon/vanillajs-helpers/badges/code.svg)](https://www.bithound.io/github/Tokimon/vanillajs-helpers)
+[![bitHound Dependencies](https://www.bithound.io/github/Tokimon/vanillajs-helpers/badges/dependencies.svg)](https://www.bithound.io/github/Tokimon/vanillajs-helpers/master/dependencies/npm)
+[![bitHound Dev Dependencies](https://www.bithound.io/github/Tokimon/vanillajs-helpers/badges/devDependencies.svg)](https://www.bithound.io/github/Tokimon/vanillajs-helpers/master/dependencies/npm)
 
 This is a collection of simple, no dependency, vanilla JS snippets with the aim
 of making it easier to work with vanilla JS.
