@@ -4,6 +4,16 @@
   "description": "Collection of convenience code snippets (helpers) that aims to make it a little easier to work with vanilla JS",
   "author": "Toke Voltelen",
   "license": "MIT",
+  "keywords": [
+    "vanilla js",
+    "helpers",
+    "event",
+    "camelCase",
+    "isObject",
+    "trim",
+    "capitalize",
+    "hash"
+  ],
   "scripts": {
     "prepublish": "npm run cjs && npm run es5",
     "test": "node ./tasks/tester.js",
