@@ -5,7 +5,7 @@ import hexToNumber from './hexToNumber';
  * Converts a Hexadecimal color to a RGB(A) color array
  * @function hexToRGB
  * @param  {String} - The Hexadecimal color (eg, '#2fd466')
- * @return {Array}  - The RGB(A) color array
+ * @return {Number[]}  - The RGB(A) color array
  */
 export default function hexToRGB(hex) {
   if(hex[0] === '#') { hex = hex.substr(1); }
