@@ -24,11 +24,11 @@ describe('"promisefy"', () => {
     ]);
   });
 
-  it('Should fail on non function arguments', () => {
-    expect(promisefy()).to.fail;
-    expect(promisefy(null)).to.fail;
-    expect(promisefy('String')).to.fail;
-    expect(promisefy(123)).to.fail;
-    expect(promisefy({})).to.fail;
+  it('Should throw on non function arguments', () => {
+    expect(() => promisefy()).to.throw();
+    expect(() => promisefy(null)).to.throw();
+    expect(() => promisefy('String')).to.throw();
+    expect(() => promisefy(123)).to.throw();
+    expect(() => promisefy({})).to.throw();
   });
 });
