@@ -2,7 +2,7 @@
 
 const nPath = require('path');
 
-const fs = require('fs-promise');
+const fs = require('fs-extra');
 const glob = require('glob-promise');
 const babel = require('babel-core');
 
