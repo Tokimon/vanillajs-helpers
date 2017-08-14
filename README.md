@@ -44,9 +44,13 @@ Turn a phrase or word with different casing into a `dashed-lowercase-phrase`.
 - [eachWord](https://github.com/Tokimon/vanillajs-helpers/wiki/eachWord):
 Loop over each word in a phrase.
 - [formatNumber](https://github.com/Tokimon/vanillajs-helpers/wiki/formatNumber):
-Format a number acording to a given template like: 1.000,00
+Format a number acording to a given template like: 1.000,00.
 - [hash](https://github.com/Tokimon/vanillajs-helpers/wiki/hash):
 Create a unique hash from a string.
+- [hexToNumber](https://github.com/Tokimon/vanillajs-helpers/wiki/hexToNumber):
+Convert Hexadecimal into a number (eg. b4 => 180).
+- [hexToRGB](https://github.com/Tokimon/vanillajs-helpers/wiki/hexToRGB):
+Converts a Hexadecimal color to a RGB(A) color array.
 - [isArray](https://github.com/Tokimon/vanillajs-helpers/wiki/isArray):
 Tests if a given object is an Array
 - [isBoolean](https://github.com/Tokimon/vanillajs-helpers/wiki/isBoolean):
@@ -67,8 +71,12 @@ Tests if a given object is a String
 Iterate over entries in an array like object.
 - [leadingZero](https://github.com/Tokimon/vanillajs-helpers/wiki/leadingZero):
 Make sure a number is a string of a given length with empty slots filled up with zeroes (0), like: 007
+- [leftPad](https://github.com/Tokimon/vanillajs-helpers/wiki/leftPad):
+Pads a string to the left with a given character (much like leadingZero).
 - [limitDecimals](https://github.com/Tokimon/vanillajs-helpers/wiki/limitDecimals):
 Limit decimals of a floating number to a given length.
+- [numberToHex](https://github.com/Tokimon/vanillajs-helpers/wiki/numberToHex):
+Convert a number to a Hexadecimal representation (eg. 180 => b4).
 - [objectType](https://github.com/Tokimon/vanillajs-helpers/wiki/objectType):
 Determine what type a given object is (string, array, etc.)
 - [pascalCase](https://github.com/Tokimon/vanillajs-helpers/wiki/pascalCase):
@@ -80,9 +88,13 @@ Converts a regular method using `(err, data)` type of callback into a method tha
 - [randomId](https://github.com/Tokimon/vanillajs-helpers/wiki/randomId):
 Generates a random id string of a given length.
 - [randomRGBColor](https://github.com/Tokimon/vanillajs-helpers/wiki/randomRGBColor):
-Gives a random RGB color
+Gives a random RGB color.
+- [repeatString](https://github.com/Tokimon/vanillajs-helpers/wiki/repeatString):
+Creates a string with a given character (or string) repeated x number of times.
 - [RGBToHex](https://github.com/Tokimon/vanillajs-helpers/wiki/RGBToHex):
 Converts a RGB color to a HEX color (eg. [255, 0, 0] => #ff0000)
+- [rightPad](https://github.com/Tokimon/vanillajs-helpers/wiki/rightPad):
+Pads a string to the right with a given character (the inverse of leftPad).
 - [snakeCase](https://github.com/Tokimon/vanillajs-helpers/wiki/snakeCase):
 Turn a phrase or word with different casing into a `snake_cased` word.
 - [trim](https://github.com/Tokimon/vanillajs-helpers/wiki/trim):
@@ -109,6 +121,12 @@ camelCase('Camel cased phrase'); // camelCasedPhrase
 ```js
 // CommonJS Modules
 const camelCase = require('vanillajs-helpers/cjs/camelCase').default;
+camelCase('Camel cased phrase'); // camelCasedPhrase
+```
+
+```js
+// ES5 (if you don't want to transpile)
+const camelCase = require('vanillajs-helpers/es5/camelCase').default;
 camelCase('Camel cased phrase'); // camelCasedPhrase
 ```
 
