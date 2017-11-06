@@ -1,28 +1,16 @@
-// Shamelessly copied from:
-// http://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javascript-jquery
-
-/**
- * Generates a unique hash code from a string
- * @function hashCode
- * @param  {String} str - String to convert
- * @return {Number} A Numeric hash code generated from the string
- */
+import isString from './isString';
 export function hashCode(str) {
-  // Math.abs added to make it a positive number
-  return Math.abs(`${str}`.split('').reduce((a, b) => {
-    a = ((a << 5) - a) + b.charCodeAt(0);
-    return a & a;
-  }, 0));
+    str = isString(str) ? str : '';
+    let l = str.length;
+    if (l === 0) {
+        return 0;
+    }
+    let h = 0;
+    for (let i = 0; i < l; i++) {
+        h = (((h << 5) - h) + str.charCodeAt(i)) | 0;
+    }
+    return (h >>> 0);
 }
-
-
-
-/**
- * Generates a unique hash string from a string
- * @param  {String} str - String to convert
- * @return {String} The hashed string
- */
 export default function hash(str) {
-  const code = hashCode(str);
-  return code ? code.toString(36) : '';
+    return hashCode(str).toString(36);
 }

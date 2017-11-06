@@ -1,16 +1,7 @@
 import isString from './isString';
 import isFunction from './isFunction';
-import iterate from './iterate';
-
-/**
- * Iterate over each word in a phrase
- * @function eachWord
- * @param  {String} phrase - String containing the words to iterate over
- * @param  {Function} cb - Method to call on each word
- * @param  {String|RegExp} [separator=/[- _,]+/] - Separator char/regular expression to split the words by
- * @return {Number} Number of words iterated
- */
+import indexloop from './indexloop';
 export default function eachWord(phrase, cb, separator = /[- _,]+/) {
-  const words = isString(phrase) ? phrase.split(separator) : [];
-  return isFunction(cb) ? iterate(words, cb) : words.length;
+    const words = isString(phrase) ? phrase.split(separator) : [];
+    return isFunction(cb) ? indexloop(words, cb) : words.length;
 }
