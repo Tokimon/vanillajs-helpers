@@ -1,6 +1,4 @@
 test
-cjs/test
-es5/test
 tasks
 specs
 .babelrc
@@ -10,3 +8,4 @@ coverage
 .eslintrc
 .eslintignore
 jsdoc
+tsconfig.json

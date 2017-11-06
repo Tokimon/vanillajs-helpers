@@ -15,10 +15,9 @@
     "hash"
   ],
   "scripts": {
-    "prepublish": "npm run cjs && npm run es5",
+    "prepublish": "npm run build",
     "test": "node ./tasks/tester.js",
-    "cjs": "node ./tasks/cjs.js",
-    "es5": "node ./tasks/es5.js",
+    "build": "tsc && tsc -p ./cjs && tsc -p ./es5",
     "spec": "node ./tasks/spec.js",
     "jsdoc": "node ./tasks/jsdoc.js",
     "updateDeps": "node ./tasks/upgradeDependencies.js",
@@ -66,6 +65,7 @@
     "mocha": "^3.5.0",
     "sinon": "^3.2.0",
     "sinon-chai": "^2.13.0",
+    "typescript": "^2.6.1",
     "yargs": "^8.0.2"
   }
 }
