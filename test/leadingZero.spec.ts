@@ -1,14 +1,13 @@
 /* eslint-env node, mocha */
 
 import expect from './assets/chai';
-import leadingZero from '../leadingZero';
+import leadingZero from '../ts/leadingZero';
 
 describe('"leadingZero"', () => {
   it('Should always return a string', () => {
     expect(leadingZero(123)).to.be.a('string');
-    expect(leadingZero({})).to.be.a('string');
     expect(leadingZero(null)).to.be.a('string');
-    expect(leadingZero()).to.be.a('string');
+    expect(leadingZero(undefined)).to.be.a('string');
   });
 
   it('Should add a zero to a value of just one character', () => {
@@ -27,6 +26,6 @@ describe('"leadingZero"', () => {
     expect(leadingZero(1, 1)).to.equal('1');
     expect(leadingZero('123', 2)).to.equal('123');
     expect(leadingZero(null)).to.equal('null');
-    expect(leadingZero()).to.equal('undefined');
+    expect(leadingZero(undefined)).to.equal('undefined');
   });
 });

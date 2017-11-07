@@ -1,16 +1,16 @@
 /* eslint-env node, mocha */
 /* eslint-disable no-unused-expressions */
 
-import sinon from 'sinon';
+import * as sinon from 'sinon';
 import expect from './assets/chai';
-import iterate from '../iterate';
+import indexLoop, { ArrayLike } from '../ts/indexLoop';
 
-describe('"iterate"', () => {
-  it('Should iterate an array', () => {
+describe('"indexLoop"', () => {
+  it('Should indexLoop an array', () => {
     const arr = [1, 2, 3];
     const cb = sinon.spy();
 
-    iterate(arr, cb);
+    indexLoop(arr, cb);
 
     expect(cb).to.have.been.calledThrice;
     expect(cb.firstCall).to.have.been.calledWith(1, 0, arr);
@@ -18,11 +18,11 @@ describe('"iterate"', () => {
     expect(cb.thirdCall).to.have.been.calledWith(3, 2, arr);
   });
 
-  it('Should iterate an iterable collection (like NodeList)', () => {
+  it('Should indexLoop an iterable collection (like NodeList)', () => {
     const nodes = { 0: 'one', 1: 'two', 2: 'three', length: 3 };
     const cb = sinon.spy();
 
-    iterate(nodes, cb);
+    indexLoop(nodes, cb);
 
     expect(cb).to.have.been.calledThrice;
     expect(cb.firstCall).to.have.been.calledWith(nodes[0], 0, nodes);
@@ -30,11 +30,11 @@ describe('"iterate"', () => {
     expect(cb.thirdCall).to.have.been.calledWith(nodes[2], 2, nodes);
   });
 
-  it('Should iterate a single item', () => {
+  it('Should indexLoop a single item', () => {
     const cb = sinon.spy();
-    const obj = {};
+    const obj = {} as ArrayLike;
 
-    iterate(obj, cb);
+    indexLoop(obj, cb);
 
     expect(cb).to.have.been.calledOnce;
     expect(cb.firstCall).to.have.been.calledWith(obj, 0, obj);
@@ -45,7 +45,7 @@ describe('"iterate"', () => {
     const cb = sinon.stub();
     cb.onSecondCall().returns(false);
 
-    iterate(arr, cb);
+    indexLoop(arr, cb);
 
     expect(cb).to.have.been.calledTwice;
     expect(cb.firstCall).to.have.been.calledWith(1, 0, arr);
@@ -53,12 +53,12 @@ describe('"iterate"', () => {
   });
 
   it('Should return the length of the collection', () => {
-    expect(iterate([1, 2, 3], () => {})).to.equal(3);
+    expect(indexLoop([1, 2, 3], () => {})).to.equal(3);
   });
 
   it('Should return 0 if cb or iterable is not defined', () => {
-    expect(iterate()).to.equal(0);
-    expect(iterate([1])).to.equal(0);
-    expect(iterate(null, () => {})).to.equal(0);
+    expect(indexLoop([], null)).to.equal(0);
+    expect(indexLoop(null, () => {})).to.equal(0);
+    expect(indexLoop(null, null)).to.equal(0);
   });
 });

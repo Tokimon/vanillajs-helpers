@@ -1,7 +1,7 @@
 /* eslint-env node, mocha */
 
 import expect from './assets/chai';
-import pascalCase from '../pascalCase';
+import pascalCase from '../ts/pascalCase';
 
 describe('"pascalCase"', () => {
   it('Should convert a phrase into a PascalCased word', () => {
@@ -17,8 +17,7 @@ describe('"pascalCase"', () => {
   });
 
   it('Should always turn inputs into strings', () => {
-    expect(pascalCase(9)).to.equal('9');
     expect(pascalCase(null)).to.equal('Null');
-    expect(pascalCase()).to.equal('');
+    expect(pascalCase(undefined)).to.equal('');
   });
 });

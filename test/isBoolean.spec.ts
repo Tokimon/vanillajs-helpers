@@ -2,7 +2,7 @@
 /* eslint-disable no-new-wrappers, no-unused-expressions */
 
 import expect from './assets/chai';
-import isBoolean from '../isBoolean';
+import isBoolean from '../ts/isBoolean';
 
 describe('"isBoolean"', () => {
   it('Should return true for Boolean values', () => {
@@ -20,6 +20,6 @@ describe('"isBoolean"', () => {
     expect(isBoolean(0)).to.be.false;
     expect(isBoolean(1)).to.be.false;
     expect(isBoolean(null)).to.be.false;
-    expect(isBoolean()).to.be.false;
+    expect(isBoolean(undefined)).to.be.false;
   });
 });

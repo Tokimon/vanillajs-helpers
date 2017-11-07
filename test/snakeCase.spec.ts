@@ -1,7 +1,7 @@
 /* eslint-env node, mocha */
 
 import expect from './assets/chai';
-import snake from '../snakeCase';
+import snake from '../ts/snakeCase';
 
 describe('"snakeCase"', () => {
   it('Should transform a phrase into a snake_case phrase', () => {
@@ -21,8 +21,7 @@ describe('"snakeCase"', () => {
   });
 
   it('Should always turn inputs into strings', () => {
-    expect(snake(9)).to.equal('9');
+    expect(snake(undefined)).to.equal('undefined');
     expect(snake(null)).to.equal('null');
-    expect(snake()).to.equal('');
   });
 });

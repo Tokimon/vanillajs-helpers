@@ -2,12 +2,12 @@
 /* eslint-disable no-unused-expressions */
 
 import expect from './assets/chai';
-import promisefy from '../promisefy';
+import promisefy from '../ts/promisefy';
 
 describe('"promisefy"', () => {
   it('Should make the method return a promise', () => {
     const err = new Error('error');
-    const callback = (ok, cb) => ok ? cb(null, 'success') : cb(err);
+    const callback = (ok: boolean, cb: Function) => ok ? cb(null, 'success') : cb(err);
 
     const promised = promisefy(callback);
     expect(promised).to.be.a('function');
@@ -25,10 +25,7 @@ describe('"promisefy"', () => {
   });
 
   it('Should throw on non function arguments', () => {
-    expect(() => promisefy()).to.throw();
+    expect(() => promisefy(undefined)).to.throw();
     expect(() => promisefy(null)).to.throw();
-    expect(() => promisefy('String')).to.throw();
-    expect(() => promisefy(123)).to.throw();
-    expect(() => promisefy({})).to.throw();
   });
 });

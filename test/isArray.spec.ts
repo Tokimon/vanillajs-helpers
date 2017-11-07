@@ -2,7 +2,7 @@
 /* eslint-disable no-new-wrappers, no-unused-expressions */
 
 import expect from './assets/chai';
-import isArray from '../isArray';
+import isArray from '../ts/isArray';
 
 describe('"isArray"', () => {
   it('Should return true for Array values', () => {
@@ -15,6 +15,6 @@ describe('"isArray"', () => {
     expect(isArray(null)).to.be.false;
     expect(isArray({0: 1, length: 1})).to.be.false;
     expect(isArray('Array')).to.be.false;
-    expect(isArray()).to.be.false;
+    expect(isArray(undefined)).to.be.false;
   });
 });

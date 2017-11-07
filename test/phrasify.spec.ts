@@ -1,7 +1,7 @@
 /* eslint-env node, mocha */
 
 import expect from './assets/chai';
-import phrasify from '../phrasify';
+import phrasify from '../ts/phrasify';
 
 describe('"phrasify"', () => {
   describe('- without defined settings', () => {
@@ -27,7 +27,7 @@ describe('"phrasify"', () => {
     });
 
     it('Should convert a word or phrase into a space separated phrase', () => {
-      const phraser = phrasify();
+      const phraser = <Function> phrasify();
       expect(phraser('Convert PHRASE  into normal phrase')).to.equal('Convert PHRASE into normal phrase');
       expect(phraser('ABBR phrase')).to.equal('ABBR phrase');
       expect(phraser('HTMLElement')).to.equal('HTML Element');
@@ -41,16 +41,16 @@ describe('"phrasify"', () => {
     });
 
     it('Should always turn inputs into strings', () => {
-      const phraser = phrasify();
+      const phraser = <Function> phrasify();
       expect(phraser(9)).to.equal('9');
       expect(phraser(null)).to.equal('null');
       expect(phraser('')).to.equal('');
       expect(phraser()).to.equal('');
     });
 
-    describe('{ "numbers" : false } (default settings)', () => {
+    describe('{ "numbers" : false }', () => {
       it('Should not treat numbers', () => {
-        const phraser = phrasify();
+        const phraser = <Function> phrasify({ numbers: false });
         expect(phraser('LOOK! 99 air balloons')).to.equal('LOOK 99 air balloons');
         expect(phraser('bool2str')).to.equal('bool2str');
         expect(phraser('L337phraser')).to.equal('L337phraser');
@@ -61,7 +61,7 @@ describe('"phrasify"', () => {
 
     describe('{ "numbers" : true }', () => {
       it('Should make space around numbers', () => {
-        const phraser = phrasify({ numbers: true });
+        const phraser = <Function> phrasify({ numbers: true });
         expect(phraser('LOOK! 99 air balloons')).to.equal('LOOK 99 air balloons');
         expect(phraser('bool2str')).to.equal('bool 2 str');
         expect(phraser('L337phraser')).to.equal('L 337 phraser');

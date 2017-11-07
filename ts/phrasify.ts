@@ -13,7 +13,9 @@ const defaultSettings: PhrasifySettings = { numbers: false };
 
 
 
-function convert(opts: PhrasifySettings, str: string = '') {
+function seperateWords(opts: PhrasifySettings, str?: string) {
+  if(!str) { return ''; }
+
   // Create space before uppercase letters (if it is an abbrivaition
   // - more than 1 letter - create space after as well)
   str = `${str}`.replace(/([A-Z])([a-z])/g, (m) => ` ${m}`);
@@ -29,8 +31,10 @@ function convert(opts: PhrasifySettings, str: string = '') {
 /**
  * Transform phrase into a space separated phrase
  */
-export default function phrasify(input: string|PhrasifySettings = {}): string|Function {
+export default function phrasify(input?: string|PhrasifySettings): string|Function {
   const opts = isObject(input) ? Object.assign(defaultSettings, input) : defaultSettings;
 
-  return isString(input) ? convert(opts, input as string) : (str: string) => convert(opts, str);
+  return isString(input)
+    ? seperateWords(opts, input as string)
+    : (str?: string) => seperateWords(opts, str);
 }

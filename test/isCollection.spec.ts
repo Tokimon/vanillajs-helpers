@@ -2,7 +2,7 @@
 /* eslint-disable no-array-constructor, no-unused-expressions */
 
 import expect from './assets/chai';
-import isCollection from '../isCollection';
+import isCollection from '../ts/isCollection';
 
 describe('"isCollection"', () => {
   it('Should return true for Arrays', () => {
@@ -19,6 +19,6 @@ describe('"isCollection"', () => {
     expect(isCollection({ 0: 1, 1: 2 })).to.be.false;
     expect(isCollection(1)).to.be.false;
     expect(isCollection(null)).to.be.false;
-    expect(isCollection()).to.be.false;
+    expect(isCollection(undefined)).to.be.false;
   });
 });

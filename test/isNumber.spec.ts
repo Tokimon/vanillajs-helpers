@@ -1,11 +1,11 @@
 /* eslint-env node, mocha */
-/* eslint-disable no-new-wrappers, no-unused-expressions */
 
-import sinon from 'sinon';
+type NeutralObject = { [key: string]: any };
+declare var global: NeutralObject
 
+import * as sinon from 'sinon';
 import expect from './assets/chai';
-
-import isNumber from '../isNumber';
+import isNumber from '../ts/isNumber';
 
 describe('"isNumber"', () => {
   it('Should return true for Numeric values', () => {
@@ -17,12 +17,13 @@ describe('"isNumber"', () => {
   it('Should fallback to traditional "isFinite" if "Number.isFinite" is not supported', () => {
     const oldNumberIsFinite = Number.isFinite;
     Number.isFinite = undefined;
-    sinon.spy(global, 'isFinite');
+    const oldIsFinite = isFinite;
+    global.isFinite = sinon.spy();
 
     expect(isNumber(9)).to.be.true;
     expect(isFinite).to.have.been.called;
 
-    global.isFinite.restore();
+    global.isFinite = oldIsFinite;
     Number.isFinite = oldNumberIsFinite;
   });
 
@@ -34,6 +35,6 @@ describe('"isNumber"', () => {
     expect(isNumber(String())).to.be.false;
     expect(isNumber(new Number())).to.be.false;
     expect(isNumber({})).to.be.false;
-    expect(isNumber()).to.be.false;
+    expect(isNumber(undefined)).to.be.false;
   });
 });

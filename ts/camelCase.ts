@@ -34,8 +34,8 @@ function caser(opts: CamelCaseSettings, str?: string): string {
 /**
  * Transform a phrase into a camelCased word (eg. 'camel case' -> 'camelCase')
  */
-export default function camelCase(input: string|CamelCaseSettings): string|Function {
+export default function camelCase(input?: string|CamelCaseSettings): string|Function {
   const opts = isObject(input) ? Object.assign(defaultSettings, input) : defaultSettings;
 
-  return isString(input) ? caser(opts, input as string) : (str: string) => caser(opts, str);
+  return isString(input) ? caser(opts, input as string) : (str?: string) => caser(opts, str);
 }

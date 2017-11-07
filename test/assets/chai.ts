@@ -1,6 +1,6 @@
-import chai from 'chai';
-import sinonChai from 'sinon-chai';
-import chaiPromise from 'chai-as-promised';
+import * as chai from 'chai';
+import * as sinonChai from 'sinon-chai';
+import * as chaiPromise from 'chai-as-promised';
 
 chai.use(sinonChai);
 chai.use(chaiPromise);

@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-expressions */
 
 import expect from './assets/chai';
-import chunkString from '../chunkString';
+import chunkString from '../ts/chunkString';
 
 describe('"chunkString"', () => {
   it('Should return an array of strings', () => {
@@ -10,7 +10,7 @@ describe('"chunkString"', () => {
     expect(chunks).to.be.an('array').and.to.have.length(2);
     expect(chunks.every((str) => typeof str === 'string')).to.be.true;
 
-    chunks = chunkString(123456789);
+    chunks = chunkString('123456789');
     expect(chunks).to.be.an('array').and.to.have.length(5);
     expect(chunks.every((str) => typeof str === 'string')).to.be.true;
   });
@@ -20,7 +20,7 @@ describe('"chunkString"', () => {
     expect(chunks).to.be.an('array').and.to.have.length(1);
     expect(chunks.every((str) => typeof str === 'string')).to.be.true;
 
-    chunks = chunkString(123456789, 4);
+    chunks = chunkString('123456789', 4);
     expect(chunks).to.be.an('array').and.to.have.length(3);
     expect(chunks.every((str) => typeof str === 'string')).to.be.true;
   });
@@ -28,7 +28,6 @@ describe('"chunkString"', () => {
   it('Should return empty Array for empty values', () => {
     expect(chunkString()).to.be.an('array').and.to.have.length(0);
     expect(chunkString('')).to.be.an('array').and.to.have.length(0);
-    expect(chunkString(0)).to.be.an('array').and.to.have.length(0);
     expect(chunkString(null)).to.be.an('array').and.to.have.length(0);
   });
 });

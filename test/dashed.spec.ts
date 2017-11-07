@@ -1,7 +1,7 @@
 /* eslint-env node, mocha */
 
 import expect from './assets/chai';
-import dashed from '../dashed';
+import dashed from '../ts/dashed';
 
 describe('"dashed"', () => {
   it('Should transform a phrase into a dashed phrase', () => {
@@ -22,8 +22,7 @@ describe('"dashed"', () => {
   });
 
   it('Should always turn inputs into strings', () => {
-    expect(dashed(9)).to.equal('9');
     expect(dashed(null)).to.equal('null');
-    expect(dashed()).to.equal('');
+    expect(dashed(undefined)).to.equal('');
   });
 });
