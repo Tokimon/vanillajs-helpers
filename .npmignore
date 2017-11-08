@@ -1,11 +1,8 @@
 test
-tasks
-specs
 .babelrc
 coverage
 .travis.yml
 .coveralls.yml
 .eslintrc
 .eslintignore
-jsdoc
 tsconfig.json

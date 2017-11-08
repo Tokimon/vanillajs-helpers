@@ -56,9 +56,11 @@
       "ts-node/register"
     ],
     "reporter": [
-      "text"
+      "text",
+      "lcov"
     ],
     "sourceMap": true,
-    "instrument": true
+    "instrument": true,
+    "report-dir": "./coverage"
   }
 }
