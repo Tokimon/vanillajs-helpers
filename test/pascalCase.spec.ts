@@ -17,7 +17,7 @@ describe('"pascalCase"', () => {
   });
 
   it('Should always turn inputs into strings', () => {
-    expect(pascalCase(null)).to.equal('Null');
+    expect(pascalCase(null)).to.equal('');
     expect(pascalCase(undefined)).to.equal('');
   });
 });

@@ -26,7 +26,7 @@ export default function formatNumber(num: number, settings?: FormatNumberSetting
   const { decimals, thousandSep, decimalSep } = Object.assign({}, defaultSettings, settings);
 
   // Format the number to the desired number of decimals and split.
-  const parts = `${limitDecimals(num, decimals)}`.split('.');
+  const parts = limitDecimals(num, decimals).split('.');
 
   // Insert separator
   parts[0] = parts[0].replace(/(\d)(?=(\d{3})+$)/g, `$1${thousandSep}`);

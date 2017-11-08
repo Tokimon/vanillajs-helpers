@@ -20,11 +20,13 @@ const defaultSettings: CamelCaseSettings = {
 
 
 
-function caser(opts: CamelCaseSettings, str?: string): string {
+function caser(opts: CamelCaseSettings, str: string): string {
   const regex = opts.upper ? /(?:^|\s+)(.)/g : /\s+(.)/g;
+
   return (<Function> phrasify({ numbers: opts.numbers }))(str)
-    .replace(/\s+(\S+)/g, (all: string, word: string) => {
+    .replace(/(?:^|\s+)(\w+)/g, (all: string, word: string, index: number) => {
       if(opts.abbr && /^[A-Z]+$/.test(word)) { return word; }
+      if(index === 0 && !opts.upper) { return word.toLowerCase(); }
       return word[0].toUpperCase() + word.substr(1).toLowerCase();
     });
 }
@@ -35,7 +37,7 @@ function caser(opts: CamelCaseSettings, str?: string): string {
  * Transform a phrase into a camelCased word (eg. 'camel case' -> 'camelCase')
  */
 export default function camelCase(input?: string|CamelCaseSettings): string|Function {
-  const opts = isObject(input) ? Object.assign(defaultSettings, input) : defaultSettings;
+  const opts = isObject(input) ? Object.assign({}, defaultSettings, input) : defaultSettings;
 
-  return isString(input) ? caser(opts, input as string) : (str?: string) => caser(opts, str);
+  return isString(input) ? caser(opts, input as string) : (str: string): string => caser(opts, str);
 }

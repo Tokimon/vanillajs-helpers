@@ -42,8 +42,7 @@ describe('"phrasify"', () => {
 
     it('Should always turn inputs into strings', () => {
       const phraser = <Function> phrasify();
-      expect(phraser(9)).to.equal('9');
-      expect(phraser(null)).to.equal('null');
+      expect(phraser(null)).to.equal('');
       expect(phraser('')).to.equal('');
       expect(phraser()).to.equal('');
     });

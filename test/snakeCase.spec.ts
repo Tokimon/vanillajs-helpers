@@ -21,7 +21,7 @@ describe('"snakeCase"', () => {
   });
 
   it('Should always turn inputs into strings', () => {
-    expect(snake(undefined)).to.equal('undefined');
-    expect(snake(null)).to.equal('null');
+    expect(snake(undefined)).to.equal('');
+    expect(snake(null)).to.equal('');
   });
 });

@@ -1,3 +1,4 @@
+import isObject from './isObject';
 import isFunction from './isFunction';
 
 
@@ -14,9 +15,9 @@ export function isGeneratorLike(obj: any): boolean {
  * Determine if the given object is a Generator Function
  */
 export default function isGenerator(obj: any): boolean {
-  var constructor = obj.constructor;
+  const { constructor } = obj;
 
-  if(!constructor) { return false; }
+  if(!isObject(constructor) && !isFunction(constructor)) { return false; }
   if(constructor.name === 'GeneratorFunction' || constructor.displayName === 'GeneratorFunction') {
     return true;
   }

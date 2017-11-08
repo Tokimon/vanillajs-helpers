@@ -26,5 +26,6 @@ export function hashCode(str: string): number {
  * Generates a unique hash string from a string
  */
 export default function hash(str: string): string {
-  return hashCode(str).toString(36);
+  const code = hashCode(str);
+  return code === 0 ? '' : code.toString(36);
 }

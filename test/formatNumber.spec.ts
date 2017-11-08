@@ -16,9 +16,9 @@ describe('"formatNumber"', () => {
     expect(formatNumber(1100.234, { decimals: 1 })).to.equal('1.100,2');
     expect(formatNumber(1100.234, { decimals: 5 })).to.equal('1.100,23400');
     expect(formatNumber(1100.234, { decimals: '>1' })).to.equal('1.100,234');
-    expect(formatNumber(1100.234, { decimals: '>4' })).to.equal('1.100,2340');
-    expect(formatNumber(1100.234, { decimals: '>2' })).to.equal('1.100,23');
-    expect(formatNumber(1100.234, { decimals: '>5' })).to.equal('1.100,234');
+    expect(formatNumber(1100.234, { decimals: '>5' })).to.equal('1.100,23400');
+    expect(formatNumber(1100.234, { decimals: '<2' })).to.equal('1.100,23');
+    expect(formatNumber(1100.234, { decimals: '<5' })).to.equal('1.100,234');
   });
 
   it('Should should format 0 when a non number is specified', () => {

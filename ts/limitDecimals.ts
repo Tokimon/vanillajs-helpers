@@ -1,6 +1,6 @@
 /**
  * Limit decimals of a floating number to specified length. The length depends on
- * {decCount} which can have the following settings (n = integer):
+ * `decimals` which can have the following settings (n = integer):
  *
  * - >n = a minimum number of decimals, if the current number of decimals are
  *        shorter than the defined length, extra 0 (zeros) will be added.
@@ -11,32 +11,37 @@
  * -  n = match this exact number of decimals, rounding longer decimals and adding
  *        extra 0 (zeroes) to shorter ones.
  */
-export default function limitDecimals(num: number|string, decCount: number|string = 2): string {
+export default function limitDecimals(num: number|string, decimals: number|string = 2): string {
   num = parseFloat(num as string);
   if(isNaN(num)) { num = 0; }
 
-  const countMatch = /^([<>])?(\d+)/.exec(decCount as string);
+  const countMatch = /^([<>])?(\d+)/.exec(decimals as string);
   let parts = `${num}`.split('.');
   let decLen = parts[1] ? parts[1].length : 0;
+  let decCount = 0;
 
-  decCount = countMatch ? Number(countMatch[2]) : 0;
+  if(countMatch) {
+    const indicator = countMatch[1];
+    decCount = Number(countMatch[2]);
 
-  // minimum number of decimals
-  if(countMatch[1] === '>' && decLen > decCount) {
-    decCount = decLen;
-  }
-
-  // maximum number of decimals
-  if(countMatch[1] === '<') {
-    if(decLen < decCount) {
+    // minimum number of decimals
+    if(indicator === '>' && decLen > decCount) {
       decCount = decLen;
-    } else {
-      num = Number(num.toFixed(decCount));
-      parts = `${num}`.split('.');
-      decLen = parts[1] ? parts[1].length : 0;
-      decCount = decLen < decCount ? decLen : decCount;
+    }
+
+    // maximum number of decimals
+    if(indicator === '<') {
+      if(decLen < decCount) {
+        decCount = decLen;
+      } else {
+        num = Number(num.toFixed(decCount));
+        parts = `${num}`.split('.');
+        decLen = parts[1] ? parts[1].length : 0;
+        decCount = decLen < decCount ? decLen : decCount;
+      }
     }
   }
+
 
   return num.toFixed(decCount);
 }

@@ -8,6 +8,7 @@ describe('"isGenerator"', () => {
     expect(isGenerator(function *() { yield ''; })).to.be.true;
     expect(isGenerator(function() {})).to.be.false;
     expect(isGenerator({ next() {}, throw() {} })).to.be.false;
+    expect(isGenerator({ constructor: true })).to.be.false;
   });
 });
 

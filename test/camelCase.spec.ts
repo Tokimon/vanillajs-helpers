@@ -13,7 +13,7 @@ describe('"camelCase"', () => {
       expect(camelCase('bool2str')).to.equal('bool2Str');
       expect(camelCase('L337caser')).to.equal('l337Caser');
       expect(camelCase('camelCase')).to.equal('camelCase');
-      expect(camelCase('CamelCase')).to.equal('camelCase');
+      expect(camelCase('PascalCase')).to.equal('pascalCase');
       expect(camelCase('snake_case')).to.equal('snakeCase');
       expect(camelCase('word')).to.equal('word');
       expect(camelCase('Name')).to.equal('name');
@@ -32,9 +32,9 @@ describe('"camelCase"', () => {
 
     it('Should always turn inputs into strings', () => {
       const caser = <Function> camelCase();
-      expect(caser(null)).to.equal('null');
+      expect(caser(null)).to.equal('');
       expect(caser('')).to.equal('');
-      expect(caser()).to.equal('');
+      expect(caser(undefined)).to.equal('');
     });
 
     describe('{ "abbr" : false, "upper" : false, "numbers" : true } (default settings)', () => {

@@ -22,7 +22,7 @@ describe('"dashed"', () => {
   });
 
   it('Should always turn inputs into strings', () => {
-    expect(dashed(null)).to.equal('null');
+    expect(dashed(null)).to.equal('');
     expect(dashed(undefined)).to.equal('');
   });
 });

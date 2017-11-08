@@ -9,8 +9,8 @@ export default function currencyFormat(thousand: string = '1.000,00 €'): Funct
   const m = /^(\D*)1(\D*)000(\D*)(\d*)(\D*)$/.exec(thousand);
 
   if(m) {
-    const [before, thousand, comma, dec, after] = m;
-    const settings = { decimals: dec.length, thousand, comma };
+    const [, before, thousandSep, decimalSep, dec, after] = m;
+    const settings = { decimals: dec.length, thousandSep, decimalSep };
     return (num: number) => `${before}${formatNumber(num, settings)}${after}`;
   }
 

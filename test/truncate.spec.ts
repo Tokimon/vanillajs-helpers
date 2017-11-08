@@ -4,9 +4,19 @@ import expect from './assets/chai';
 import truncate from '../ts/truncate';
 
 describe('"truncate"', () => {
-  it('Should return the given entry when it is not a string or maxlength is not given or longer than entry', () => {
-    expect(truncate('This is not truncated')).to.equal('This is not truncated');
-    expect(truncate('Short string', { maxLength: 20 })).to.equal('Short string');
+  it('Should return empty string when value is falsy', () => {
+    expect(truncate(undefined)).to.equal('');
+    expect(truncate(null)).to.equal('');
+  });
+
+  it('Should return the given entry when "maxLength" is not given', () => {
+    const str = 'This is not truncated';
+    expect(truncate(str)).to.equal(str);
+  });
+
+  it('Should return the given entry when "maxLength" is higher than entry length', () => {
+    const str = 'Short string';
+    expect(truncate(str, { maxLength: 20 })).to.equal(str);
   });
 
   it('Should shorten a string and add "..." to the end of it', () => {
