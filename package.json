@@ -15,9 +15,8 @@
   ],
   "scripts": {
     "prepublish": "npm run build",
-    "test": "cross-env TS_NODE_PROJECT=./cjs mocha --compilers ts:ts-node/register ./test/**/*.spec.ts",
+    "test": "cross-env TS_NODE_PROJECT=./test nyc mocha --compilers ts:ts-node/register ./test/*.spec.ts",
     "build": "tsc && tsc -p ./cjs && tsc -p ./es5",
-    "jsdoc": "node ./tasks/jsdoc.js",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "coveralls:win": "type ./coverage/lcov.info | node node_modules/.bin/coveralls"
   },
@@ -31,24 +30,35 @@
   "homepage": "https://github.com/Tokimon/vanillajs-helpers#readme",
   "devDependencies": {
     "@types/chai": "^4.0.4",
+    "@types/chai-as-promised": "^7.1.0",
     "@types/mocha": "^2.2.44",
+    "@types/sinon-chai": "^2.7.29",
     "chai": "^4.1.1",
     "chai-as-promised": "^7.1.1",
     "coveralls": "^2.13.1",
-    "fs-extra": "^4.0.1",
-    "glob": "^7.1.2",
-    "glob-promise": "^3.1.0",
-    "istanbul": "^0.4.5",
+    "cross-env": "^5.1.1",
     "mocha": "^3.5.3",
+    "nyc": "^11.3.0",
     "sinon": "^3.2.0",
     "sinon-chai": "^2.13.0",
     "ts-node": "^3.3.0",
-    "typescript": "^2.6.1",
-    "yargs": "^8.0.2"
+    "typescript": "^2.6.1"
   },
-  "dependencies": {
-    "@types/chai-as-promised": "^7.1.0",
-    "@types/sinon-chai": "^2.7.29",
-    "cross-env": "^5.1.1"
+  "dependencies": {},
+  "nyc": {
+    "include": [
+      "ts/*.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "text"
+    ],
+    "sourceMap": true,
+    "instrument": true
   }
 }
