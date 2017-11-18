@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-expressions */
 
 import expect from './assets/chai';
-import chunkString from '../ts/chunkString';
+import chunkString from '../chunkString';
 
 describe('"chunkString"', () => {
   it('Should return an array of strings', () => {

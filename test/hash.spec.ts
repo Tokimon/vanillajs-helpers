@@ -1,7 +1,7 @@
 /* eslint-env node, mocha */
 
 import expect from './assets/chai';
-import hash, { hashCode } from '../ts/hash';
+import hash, { hashCode } from '../hash';
 
 describe('"hashCode"', () => {
   it('Should always return a positive hash code', () => {

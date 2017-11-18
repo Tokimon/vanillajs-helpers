@@ -1,7 +1,7 @@
 /* eslint-env node, mocha */
 import expect from './assets/chai';
 
-import currencyFormat from '../ts/currencyFormat';
+import currencyFormat from '../currencyFormat';
 
 describe('"currencyFormat"', () => {
   it('Should format number to default currency format', () => {

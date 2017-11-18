@@ -1,7 +1,7 @@
 /* eslint-env node, mocha */
 
 import expect from './assets/chai';
-import snake from '../ts/snakeCase';
+import snake from '../snakeCase';
 
 describe('"snakeCase"', () => {
   it('Should transform a phrase into a snake_case phrase', () => {

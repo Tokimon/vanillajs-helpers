@@ -1,7 +1,7 @@
 /* eslint-env node, mocha */
 
 import expect from './assets/chai';
-import limitDecimals from '../ts/limitDecimals';
+import limitDecimals from '../limitDecimals';
 
 describe('"limitDecimals"', () => {
   it('Should format the decimals to the default number of digits', () => {

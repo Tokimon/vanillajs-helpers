@@ -1,7 +1,7 @@
 /* eslint-env node, mocha */
 
 import expect from './assets/chai';
-import isGenerator, { isGeneratorLike } from '../ts/isGenerator';
+import isGenerator, { isGeneratorLike } from '../isGenerator';
 
 describe('"isGenerator"', () => {
   it('Should only return true for Generators', () => {

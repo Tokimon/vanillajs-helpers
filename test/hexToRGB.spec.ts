@@ -1,7 +1,7 @@
 /* eslint-env node, mocha */
 
 import expect from './assets/chai';
-import hexToRGB from '../ts/hexToRGB';
+import hexToRGB from '../hexToRGB';
 
 describe('"hexToRGB"', () => {
   it('Should generate a RGB array from falsy values', () => {

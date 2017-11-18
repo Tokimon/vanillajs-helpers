@@ -1,0 +1,364 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>vanillajs-helpers</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">vanillajs-helpers</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1> vanillajs-helpers</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<h1 id="vanilla-js-helpers">Vanilla JS helpers</h1>
+				<p><a href="https://travis-ci.org/Tokimon/vanillajs-helpers"><img src="https://travis-ci.org/Tokimon/vanillajs-helpers.svg?branch=master" alt="Build Status"></a>
+					<a href="https://coveralls.io/github/Tokimon/vanillajs-helpers"><img src="https://coveralls.io/repos/github/Tokimon/vanillajs-helpers/badge.svg?branch=master" alt="Coverage"></a>
+					<br>
+					<a href="https://www.bithound.io/github/Tokimon/vanillajs-helpers"><img src="https://www.bithound.io/github/Tokimon/vanillajs-helpers/badges/score.svg" alt="bitHound Overall Score"></a>
+					<a href="https://www.bithound.io/github/Tokimon/vanillajs-helpers"><img src="https://www.bithound.io/github/Tokimon/vanillajs-helpers/badges/code.svg" alt="bitHound Code"></a>
+					<a href="https://www.bithound.io/github/Tokimon/vanillajs-helpers/master/dependencies/npm"><img src="https://www.bithound.io/github/Tokimon/vanillajs-helpers/badges/dependencies.svg" alt="bitHound Dependencies"></a>
+				<a href="https://www.bithound.io/github/Tokimon/vanillajs-helpers/master/dependencies/npm"><img src="https://www.bithound.io/github/Tokimon/vanillajs-helpers/badges/devDependencies.svg" alt="bitHound Dev Dependencies"></a></p>
+				<p>This is a collection of simple, no dependency, vanilla JS snippets with the aim
+				of making it easier to work with vanilla JS.</p>
+				<p>They is written in ES6, since now both Node and most of the major browsers support this syntax,
+					all scripts have however been converted into the CommonJS syntax and stored in the <code>./cjs</code> folder,
+				should they whish to be used in a Node environment.</p>
+				<p>Polyfills haven&#39;t been included as they exist in abundance on NPM, and since the
+					need for polyfills are ever diminishing it is more future proof and clutter free
+				to leave them out.</p>
+				<p><strong>BROWSER HELPERS</strong></p>
+				<p>These helpers a JS platform agnostic, for browser specific helpers check out:
+				<a href="https://github.com/Tokimon/vanillajs-browser-helpers">vanillajs-browser-helpers</a></p>
+				<h2 id="documentation">Documentation</h2>
+				<p>Documentation is written in the <a href="https://github.com/Tokimon/vanillajs-helpers/wiki">Wiki</a>
+				of the <a href="https://github.com/Tokimon/vanillajs-helpers">GitHub repository</a>, but here below is an overview of the helpers available.</p>
+				<h3 id="helpers">Helpers</h3>
+				<ul>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/camelCase">camelCase</a>:
+					Turn a phrase or word with different casing into a <code>camelCased</code> word.</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/capitalize">capitalize</a>:
+					Capitalize Each Word In A Phrase.</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/chunkString">chunkString</a>:
+					Chop up a string into chunks of the desired length.</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/currencyFormat">currencyFormat</a>:
+					Format a number into a specific currency format like: $ 1.000,00.</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/dashed">dashed</a>:
+					Turn a phrase or word with different casing into a <code>dashed-lowercase-phrase</code>.</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/eachWord">eachWord</a>:
+					Loop over each word in a phrase.</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/formatNumber">formatNumber</a>:
+					Format a number acording to a given template like: 1.000,00.</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/hash">hash</a>:
+					Create a unique hash from a string.</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/hexToNumber">hexToNumber</a>:
+					Convert Hexadecimal into a number (eg. b4 =&gt; 180).</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/hexToRGB">hexToRGB</a>:
+					Converts a Hexadecimal color to a RGB(A) color array.</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/isArray">isArray</a>:
+					Tests if a given object is an Array</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/isBoolean">isBoolean</a>:
+					Tests if a given object is a Boolean</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/isCollection">isCollection</a>:
+					Tests if a given object is an Array or array like object (contains numeric entries and a length)</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/isFunction">isFunction</a>:
+					Tests if a given object is a Function</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/isGenerator">isGenerator</a>:
+					Tests if a given object is a Generator function</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/isNumber">isNumber</a>:
+					Tests if a given object is a Number</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/isObject">isObject</a>:
+					Tests if a given object is an Object (plain object)</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/isString">isString</a>:
+					Tests if a given object is a String</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/iterate">iterate</a>:
+					Iterate over entries in an array like object.</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/leadingZero">leadingZero</a>:
+					Make sure a number is a string of a given length with empty slots filled up with zeroes (0), like: 007</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/leftPad">leftPad</a>:
+					Pads a string to the left with a given character (much like leadingZero).</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/limitDecimals">limitDecimals</a>:
+					Limit decimals of a floating number to a given length.</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/numberToHex">numberToHex</a>:
+					Convert a number to a Hexadecimal representation (eg. 180 =&gt; b4).</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/objectType">objectType</a>:
+					Determine what type a given object is (string, array, etc.)</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/pascalCase">pascalCase</a>:
+					Turn a phrase or word with different casing into a <code>PascalCased</code> word.</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/phrasify">phrasify</a>:
+					Converts a word of a special casing or a phrase, into a space separated phrase.</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/promisefy">promisefy</a>:
+					Converts a regular method using <code>(err, data)</code> type of callback into a method that returns a promise.</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/randomId">randomId</a>:
+					Generates a random id string of a given length.</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/randomRGBColor">randomRGBColor</a>:
+					Gives a random RGB color.</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/repeatString">repeatString</a>:
+					Creates a string with a given character (or string) repeated x number of times.</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/RGBToHex">RGBToHex</a>:
+					Converts a RGB color to a HEX color (eg. [255, 0, 0] =&gt; #ff0000)</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/rightPad">rightPad</a>:
+					Pads a string to the right with a given character (the inverse of leftPad).</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/snakeCase">snakeCase</a>:
+					Turn a phrase or word with different casing into a <code>snake_cased</code> word.</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/trim">trim</a>:
+					Trims off trailing spaces (or defined char) on both sides of a string.</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/truncate">truncate</a>:
+					Ensures a max length of a given string.</li>
+					<li><a href="https://github.com/Tokimon/vanillajs-helpers/wiki/uniqueArray">uniqueArray</a>:
+					Make sure an Array only contains unique values.</li>
+				</ul>
+				<h2 id="installation">Installation</h2>
+				<pre><code>npm <span class="hljs-keyword">install</span> vanillajs-helpers
+</code></pre><h2 id="usage">Usage</h2>
+				<pre><code class="lang-js"><span class="hljs-comment">// ES 6 Modules</span>
+<span class="hljs-keyword">import</span> camelCase <span class="hljs-keyword">from</span> <span class="hljs-string">'vanillajs-helpers/camelCase'</span>;
+camelCase(<span class="hljs-string">'Camel cased phrase'</span>); <span class="hljs-comment">// camelCasedPhrase</span>
+</code></pre>
+				<pre><code class="lang-js"><span class="hljs-comment">// CommonJS Modules</span>
+<span class="hljs-keyword">const</span> camelCase = <span class="hljs-built_in">require</span>(<span class="hljs-string">'vanillajs-helpers/cjs/camelCase'</span>).default;
+camelCase(<span class="hljs-string">'Camel cased phrase'</span>); <span class="hljs-comment">// camelCasedPhrase</span>
+</code></pre>
+				<pre><code class="lang-js"><span class="hljs-comment">// ES5 (if you don't want to transpile)</span>
+<span class="hljs-keyword">const</span> camelCase = <span class="hljs-built_in">require</span>(<span class="hljs-string">'vanillajs-helpers/es5/camelCase'</span>).default;
+camelCase(<span class="hljs-string">'Camel cased phrase'</span>); <span class="hljs-comment">// camelCasedPhrase</span>
+</code></pre>
+				<h2 id="something-missing-">Something missing?</h2>
+				<p>If you have any questions, find any bugs or have ideas for missing functionality you would like to see included, feel
+					free to add an issue in the <a href="https://github.com/Tokimon/vanillajs-helpers/issues">issue list</a> or perhaps do a
+				<a href="https://github.com/Tokimon/vanillajs-helpers/pulls">Pull Request</a> of a great snippet you created.</p>
+				<h2 id="testing">Testing</h2>
+				<p>Check out the <a href="https://github.com/Tokimon/vanillajs-helpers/wiki/testing">Testing docs</a></p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_rgbtohex_.html">"RGBTo<wbr>Hex"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_camelcase_.html">"camel<wbr>Case"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_capitalize_.html">"capitalize"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_chunkstring_.html">"chunk<wbr>String"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_currencyformat_.html">"currency<wbr>Format"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_dashed_.html">"dashed"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_eachword_.html">"each<wbr>Word"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_formatnumber_.html">"format<wbr>Number"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_hash_.html">"hash"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_hextonumber_.html">"hex<wbr>ToNumber"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_hextorgb_.html">"hex<wbr>ToRGB"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_indexloop_.html">"index<wbr>Loop"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_isarray_.html">"is<wbr>Array"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_isboolean_.html">"is<wbr>Boolean"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_iscollection_.html">"is<wbr>Collection"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_isfunction_.html">"is<wbr>Function"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_isgenerator_.html">"is<wbr>Generator"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_isnumber_.html">"is<wbr>Number"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_isobject_.html">"is<wbr>Object"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_isstring_.html">"is<wbr>String"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_leadingzero_.html">"leading<wbr>Zero"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_limitdecimals_.html">"limit<wbr>Decimals"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_numbertohex_.html">"number<wbr>ToHex"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_objecttype_.html">"object<wbr>Type"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_pascalcase_.html">"pascal<wbr>Case"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_phrasify_.html">"phrasify"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_promisefy_.html">"promisefy"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_randomid_.html">"random<wbr>Id"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_randomrgbcolor_.html">"randomRGBColor"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_snakecase_.html">"snake<wbr>Case"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_truncate_.html">"truncate"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_uniquearray_.html">"unique<wbr>Array"</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

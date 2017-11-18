@@ -1,7 +1,7 @@
 /* eslint-env node, mocha */
 
 import expect from './assets/chai';
-import truncate from '../ts/truncate';
+import truncate from '../truncate';
 
 describe('"truncate"', () => {
   it('Should return empty string when value is falsy', () => {

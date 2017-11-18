@@ -2,7 +2,7 @@
 /* eslint-disable no-new-object, no-unused-expressions */
 
 import expect from './assets/chai';
-import isObject from '../ts/isObject';
+import isObject from '../isObject';
 
 describe('"isObject"', () => {
   class TestObj {

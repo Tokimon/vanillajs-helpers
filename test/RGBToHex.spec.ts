@@ -1,7 +1,7 @@
 /* eslint-env node, mocha */
 
 import expect from './assets/chai';
-import RGBToHex from '../ts/RGBToHex';
+import RGBToHex from '../RGBToHex';
 
 describe('"RGBToHex"', () => {
   it('Should generate a hex color from a RGB array', () => {

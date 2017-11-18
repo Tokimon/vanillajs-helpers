@@ -2,7 +2,7 @@
 /* eslint-disable no-new-wrappers, no-unused-expressions */
 
 import expect from './assets/chai';
-import isString from '../ts/isString';
+import isString from '../isString';
 
 describe('"isString"', () => {
   it('Should return true for String values', () => {

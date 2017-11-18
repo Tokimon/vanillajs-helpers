@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-expressions */
 
 import expect from './assets/chai';
-import randomId from '../ts/randomId';
+import randomId from '../randomId';
 
 describe('"randomId"', () => {
   it('Should generate a random id of default length', () => {

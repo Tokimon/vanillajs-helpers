@@ -1,7 +1,7 @@
 /* eslint-env node, mocha */
 
 import expect from './assets/chai';
-import uniqueArray from '../ts/uniqueArray';
+import uniqueArray from '../uniqueArray';
 
 describe('"uniqueArray"', () => {
   it('Should return empty array for falsy values', () => {

@@ -1,7 +1,7 @@
 /* eslint-env node, mocha */
 
 import expect from './assets/chai';
-import capitalize from '../ts/capitalize';
+import capitalize from '../capitalize';
 
 describe('"capitalize"', () => {
   it('Should return empty string for falsy values', () => {

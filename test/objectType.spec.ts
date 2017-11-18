@@ -1,7 +1,7 @@
 /* eslint-env node, mocha */
 
 import expect from './assets/chai';
-import objectType from '../ts/objectType';
+import objectType from '../objectType';
 
 describe('"objectType"', () => {
   it('Should return the name of the given object', () => {

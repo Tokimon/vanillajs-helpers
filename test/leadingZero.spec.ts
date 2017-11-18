@@ -1,7 +1,7 @@
 /* eslint-env node, mocha */
 
 import expect from './assets/chai';
-import leadingZero from '../ts/leadingZero';
+import leadingZero from '../leadingZero';
 
 describe('"leadingZero"', () => {
   it('Should always return a string', () => {

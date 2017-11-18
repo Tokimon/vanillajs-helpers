@@ -1,7 +1,7 @@
 /* eslint-env node, mocha */
 
 import expect from './assets/chai';
-import hexToNumber from '../ts/hexToNumber';
+import hexToNumber from '../hexToNumber';
 
 describe('"hexToNumber"', () => {
   it('Should return 0 on falsy values', () => {

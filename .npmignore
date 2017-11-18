@@ -1,8 +1,12 @@
-test
 .babelrc
-coverage
 .travis.yml
 .coveralls.yml
 .eslintrc
 .eslintignore
+.nyc_output
+docs
+test
+coverage
+tasks
 tsconfig.json
+yarn.lock

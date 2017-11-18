@@ -1,7 +1,7 @@
 /* eslint-env node, mocha */
 
 import expect from './assets/chai';
-import pascalCase from '../ts/pascalCase';
+import pascalCase from '../pascalCase';
 
 describe('"pascalCase"', () => {
   it('Should convert a phrase into a PascalCased word', () => {

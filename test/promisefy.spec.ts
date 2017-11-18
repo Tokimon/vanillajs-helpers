@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-expressions */
 
 import expect from './assets/chai';
-import promisefy from '../ts/promisefy';
+import promisefy from '../promisefy';
 
 describe('"promisefy"', () => {
   it('Should make the method return a promise', () => {

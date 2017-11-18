@@ -2,7 +2,7 @@
 /* eslint-disable no-new-wrappers, no-unused-expressions */
 
 import expect from './assets/chai';
-import isBoolean from '../ts/isBoolean';
+import isBoolean from '../isBoolean';
 
 describe('"isBoolean"', () => {
   it('Should return true for Boolean values', () => {

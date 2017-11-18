@@ -1,7 +1,7 @@
 /* eslint-env node, mocha */
 
 import expect from './assets/chai';
-import phrasify from '../ts/phrasify';
+import phrasify from '../phrasify';
 
 describe('"phrasify"', () => {
   describe('- without defined settings', () => {

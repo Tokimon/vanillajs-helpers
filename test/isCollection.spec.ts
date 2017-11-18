@@ -2,7 +2,7 @@
 /* eslint-disable no-array-constructor, no-unused-expressions */
 
 import expect from './assets/chai';
-import isCollection from '../ts/isCollection';
+import isCollection from '../isCollection';
 
 describe('"isCollection"', () => {
   it('Should return true for Arrays', () => {

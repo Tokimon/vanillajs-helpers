@@ -1,7 +1,7 @@
 /* eslint-env node, mocha */
 
 import expect from './assets/chai';
-import randomRGBColor from '../ts/randomRGBColor';
+import randomRGBColor from '../randomRGBColor';
 
 describe('"randomRGBColor"', () => {
   it('Should generate a random RGB color', () => {

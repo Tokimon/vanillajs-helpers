@@ -1,7 +1,7 @@
 /* eslint-env node, mocha */
 
 import expect from './assets/chai';
-import isNumber from '../ts/isNumber';
+import isNumber from '../isNumber';
 
 describe('"isNumber"', () => {
   it('Should return true for Numeric values', () => {

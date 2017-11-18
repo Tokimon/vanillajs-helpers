@@ -1,7 +1,7 @@
 /* eslint-env node, mocha */
 
 import expect from './assets/chai';
-import camelCase from '../ts/camelCase';
+import camelCase from '../camelCase';
 
 describe('"camelCase"', () => {
   describe('without defined settings', () => {

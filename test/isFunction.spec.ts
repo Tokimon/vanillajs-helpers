@@ -2,7 +2,7 @@
 /* eslint-disable no-new-func, no-unused-expressions */
 
 import expect from './assets/chai';
-import isFunction from '../ts/isFunction';
+import isFunction from '../isFunction';
 
 describe('"isFunction"', () => {
   it('Should return true for Function values', () => {

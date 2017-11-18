@@ -1,7 +1,7 @@
 /* eslint-env node, mocha */
 
 import expect from './assets/chai';
-import dashed from '../ts/dashed';
+import dashed from '../dashed';
 
 describe('"dashed"', () => {
   it('Should transform a phrase into a dashed phrase', () => {
