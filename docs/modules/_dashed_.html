@@ -935,13 +935,13 @@ img { max-width: 100%; }
 				<a name="dashed" class="tsd-anchor"></a>
 				<h3>dashed</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-					<li class="tsd-signature tsd-kind-icon">dashed<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, dashAroundNumbers<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					<li class="tsd-signature tsd-kind-icon">dashed<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, settings<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_phrasify_.phrasifysettings.html" class="tsd-signature-type">PhrasifySettings</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/Tokimon/vanillajs-helpers/blob/bf2cbcc/dashed.ts#L7">dashed.ts:7</a></li>
+								<li>Defined in <a href="https://github.com/Tokimon/vanillajs-helpers/blob/0d80801/dashed.ts#L12">dashed.ts:12</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -949,6 +949,9 @@ img { max-width: 100%; }
 								<p>Transform phrase into a dashed phrase
 								(eg. &#39;camelCase&#39; -&gt; &#39;camel-case&#39; or &#39;spaced phrase&#39; -&gt; &#39;spaced-phrase&#39;)</p>
 							</div>
+							<pre><code class="lang-ts">dashed(<span class="hljs-string">'some dashed phrase'</span>); <span class="hljs-comment">// -&gt; some-dashed-phrase</span>
+dasher(<span class="hljs-string">'dash version1 beta'</span>, { numbers: <span class="hljs-literal">true</span> }); <span class="hljs-comment">// -&gt; dash-version-1-beta</span>
+</code></pre>
 						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
@@ -956,10 +959,10 @@ img { max-width: 100%; }
 								<h5>str: <span class="tsd-signature-type">string</span></h5>
 							</li>
 							<li>
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> dashAroundNumbers: <span class="tsd-signature-type">boolean</span></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> settings: <a href="../interfaces/_phrasify_.phrasifysettings.html" class="tsd-signature-type">PhrasifySettings</a></h5>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 					</li>
 				</ul>
 			</section>

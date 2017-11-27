@@ -909,6 +909,9 @@ img { max-width: 100%; }
 </header>
 <nav class="tsd-navigation secondary">
 	<ul>
+		<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+			<a href="_currencyformat_.html#currencyfomatter" class="tsd-kind-icon">Currency<wbr>Fomatter</a>
+		</li>
 		<li class=" tsd-kind-function tsd-parent-kind-external-module">
 			<a href="_currencyformat_.html#currencyformat" class="tsd-kind-icon">currency<wbr>Format</a>
 		</li>
@@ -921,6 +924,12 @@ img { max-width: 100%; }
 			<section class="tsd-panel tsd-index-panel">
 				<div class="tsd-index-content">
 					<section class="tsd-index-section ">
+						<h3>Type aliases</h3>
+						<ul class="tsd-index-list">
+							<li class="tsd-kind-type-alias tsd-parent-kind-external-module"><a href="_currencyformat_.html#currencyfomatter" class="tsd-kind-icon">Currency<wbr>Fomatter</a></li>
+						</ul>
+					</section>
+					<section class="tsd-index-section ">
 						<h3>Functions</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_currencyformat_.html#currencyformat" class="tsd-kind-icon">currency<wbr>Format</a></li>
@@ -930,24 +939,78 @@ img { max-width: 100%; }
 			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
+			<h2>Type aliases</h2>
+			<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module">
+				<a name="currencyfomatter" class="tsd-anchor"></a>
+				<h3>Currency<wbr>Fomatter</h3>
+				<div class="tsd-signature tsd-kind-icon">Currency<wbr>Fomatter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/Tokimon/vanillajs-helpers/blob/0d80801/currencyFormat.ts#L5">currencyFormat.ts:5</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-type-declaration">
+					<h4>Type declaration</h4>
+					<ul class="tsd-parameters">
+						<li class="tsd-parameter-siganture">
+							<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-is-not-exported">
+								<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>num<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+							</ul>
+							<ul class="tsd-descriptions">
+								<li class="tsd-description">
+									<h4 class="tsd-parameters-title">Parameters</h4>
+									<ul class="tsd-parameters">
+										<li>
+											<h5>num: <span class="tsd-signature-type">number</span></h5>
+										</li>
+									</ul>
+									<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Functions</h2>
 			<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
 				<a name="currencyformat" class="tsd-anchor"></a>
 				<h3>currency<wbr>Format</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-					<li class="tsd-signature tsd-kind-icon">currency<wbr>Format<span class="tsd-signature-symbol">(</span>thousand<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span></li>
+					<li class="tsd-signature tsd-kind-icon">currency<wbr>Format<span class="tsd-signature-symbol">(</span>thousand<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_currencyformat_.html#currencyfomatter" class="tsd-signature-type">CurrencyFomatter</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/Tokimon/vanillajs-helpers/blob/bf2cbcc/currencyFormat.ts#L8">currencyFormat.ts:8</a></li>
+								<li>Defined in <a href="https://github.com/Tokimon/vanillajs-helpers/blob/0d80801/currencyFormat.ts#L35">currencyFormat.ts:35</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>Create a function that formats a number to a given currency format (eg. 1000 -&gt; 1.000,00 €)</p>
+								<p>Creates a function that formats a number to a given currency format (eg. 1000 -&gt; 1.000,00 €)</p>
 							</div>
+							<p>The template string should be the number 1000 described with before and after
+								symbols (no numbers), a thousand separator and a decimal separator followed by
+							the number of decimals defined with zeroes: <code>[before]1[thou.]000[dec.]00[after] -&gt; $ 1,000.00</code></p>
+							<pre><code class="lang-ts"><span class="hljs-comment">// Format number to default currency format (euro)</span>
+<span class="hljs-keyword">const</span> euro = currencyFormat();
+euro(<span class="hljs-number">2345234.678</span>); <span class="hljs-comment">// -&gt; '2.345.234,68 €'</span>
+
+<span class="hljs-comment">// Format number to USD currency format</span>
+<span class="hljs-keyword">const</span> usd = currencyFormat(<span class="hljs-string">'$ 1,000.00'</span>);
+usd(<span class="hljs-number">2345234.678</span>); <span class="hljs-comment">// -&gt; '$ 2,345,234.68'</span>
+
+<span class="hljs-comment">// Format number to custom currency format</span>
+<span class="hljs-keyword">const</span> custom = currencyFormat(<span class="hljs-string">'# 1-000;00 ¤'</span>);
+custom(<span class="hljs-number">2345234.678</span>); <span class="hljs-comment">// -&gt; '# 2-345-234;68 ¤'</span>
+
+<span class="hljs-comment">// Specifying number of decimals</span>
+<span class="hljs-keyword">const</span> sixdecimals = currencyFormat(<span class="hljs-string">'$ 1,000.000000'</span>);
+sixdecimals(<span class="hljs-number">2345234.678</span>); <span class="hljs-comment">// -&gt; '$ 2,345,234.678000'</span>
+sixdecimals(<span class="hljs-number">234.12345678</span>); <span class="hljs-comment">// -&gt; '$ 234.123457'</span>
+</code></pre>
 						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
@@ -955,7 +1018,7 @@ img { max-width: 100%; }
 								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> thousand: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;1.000,00 €&quot;</span></h5>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Function</span></h4>
+						<h4 class="tsd-returns-title">Returns <a href="_currencyformat_.html#currencyfomatter" class="tsd-signature-type">CurrencyFomatter</a></h4>
 					</li>
 				</ul>
 			</section>

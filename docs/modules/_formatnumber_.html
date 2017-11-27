@@ -950,14 +950,20 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/Tokimon/vanillajs-helpers/blob/bf2cbcc/formatNumber.ts#L25">formatNumber.ts:25</a></li>
+								<li>Defined in <a href="https://github.com/Tokimon/vanillajs-helpers/blob/0d80801/formatNumber.ts#L33">formatNumber.ts:33</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
 								<p>Formats a number with defined thousand and decimal separator, and a decimal limit
-								(see &#39;limitDecimals.js&#39; for details on <code>decCount</code>)</p>
+								(see <code>limitDecimals</code> for details on <code>decCount</code>)</p>
 							</div>
+							<pre><code class="lang-ts"><span class="hljs-comment">// Default format</span>
+formatNumber(<span class="hljs-number">123456</span>); <span class="hljs-comment">// -&gt; 123.456,00</span>
+
+<span class="hljs-comment">// Custom format</span>
+formatNumber(<span class="hljs-number">123456</span>, { decimals: <span class="hljs-string">'&gt;3'</span>, thousandSep: <span class="hljs-string">'-'</span>, decimalSep: <span class="hljs-string">':'</span> }); <span class="hljs-comment">// -&gt; 123-456:000</span>
+</code></pre>
 						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">

@@ -945,13 +945,15 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/Tokimon/vanillajs-helpers/blob/bf2cbcc/hash.ts#L28">hash.ts:28</a></li>
+								<li>Defined in <a href="https://github.com/Tokimon/vanillajs-helpers/blob/0d80801/hash.ts#L35">hash.ts:35</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>Generates a unique hash string from a string</p>
+								<p>Generates a unique hash (DJB2) string from a string</p>
 							</div>
+							<pre><code class="lang-ts">hash(<span class="hljs-string">'Hash this string'</span>); <span class="hljs-comment">// -&gt; sg463l</span>
+</code></pre>
 						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
@@ -973,14 +975,15 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/Tokimon/vanillajs-helpers/blob/bf2cbcc/hash.ts#L9">hash.ts:9</a></li>
+								<li>Defined in <a href="https://github.com/Tokimon/vanillajs-helpers/blob/0d80801/hash.ts#L12">hash.ts:12</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>Generates a unique hash code from a string using the DJB2 method
-								(similar to Java&#39;s String.hashCode())</p>
+								<p>Generates a unique numeric hash (DJB2) code from a string</p>
 							</div>
+							<pre><code class="lang-ts">hashCode(<span class="hljs-string">'Hash this string'</span>); <span class="hljs-comment">// -&gt; 1720121313</span>
+</code></pre>
 						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">

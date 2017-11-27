@@ -935,24 +935,27 @@ img { max-width: 100%; }
 				<a name="chunkstring" class="tsd-anchor"></a>
 				<h3>chunk<wbr>String</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-					<li class="tsd-signature tsd-kind-icon">chunk<wbr>String<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, size<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
+					<li class="tsd-signature tsd-kind-icon">chunk<wbr>String<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, size<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/Tokimon/vanillajs-helpers/blob/bf2cbcc/chunkString.ts#L4">chunkString.ts:4</a></li>
+								<li>Defined in <a href="https://github.com/Tokimon/vanillajs-helpers/blob/0d80801/chunkString.ts#L9">chunkString.ts:9</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
 								<p>Split a String up into smaller strings of a give size (eg. &#39;ABCDEF&#39; -&gt; [AB,CD,EF])</p>
 							</div>
+							<pre><code class="lang-ts">chunkString(<span class="hljs-string">'abcdefghijkl'</span>); <span class="hljs-comment">// -&gt; ['ab', 'cd', 'ef', 'gh', 'ij', 'kl']</span>
+chunkString(<span class="hljs-string">'abcdefghijkl'</span>, <span class="hljs-number">4</span>); <span class="hljs-comment">// -&gt; ['abcd', 'efgh', 'ijkl']</span>
+</code></pre>
 						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> str: <span class="tsd-signature-type">string</span></h5>
+								<h5>str: <span class="tsd-signature-type">string</span></h5>
 							</li>
 							<li>
 								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> size: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;2</span></h5>

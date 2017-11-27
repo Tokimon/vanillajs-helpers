@@ -1,3 +1,7 @@
+import isString from './isString';
+
+
+
 /**
  * Limit decimals of a floating number to specified length. The length depends on
  * `decimals` which can have the following settings (n = integer):
@@ -12,8 +16,8 @@
  *        extra 0 (zeroes) to shorter ones.
  */
 export default function limitDecimals(num: number|string, decimals: number|string = 2): string {
-  num = parseFloat(num as string);
-  if(isNaN(num)) { num = 0; }
+  num = isString(num) ? parseFloat(<string> num) : <number> num;
+  if(isNaN(<number> num)) { num = 0; }
 
   const countMatch = /^([<>])?(\d+)/.exec(decimals as string);
   let parts = `${num}`.split('.');

@@ -935,13 +935,13 @@ img { max-width: 100%; }
 				<a name="eachword" class="tsd-anchor"></a>
 				<h3>each<wbr>Word</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-					<li class="tsd-signature tsd-kind-icon">each<wbr>Word<span class="tsd-signature-symbol">(</span>phrase<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, cb<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Function</span>, separator<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					<li class="tsd-signature tsd-kind-icon">each<wbr>Word<span class="tsd-signature-symbol">(</span>phrase<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, cb<span class="tsd-signature-symbol">: </span><a href="_indexloop_.html#indexloopcallback" class="tsd-signature-type">IndexLoopCallback</a>, separator<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/Tokimon/vanillajs-helpers/blob/bf2cbcc/eachWord.ts#L11">eachWord.ts:11</a></li>
+								<li>Defined in <a href="https://github.com/Tokimon/vanillajs-helpers/blob/0d80801/eachWord.ts#L23">eachWord.ts:23</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -949,6 +949,16 @@ img { max-width: 100%; }
 								<p>Iterate over each word in a phrase
 								(or return word count if no callback is given)</p>
 							</div>
+							<pre><code class="lang-ts"><span class="hljs-comment">// Default seperator</span>
+<span class="hljs-keyword">const</span> count = eachWord(<span class="hljs-string">'Hello JS-World'</span>, <span class="hljs-function"><span class="hljs-params">word</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(word));
+<span class="hljs-comment">// Hello ... JS ... World</span>
+<span class="hljs-comment">// count === 3</span>
+
+<span class="hljs-comment">// With specified separator</span>
+<span class="hljs-keyword">const</span> count = eachWord(<span class="hljs-string">'Hello JS World-Championship'</span>, <span class="hljs-function"><span class="hljs-params">word</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(word), <span class="hljs-string">' '</span>);
+<span class="hljs-comment">// Hello ... JS-World</span>
+<span class="hljs-comment">// count === 2</span>
+</code></pre>
 						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
@@ -956,7 +966,7 @@ img { max-width: 100%; }
 								<h5>phrase: <span class="tsd-signature-type">string</span></h5>
 							</li>
 							<li>
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> cb: <span class="tsd-signature-type">Function</span></h5>
+								<h5>cb: <a href="_indexloop_.html#indexloopcallback" class="tsd-signature-type">IndexLoopCallback</a></h5>
 							</li>
 							<li>
 								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> separator: <span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;/[- _,]+/</span></h5>

@@ -8,24 +8,23 @@ export type ArrayLike = {
   length: number
 }
 
+export type IndexLoopCallback = (item: any, index: number, arr: any[]|ArrayLike) => void|boolean;
+
+
+
 /**
  * Iterate over numeric indexes in an object
  * (use `return false` to break the loop prematurely).
  */
-export default function indexLoop(collection: any[]|ArrayLike, cb: Function) {
-  if(!isFunction(cb) || !collection) { return 0; }
-
+export default function indexLoop(collection: any[]|ArrayLike, cb: IndexLoopCallback) {
+  collection = collection || [];
   const len = collection.length;
 
-  // Make a single iteration if the 'collection' doesn't have a length
-  if(!isNumber(len)) {
-    cb(collection, 0, collection);
-    return 1;
-  }
-
-  let i = -1;
-  while(++i < len) {
-    if(cb(collection[i], i, collection) === false) { break; }
+  if(isFunction(cb)) {
+    let i = -1;
+    while(++i < len) {
+      if(cb(collection[i], i, collection) === false) { break; }
+    }
   }
 
   return len;

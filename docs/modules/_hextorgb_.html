@@ -941,13 +941,18 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/Tokimon/vanillajs-helpers/blob/bf2cbcc/hexToRGB.ts#L9">hexToRGB.ts:9</a></li>
+								<li>Defined in <a href="https://github.com/Tokimon/vanillajs-helpers/blob/0d80801/hexToRGB.ts#L17">hexToRGB.ts:17</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
 								<p>Converts a Hexadecimal color to a RGB(A) color array</p>
 							</div>
+							<pre><code class="lang-ts">hexToRGB(<span class="hljs-string">'#2fd466'</span>); <span class="hljs-comment">// -&gt; [47, 212, 102]</span>
+
+<span class="hljs-comment">// And with alpha channel</span>
+hexToRGB(<span class="hljs-string">'#2fd46680'</span>); <span class="hljs-comment">// -&gt; [47, 212, 102, 0.5]</span>
+</code></pre>
 						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">

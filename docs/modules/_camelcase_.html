@@ -912,6 +912,9 @@ img { max-width: 100%; }
 		<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 			<a href="../interfaces/_camelcase_.camelcasesettings.html" class="tsd-kind-icon">Camel<wbr>Case<wbr>Settings</a>
 		</li>
+		<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+			<a href="_camelcase_.html#camelcasefunction" class="tsd-kind-icon">Camel<wbr>Case<wbr>Function</a>
+		</li>
 		<li class=" tsd-kind-function tsd-parent-kind-external-module">
 			<a href="_camelcase_.html#camelcase" class="tsd-kind-icon">camel<wbr>Case</a>
 		</li>
@@ -930,6 +933,12 @@ img { max-width: 100%; }
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
+						<h3>Type aliases</h3>
+						<ul class="tsd-index-list">
+							<li class="tsd-kind-type-alias tsd-parent-kind-external-module"><a href="_camelcase_.html#camelcasefunction" class="tsd-kind-icon">Camel<wbr>Case<wbr>Function</a></li>
+						</ul>
+					</section>
+					<section class="tsd-index-section ">
 						<h3>Functions</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_camelcase_.html#camelcase" class="tsd-kind-icon">camel<wbr>Case</a></li>
@@ -939,35 +948,92 @@ img { max-width: 100%; }
 			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
+			<h2>Type aliases</h2>
+			<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module">
+				<a name="camelcasefunction" class="tsd-anchor"></a>
+				<h3>Camel<wbr>Case<wbr>Function</h3>
+				<div class="tsd-signature tsd-kind-icon">Camel<wbr>Case<wbr>Function<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/Tokimon/vanillajs-helpers/blob/0d80801/camelCase.ts#L12">camelCase.ts:12</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-type-declaration">
+					<h4>Type declaration</h4>
+					<ul class="tsd-parameters">
+						<li class="tsd-parameter-siganture">
+							<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-is-not-exported">
+								<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+							</ul>
+							<ul class="tsd-descriptions">
+								<li class="tsd-description">
+									<h4 class="tsd-parameters-title">Parameters</h4>
+									<ul class="tsd-parameters">
+										<li>
+											<h5>str: <span class="tsd-signature-type">string</span></h5>
+										</li>
+									</ul>
+									<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Functions</h2>
 			<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
 				<a name="camelcase" class="tsd-anchor"></a>
 				<h3>camel<wbr>Case</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-					<li class="tsd-signature tsd-kind-icon">camel<wbr>Case<span class="tsd-signature-symbol">(</span>input<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_camelcase_.camelcasesettings.html" class="tsd-signature-type">CamelCaseSettings</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Function</span></li>
+					<li class="tsd-signature tsd-kind-icon">camel<wbr>Case<span class="tsd-signature-symbol">(</span>input<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_camelcase_.camelcasesettings.html" class="tsd-signature-type">CamelCaseSettings</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_camelcase_.html#camelcasefunction" class="tsd-signature-type">CamelCaseFunction</a></li>
+					<li class="tsd-signature tsd-kind-icon">camel<wbr>Case<span class="tsd-signature-symbol">(</span>input<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/Tokimon/vanillajs-helpers/blob/bf2cbcc/camelCase.ts#L39">camelCase.ts:39</a></li>
+								<li>Defined in <a href="https://github.com/Tokimon/vanillajs-helpers/blob/0d80801/camelCase.ts#L54">camelCase.ts:54</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
 							<div class="lead">
-								<p>Transform a phrase into a camelCased word (eg. &#39;camel case&#39; -&gt; &#39;camelCase&#39;)</p>
+								<p>Transform a phrase into a camelCased word (eg. &#39;camel case&#39; -&gt; &#39;camelCase&#39;)
+									If a settings <code>CamelCaseSettings</code> object is given a function is returned that
+								transforms a string.</p>
 							</div>
+							<pre><code class="lang-ts"><span class="hljs-comment">// using default settings</span>
+camelCase(<span class="hljs-string">'data-value2-input'</span>); <span class="hljs-comment">// -&gt; dataValue2input</span>
+camelCase(<span class="hljs-string">'XML data input'</span>); <span class="hljs-comment">// -&gt; XmlDataInput</span>
+
+<span class="hljs-comment">// Adjusting settings</span>
+<span class="hljs-keyword">const</span> caser = camelCase({ abbr: <span class="hljs-literal">true</span>, numbers: <span class="hljs-literal">true</span>, upper: <span class="hljs-literal">true</span> });
+caser(<span class="hljs-string">'data-VALUE2-input'</span>); <span class="hljs-comment">// -&gt; DataVALUE2Input</span>
+caser(<span class="hljs-string">'XML data input'</span>); <span class="hljs-comment">// -&gt; XMLDataInput</span>
+</code></pre>
 						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> input: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_camelcase_.camelcasesettings.html" class="tsd-signature-type">CamelCaseSettings</a></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> input: <a href="../interfaces/_camelcase_.camelcasesettings.html" class="tsd-signature-type">CamelCaseSettings</a></h5>
 							</li>
 						</ul>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span>
-							<span class="tsd-signature-symbol"> | </span>
-							<span class="tsd-signature-type">Function</span>
-						</h4>
+						<h4 class="tsd-returns-title">Returns <a href="_camelcase_.html#camelcasefunction" class="tsd-signature-type">CamelCaseFunction</a></h4>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/Tokimon/vanillajs-helpers/blob/0d80801/camelCase.ts#L55">camelCase.ts:55</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>input: <span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 					</li>
 				</ul>
 			</section>

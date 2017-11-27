@@ -3,8 +3,11 @@ import isString from './isString';
 
 
 /**
- * Generates a unique hash code from a string using the DJB2 method
- * (similar to Java's String.hashCode())
+ * Generates a unique numeric hash (DJB2) code from a string
+ *
+ * ```ts
+ * hashCode('Hash this string'); // -> 1720121313
+ * ```
  */
 export function hashCode(str: string): number {
   str = isString(str) ? str : '';
@@ -23,7 +26,11 @@ export function hashCode(str: string): number {
 
 
 /**
- * Generates a unique hash string from a string
+ * Generates a unique hash (DJB2) string from a string
+ *
+ * ```ts
+ * hash('Hash this string'); // -> sg463l
+ * ```
  */
 export default function hash(str: string): string {
   const code = hashCode(str);

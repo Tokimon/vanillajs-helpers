@@ -912,6 +912,9 @@ img { max-width: 100%; }
 		<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
 			<a href="_indexloop_.html#arraylike" class="tsd-kind-icon">Array<wbr>Like</a>
 		</li>
+		<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+			<a href="_indexloop_.html#indexloopcallback" class="tsd-kind-icon">Index<wbr>Loop<wbr>Callback</a>
+		</li>
 		<li class=" tsd-kind-function tsd-parent-kind-external-module">
 			<a href="_indexloop_.html#indexloop" class="tsd-kind-icon">index<wbr>Loop</a>
 		</li>
@@ -927,6 +930,7 @@ img { max-width: 100%; }
 						<h3>Type aliases</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-type-alias tsd-parent-kind-external-module"><a href="_indexloop_.html#arraylike" class="tsd-kind-icon">Array<wbr>Like</a></li>
+							<li class="tsd-kind-type-alias tsd-parent-kind-external-module"><a href="_indexloop_.html#indexloopcallback" class="tsd-kind-icon">Index<wbr>Loop<wbr>Callback</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
@@ -946,7 +950,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Array<wbr>Like<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Tokimon/vanillajs-helpers/blob/bf2cbcc/indexLoop.ts#L6">indexLoop.ts:6</a></li>
+						<li>Defined in <a href="https://github.com/Tokimon/vanillajs-helpers/blob/0d80801/indexLoop.ts#L6">indexLoop.ts:6</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-type-declaration">
@@ -958,6 +962,46 @@ img { max-width: 100%; }
 					</ul>
 				</div>
 			</section>
+			<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module">
+				<a name="indexloopcallback" class="tsd-anchor"></a>
+				<h3>Index<wbr>Loop<wbr>Callback</h3>
+				<div class="tsd-signature tsd-kind-icon">Index<wbr>Loop<wbr>Callback<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/Tokimon/vanillajs-helpers/blob/0d80801/indexLoop.ts#L11">indexLoop.ts:11</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-type-declaration">
+					<h4>Type declaration</h4>
+					<ul class="tsd-parameters">
+						<li class="tsd-parameter-siganture">
+							<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-is-not-exported">
+								<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, arr<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="_indexloop_.html#arraylike" class="tsd-signature-type">ArrayLike</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></li>
+							</ul>
+							<ul class="tsd-descriptions">
+								<li class="tsd-description">
+									<h4 class="tsd-parameters-title">Parameters</h4>
+									<ul class="tsd-parameters">
+										<li>
+											<h5>item: <span class="tsd-signature-type">any</span></h5>
+										</li>
+										<li>
+											<h5>index: <span class="tsd-signature-type">number</span></h5>
+										</li>
+										<li>
+											<h5>arr: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="_indexloop_.html#arraylike" class="tsd-signature-type">ArrayLike</a></h5>
+										</li>
+									</ul>
+									<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span>
+										<span class="tsd-signature-symbol"> | </span>
+										<span class="tsd-signature-type">boolean</span>
+									</h4>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Functions</h2>
@@ -965,13 +1009,13 @@ img { max-width: 100%; }
 				<a name="indexloop" class="tsd-anchor"></a>
 				<h3>index<wbr>Loop</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-					<li class="tsd-signature tsd-kind-icon">index<wbr>Loop<span class="tsd-signature-symbol">(</span>collection<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="_indexloop_.html#arraylike" class="tsd-signature-type">ArrayLike</a>, cb<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					<li class="tsd-signature tsd-kind-icon">index<wbr>Loop<span class="tsd-signature-symbol">(</span>collection<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="_indexloop_.html#arraylike" class="tsd-signature-type">ArrayLike</a>, cb<span class="tsd-signature-symbol">: </span><a href="_indexloop_.html#indexloopcallback" class="tsd-signature-type">IndexLoopCallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/Tokimon/vanillajs-helpers/blob/bf2cbcc/indexLoop.ts#L15">indexLoop.ts:15</a></li>
+								<li>Defined in <a href="https://github.com/Tokimon/vanillajs-helpers/blob/0d80801/indexLoop.ts#L19">indexLoop.ts:19</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -986,7 +1030,7 @@ img { max-width: 100%; }
 								<h5>collection: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="_indexloop_.html#arraylike" class="tsd-signature-type">ArrayLike</a></h5>
 							</li>
 							<li>
-								<h5>cb: <span class="tsd-signature-type">Function</span></h5>
+								<h5>cb: <a href="_indexloop_.html#indexloopcallback" class="tsd-signature-type">IndexLoopCallback</a></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
