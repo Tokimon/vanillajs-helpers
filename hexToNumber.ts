@@ -10,5 +10,5 @@ import isString from './isString';
  * ```
  */
 export default function hexToNumber(hex: string): number {
-  return isString(hex) ? parseInt(hex, 16) : 0;
+  return isString(hex) && hex ? parseInt(hex, 16) : 0;
 }

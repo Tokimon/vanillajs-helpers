@@ -30,16 +30,6 @@ describe('"indexLoop"', () => {
     expect(cb.thirdCall).to.have.been.calledWith(nodes[2], 2, nodes);
   });
 
-  it('Should indexLoop a single item', () => {
-    const cb = sinon.spy();
-    const obj = {} as ArrayLike;
-
-    indexLoop(obj, cb);
-
-    expect(cb).to.have.been.calledOnce;
-    expect(cb.firstCall).to.have.been.calledWith(obj, 0, obj);
-  });
-
   it('Should break loop if false is returned', () => {
     const arr = [1, 2, 3];
     const cb = sinon.stub();

@@ -17,8 +17,8 @@ describe('"dashed"', () => {
   });
 
   it('Should add "-" around numbers', () => {
-    expect(dashed('LOOK! 99 air balloons', true)).to.equal('look-99-air-balloons');
-    expect(dashed('data-value25input', true)).to.equal('data-value-25-input');
+    expect(dashed('LOOK! 99 air balloons', { numbers: true })).to.equal('look-99-air-balloons');
+    expect(dashed('data-value25input', { numbers: true })).to.equal('data-value-25-input');
   });
 
   it('Should always turn inputs into strings', () => {

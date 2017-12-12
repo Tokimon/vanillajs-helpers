@@ -61,10 +61,11 @@ describe('"eachWord"', () => {
 
   it('Should return the number of words in the phrase', () => {
     expect(eachWord('space separated phrase', () => {})).to.equal(3);
-    expect(eachWord('space separated phrase')).to.equal(3);
+    expect(eachWord('space separated phrase', null)).to.equal(3);
   });
 
   it('Should return 0 if phrase is not defined', () => {
-    expect(eachWord(null)).to.equal(0);
+    expect(eachWord('', null)).to.equal(0);
+    expect(eachWord(null, null)).to.equal(0);
   });
 });

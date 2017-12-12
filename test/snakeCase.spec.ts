@@ -16,8 +16,8 @@ describe('"snakeCase"', () => {
   });
 
   it('Should add "_" around numbers', () => {
-    expect(snake('LOOK! 99 air balloons', true)).to.equal('look_99_air_balloons');
-    expect(snake('data-value25input', true)).to.equal('data_value_25_input');
+    expect(snake('LOOK! 99 air balloons', { numbers: true })).to.equal('look_99_air_balloons');
+    expect(snake('data-value25input', { numbers: true })).to.equal('data_value_25_input');
   });
 
   it('Should always turn inputs into strings', () => {

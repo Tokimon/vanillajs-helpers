@@ -15,7 +15,7 @@ import hexToNumber from './hexToNumber';
  * ```
  */
 export default function hexToRGB(hex: string): number[] {
-  if(!isString(hex)) { return [0, 0, 0]; }
+  if(!isString(hex) || !hex) { return [0, 0, 0]; }
 
   if(hex[0] === '#') { hex = hex.substr(1); }
 

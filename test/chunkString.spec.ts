@@ -26,7 +26,7 @@ describe('"chunkString"', () => {
   });
 
   it('Should return empty Array for empty values', () => {
-    expect(chunkString()).to.be.an('array').and.to.have.length(0);
+    expect(chunkString(undefined)).to.be.an('array').and.to.have.length(0);
     expect(chunkString('')).to.be.an('array').and.to.have.length(0);
     expect(chunkString(null)).to.be.an('array').and.to.have.length(0);
   });

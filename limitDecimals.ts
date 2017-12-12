@@ -16,6 +16,7 @@ import isString from './isString';
  *        extra 0 (zeroes) to shorter ones.
  */
 export default function limitDecimals(num: number|string, decimals: number|string = 2): string {
+  if(!num) { num = 0; }
   num = isString(num) ? parseFloat(<string> num) : <number> num;
   if(isNaN(<number> num)) { num = 0; }
 

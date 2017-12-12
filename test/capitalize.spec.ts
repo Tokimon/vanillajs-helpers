@@ -5,7 +5,7 @@ import capitalize from '../capitalize';
 
 describe('"capitalize"', () => {
   it('Should return empty string for falsy values', () => {
-    expect(capitalize()).to.equal('');
+    expect(capitalize(undefined)).to.equal('');
     expect(capitalize(null)).to.equal('');
   });
 

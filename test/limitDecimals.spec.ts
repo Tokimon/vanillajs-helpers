@@ -28,12 +28,18 @@ describe('"limitDecimals"', () => {
     expect(limitDecimals(0.9999, '<3')).to.equal('1');
   });
 
-  it('Should format 0 when a non number is specified', () => {
-    expect(limitDecimals(null)).to.equal('0.00');
-  });
+  it('Should be able to limit decimals of strings', () => {
+    expect(limitDecimals('9.678', '<2')).to.equal('9.68');
+    expect(limitDecimals('9.123', null)).to.equal('9');
+  })
 
   it('Should cut decimals if decimal indication is not defined correctly', () => {
     expect(limitDecimals(9.678, 'none')).to.equal('10');
     expect(limitDecimals(9.123, null)).to.equal('9');
+  });
+
+  it('Should format 0 when a non number is specified', () => {
+    expect(limitDecimals(null)).to.equal('0.00');
+    expect(limitDecimals('Not A Number')).to.equal('0.00');
   });
 });

@@ -17,8 +17,6 @@ describe('"currencyFormat"', () => {
 
   it('Should format 0 when a non number is specified', () => {
     expect(currencyFormat()(null)).to.equal('0,00 €');
-    expect(currencyFormat()('')).to.equal('0,00 €');
-    expect(currencyFormat()()).to.equal('0,00 €');
-    expect(currencyFormat()({})).to.equal('0,00 €');
+    expect(currencyFormat()(undefined)).to.equal('0,00 €');
   });
 });

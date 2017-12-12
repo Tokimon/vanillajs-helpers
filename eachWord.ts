@@ -21,6 +21,6 @@ import indexLoop, { IndexLoopCallback } from './indexLoop';
  * ```
  */
 export default function eachWord(phrase: string, cb: IndexLoopCallback, separator: RegExp|string = /[- _,]+/): number {
-  const words = isString(phrase) ? phrase.split(separator) : [];
+  const words = (isString(phrase) ? phrase.split(separator) : []).filter((word) => !!word);
   return indexLoop(words, cb);
 }
