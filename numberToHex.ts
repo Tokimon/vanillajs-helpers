@@ -7,4 +7,4 @@ import leadingZero from './leadingZero';
  */
 export default function numberToHex(num: number = 0): string {
   return leadingZero(Math.round(num).toString(16));
-};
+}

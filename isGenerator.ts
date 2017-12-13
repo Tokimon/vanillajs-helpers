@@ -17,8 +17,8 @@ export function isGeneratorLike(obj: any): boolean {
 export default function isGenerator(obj: any): boolean {
   const { constructor } = obj;
 
-  if(!isObject(constructor) && !isFunction(constructor)) { return false; }
-  if(constructor.name === 'GeneratorFunction' || constructor.displayName === 'GeneratorFunction') {
+  if (!isObject(constructor) && !isFunction(constructor)) { return false; }
+  if (constructor.name === 'GeneratorFunction' || constructor.displayName === 'GeneratorFunction') {
     return true;
   }
 

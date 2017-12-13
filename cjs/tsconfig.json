@@ -5,11 +5,12 @@
     "removeComments": true,
     "preserveConstEnums": true,
     "sourceMap": false,
-    "target": "es6",
+    "target": "es2017",
     "lib": ["es5", "es6", "dom"],
     "moduleResolution": "node",
     "allowJs": false,
-    "outDir": "."
+    "outDir": ".",
+    "strictNullChecks": true
   },
 
   "include": [

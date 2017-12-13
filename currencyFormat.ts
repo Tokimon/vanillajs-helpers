@@ -35,7 +35,7 @@ export type CurrencyFomatter = (num: number) => string;
 export default function currencyFormat(thousand: string = '1.000,00 €'): CurrencyFomatter {
   const m = /^(\D*)1(\D*)000(\D*)(\d*)(\D*)$/.exec(thousand);
 
-  if(m) {
+  if (m) {
     const [, before, thousandSep, decimalSep, dec, after] = m;
     const settings = { decimals: dec.length, thousandSep, decimalSep };
     return (num: number) => `${before}${formatNumber(num, settings)}${after}`;

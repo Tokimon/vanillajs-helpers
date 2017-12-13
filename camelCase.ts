@@ -5,8 +5,8 @@ import phrasify, { PhrasifySettings } from './phrasify';
 
 
 export interface CamelCaseSettings extends PhrasifySettings {
-  upper?: boolean,
-  abbr?: boolean
+  upper?: boolean;
+  abbr?: boolean;
 }
 
 export type CamelCaseFunction = (str: string) => string;
@@ -23,12 +23,11 @@ const defaultSettings: CamelCaseSettings = {
 
 function caser(settings: CamelCaseSettings, str: string): string {
   const { upper, abbr, numbers } = settings;
-  const regex = upper ? /(?:^|\s+)(.)/g : /\s+(.)/g;
 
   return phrasify({ numbers })(str)
     .replace(/(?:^|\s+)(\w+)/g, (all: string, word: string, index: number) => {
-      if(abbr && /^[A-Z]+$/.test(word)) { return word; }
-      if(index === 0 && !upper) { return word.toLowerCase(); }
+      if (abbr && /^[A-Z]+$/.test(word)) { return word; }
+      if (index === 0 && !upper) { return word.toLowerCase(); }
       return word[0].toUpperCase() + word.substr(1).toLowerCase();
     });
 }
@@ -53,7 +52,7 @@ function caser(settings: CamelCaseSettings, str: string): string {
  */
 export default function camelCase(input?: CamelCaseSettings): CamelCaseFunction;
 export default function camelCase(input: string): string;
-export default function camelCase(input: string|CamelCaseSettings): string|CamelCaseFunction {
+export default function camelCase(input?: string|CamelCaseSettings): string|CamelCaseFunction {
   const opts = isObject(input) ? Object.assign({}, defaultSettings, input) : defaultSettings;
-  return isString(input) ? caser(opts, input as string) : (str) => caser(opts, str);
+  return isString(input) ? caser(opts, input as string) : (str: string) => caser(opts, str);
 }

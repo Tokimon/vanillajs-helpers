@@ -5,10 +5,10 @@
     "removeComments": true,
     "preserveConstEnums": true,
     "sourceMap": true,
-    "target": "es6",
+    "target": "es2017",
     "lib": ["es5", "es6", "dom"],
     "moduleResolution": "node",
-    "allowJs": true,
+    "allowJs": false,
     "outDir": "."
   },
 

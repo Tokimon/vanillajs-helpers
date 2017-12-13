@@ -1,12 +1,11 @@
 import isFunction from './isFunction';
-import isNumber from './isNumber';
 
 
 
 export type ArrayLike = {
   [key: number]: any,
   length: number
-}
+};
 
 export type IndexLoopCallback = (item: any, index: number, arr: any[]|ArrayLike) => void|boolean;
 
@@ -20,10 +19,10 @@ export default function indexLoop(collection: any[]|ArrayLike, cb: IndexLoopCall
   collection = collection || [];
   const len = collection.length;
 
-  if(isFunction(cb)) {
+  if (isFunction(cb)) {
     let i = -1;
-    while(++i < len) {
-      if(cb(collection[i], i, collection) === false) { break; }
+    while (++i < len) {
+      if (cb(collection[i], i, collection) === false) { break; }
     }
   }
 

@@ -1,5 +1,4 @@
 import isString from './isString';
-import isFunction from './isFunction';
 import indexLoop, { IndexLoopCallback } from './indexLoop';
 
 

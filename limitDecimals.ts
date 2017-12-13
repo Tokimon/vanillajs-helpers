@@ -16,27 +16,27 @@ import isString from './isString';
  *        extra 0 (zeroes) to shorter ones.
  */
 export default function limitDecimals(num: number|string, decimals: number|string = 2): string {
-  if(!num) { num = 0; }
-  num = isString(num) ? parseFloat(<string> num) : <number> num;
-  if(isNaN(<number> num)) { num = 0; }
+  if (!num) { num = 0; }
+  num = isString(num) ? parseFloat(num as string) : num as number;
+  if (isNaN(num as number)) { num = 0; }
 
   const countMatch = /^([<>])?(\d+)/.exec(decimals as string);
   let parts = `${num}`.split('.');
   let decLen = parts[1] ? parts[1].length : 0;
   let decCount = 0;
 
-  if(countMatch) {
+  if (countMatch) {
     const indicator = countMatch[1];
     decCount = Number(countMatch[2]);
 
     // minimum number of decimals
-    if(indicator === '>' && decLen > decCount) {
+    if (indicator === '>' && decLen > decCount) {
       decCount = decLen;
     }
 
     // maximum number of decimals
-    if(indicator === '<') {
-      if(decLen < decCount) {
+    if (indicator === '<') {
+      if (decLen < decCount) {
         decCount = decLen;
       } else {
         num = Number(num.toFixed(decCount));

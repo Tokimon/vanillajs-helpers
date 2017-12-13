@@ -7,6 +7,6 @@ import isArray from './isArray';
  * (Object with length and numeric keys)
  */
 export default function isCollection(coll: any): boolean {
-  if(typeof coll === 'undefined' || coll === null) { return false; }
+  if (typeof coll === 'undefined' || coll === null) { return false; }
   return isArray(coll) || typeof coll.length !== 'undefined';
 }

@@ -21,7 +21,7 @@ import hex from './numberToHex';
 export default function RGBToHex(r: number[]): string;
 export default function RGBToHex(r: number, g: number, b: number, a?: number): string;
 export default function RGBToHex(r: number|number[], g?: number, b?: number, a?: number): string {
-  if(isArray(r)) { [r, g, b, a] = r as number[]; }
-  const alpha = isNumber(a) ? hex(a  * 255) : '';
+  if (isArray(r)) { [r, g, b, a] = r as number[]; }
+  const alpha = isNumber(a) ? hex(a! * 255) : '';
   return `#${hex(r as number)}${hex(g)}${hex(b)}${alpha}`;
 }

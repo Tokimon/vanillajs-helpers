@@ -21,7 +21,7 @@ export default function safeDateChange(from: Date, to: Date) {
 
   // Compensate for going from the 31st in a month
   // into a month that doesn't have 31 days
-  if(d > 28 && to.getDate() !== d) {
+  if (d > 28 && to.getDate() !== d) {
     to.setDate(0);
   }
 
