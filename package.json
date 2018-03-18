@@ -19,7 +19,7 @@
     "build": "tsc && tsc -p ./cjs && tsc -p ./es5",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "coveralls:win": "type ./coverage/lcov.info | node node_modules/.bin/coveralls",
-    "docs": "typedoc --out ./docs --exclude \"**/vanillajs-helpers/+(?)/**/*.*\" --mode modules --tsconfig ./tsconfig.json --theme minimal --ignoreCompilerErrors --excludePrivate --excludeNotExported --stripInternal --suppressExcessPropertyErrors --suppressImplicitAnyIndexErrors ./",
+    "docs": "typedoc --out ./docs --exclude \"**/vanillajs-helpers/+(?)/**/*.*\" --mode modules --tsconfig ./tsconfig.json --theme markdown --ignoreCompilerErrors --excludePrivate --excludeNotExported --stripInternal --suppressExcessPropertyErrors --suppressImplicitAnyIndexErrors ./",
     "clean": "node ./tasks/clean.js",
     "lint": "tslint -p ."
   },
@@ -32,25 +32,25 @@
   },
   "homepage": "https://github.com/Tokimon/vanillajs-helpers#readme",
   "devDependencies": {
-    "@types/chai": "^4.1.0",
+    "@types/chai": "^4.1.2",
     "@types/chai-as-promised": "^7.1.0",
-    "@types/mocha": "^2.2.46",
+    "@types/mocha": "^2.2.48",
     "@types/sinon-chai": "^2.7.29",
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
     "coveralls": "^3.0.0",
-    "cross-env": "^5.1.3",
+    "cross-env": "^5.1.4",
     "fs-extra": "^5.0.0",
-    "globby": "^7.1.1",
-    "mocha": "^4.1.0",
-    "nyc": "^11.4.1",
-    "sinon": "^4.1.4",
-    "sinon-chai": "^2.14.0",
-    "ts-node": "^4.1.0",
-    "tslint": "^5.8.0",
-    "tslint-config-semistandard": "^6.0.4",
-    "typedoc": "^0.9.0",
-    "typescript": "^2.6.2"
+    "globby": "^8.0.1",
+    "mocha": "^5.0.4",
+    "nyc": "^11.6.0",
+    "sinon": "^4.4.6",
+    "sinon-chai": "^3.0.0",
+    "ts-node": "^5.0.1",
+    "tslint": "^5.9.1",
+    "tslint-config-semistandard": "^7.0.0",
+    "typedoc": "^0.11.1",
+    "typescript": "^2.7.2"
   },
   "nyc": {
     "include": [
@@ -70,5 +70,7 @@
     "instrument": true,
     "report-dir": "./coverage"
   },
-  "dependencies": {}
+  "dependencies": {
+    "typedoc-plugin-markdown": "^1.0.14"
+  }
 }
