@@ -7,7 +7,7 @@ export type ArrayLike = {
   length: number
 };
 
-export type IndexLoopCallback = (item: any, index: number, arr: any[]|ArrayLike) => void|boolean;
+export type IndexLoopCallback = (item: any, index: number, arr: any[] | ArrayLike) => void | boolean;
 
 
 
@@ -15,7 +15,7 @@ export type IndexLoopCallback = (item: any, index: number, arr: any[]|ArrayLike)
  * Iterate over numeric indexes in an object
  * (use `return false` to break the loop prematurely).
  */
-export default function indexLoop(collection: any[]|ArrayLike, cb: IndexLoopCallback) {
+export default function indexLoop(collection: any[] | ArrayLike, cb: IndexLoopCallback) {
   collection = collection || [];
   const len = collection.length;
 

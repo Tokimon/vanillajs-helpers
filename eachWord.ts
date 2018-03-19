@@ -19,7 +19,7 @@ import indexLoop, { IndexLoopCallback } from './indexLoop';
  * // count === 2
  * ```
  */
-export default function eachWord(phrase: string, cb: IndexLoopCallback, separator: RegExp|string = /[- _,]+/): number {
+export default function eachWord(phrase: string, cb: IndexLoopCallback, separator: RegExp | string = /[- _,]+/): number {
   const words = (isString(phrase) ? phrase.split(separator) : []).filter((word) => !!word);
   return indexLoop(words, cb);
 }

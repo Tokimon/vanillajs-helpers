@@ -52,7 +52,7 @@ function caser(settings: CamelCaseSettings, str: string): string {
  */
 export default function camelCase(input?: CamelCaseSettings): CamelCaseFunction;
 export default function camelCase(input: string): string;
-export default function camelCase(input?: string|CamelCaseSettings): string|CamelCaseFunction {
+export default function camelCase(input?: string | CamelCaseSettings): string | CamelCaseFunction {
   const opts = isObject(input) ? Object.assign({}, defaultSettings, input) : defaultSettings;
   return isString(input) ? caser(opts, input as string) : (str: string) => caser(opts, str);
 }

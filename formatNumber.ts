@@ -3,7 +3,7 @@ import limitDecimals from './limitDecimals';
 
 
 export interface FormatNumberSettings {
-  decimals?: number|string;
+  decimals?: number | string;
   thousandSep?: string;
   decimalSep?: string;
 }

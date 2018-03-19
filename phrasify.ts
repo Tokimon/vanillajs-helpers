@@ -33,7 +33,7 @@ function seperateWords(opts: PhrasifySettings, str: string): string {
  */
 export default function phrasify(input?: PhrasifySettings): Function;
 export default function phrasify(input: string): string;
-export default function phrasify(input?: string|PhrasifySettings): string|Function {
+export default function phrasify(input?: string | PhrasifySettings): string | Function {
   const opts = isObject(input) ? Object.assign({}, defaultSettings, input) : defaultSettings;
 
   return isString(input)

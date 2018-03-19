@@ -15,10 +15,10 @@ import isString from './isString';
  * -  n = match this exact number of decimals, rounding longer decimals and adding
  *        extra 0 (zeroes) to shorter ones.
  */
-export default function limitDecimals(num: number|string, decimals: number|string = 2): string {
+export default function limitDecimals(num: number | string, decimals: number | string = 2): string {
   if (!num) { num = 0; }
   num = isString(num) ? parseFloat(num as string) : num as number;
-  if (isNaN(num as number)) { num = 0; }
+  if (isNaN(num)) { num = 0; }
 
   const countMatch = /^([<>])?(\d+)/.exec(decimals as string);
   let parts = `${num}`.split('.');
