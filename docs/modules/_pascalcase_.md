@@ -22,7 +22,7 @@
 
 
 
-*Defined in [pascalCase.ts:8](https://github.com/Tokimon/vanillajs-helpers/blob/255013e/pascalCase.ts#L8)*
+*Defined in [pascalCase.ts:8](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/pascalCase.ts#L8)*
 
 
 

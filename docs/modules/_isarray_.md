@@ -22,7 +22,7 @@
 
 
 
-*Defined in [isArray.ts:4](https://github.com/Tokimon/vanillajs-helpers/blob/255013e/isArray.ts#L4)*
+*Defined in [isArray.ts:4](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/isArray.ts#L4)*
 
 
 

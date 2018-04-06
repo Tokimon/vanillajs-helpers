@@ -22,7 +22,7 @@
 
 
 
-*Defined in [leadingZero.ts:4](https://github.com/Tokimon/vanillajs-helpers/blob/255013e/leadingZero.ts#L4)*
+*Defined in [leadingZero.ts:4](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/leadingZero.ts#L4)*
 
 
 

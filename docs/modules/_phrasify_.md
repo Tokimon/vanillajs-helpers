@@ -14,6 +14,12 @@
 ### Functions
 
 * [phrasify](_phrasify_.md#phrasify)
+* [seperateWords](_phrasify_.md#seperatewords)
+
+
+### Object literals
+
+* [defaultSettings](_phrasify_.md#defaultsettings)
 
 
 
@@ -29,7 +35,7 @@
 
 
 
-*Defined in [phrasify.ts:34](https://github.com/Tokimon/vanillajs-helpers/blob/255013e/phrasify.ts#L34)*
+*Defined in [phrasify.ts:34](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/phrasify.ts#L34)*
 
 
 
@@ -50,7 +56,7 @@ Transform phrase into a space separated phrase
 
 
 
-*Defined in [phrasify.ts:35](https://github.com/Tokimon/vanillajs-helpers/blob/255013e/phrasify.ts#L35)*
+*Defined in [phrasify.ts:35](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/phrasify.ts#L35)*
 
 
 
@@ -65,6 +71,57 @@ Transform phrase into a space separated phrase
 
 
 **Returns:** `string`
+
+
+
+
+
+___
+
+<a id="seperatewords"></a>
+
+###  seperateWords
+
+► **seperateWords**(opts: *[PhrasifySettings](../interfaces/_phrasify_.phrasifysettings.md)*, str: *`string`*): `string`
+
+
+
+*Defined in [phrasify.ts:16](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/phrasify.ts#L16)*
+
+
+
+**Parameters:**
+
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| opts | [PhrasifySettings](../interfaces/_phrasify_.phrasifysettings.md)   |  - |
+| str | `string`   |  - |
+
+
+
+
+
+**Returns:** `string`
+
+
+
+
+
+___
+
+
+<a id="defaultsettings"></a>
+
+## Object literal: defaultSettings
+
+
+<a id="defaultsettings.numbers"></a>
+
+###  numbers
+
+**●  numbers**:  *`false`*  = false
+
+*Defined in [phrasify.ts:12](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/phrasify.ts#L12)*
 
 
 

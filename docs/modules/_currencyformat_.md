@@ -25,7 +25,7 @@
 
 **Τ CurrencyFomatter**:  *`function`* 
 
-*Defined in [currencyFormat.ts:5](https://github.com/Tokimon/vanillajs-helpers/blob/255013e/currencyFormat.ts#L5)*
+*Defined in [currencyFormat.ts:5](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/currencyFormat.ts#L5)*
 
 
 #### Type declaration
@@ -62,7 +62,7 @@ ___
 
 
 
-*Defined in [currencyFormat.ts:35](https://github.com/Tokimon/vanillajs-helpers/blob/255013e/currencyFormat.ts#L35)*
+*Defined in [currencyFormat.ts:35](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/currencyFormat.ts#L35)*
 
 
 
@@ -73,15 +73,15 @@ The template string should be the number 1000 described with before and after sy
     // Format number to default currency format (euro)
     const euro = currencyFormat();
     euro(2345234.678); // -> '2.345.234,68 €'
-
+    
     // Format number to USD currency format
     const usd = currencyFormat('$ 1,000.00');
     usd(2345234.678); // -> '$ 2,345,234.68'
-
+    
     // Format number to custom currency format
     const custom = currencyFormat('# 1-000;00 ¤');
     custom(2345234.678); // -> '# 2-345-234;68 ¤'
-
+    
     // Specifying number of decimals
     const sixdecimals = currencyFormat('$ 1,000.000000');
     sixdecimals(2345234.678); // -> '$ 2,345,234.678000'

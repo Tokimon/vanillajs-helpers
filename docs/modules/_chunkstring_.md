@@ -22,11 +22,11 @@
 
 
 
-*Defined in [chunkString.ts:9](https://github.com/Tokimon/vanillajs-helpers/blob/255013e/chunkString.ts#L9)*
+*Defined in [chunkString.ts:9](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/chunkString.ts#L9)*
 
 
 
-Split a String up into smaller strings of a give size (eg. 'ABCDEF' -> [AB,CD,EF])
+Split a String up into smaller strings of a give size (eg. 'ABCDEF' -> \[AB,CD,EF\])
 
     chunkString('abcdefghijkl'); // -> ['ab', 'cd', 'ef', 'gh', 'ij', 'kl']
     chunkString('abcdefghijkl', 4); // -> ['abcd', 'efgh', 'ijkl']

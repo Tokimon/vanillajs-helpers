@@ -22,14 +22,14 @@
 
 
 
-*Defined in [hexToRGB.ts:17](https://github.com/Tokimon/vanillajs-helpers/blob/255013e/hexToRGB.ts#L17)*
+*Defined in [hexToRGB.ts:17](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/hexToRGB.ts#L17)*
 
 
 
 Converts a Hexadecimal color to a RGB(A) color array
 
     hexToRGB('#2fd466'); // -> [47, 212, 102]
-
+    
     // And with alpha channel
     hexToRGB('#2fd46680'); // -> [47, 212, 102, 0.5]
 

@@ -26,13 +26,20 @@
 
 **Τ ArrayLike**:  *`object`* 
 
-*Defined in [indexLoop.ts:5](https://github.com/Tokimon/vanillajs-helpers/blob/255013e/indexLoop.ts#L5)*
+*Defined in [indexLoop.ts:5](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/indexLoop.ts#L5)*
 
 
 #### Type declaration
 
 
 [key: `number`]: `any`
+
+
+
+
+
+ length: `number`
+
 
 
 
@@ -47,7 +54,7 @@ ___
 
 **Τ IndexLoopCallback**:  *`function`* 
 
-*Defined in [indexLoop.ts:10](https://github.com/Tokimon/vanillajs-helpers/blob/255013e/indexLoop.ts#L10)*
+*Defined in [indexLoop.ts:10](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/indexLoop.ts#L10)*
 
 
 #### Type declaration
@@ -86,7 +93,7 @@ ___
 
 
 
-*Defined in [indexLoop.ts:18](https://github.com/Tokimon/vanillajs-helpers/blob/255013e/indexLoop.ts#L18)*
+*Defined in [indexLoop.ts:18](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/indexLoop.ts#L18)*
 
 
 

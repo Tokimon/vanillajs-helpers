@@ -22,7 +22,7 @@
 
 
 
-*Defined in [dashed.ts:12](https://github.com/Tokimon/vanillajs-helpers/blob/255013e/dashed.ts#L12)*
+*Defined in [dashed.ts:12](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/dashed.ts#L12)*
 
 
 

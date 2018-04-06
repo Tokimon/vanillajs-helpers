@@ -22,11 +22,11 @@
 
 
 
-*Defined in [objectType.ts:4](https://github.com/Tokimon/vanillajs-helpers/blob/255013e/objectType.ts#L4)*
+*Defined in [objectType.ts:4](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/objectType.ts#L4)*
 
 
 
-Returns the objects type definition name (eg. [object String] => "string")
+Returns the objects type definition name (eg. \[object String\] => "string")
 
 
 **Parameters:**

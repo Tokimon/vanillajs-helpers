@@ -19,6 +19,12 @@
 ### Functions
 
 * [camelCase](_camelcase_.md#camelcase)
+* [caser](_camelcase_.md#caser)
+
+
+### Object literals
+
+* [defaultSettings](_camelcase_.md#defaultsettings)
 
 
 
@@ -30,7 +36,7 @@
 
 **Τ CamelCaseFunction**:  *`function`* 
 
-*Defined in [camelCase.ts:12](https://github.com/Tokimon/vanillajs-helpers/blob/255013e/camelCase.ts#L12)*
+*Defined in [camelCase.ts:12](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/camelCase.ts#L12)*
 
 
 #### Type declaration
@@ -69,7 +75,7 @@ ___
 
 
 
-*Defined in [camelCase.ts:53](https://github.com/Tokimon/vanillajs-helpers/blob/255013e/camelCase.ts#L53)*
+*Defined in [camelCase.ts:53](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/camelCase.ts#L53)*
 
 
 
@@ -78,7 +84,7 @@ Transform a phrase into a camelCased word (eg. 'camel case' -> 'camelCase') If a
     // using default settings
     camelCase('data-value2-input'); // -> dataValue2input
     camelCase('XML data input'); // -> XmlDataInput
-
+    
     // Adjusting settings
     const caser = camelCase({ abbr: true, numbers: true, upper: true });
     caser('data-VALUE2-input'); // -> DataVALUE2Input
@@ -99,7 +105,7 @@ Transform a phrase into a camelCased word (eg. 'camel case' -> 'camelCase') If a
 
 
 
-*Defined in [camelCase.ts:54](https://github.com/Tokimon/vanillajs-helpers/blob/255013e/camelCase.ts#L54)*
+*Defined in [camelCase.ts:54](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/camelCase.ts#L54)*
 
 
 
@@ -114,6 +120,83 @@ Transform a phrase into a camelCased word (eg. 'camel case' -> 'camelCase') If a
 
 
 **Returns:** `string`
+
+
+
+
+
+___
+
+<a id="caser"></a>
+
+###  caser
+
+► **caser**(settings: *[CamelCaseSettings](../interfaces/_camelcase_.camelcasesettings.md)*, str: *`string`*): `string`
+
+
+
+*Defined in [camelCase.ts:24](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/camelCase.ts#L24)*
+
+
+
+**Parameters:**
+
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| settings | [CamelCaseSettings](../interfaces/_camelcase_.camelcasesettings.md)   |  - |
+| str | `string`   |  - |
+
+
+
+
+
+**Returns:** `string`
+
+
+
+
+
+___
+
+
+<a id="defaultsettings"></a>
+
+## Object literal: defaultSettings
+
+
+<a id="defaultsettings.abbr"></a>
+
+###  abbr
+
+**●  abbr**:  *`false`*  = false
+
+*Defined in [camelCase.ts:18](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/camelCase.ts#L18)*
+
+
+
+
+
+___
+<a id="defaultsettings.numbers"></a>
+
+###  numbers
+
+**●  numbers**:  *`true`*  = true
+
+*Defined in [camelCase.ts:19](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/camelCase.ts#L19)*
+
+
+
+
+
+___
+<a id="defaultsettings.upper"></a>
+
+###  upper
+
+**●  upper**:  *`false`*  = false
+
+*Defined in [camelCase.ts:17](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/camelCase.ts#L17)*
 
 
 

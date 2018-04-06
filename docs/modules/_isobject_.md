@@ -22,7 +22,7 @@
 
 
 
-*Defined in [isObject.ts:8](https://github.com/Tokimon/vanillajs-helpers/blob/255013e/isObject.ts#L8)*
+*Defined in [isObject.ts:8](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/isObject.ts#L8)*
 
 
 

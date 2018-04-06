@@ -22,7 +22,7 @@
 
 
 
-*Defined in [capitalize.ts:9](https://github.com/Tokimon/vanillajs-helpers/blob/255013e/capitalize.ts#L9)*
+*Defined in [capitalize.ts:9](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/capitalize.ts#L9)*
 
 
 

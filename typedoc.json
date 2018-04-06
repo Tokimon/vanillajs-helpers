@@ -1,0 +1,12 @@
+{
+  "out": "./docs",
+  "exclude": ["**/vanillajs-helpers/*/**", "**/vanillajs-helpers/**/.*/**"],
+  "mode": "modules",
+  "theme": "markdown",
+  "mdFlavour": "github",
+  "excludeExternals": true,
+  "excludePrivate": true,
+  "stripInternal": true,
+  "suppressExcessPropertyErrors": true,
+  "suppressImplicitAnyIndexErrors": true
+}

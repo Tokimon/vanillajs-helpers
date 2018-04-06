@@ -16,6 +16,11 @@
 * [formatNumber](_formatnumber_.md#formatnumber)
 
 
+### Object literals
+
+* [defaultSettings](_formatnumber_.md#defaultsettings)
+
+
 
 ---
 ## Functions
@@ -27,7 +32,7 @@
 
 
 
-*Defined in [formatNumber.ts:33](https://github.com/Tokimon/vanillajs-helpers/blob/255013e/formatNumber.ts#L33)*
+*Defined in [formatNumber.ts:33](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/formatNumber.ts#L33)*
 
 
 
@@ -35,7 +40,7 @@ Formats a number with defined thousand and decimal separator, and a decimal limi
 
     // Default format
     formatNumber(123456); // -> 123.456,00
-
+    
     // Custom format
     formatNumber(123456, { decimals: '>3', thousandSep: '-', decimalSep: ':' }); // -> 123-456:000
 
@@ -52,6 +57,52 @@ Formats a number with defined thousand and decimal separator, and a decimal limi
 
 
 **Returns:** `string`
+
+
+
+
+
+___
+
+
+<a id="defaultsettings"></a>
+
+## Object literal: defaultSettings
+
+
+<a id="defaultsettings.decimalsep"></a>
+
+###  decimalSep
+
+**●  decimalSep**:  *`string`*  = ","
+
+*Defined in [formatNumber.ts:16](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/formatNumber.ts#L16)*
+
+
+
+
+
+___
+<a id="defaultsettings.decimals"></a>
+
+###  decimals
+
+**●  decimals**:  *`number`*  = 2
+
+*Defined in [formatNumber.ts:14](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/formatNumber.ts#L14)*
+
+
+
+
+
+___
+<a id="defaultsettings.thousandsep"></a>
+
+###  thousandSep
+
+**●  thousandSep**:  *`string`*  = "."
+
+*Defined in [formatNumber.ts:15](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/formatNumber.ts#L15)*
 
 
 

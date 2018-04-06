@@ -24,84 +24,75 @@ to leave them out.
 These helpers a JS platform agnostic, for browser specific helpers check out:
 [vanillajs-browser-helpers](https://github.com/Tokimon/vanillajs-browser-helpers)
 
-## Documentation
+## Available methods
 
-Documentation is written in the [Wiki](https://github.com/Tokimon/vanillajs-helpers/wiki)
-of the [GitHub repository](https://github.com/Tokimon/vanillajs-helpers), but here below is an overview of the helpers available.
-
-### Helpers
-
-- [camelCase](https://github.com/Tokimon/vanillajs-helpers/wiki/camelCase):
+- [camelCase](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_camelcase_.md):
 Turn a phrase or word with different casing into a `camelCased` word.
-- [capitalize](https://github.com/Tokimon/vanillajs-helpers/wiki/capitalize):
+- [capitalize](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_capitalize_.md):
 Capitalize Each Word In A Phrase.
-- [chunkString](https://github.com/Tokimon/vanillajs-helpers/wiki/chunkString):
+- [chunkString](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_chunkstring_.md):
 Chop up a string into chunks of the desired length.
-- [currencyFormat](https://github.com/Tokimon/vanillajs-helpers/wiki/currencyFormat):
+- [currencyFormat](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_currencyformat_.md):
 Format a number into a specific currency format like: $ 1.000,00.
-- [dashed](https://github.com/Tokimon/vanillajs-helpers/wiki/dashed):
+- [dashed](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_dashed_.md):
 Turn a phrase or word with different casing into a `dashed-lowercase-phrase`.
-- [eachWord](https://github.com/Tokimon/vanillajs-helpers/wiki/eachWord):
+- [eachWord](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_eachword_.md):
 Loop over each word in a phrase.
-- [formatNumber](https://github.com/Tokimon/vanillajs-helpers/wiki/formatNumber):
+- [formatNumber](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_formatnumber_.md):
 Format a number acording to a given template like: 1.000,00.
-- [hash](https://github.com/Tokimon/vanillajs-helpers/wiki/hash):
+- [hash](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_hash_.md):
 Create a unique hash from a string.
-- [hexToNumber](https://github.com/Tokimon/vanillajs-helpers/wiki/hexToNumber):
+- [hexToNumber](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_hextonumber_.md):
 Convert Hexadecimal into a number (eg. b4 => 180).
-- [hexToRGB](https://github.com/Tokimon/vanillajs-helpers/wiki/hexToRGB):
+- [hexToRGB](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_hextorgb_.md):
 Converts a Hexadecimal color to a RGB(A) color array.
-- [isArray](https://github.com/Tokimon/vanillajs-helpers/wiki/isArray):
+- [indexLoop](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_indexloop_.md):
+Iterate over indexes in an array like object (break out early with `return false`).
+- [isArray](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_isarray_.md):
 Tests if a given object is an Array
-- [isBoolean](https://github.com/Tokimon/vanillajs-helpers/wiki/isBoolean):
+- [isBoolean](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_isboolean_.md):
 Tests if a given object is a Boolean
-- [isCollection](https://github.com/Tokimon/vanillajs-helpers/wiki/isCollection):
+- [isCollection](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_iscollection_.md):
 Tests if a given object is an Array or array like object (contains numeric entries and a length)
-- [isFunction](https://github.com/Tokimon/vanillajs-helpers/wiki/isFunction):
+- [isFunction](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_isfunction_.md):
 Tests if a given object is a Function
-- [isGenerator](https://github.com/Tokimon/vanillajs-helpers/wiki/isGenerator):
+- [isGenerator](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_isgenerator_.md):
 Tests if a given object is a Generator function
-- [isNumber](https://github.com/Tokimon/vanillajs-helpers/wiki/isNumber):
+- [isNumber](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_isnumber_.md):
 Tests if a given object is a Number
-- [isObject](https://github.com/Tokimon/vanillajs-helpers/wiki/isObject):
+- [isObject](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_isobject_.md):
 Tests if a given object is an Object (plain object)
-- [isString](https://github.com/Tokimon/vanillajs-helpers/wiki/isString):
+- [isString](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_isstring_.md):
 Tests if a given object is a String
-- [iterate](https://github.com/Tokimon/vanillajs-helpers/wiki/iterate):
-Iterate over entries in an array like object.
-- [leadingZero](https://github.com/Tokimon/vanillajs-helpers/wiki/leadingZero):
+- [leadingZero](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_leadingzero_.md):
 Make sure a number is a string of a given length with empty slots filled up with zeroes (0), like: 007
-- [leftPad](https://github.com/Tokimon/vanillajs-helpers/wiki/leftPad):
-Pads a string to the left with a given character (much like leadingZero).
-- [limitDecimals](https://github.com/Tokimon/vanillajs-helpers/wiki/limitDecimals):
+- [limitDecimals](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_limitdecimals_.md):
 Limit decimals of a floating number to a given length.
-- [numberToHex](https://github.com/Tokimon/vanillajs-helpers/wiki/numberToHex):
+- [numberToHex](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_numbertohex_.md):
 Convert a number to a Hexadecimal representation (eg. 180 => b4).
-- [objectType](https://github.com/Tokimon/vanillajs-helpers/wiki/objectType):
+- [objectType](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_objecttype_.md):
 Determine what type a given object is (string, array, etc.)
-- [pascalCase](https://github.com/Tokimon/vanillajs-helpers/wiki/pascalCase):
+- [pascalCase](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_pascalcase_.md):
 Turn a phrase or word with different casing into a `PascalCased` word.
-- [phrasify](https://github.com/Tokimon/vanillajs-helpers/wiki/phrasify):
+- [phrasify](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_phrasify_.md):
 Converts a word of a special casing or a phrase, into a space separated phrase.
-- [promisefy](https://github.com/Tokimon/vanillajs-helpers/wiki/promisefy):
+- [promisefy](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_promisefy_.md):
 Converts a regular method using `(err, data)` type of callback into a method that returns a promise.
-- [randomId](https://github.com/Tokimon/vanillajs-helpers/wiki/randomId):
-Generates a random id string of a given length.
-- [randomRGBColor](https://github.com/Tokimon/vanillajs-helpers/wiki/randomRGBColor):
+- [randomHexColor](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_randomrgbcolor_.md):
 Gives a random RGB color.
-- [repeatString](https://github.com/Tokimon/vanillajs-helpers/wiki/repeatString):
-Creates a string with a given character (or string) repeated x number of times.
-- [RGBToHex](https://github.com/Tokimon/vanillajs-helpers/wiki/RGBToHex):
+- [randomId](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_randomid_.md):
+Generates a random id string of a given length.
+- [randomRGBColor](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_randomrgbcolor_.md):
+Gives a random RGB color.
+- [RGBToHex](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_rgbtohex_.md):
 Converts a RGB color to a HEX color (eg. [255, 0, 0] => #ff0000)
-- [rightPad](https://github.com/Tokimon/vanillajs-helpers/wiki/rightPad):
-Pads a string to the right with a given character (the inverse of leftPad).
-- [snakeCase](https://github.com/Tokimon/vanillajs-helpers/wiki/snakeCase):
+- [safeDateChange](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_safedatechange_.md):
+Change to another date without jumping month (eg. if you are going from 31st of January to February you would normally end up in March).
+- [snakeCase](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_snakecase_.md):
 Turn a phrase or word with different casing into a `snake_cased` word.
-- [trim](https://github.com/Tokimon/vanillajs-helpers/wiki/trim):
-Trims off trailing spaces (or defined char) on both sides of a string.
-- [truncate](https://github.com/Tokimon/vanillajs-helpers/wiki/truncate):
+- [truncate](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_truncate_.md):
 Ensures a max length of a given string.
-- [uniqueArray](https://github.com/Tokimon/vanillajs-helpers/wiki/uniqueArray):
+- [uniqueArray](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_uniquearray_.md):
 Make sure an Array only contains unique values.
 
 ## Installation
@@ -111,6 +102,12 @@ npm install vanillajs-helpers
 ```
 
 ## Usage
+
+```ts
+// TypeScript modules (TypeScript will include the .ts file opposed to the .js file)
+import camelCase from 'vanillajs-helpers/camelCase';
+camelCase('Camel cased phrase'); // camelCasedPhrase
+```
 
 ```js
 // ES 6 Modules
@@ -138,4 +135,4 @@ free to add an issue in the [issue list](https://github.com/Tokimon/vanillajs-he
 
 ## Testing
 
-Check out the [Testing docs](https://github.com/Tokimon/vanillajs-helpers/wiki/testing)
+Check out the [Testing docs](https://github.com/Tokimon/vanillajs-helpers/wiki/testing.md)

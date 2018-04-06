@@ -22,7 +22,7 @@
 
 
 
-*Defined in [uniqueArray.ts:8](https://github.com/Tokimon/vanillajs-helpers/blob/255013e/uniqueArray.ts#L8)*
+*Defined in [uniqueArray.ts:8](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/uniqueArray.ts#L8)*
 
 
 

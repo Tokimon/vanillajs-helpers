@@ -23,7 +23,7 @@
 
 
 
-*Defined in [isGenerator.ts:17](https://github.com/Tokimon/vanillajs-helpers/blob/255013e/isGenerator.ts#L17)*
+*Defined in [isGenerator.ts:17](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/isGenerator.ts#L17)*
 
 
 
@@ -56,7 +56,7 @@ ___
 
 
 
-*Defined in [isGenerator.ts:9](https://github.com/Tokimon/vanillajs-helpers/blob/255013e/isGenerator.ts#L9)*
+*Defined in [isGenerator.ts:9](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/isGenerator.ts#L9)*
 
 
 

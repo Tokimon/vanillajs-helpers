@@ -22,7 +22,7 @@
 
 
 
-*Defined in [randomId.ts:4](https://github.com/Tokimon/vanillajs-helpers/blob/255013e/randomId.ts#L4)*
+*Defined in [randomId.ts:4](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/randomId.ts#L4)*
 
 
 

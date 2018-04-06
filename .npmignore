@@ -9,4 +9,5 @@ test
 coverage
 tasks
 tsconfig.json
+typedoc.json
 yarn.lock

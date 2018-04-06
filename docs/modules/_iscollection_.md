@@ -22,7 +22,7 @@
 
 
 
-*Defined in [isCollection.ts:9](https://github.com/Tokimon/vanillajs-helpers/blob/255013e/isCollection.ts#L9)*
+*Defined in [isCollection.ts:9](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/isCollection.ts#L9)*
 
 
 
