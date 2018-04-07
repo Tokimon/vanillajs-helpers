@@ -11,9 +11,9 @@
 This is a collection of simple, no dependency, vanilla JS snippets with the aim
 of making it easier to work with vanilla JS.
 
-They is written in ES6, since now both Node and most of the major browsers support this syntax,
-all scripts have however been converted into the CommonJS syntax and stored in the `./cjs` folder,
-should they whish to be used in a Node environment.
+They is written in ES6 (TypeScript), since now both Node and most of the major browsers support this syntax,
+all scripts have however been converted into the CommonJS (`./cjs`) and ES5 (`./es5`) syntax stored in their
+respective sub folders.
 
 Polyfills haven't been included as they exist in abundance on NPM, and since the
 need for polyfills are ever diminishing it is more future proof and clutter free
@@ -52,8 +52,6 @@ Iterate over indexes in an array like object (break out early with `return false
 Tests if a given object is an Array
 - [isBoolean](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_isboolean_.md):
 Tests if a given object is a Boolean
-- [isCollection](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_iscollection_.md):
-Tests if a given object is an Array or array like object (contains numeric entries and a length)
 - [isFunction](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_isfunction_.md):
 Tests if a given object is a Function
 - [isGenerator](https://github.com/Tokimon/vanillajs-helpers/tree/master/docs/_isgenerator_.md):

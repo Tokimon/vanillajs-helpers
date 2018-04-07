@@ -31,6 +31,9 @@ export type CurrencyFomatter = (num: number) => string;
  * sixdecimals(2345234.678); // -> '$ 2,345,234.678000'
  * sixdecimals(234.12345678); // -> '$ 234.123457'
  * ```
+ *
+ * @param thousand - The template for how to format a number, takes an example of 1000 in the desired curreny (eg. '1.000,00 €')
+ * @return - Curried function to format a given number
  */
 export default function currencyFormat(thousand: string = '1.000,00 €'): CurrencyFomatter {
   const m = /^(\D*)1(\D*)000(\D*)(\d*)(\D*)$/.exec(thousand);

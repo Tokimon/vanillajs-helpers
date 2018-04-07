@@ -18,6 +18,11 @@ import indexLoop, { IndexLoopCallback } from './indexLoop';
  * // Hello ... JS-World
  * // count === 2
  * ```
+ *
+ * @param phrase - Phrase to loop over
+ * @param cb - Callback function to call on every iteration
+ * @param seperator - Expression to determine seperation of words
+ * @return - Number of words in the phrase (length of looped array)
  */
 export default function eachWord(phrase: string, cb: IndexLoopCallback, separator: RegExp | string = /[- _,]+/): number {
   const words = (isString(phrase) ? phrase.split(separator) : []).filter((word) => !!word);
