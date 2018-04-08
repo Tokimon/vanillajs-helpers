@@ -14,11 +14,12 @@
   },
 
   "include": [
-    "./*.ts"
+    "./*.ts",
+    "./test/*.ts"
   ],
 
   "exclude": [
     "./node_modules/**/*.ts",
-    "./test/**/*.ts"
+    "./node_modules/.*/**/*.ts"
   ]
 }
