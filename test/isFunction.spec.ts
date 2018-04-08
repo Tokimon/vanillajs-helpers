@@ -1,12 +1,12 @@
-/* eslint-env node, mocha */
-/* eslint-disable no-new-func, no-unused-expressions */
+/* tslint:disable:no-new-func, no-unused-expression */
 
 import expect from './assets/chai';
 import isFunction from '../isFunction';
 
 describe('"isFunction"', () => {
   it('Should return true for Function values', () => {
-    expect(isFunction(function() {})).to.be.true;
+    expect(isFunction(function() { void 0; })).to.be.true;
+    expect(isFunction(() => void 0)).to.be.true;
     expect(isFunction(new Function())).to.be.true;
   });
 

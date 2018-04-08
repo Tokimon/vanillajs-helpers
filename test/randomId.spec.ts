@@ -1,5 +1,4 @@
-/* eslint-env node, mocha */
-/* eslint-disable no-unused-expressions */
+/* tslint:disable:no-unused-expression */
 
 import expect from './assets/chai';
 import randomId from '../randomId';

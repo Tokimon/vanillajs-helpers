@@ -12,12 +12,25 @@ interface TruncateSettings {
 
 /**
  * Limits a string to a given number of characters and adds '...' in the end
+ *
+ * ```ts
+ * truncate('No max length to the string'); // -> No max limit to the string length
+ * truncate('With a max length to the string', { maxLength: 10 }); // -> With a max...
+ * truncate('With a max length to the string and a differnet ending', { maxLength: 10, end: ' <---' }); // -> With a max <---
+ * ```
+ *
+ * @param str - String to truncate
+ * @param settings - Settings to use with the truncation
+ * @return - The truncated string
  */
 export default function truncate(str: string, settings: TruncateSettings = {}): string {
   if (!isString(str)) { return ''; }
 
   const { maxLength, end = '...' } = settings;
-  if (!isNumber(maxLength) || maxLength! < 0) { return str; }
 
-  return str.length <= maxLength! ? str : `${str.substr(0, maxLength)}${end}`;
+  if (!isNumber(maxLength) || maxLength! < 0 || str.length <= maxLength!) {
+    return str;
+  }
+
+  return `${str.substr(0, maxLength)}${end}`;
 }

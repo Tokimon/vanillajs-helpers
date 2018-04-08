@@ -1,5 +1,3 @@
-/* eslint-env node, mocha */
-
 import expect from './assets/chai';
 import limitDecimals from '../limitDecimals';
 
@@ -31,7 +29,7 @@ describe('"limitDecimals"', () => {
   it('Should be able to limit decimals of strings', () => {
     expect(limitDecimals('9.678', '<2')).to.equal('9.68');
     expect(limitDecimals('9.123', null)).to.equal('9');
-  })
+  });
 
   it('Should cut decimals if decimal indication is not defined correctly', () => {
     expect(limitDecimals(9.678, 'none')).to.equal('10');

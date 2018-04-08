@@ -1,4 +1,4 @@
-/* eslint-env node, mocha */
+/* tslint:disable:no-new-func, no-unused-expression */
 
 import expect from './assets/chai';
 import isNumber from '../isNumber';

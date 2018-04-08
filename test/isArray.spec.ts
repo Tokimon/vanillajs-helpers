@@ -1,5 +1,4 @@
-/* eslint-env node, mocha */
-/* eslint-disable no-new-wrappers, no-unused-expressions */
+/* tslint:disable:no-new-wrappers, no-unused-expression */
 
 import expect from './assets/chai';
 import isArray from '../isArray';
@@ -13,7 +12,7 @@ describe('"isArray"', () => {
 
   it('Should return false for non Array values', () => {
     expect(isArray(null)).to.be.false;
-    expect(isArray({0: 1, length: 1})).to.be.false;
+    expect(isArray({ 0: 1, length: 1 })).to.be.false;
     expect(isArray('Array')).to.be.false;
     expect(isArray(undefined)).to.be.false;
   });

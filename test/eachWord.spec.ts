@@ -1,5 +1,4 @@
-/* eslint-env node, mocha */
-/* eslint-disable no-unused-expressions */
+/* tslint:disable:no-unused-expression */
 
 import * as sinon from 'sinon';
 import expect from './assets/chai';
@@ -60,7 +59,7 @@ describe('"eachWord"', () => {
   });
 
   it('Should return the number of words in the phrase', () => {
-    expect(eachWord('space separated phrase', () => {})).to.equal(3);
+    expect(eachWord('space separated phrase', () => void 0)).to.equal(3);
     expect(eachWord('space separated phrase', null)).to.equal(3);
   });
 

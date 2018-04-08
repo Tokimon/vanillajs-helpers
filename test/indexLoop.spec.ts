@@ -1,9 +1,8 @@
-/* eslint-env node, mocha */
-/* eslint-disable no-unused-expressions */
+/* tslint:disable:no-unused-expression */
 
 import * as sinon from 'sinon';
 import expect from './assets/chai';
-import indexLoop, { ArrayLike } from '../indexLoop';
+import indexLoop from '../indexLoop';
 
 describe('"indexLoop"', () => {
   it('Should indexLoop an array', () => {
@@ -43,12 +42,12 @@ describe('"indexLoop"', () => {
   });
 
   it('Should return the length of the collection', () => {
-    expect(indexLoop([1, 2, 3], () => {})).to.equal(3);
+    expect(indexLoop([1, 2, 3], () => void 0)).to.equal(3);
   });
 
   it('Should return 0 if cb or iterable is not defined', () => {
     expect(indexLoop([], null)).to.equal(0);
-    expect(indexLoop(null, () => {})).to.equal(0);
+    expect(indexLoop(null, () => void 0)).to.equal(0);
     expect(indexLoop(null, null)).to.equal(0);
   });
 });

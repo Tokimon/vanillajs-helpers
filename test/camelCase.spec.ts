@@ -1,5 +1,3 @@
-/* eslint-env node, mocha */
-
 import expect from './assets/chai';
 import camelCase from '../camelCase';
 
@@ -31,7 +29,7 @@ describe('"camelCase"', () => {
     });
 
     it('Should always turn inputs into strings', () => {
-      const caser = <Function> camelCase();
+      const caser = camelCase() as Function;
       expect(caser(null)).to.equal('');
       expect(caser('')).to.equal('');
       expect(caser(undefined)).to.equal('');
@@ -39,7 +37,7 @@ describe('"camelCase"', () => {
 
     describe('{ "abbr" : false, "upper" : false, "numbers" : true } (default settings)', () => {
       it('Should use default settings when an empty settings object is given', () => {
-        const caser = <Function> camelCase();
+        const caser = camelCase() as Function;
         expect(caser('Convert PHRASE into Camel case')).to.equal('convertPhraseIntoCamelCase');
         expect(caser('ABBR phrase')).to.equal('abbrPhrase');
         expect(caser('HTMLElement')).to.equal('htmlElement');
@@ -57,7 +55,7 @@ describe('"camelCase"', () => {
 
     describe('{ "abbr" : true }', () => {
       it('Should keep abbriviations', () => {
-        const caser = <Function> camelCase({ abbr: true });
+        const caser = camelCase({ abbr: true }) as Function;
         expect(caser('Convert PHRASE into Camel case')).to.equal('convertPHRASEIntoCamelCase');
         expect(caser('ABBR phrase')).to.equal('ABBRPhrase');
         expect(caser('HTMLElement')).to.equal('HTMLElement');
@@ -66,7 +64,7 @@ describe('"camelCase"', () => {
 
     describe('{ "upper" : true }', () => {
       it('Should convert first character to upper case ', () => {
-        const caser = <Function> camelCase({ upper: true });
+        const caser = camelCase({ upper: true }) as Function;
         expect(caser('Convert PHRASE into Camel case')).to.equal('ConvertPhraseIntoCamelCase');
         expect(caser('ABBR phrase')).to.equal('AbbrPhrase');
         expect(caser('HTMLElement')).to.equal('HtmlElement');
@@ -83,7 +81,7 @@ describe('"camelCase"', () => {
 
     describe('{ "numbers" : false }', () => {
       it('Should ignore numbers', () => {
-        const caser = <Function> camelCase({ numbers: false });
+        const caser = camelCase({ numbers: false }) as Function;
         expect(caser('LOOK! 99 air balloons')).to.equal('look99AirBalloons');
         expect(caser('bool2str')).to.equal('bool2str');
         expect(caser('L337caser')).to.equal('l337caser');
@@ -94,7 +92,7 @@ describe('"camelCase"', () => {
 
     describe('{ "abbr" : true, "upper" : true }', () => {
       it('Should convert first character to upper case and keep abbrivations', () => {
-        const caser = <Function> camelCase({ upper: true, abbr: true });
+        const caser = camelCase({ upper: true, abbr: true }) as Function;
         expect(caser('Convert PHRASE into Camel case')).to.equal('ConvertPHRASEIntoCamelCase');
         expect(caser('ABBR phrase')).to.equal('ABBRPhrase');
         expect(caser('HTMLElement')).to.equal('HTMLElement');
@@ -111,7 +109,7 @@ describe('"camelCase"', () => {
 
     describe('{ "abbr" : true, "numbers" : false }', () => {
       it('Should keep abbrivations and ignore numbers', () => {
-        const caser = <Function> camelCase({ numbers: false, abbr: true });
+        const caser = camelCase({ numbers: false, abbr: true }) as Function;
         expect(caser('Convert PHRASE into Camel case')).to.equal('convertPHRASEIntoCamelCase');
         expect(caser('ABBR phrase')).to.equal('ABBRPhrase');
         expect(caser('HTMLElement')).to.equal('HTMLElement');
@@ -128,7 +126,7 @@ describe('"camelCase"', () => {
 
     describe('{ "upper" : true, "numbers" : false }', () => {
       it('Should convert first character to upper case and ignore numbers', () => {
-        const caser = <Function> camelCase({ upper: true, numbers: false });
+        const caser = camelCase({ upper: true, numbers: false }) as Function;
         expect(caser('Convert PHRASE into Camel case')).to.equal('ConvertPhraseIntoCamelCase');
         expect(caser('ABBR phrase')).to.equal('AbbrPhrase');
         expect(caser('HTMLElement')).to.equal('HtmlElement');
@@ -145,7 +143,7 @@ describe('"camelCase"', () => {
 
     describe('{ "abbr" : true, "upper" : true, "numbers" : false }', () => {
       it('Should convert first character to upper case, keep abbrivations and ignore numbers', () => {
-        const caser = <Function> camelCase({ numbers: false, abbr: true, upper: true });
+        const caser = camelCase({ numbers: false, abbr: true, upper: true }) as Function;
         expect(caser('Convert PHRASE into Camel case')).to.equal('ConvertPHRASEIntoCamelCase');
         expect(caser('ABBR phrase')).to.equal('ABBRPhrase');
         expect(caser('HTMLElement')).to.equal('HTMLElement');

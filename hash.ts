@@ -8,6 +8,9 @@ import isString from './isString';
  * ```ts
  * hashCode('Hash this string'); // -> 1720121313
  * ```
+ *
+ * @param str - String to generate hash code from
+ * @return - Hash code
  */
 export function hashCode(str: string): number {
   str = isString(str) ? str : '';
@@ -31,6 +34,9 @@ export function hashCode(str: string): number {
  * ```ts
  * hash('Hash this string'); // -> sg463l
  * ```
+ *
+ * @param str - String to generate hash string from
+ * @return - Hash string
  */
 export default function hash(str: string): string {
   const code = hashCode(str);

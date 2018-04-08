@@ -1,21 +1,7 @@
-/* eslint-env node, mocha */
-
 import expect from './assets/chai';
 import uniqueArray from '../uniqueArray';
 
 describe('"uniqueArray"', () => {
-  it('Should return empty array for falsy values', () => {
-    expect(uniqueArray(undefined)).to.eql([]);
-    expect(uniqueArray(null)).to.eql([]);
-  });
-
-  it('Should return an array containing the given value if it is not an array', () => {
-    const obj = {};
-    expect(uniqueArray(obj)).to.eql([obj]);
-    expect(uniqueArray('1,2,3')).to.eql(['1,2,3']);
-    expect(uniqueArray(123)).to.eql([123]);
-  });
-
   it('Should filter out duplicate items in the array (Empty)', () => {
     expect(uniqueArray([])).to.be.an('array').and.to.have.lengthOf(0);
   });

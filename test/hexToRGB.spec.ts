@@ -1,5 +1,3 @@
-/* eslint-env node, mocha */
-
 import expect from './assets/chai';
 import hexToRGB from '../hexToRGB';
 

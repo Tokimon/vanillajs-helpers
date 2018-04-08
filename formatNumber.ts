@@ -3,7 +3,7 @@ import limitDecimals from './limitDecimals';
 
 
 export interface FormatNumberSettings {
-  decimals?: number|string;
+  decimals?: number | string;
   thousandSep?: string;
   decimalSep?: string;
 }
@@ -29,6 +29,10 @@ const defaultSettings: FormatNumberSettings = {
  * // Custom format
  * formatNumber(123456, { decimals: '>3', thousandSep: '-', decimalSep: ':' }); // -> 123-456:000
  * ```
+ *
+ * @param num - Number to format
+ * @param settings - Settings for the number formatting
+ * @return Formatted number as a string
  */
 export default function formatNumber(num: number, settings?: FormatNumberSettings): string {
   const { decimals, thousandSep, decimalSep } = Object.assign({}, defaultSettings, settings);

@@ -1,5 +1,5 @@
-/* eslint-env node, mocha */
-/* eslint-disable no-new-wrappers, no-unused-expressions */
+
+/* tslint:disable:no-new-wrappers, no-unused-expression */
 
 import expect from './assets/chai';
 import isBoolean from '../isBoolean';
