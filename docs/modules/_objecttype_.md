@@ -22,7 +22,7 @@
 
 
 
-*Defined in [objectType.ts:13](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/objectType.ts#L13)*
+*Defined in [objectType.ts:13](https://github.com/Tokimon/vanillajs-helpers/blob/d7b5019/objectType.ts#L13)*
 
 
 

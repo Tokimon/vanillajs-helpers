@@ -22,7 +22,7 @@
 
 
 
-*Defined in [snakeCase.ts:19](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/snakeCase.ts#L19)*
+*Defined in [snakeCase.ts:19](https://github.com/Tokimon/vanillajs-helpers/blob/d7b5019/snakeCase.ts#L19)*
 
 
 

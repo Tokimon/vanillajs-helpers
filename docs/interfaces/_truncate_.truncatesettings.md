@@ -12,7 +12,7 @@
 
 **●  end**:  *`undefined`⎮`string`* 
 
-*Defined in [truncate.ts:8](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/truncate.ts#L8)*
+*Defined in [truncate.ts:8](https://github.com/Tokimon/vanillajs-helpers/blob/d7b5019/truncate.ts#L8)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  maxLength**:  *`undefined`⎮`number`* 
 
-*Defined in [truncate.ts:7](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/truncate.ts#L7)*
+*Defined in [truncate.ts:7](https://github.com/Tokimon/vanillajs-helpers/blob/d7b5019/truncate.ts#L7)*
 
 
 

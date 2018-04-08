@@ -22,7 +22,7 @@
 
 
 
-*Defined in [isString.ts:16](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/isString.ts#L16)*
+*Defined in [isString.ts:16](https://github.com/Tokimon/vanillajs-helpers/blob/d7b5019/isString.ts#L16)*
 
 
 

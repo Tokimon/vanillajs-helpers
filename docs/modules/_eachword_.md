@@ -22,7 +22,7 @@
 
 
 
-*Defined in [eachWord.ts:27](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/eachWord.ts#L27)*
+*Defined in [eachWord.ts:27](https://github.com/Tokimon/vanillajs-helpers/blob/d7b5019/eachWord.ts#L27)*
 
 
 

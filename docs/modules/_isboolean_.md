@@ -22,7 +22,7 @@
 
 
 
-*Defined in [isBoolean.ts:12](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/isBoolean.ts#L12)*
+*Defined in [isBoolean.ts:12](https://github.com/Tokimon/vanillajs-helpers/blob/d7b5019/isBoolean.ts#L12)*
 
 
 

@@ -12,7 +12,7 @@
 
 **●  decimalSep**:  *`undefined`⎮`string`* 
 
-*Defined in [formatNumber.ts:8](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/formatNumber.ts#L8)*
+*Defined in [formatNumber.ts:8](https://github.com/Tokimon/vanillajs-helpers/blob/d7b5019/formatNumber.ts#L8)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  decimals**:  *`number`⎮`string`* 
 
-*Defined in [formatNumber.ts:6](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/formatNumber.ts#L6)*
+*Defined in [formatNumber.ts:6](https://github.com/Tokimon/vanillajs-helpers/blob/d7b5019/formatNumber.ts#L6)*
 
 
 
@@ -40,7 +40,7 @@ ___
 
 **●  thousandSep**:  *`undefined`⎮`string`* 
 
-*Defined in [formatNumber.ts:7](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/formatNumber.ts#L7)*
+*Defined in [formatNumber.ts:7](https://github.com/Tokimon/vanillajs-helpers/blob/d7b5019/formatNumber.ts#L7)*
 
 
 

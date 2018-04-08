@@ -22,7 +22,7 @@
 
 
 
-*Defined in [hexToRGB.ts:20](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/hexToRGB.ts#L20)*
+*Defined in [hexToRGB.ts:20](https://github.com/Tokimon/vanillajs-helpers/blob/d7b5019/hexToRGB.ts#L20)*
 
 
 

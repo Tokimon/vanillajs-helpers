@@ -22,7 +22,7 @@
 
 
 
-*Defined in [isNumber.ts:13](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/isNumber.ts#L13)*
+*Defined in [isNumber.ts:13](https://github.com/Tokimon/vanillajs-helpers/blob/d7b5019/isNumber.ts#L13)*
 
 
 

@@ -24,7 +24,7 @@
 
 
 
-*Defined in [RGBToHex.ts:20](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/RGBToHex.ts#L20)*
+*Defined in [RGBToHex.ts:20](https://github.com/Tokimon/vanillajs-helpers/blob/d7b5019/RGBToHex.ts#L20)*
 
 
 
@@ -52,7 +52,7 @@ Converts a Array of R G B (A) colors into a hex color.
 
 
 
-*Defined in [RGBToHex.ts:39](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/RGBToHex.ts#L39)*
+*Defined in [RGBToHex.ts:39](https://github.com/Tokimon/vanillajs-helpers/blob/d7b5019/RGBToHex.ts#L39)*
 
 
 
