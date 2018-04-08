@@ -22,7 +22,7 @@
 
 
 
-*Defined in [hexToRGB.ts:17](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/hexToRGB.ts#L17)*
+*Defined in [hexToRGB.ts:20](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/hexToRGB.ts#L20)*
 
 
 
@@ -38,13 +38,15 @@ Converts a Hexadecimal color to a RGB(A) color array
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| hex | `string`   |  - |
+| hex | `string`   |  Hex color to convert to RGB |
 
 
 
 
 
 **Returns:** `number`[]
+- Array with RGB values
+
 
 
 

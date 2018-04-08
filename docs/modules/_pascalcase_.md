@@ -18,28 +18,63 @@
 
 ###  pascalCase
 
-► **pascalCase**(str: *`string`*): `string`
+► **pascalCase**(input?: *[CamelCaseSettings](../interfaces/_camelcase_.camelcasesettings.md)*): [CamelCaseFunction](_camelcase_.md#camelcasefunction)
+
+► **pascalCase**(input: *`string`*): `string`
 
 
 
-*Defined in [pascalCase.ts:8](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/pascalCase.ts#L8)*
+*Defined in [pascalCase.ts:20](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/pascalCase.ts#L20)*
 
 
 
-Transform a phrase into a PascalCased word (eg. 'pascal case' -> 'PascalCase')
+Return a function that transforms a string into a PascalCased word (eg. 'pascal case' -> 'PascalCase').
+
+    const caser = pascalCase({ abbr: true, numbers: true });
+    
+    caser('data-VALUE2-input'); // -> DataVALUE2Input
+    caser('XML data input'); // -> XMLDataInput
 
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| str | `string`   |  - |
+| input | [CamelCaseSettings](../interfaces/_camelcase_.camelcasesettings.md)   |  The settings for the returned format method |
+
+
+
+
+
+**Returns:** [CamelCaseFunction](_camelcase_.md#camelcasefunction)
+- The method to perform the formatting
+
+
+
+
+*Defined in [pascalCase.ts:33](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/pascalCase.ts#L33)*
+
+
+
+Transform a string into a PascalCased word (eg. 'pascal case' -> 'PascalCase')
+
+    pascalCase('data-value2-input'); // -> DataValue2input
+    pascalCase('XML data input'); // -> XmlDataInput
+
+
+**Parameters:**
+
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| input | `string`   |  The string to format |
 
 
 
 
 
 **Returns:** `string`
+- The formatted string
+
 
 
 

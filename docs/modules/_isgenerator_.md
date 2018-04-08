@@ -23,24 +23,31 @@
 
 
 
-*Defined in [isGenerator.ts:17](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/isGenerator.ts#L17)*
+*Defined in [isGenerator.ts:39](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/isGenerator.ts#L39)*
 
 
 
 Determine if the given object is a Generator Function
+
+    function* gen() {}
+    
+    isGeneratorLike(gen); // -> true
+    isGeneratorLike(() => {}); // -> false
 
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| obj | `any`   |  - |
+| obj | `any`   |  Object to test |
 
 
 
 
 
 **Returns:** `boolean`
+- Whether the object a Generator or not
+
 
 
 
@@ -56,24 +63,32 @@ ___
 
 
 
-*Defined in [isGenerator.ts:9](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/isGenerator.ts#L9)*
+*Defined in [isGenerator.ts:20](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/isGenerator.ts#L20)*
 
 
 
 Determine if the given object is a Generator(ish) object
+
+    function* gen() {}
+    
+    isGeneratorLike(gen); // -> true
+    isGeneratorLike({ next() {}, throw() {} }); // -> true
+    isGeneratorLike(() => {}); // -> false
 
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| obj | `any`   |  - |
+| obj | `any`   |  Object to test |
 
 
 
 
 
 **Returns:** `boolean`
+- Whether the object a Generator like function or not
+
 
 
 

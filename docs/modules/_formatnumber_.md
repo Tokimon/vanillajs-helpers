@@ -32,7 +32,7 @@
 
 
 
-*Defined in [formatNumber.ts:33](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/formatNumber.ts#L33)*
+*Defined in [formatNumber.ts:37](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/formatNumber.ts#L37)*
 
 
 
@@ -49,14 +49,16 @@ Formats a number with defined thousand and decimal separator, and a decimal limi
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| num | `number`   |  - |
-| settings | [FormatNumberSettings](../interfaces/_formatnumber_.formatnumbersettings.md)   |  - |
+| num | `number`   |  Number to format |
+| settings | [FormatNumberSettings](../interfaces/_formatnumber_.formatnumbersettings.md)   |  Settings for the number formatting |
 
 
 
 
 
 **Returns:** `string`
+Formatted number as a string
+
 
 
 
@@ -76,7 +78,7 @@ ___
 
 **●  decimalSep**:  *`string`*  = ","
 
-*Defined in [formatNumber.ts:16](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/formatNumber.ts#L16)*
+*Defined in [formatNumber.ts:16](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/formatNumber.ts#L16)*
 
 
 
@@ -89,7 +91,7 @@ ___
 
 **●  decimals**:  *`number`*  = 2
 
-*Defined in [formatNumber.ts:14](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/formatNumber.ts#L14)*
+*Defined in [formatNumber.ts:14](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/formatNumber.ts#L14)*
 
 
 
@@ -102,7 +104,7 @@ ___
 
 **●  thousandSep**:  *`string`*  = "."
 
-*Defined in [formatNumber.ts:15](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/formatNumber.ts#L15)*
+*Defined in [formatNumber.ts:15](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/formatNumber.ts#L15)*
 
 
 

@@ -22,24 +22,29 @@
 
 
 
-*Defined in [isBoolean.ts:4](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/isBoolean.ts#L4)*
+*Defined in [isBoolean.ts:12](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/isBoolean.ts#L12)*
 
 
 
 Is the given object a boolean
+
+    isBoolean(false); // -> true
+    isBoolean('string'); // -> false
 
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| obj | `any`   |  - |
+| obj | `any`   |  Object to test |
 
 
 
 
 
 **Returns:** `boolean`
+- Whether the object a Boolean or not
+
 
 
 

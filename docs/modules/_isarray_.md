@@ -22,24 +22,29 @@
 
 
 
-*Defined in [isArray.ts:4](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/isArray.ts#L4)*
+*Defined in [isArray.ts:12](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/isArray.ts#L12)*
 
 
 
 Is the given object an Array
+
+    isArray([1,2,3]); // -> true
+    isArray('string'); // -> false
 
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| obj | `any`   |  - |
+| obj | `any`   |  Object to test |
 
 
 
 
 
 **Returns:** `boolean`
+- Whether the object an Array or not
+
 
 
 

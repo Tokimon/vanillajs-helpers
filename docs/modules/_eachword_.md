@@ -22,7 +22,7 @@
 
 
 
-*Defined in [eachWord.ts:22](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/eachWord.ts#L22)*
+*Defined in [eachWord.ts:27](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/eachWord.ts#L27)*
 
 
 
@@ -43,8 +43,8 @@ Iterate over each word in a phrase (or return word count if no callback is given
 
 | Param | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| phrase | `string`  | - |   - |
-| cb | [IndexLoopCallback](_indexloop_.md#indexloopcallback)  | - |   - |
+| phrase | `string`  | - |   Phrase to loop over |
+| cb | [IndexLoopCallback](_indexloop_.md#indexloopcallback)  | - |   Callback function to call on every iteration |
 | separator | `RegExp`⎮`string`  |  /[- _,]+/ |   - |
 
 
@@ -52,6 +52,8 @@ Iterate over each word in a phrase (or return word count if no callback is given
 
 
 **Returns:** `number`
+- Number of words in the phrase (length of looped array)
+
 
 
 

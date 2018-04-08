@@ -22,24 +22,29 @@
 
 
 
-*Defined in [isFunction.ts:4](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/isFunction.ts#L4)*
+*Defined in [isFunction.ts:12](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/isFunction.ts#L12)*
 
 
 
 Is the given object a Function
+
+    isFunction(() => {}); // -> true
+    isFunction('string'); // -> false
 
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| obj | `any`   |  - |
+| obj | `any`   |  Object to test |
 
 
 
 
 
 **Returns:** `boolean`
+- Whether the object a Function or not
+
 
 
 

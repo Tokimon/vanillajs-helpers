@@ -22,11 +22,14 @@
 
 
 
-*Defined in [randomId.ts:4](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/randomId.ts#L4)*
+*Defined in [randomId.ts:11](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/randomId.ts#L11)*
 
 
 
 Generate a random id of designated length
+
+    randomId(); // -> eg. 'efuc6f1n4xf'
+    randomId(20); // -> eg. '3vsmrbxlh9at0vhcsf1xh'
 
 
 **Parameters:**
@@ -40,6 +43,8 @@ Generate a random id of designated length
 
 
 **Returns:** `string`
+- A random generated id
+
 
 
 

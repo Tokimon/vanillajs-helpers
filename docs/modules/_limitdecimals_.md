@@ -22,39 +22,55 @@
 
 
 
-*Defined in [limitDecimals.ts:18](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/limitDecimals.ts#L18)*
+*Defined in [limitDecimals.ts:33](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/limitDecimals.ts#L33)*
 
 
 
 Limit decimals of a floating number to specified length. The length depends on `decimals` which can have the following settings (n = integer):
 
-*   > n = a minimum number of decimals, if the current number of decimals are
-    > 
-    >      shorter than the defined length, extra 0 (zeros) will be added.
-    >     
+Char
+
+Description
+
+**>n**
+
+Minimum number of decimals, if the current number of decimals are shorter than the defined length, extra 0 (zeros) will be added.
+
+**<n**
+
+Maximum number of decimals, longer decimals will be rounded and shortened down to this number.
+
+**n**
+
+Match this exact number of decimals, rounding longer decimals and adding extra 0 (zeroes) to shorter ones.
+
+    // Exact number of decimals
+    limitDecimals(123.4567) // -> 123.46
+    limitDecimals(123, 5) // -> 123.00000
     
-*   <n = a maximum number of decimals, longer decimals will be rounded and
+    // Max number of decimals
+    limitDecimals(123.4567, '<3') // -> 123.457
+    limitDecimals(123, '<3') // -> 123
     
-          shortened down to this number.
-        
-    
-*   n = match this exact number of decimals, rounding longer decimals and adding
-    
-        extra 0 (zeroes) to shorter ones.
+    // Min number decimals
+    limitDecimals(123.4, '>4') // -> 123.4000
+    limitDecimals(123.456789, '>4') // -> 123.456789
 
 
 **Parameters:**
 
 | Param | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| num | `number`⎮`string`  | - |   - |
-| decimals | `number`⎮`string`  | 2 |   - |
+| num | `number`⎮`string`  | - |   Number to limit the decimals on |
+| decimals | `number`⎮`string`  | 2 |   Setting for how to handle the decimals |
 
 
 
 
 
 **Returns:** `string`
+- String representation of the number with the decimals adjusted according to the decimal setting
+
 
 
 

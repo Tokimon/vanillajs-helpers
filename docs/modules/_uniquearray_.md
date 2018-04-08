@@ -18,28 +18,32 @@
 
 ###  uniqueArray
 
-► **uniqueArray**(arr: *`any`⎮`any`[]*): `any`[]
+► **uniqueArray**(arr: *`any`[]*): `any`[]
 
 
 
-*Defined in [uniqueArray.ts:8](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/uniqueArray.ts#L8)*
+*Defined in [uniqueArray.ts:12](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/uniqueArray.ts#L12)*
 
 
 
 Filter out any duplicate values from an array
+
+    uniqueArray([1,2,3,1,4,5,3,7]); // -> [1,2,3,4,5,6,7]
 
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| arr | `any`⎮`any`[]   |  - |
+| arr | `any`[]   |  Array to filter on |
 
 
 
 
 
 **Returns:** `any`[]
+- The truncated string
+
 
 
 

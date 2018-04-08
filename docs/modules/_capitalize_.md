@@ -22,7 +22,7 @@
 
 
 
-*Defined in [capitalize.ts:9](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/capitalize.ts#L9)*
+*Defined in [capitalize.ts:12](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/capitalize.ts#L12)*
 
 
 
@@ -36,13 +36,15 @@ Capitalize each word in a phrase
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| str | `string`   |  - |
+| str | `string`   |  String to capitalize |
 
 
 
 
 
 **Returns:** `string`
+- Capitalized string
+
 
 
 

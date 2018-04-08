@@ -25,7 +25,7 @@
 
 **Τ CurrencyFomatter**:  *`function`* 
 
-*Defined in [currencyFormat.ts:5](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/currencyFormat.ts#L5)*
+*Defined in [currencyFormat.ts:5](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/currencyFormat.ts#L5)*
 
 
 #### Type declaration
@@ -62,7 +62,7 @@ ___
 
 
 
-*Defined in [currencyFormat.ts:35](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/currencyFormat.ts#L35)*
+*Defined in [currencyFormat.ts:38](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/currencyFormat.ts#L38)*
 
 
 
@@ -92,13 +92,15 @@ The template string should be the number 1000 described with before and after sy
 
 | Param | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| thousand | `string`  | &quot;1.000,00 €&quot; |   - |
+| thousand | `string`  | &quot;1.000,00 €&quot; |   The template for how to format a number, takes an example of 1000 in the desired curreny (eg. '1.000,00 €') |
 
 
 
 
 
 **Returns:** [CurrencyFomatter](_currencyformat_.md#currencyfomatter)
+- Curried function to format a given number
+
 
 
 

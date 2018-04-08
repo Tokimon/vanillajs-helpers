@@ -22,24 +22,29 @@
 
 
 
-*Defined in [isString.ts:8](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/isString.ts#L8)*
+*Defined in [isString.ts:16](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/isString.ts#L16)*
 
 
 
 Is the given object of type String
+
+    isString('string'); // -> true
+    isString(123); // -> false
 
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| obj | `any`   |  - |
+| obj | `any`   |  Object to test |
 
 
 
 
 
 **Returns:** `boolean`
+- Whether the object a string or not
+
 
 
 

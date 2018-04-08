@@ -22,25 +22,30 @@
 
 
 
-*Defined in [snakeCase.ts:10](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/snakeCase.ts#L10)*
+*Defined in [snakeCase.ts:19](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/snakeCase.ts#L19)*
 
 
 
 Transform phrase into a snake_case phrase (eg. 'camelCase' -> 'camel-case' or 'spaced phrase' -> 'spaced-phrase')
+
+    snakeCase('Convert This phrase'); // -> convert_this_phrase
+    snakeCase('dash VERSION1 beta', { numbers: true }); // -> dash_version_1_beta
 
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| str | `string`   |  - |
-| settings | [PhrasifySettings](../interfaces/_phrasify_.phrasifysettings.md)   |  - |
+| str | `string`   |  String to transform |
+| settings | [PhrasifySettings](../interfaces/_phrasify_.phrasifysettings.md)   |  Settings to pass to the phrasify function |
 
 
 
 
 
 **Returns:** `string`
+- The string transformed to snake_case
+
 
 
 

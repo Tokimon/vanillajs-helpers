@@ -22,11 +22,15 @@
 
 
 
-*Defined in [isNumber.ts:4](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/isNumber.ts#L4)*
+*Defined in [isNumber.ts:13](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/isNumber.ts#L13)*
 
 
 
 Is the given object is a finite Number
+
+    isNumber(123); // -> true
+    isNumber(Infinity); // -> false
+    isNumber('123'); // -> false
 
 
 **Parameters:**
@@ -40,6 +44,8 @@ Is the given object is a finite Number
 
 
 **Returns:** `boolean`
+- Whether the object a finite number or not
+
 
 
 

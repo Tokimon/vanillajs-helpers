@@ -22,11 +22,19 @@
 
 
 
-*Defined in [promisefy.ts:8](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/promisefy.ts#L8)*
+*Defined in [promisefy.ts:22](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/promisefy.ts#L22)*
 
 
 
-Converts a callback based action into returning a Promise instead.
+Converts a callback based action into one returning a Promise instead.
+
+    function action(name, callback) { ... callback(); }
+    
+    action = promisefy(action);
+    
+    action
+      .then(() => 'all good')
+      .catch(() => 'Something went wrong');
 
 
 **Parameters:**
@@ -40,6 +48,8 @@ Converts a callback based action into returning a Promise instead.
 
 
 **Returns:** `Function`
+- The formatted string
+
 
 
 

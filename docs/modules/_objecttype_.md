@@ -22,24 +22,30 @@
 
 
 
-*Defined in [objectType.ts:4](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/objectType.ts#L4)*
+*Defined in [objectType.ts:13](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/objectType.ts#L13)*
 
 
 
 Returns the objects type definition name (eg. \[object String\] => "string")
+
+    objectType('string'); // -> 'string'
+    objectType(123); // -> 'number'
+    objectType({}); // -> 'object'
 
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| obj | `any`   |  - |
+| obj | `any`   |  Object to get the type of |
 
 
 
 
 
 **Returns:** `string`
+- String representation of the object type
+
 
 
 

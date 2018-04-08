@@ -22,7 +22,7 @@
 
 
 
-*Defined in [dashed.ts:12](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/dashed.ts#L12)*
+*Defined in [dashed.ts:16](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/dashed.ts#L16)*
 
 
 
@@ -36,14 +36,16 @@ Transform phrase into a dashed phrase (eg. 'camelCase' -> 'camel-case' or 'space
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| str | `string`   |  - |
-| settings | [PhrasifySettings](../interfaces/_phrasify_.phrasifysettings.md)   |  - |
+| str | `string`   |  String to transform |
+| settings | [PhrasifySettings](../interfaces/_phrasify_.phrasifysettings.md)   |  Settings to pass to the phrasify function |
 
 
 
 
 
 **Returns:** `string`
+- The string with spaces replaced by a dash (-)
+
 
 
 

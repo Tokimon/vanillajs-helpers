@@ -36,7 +36,7 @@
 
 **Τ CamelCaseFunction**:  *`function`* 
 
-*Defined in [camelCase.ts:12](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/camelCase.ts#L12)*
+*Defined in [camelCase.ts:12](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/camelCase.ts#L12)*
 
 
 #### Type declaration
@@ -75,18 +75,14 @@ ___
 
 
 
-*Defined in [camelCase.ts:53](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/camelCase.ts#L53)*
+*Defined in [camelCase.ts:61](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/camelCase.ts#L61)*
 
 
 
-Transform a phrase into a camelCased word (eg. 'camel case' -> 'camelCase') If a settings `CamelCaseSettings` object is given a function is returned that transforms a string.
+Return a function that transforms a string into a camelCased word (eg. 'camel case' -> 'camelCase').
 
-    // using default settings
-    camelCase('data-value2-input'); // -> dataValue2input
-    camelCase('XML data input'); // -> XmlDataInput
-    
-    // Adjusting settings
     const caser = camelCase({ abbr: true, numbers: true, upper: true });
+    
     caser('data-VALUE2-input'); // -> DataVALUE2Input
     caser('XML data input'); // -> XMLDataInput
 
@@ -95,31 +91,41 @@ Transform a phrase into a camelCased word (eg. 'camel case' -> 'camelCase') If a
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| input | [CamelCaseSettings](../interfaces/_camelcase_.camelcasesettings.md)   |  - |
+| input | [CamelCaseSettings](../interfaces/_camelcase_.camelcasesettings.md)   |  The settings for the returned format method |
 
 
 
 
 
 **Returns:** [CamelCaseFunction](_camelcase_.md#camelcasefunction)
+- The method to perform the formatting
 
 
 
-*Defined in [camelCase.ts:54](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/camelCase.ts#L54)*
 
+*Defined in [camelCase.ts:74](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/camelCase.ts#L74)*
+
+
+
+Transform a string into a camelCased word (eg. 'camel case' -> 'camelCase')
+
+    camelCase('data-value2-input'); // -> dataValue2input
+    camelCase('XML data input'); // -> XmlDataInput
 
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| input | `string`   |  - |
+| input | `string`   |  The string to format |
 
 
 
 
 
 **Returns:** `string`
+- The formatted string
+
 
 
 
@@ -135,22 +141,29 @@ ___
 
 
 
-*Defined in [camelCase.ts:24](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/camelCase.ts#L24)*
+*Defined in [camelCase.ts:34](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/camelCase.ts#L34)*
 
+
+
+Transform a string into a camelCased word (eg. 'camel case' -> 'camelCase')
+
+    caser('data-value2-input'); // -> dataValue2input
 
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| settings | [CamelCaseSettings](../interfaces/_camelcase_.camelcasesettings.md)   |  - |
-| str | `string`   |  - |
+| settings | [CamelCaseSettings](../interfaces/_camelcase_.camelcasesettings.md)   |  The settings for the string formatting |
+| str | `string`   |  The string to format |
 
 
 
 
 
 **Returns:** `string`
+- The formatted string
+
 
 
 
@@ -170,7 +183,7 @@ ___
 
 **●  abbr**:  *`false`*  = false
 
-*Defined in [camelCase.ts:18](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/camelCase.ts#L18)*
+*Defined in [camelCase.ts:18](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/camelCase.ts#L18)*
 
 
 
@@ -183,7 +196,7 @@ ___
 
 **●  numbers**:  *`true`*  = true
 
-*Defined in [camelCase.ts:19](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/camelCase.ts#L19)*
+*Defined in [camelCase.ts:19](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/camelCase.ts#L19)*
 
 
 
@@ -196,7 +209,7 @@ ___
 
 **●  upper**:  *`false`*  = false
 
-*Defined in [camelCase.ts:17](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/camelCase.ts#L17)*
+*Defined in [camelCase.ts:17](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/camelCase.ts#L17)*
 
 
 

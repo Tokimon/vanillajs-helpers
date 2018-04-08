@@ -22,7 +22,7 @@
 
 
 
-*Defined in [hexToNumber.ts:12](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/hexToNumber.ts#L12)*
+*Defined in [hexToNumber.ts:15](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/hexToNumber.ts#L15)*
 
 
 
@@ -35,13 +35,15 @@ Convert Hexadecimal into a number (eg. b4 => 180)
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| hex | `string`   |  - |
+| hex | `string`   |  Hex code to parse |
 
 
 
 
 
 **Returns:** `number`
+- Numeric representation of the hex code
+
 
 
 

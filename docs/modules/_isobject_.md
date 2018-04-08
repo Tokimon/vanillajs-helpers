@@ -22,24 +22,32 @@
 
 
 
-*Defined in [isObject.ts:8](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/isObject.ts#L8)*
+*Defined in [isObject.ts:19](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/isObject.ts#L19)*
 
 
 
 Is the given object of type String
+
+    class Obj {}
+    
+    isObject({}); // -> true
+    isObject(new Obj()); // -> true
+    isObject('123'); // -> false
 
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| obj | `any`   |  - |
+| obj | `any`   |  Object to test |
 
 
 
 
 
 **Returns:** `boolean`
+- Whether the object a plain object or not
+
 
 
 

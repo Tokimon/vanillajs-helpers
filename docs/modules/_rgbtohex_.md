@@ -18,21 +18,46 @@
 
 ###  RGBToHex
 
-► **RGBToHex**(r: *`number`[]*): `string`
+► **RGBToHex**(rgb: *`number`[]*): `string`
 
 ► **RGBToHex**(r: *`number`*, g: *`number`*, b: *`number`*, a?: *`undefined`⎮`number`*): `string`
 
 
 
-*Defined in [RGBToHex.ts:21](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/RGBToHex.ts#L21)*
+*Defined in [RGBToHex.ts:20](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/RGBToHex.ts#L20)*
 
 
 
-Converts a rgb(a) color to a hex color.
+Converts a Array of R G B (A) colors into a hex color.
 
-    // RGB as array
-    RGBToHex( [123, 123, 123] ) // -> #7b7b7b
+    RGBToHex([123, 123, 123]) // -> #7b7b7b
     
+    // With alpha channel
+    RGBToHex([123, 123, 123, 0.5]) // -> #7b7b7b80
+
+
+**Parameters:**
+
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| rgb | `number`[]   |  The R G B (A) color represented as an array |
+
+
+
+
+
+**Returns:** `string`
+- A Hex representation of the given color
+
+
+
+
+*Defined in [RGBToHex.ts:39](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/RGBToHex.ts#L39)*
+
+
+
+Converts R G B (A) color arguments into a hex color.
+
     // RGB as arguments
     RGBToHex( 123, 123, 123 ) // -> #7b7b7b80
     
@@ -44,34 +69,18 @@ Converts a rgb(a) color to a hex color.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| r | `number`[]   |  - |
+| r | `number`   |  Red color |
+| g | `number`   |  Green color |
+| b | `number`   |  Blue color |
+| a | `undefined`⎮`number`   |  Alpha channel |
 
 
 
 
 
 **Returns:** `string`
+- A Hex representation of the given colors
 
-
-
-*Defined in [RGBToHex.ts:22](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/RGBToHex.ts#L22)*
-
-
-
-**Parameters:**
-
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| r | `number`   |  - |
-| g | `number`   |  - |
-| b | `number`   |  - |
-| a | `undefined`⎮`number`   |  - |
-
-
-
-
-
-**Returns:** `string`
 
 
 

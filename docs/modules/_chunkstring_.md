@@ -22,7 +22,7 @@
 
 
 
-*Defined in [chunkString.ts:9](https://github.com/Tokimon/vanillajs-helpers/blob/cf259dc/chunkString.ts#L9)*
+*Defined in [chunkString.ts:13](https://github.com/Tokimon/vanillajs-helpers/blob/97e473e/chunkString.ts#L13)*
 
 
 
@@ -36,14 +36,16 @@ Split a String up into smaller strings of a give size (eg. 'ABCDEF' -> \[AB,CD,E
 
 | Param | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| str | `string`  | - |   - |
-| size | `number`  | 2 |   - |
+| str | `string`  | - |   String to split up |
+| size | `number`  | 2 |   Size par chunk |
 
 
 
 
 
 **Returns:** `string`[]
+- Array of string chunks
+
 
 
 
