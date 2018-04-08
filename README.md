@@ -117,7 +117,3 @@ camelCase('Camel cased phrase'); // camelCasedPhrase
 If you have any questions, find any bugs or have ideas for missing functionality you would like to see included, feel
 free to add an issue in the [issue list](https://github.com/Tokimon/vanillajs-helpers/issues) or perhaps do a
 [Pull Request](https://github.com/Tokimon/vanillajs-helpers/pulls) of a great snippet you created.
-
-## Testing
-
-Check out the [Testing docs](https://github.com/Tokimon/vanillajs-helpers/wiki/testing.md)
