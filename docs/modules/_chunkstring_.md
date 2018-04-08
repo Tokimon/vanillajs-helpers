@@ -22,7 +22,7 @@
 
 
 
-*Defined in [chunkString.ts:13](https://github.com/Tokimon/vanillajs-helpers/blob/d7b5019/chunkString.ts#L13)*
+*Defined in [chunkString.ts:13](https://github.com/Tokimon/vanillajs-helpers/blob/d56b968/chunkString.ts#L13)*
 
 
 

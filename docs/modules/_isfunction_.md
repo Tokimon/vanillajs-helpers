@@ -22,7 +22,7 @@
 
 
 
-*Defined in [isFunction.ts:12](https://github.com/Tokimon/vanillajs-helpers/blob/d7b5019/isFunction.ts#L12)*
+*Defined in [isFunction.ts:12](https://github.com/Tokimon/vanillajs-helpers/blob/d56b968/isFunction.ts#L12)*
 
 
 

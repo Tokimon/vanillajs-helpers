@@ -24,7 +24,7 @@
 
 
 
-*Defined in [pascalCase.ts:20](https://github.com/Tokimon/vanillajs-helpers/blob/d7b5019/pascalCase.ts#L20)*
+*Defined in [pascalCase.ts:20](https://github.com/Tokimon/vanillajs-helpers/blob/d56b968/pascalCase.ts#L20)*
 
 
 
@@ -52,7 +52,7 @@ Return a function that transforms a string into a PascalCased word (eg. 'pascal 
 
 
 
-*Defined in [pascalCase.ts:33](https://github.com/Tokimon/vanillajs-helpers/blob/d7b5019/pascalCase.ts#L33)*
+*Defined in [pascalCase.ts:33](https://github.com/Tokimon/vanillajs-helpers/blob/d56b968/pascalCase.ts#L33)*
 
 
 

@@ -23,7 +23,7 @@
 
 
 
-*Defined in [hash.ts:41](https://github.com/Tokimon/vanillajs-helpers/blob/d7b5019/hash.ts#L41)*
+*Defined in [hash.ts:41](https://github.com/Tokimon/vanillajs-helpers/blob/d56b968/hash.ts#L41)*
 
 
 
@@ -60,7 +60,7 @@ ___
 
 
 
-*Defined in [hash.ts:15](https://github.com/Tokimon/vanillajs-helpers/blob/d7b5019/hash.ts#L15)*
+*Defined in [hash.ts:15](https://github.com/Tokimon/vanillajs-helpers/blob/d56b968/hash.ts#L15)*
 
 
 

@@ -25,7 +25,7 @@
 
 **●  numbers**:  *`undefined`⎮`true`⎮`false`* 
 
-*Defined in [phrasify.ts:7](https://github.com/Tokimon/vanillajs-helpers/blob/d7b5019/phrasify.ts#L7)*
+*Defined in [phrasify.ts:7](https://github.com/Tokimon/vanillajs-helpers/blob/d56b968/phrasify.ts#L7)*
 
 
 

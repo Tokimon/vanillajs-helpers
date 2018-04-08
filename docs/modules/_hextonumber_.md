@@ -22,7 +22,7 @@
 
 
 
-*Defined in [hexToNumber.ts:15](https://github.com/Tokimon/vanillajs-helpers/blob/d7b5019/hexToNumber.ts#L15)*
+*Defined in [hexToNumber.ts:15](https://github.com/Tokimon/vanillajs-helpers/blob/d56b968/hexToNumber.ts#L15)*
 
 
 
