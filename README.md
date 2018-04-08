@@ -11,18 +11,32 @@
 This is a collection of simple, no dependency, vanilla JS snippets with the aim
 of making it easier to work with vanilla JS.
 
-They is written in ES6 (TypeScript), since now both Node and most of the major browsers support this syntax,
-all scripts have however been converted into the CommonJS (`./cjs`) and ES5 (`./es5`) syntax stored in their
-respective sub folders.
+All snippets are written in TypeScript and converted into various JS versions suiting your use case:
 
-Polyfills haven't been included as they exist in abundance on NPM, and since the
-need for polyfills are ever diminishing it is more future proof and clutter free
-to leave them out.
+- `./`: ES 6+ and TypeScript files (TypeScript and JS files can live alongside each other just fine).
+- `./cjs`: CommonJS - ES 6 syntax but with CommonJS `require` imports
+- `./es5`: ES 5 - Good old ES 5 with CommonJS `require` imports
 
-**BROWSER HELPERS**
+#### BROWSER SPECIFIC HELPERS
 
 These helpers a JS platform agnostic, for browser specific helpers check out:
 [vanillajs-browser-helpers](https://github.com/Tokimon/vanillajs-browser-helpers)
+
+
+## Cross browser support
+All methods are using latest techniques and generally no efforts have been made to
+accommodate older browsers which do not support certain features. Polyfills should
+be used to fill the gap. This is intentional as the need for polyfills are ever
+diminishing, with modern browsers (and Node environments) getting updated all the time the vast
+majority of the methods will be supported at one point. Also, with compilers like Babel, polyfills can be included automatically in the build process, making it simple to ensure full support. Therefore it is more future proof and clutter free to leave fallbacks and polyfills out of
+the methods and just focus on core functinonality.
+
+Only in few edge cases where a polyfill might be tricky to implement correctly for a given
+functionality, fallback functionality will be incorporated.
+
+**Note**  
+You will have to add these snippets as part of your transpilation if you wish to have
+enable auto detection of polyfills.
 
 ## Available methods
 
@@ -99,6 +113,10 @@ Make sure an Array only contains unique values.
 npm install vanillajs-helpers
 ```
 
+```
+yarn add vanillajs-helpers
+```
+
 ## Usage
 
 ```ts
@@ -108,7 +126,7 @@ camelCase('Camel cased phrase'); // camelCasedPhrase
 ```
 
 ```js
-// ES 6 Modules
+// ES 6 Modules (ES 6 modules will include the .js file opposed to the .ts file)
 import camelCase from 'vanillajs-helpers/camelCase';
 camelCase('Camel cased phrase'); // camelCasedPhrase
 ```
@@ -120,7 +138,7 @@ camelCase('Camel cased phrase'); // camelCasedPhrase
 ```
 
 ```js
-// ES5 (if you don't want to transpile)
+// ES5 (if you don't want to include files transpilation step)
 const camelCase = require('vanillajs-helpers/es5/camelCase').default;
 camelCase('Camel cased phrase'); // camelCasedPhrase
 ```
