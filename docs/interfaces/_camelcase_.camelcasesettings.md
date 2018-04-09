@@ -25,7 +25,7 @@
 
 **●  abbr**:  *`undefined`⎮`true`⎮`false`* 
 
-*Defined in [camelCase.ts:9](https://github.com/Tokimon/vanillajs-helpers/blob/d56b968/camelCase.ts#L9)*
+*Defined in [camelCase.ts:9](https://github.com/Tokimon/vanillajs-helpers/blob/17062f0/camelCase.ts#L9)*
 
 
 
@@ -41,7 +41,7 @@ ___
 
 *Inherited from [PhrasifySettings](_phrasify_.phrasifysettings.md).[numbers](_phrasify_.phrasifysettings.md#numbers)*
 
-*Defined in [phrasify.ts:7](https://github.com/Tokimon/vanillajs-helpers/blob/d56b968/phrasify.ts#L7)*
+*Defined in [phrasify.ts:7](https://github.com/Tokimon/vanillajs-helpers/blob/17062f0/phrasify.ts#L7)*
 
 
 
@@ -55,7 +55,7 @@ ___
 
 **●  upper**:  *`undefined`⎮`true`⎮`false`* 
 
-*Defined in [camelCase.ts:8](https://github.com/Tokimon/vanillajs-helpers/blob/d56b968/camelCase.ts#L8)*
+*Defined in [camelCase.ts:8](https://github.com/Tokimon/vanillajs-helpers/blob/17062f0/camelCase.ts#L8)*
 
 
 

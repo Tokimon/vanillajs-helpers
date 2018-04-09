@@ -36,7 +36,7 @@
 
 **Τ CamelCaseFunction**:  *`function`* 
 
-*Defined in [camelCase.ts:12](https://github.com/Tokimon/vanillajs-helpers/blob/d56b968/camelCase.ts#L12)*
+*Defined in [camelCase.ts:12](https://github.com/Tokimon/vanillajs-helpers/blob/17062f0/camelCase.ts#L12)*
 
 
 #### Type declaration
@@ -75,7 +75,7 @@ ___
 
 
 
-*Defined in [camelCase.ts:61](https://github.com/Tokimon/vanillajs-helpers/blob/d56b968/camelCase.ts#L61)*
+*Defined in [camelCase.ts:61](https://github.com/Tokimon/vanillajs-helpers/blob/17062f0/camelCase.ts#L61)*
 
 
 
@@ -103,7 +103,7 @@ Return a function that transforms a string into a camelCased word (eg. 'camel ca
 
 
 
-*Defined in [camelCase.ts:74](https://github.com/Tokimon/vanillajs-helpers/blob/d56b968/camelCase.ts#L74)*
+*Defined in [camelCase.ts:74](https://github.com/Tokimon/vanillajs-helpers/blob/17062f0/camelCase.ts#L74)*
 
 
 
@@ -141,7 +141,7 @@ ___
 
 
 
-*Defined in [camelCase.ts:34](https://github.com/Tokimon/vanillajs-helpers/blob/d56b968/camelCase.ts#L34)*
+*Defined in [camelCase.ts:34](https://github.com/Tokimon/vanillajs-helpers/blob/17062f0/camelCase.ts#L34)*
 
 
 
@@ -183,7 +183,7 @@ ___
 
 **●  abbr**:  *`false`*  = false
 
-*Defined in [camelCase.ts:18](https://github.com/Tokimon/vanillajs-helpers/blob/d56b968/camelCase.ts#L18)*
+*Defined in [camelCase.ts:18](https://github.com/Tokimon/vanillajs-helpers/blob/17062f0/camelCase.ts#L18)*
 
 
 
@@ -196,7 +196,7 @@ ___
 
 **●  numbers**:  *`true`*  = true
 
-*Defined in [camelCase.ts:19](https://github.com/Tokimon/vanillajs-helpers/blob/d56b968/camelCase.ts#L19)*
+*Defined in [camelCase.ts:19](https://github.com/Tokimon/vanillajs-helpers/blob/17062f0/camelCase.ts#L19)*
 
 
 
@@ -209,7 +209,7 @@ ___
 
 **●  upper**:  *`false`*  = false
 
-*Defined in [camelCase.ts:17](https://github.com/Tokimon/vanillajs-helpers/blob/d56b968/camelCase.ts#L17)*
+*Defined in [camelCase.ts:17](https://github.com/Tokimon/vanillajs-helpers/blob/17062f0/camelCase.ts#L17)*
 
 
 

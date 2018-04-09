@@ -25,7 +25,7 @@
 
 **Τ CurrencyFomatter**:  *`function`* 
 
-*Defined in [currencyFormat.ts:5](https://github.com/Tokimon/vanillajs-helpers/blob/d56b968/currencyFormat.ts#L5)*
+*Defined in [currencyFormat.ts:5](https://github.com/Tokimon/vanillajs-helpers/blob/17062f0/currencyFormat.ts#L5)*
 
 
 #### Type declaration
@@ -62,7 +62,7 @@ ___
 
 
 
-*Defined in [currencyFormat.ts:38](https://github.com/Tokimon/vanillajs-helpers/blob/d56b968/currencyFormat.ts#L38)*
+*Defined in [currencyFormat.ts:38](https://github.com/Tokimon/vanillajs-helpers/blob/17062f0/currencyFormat.ts#L38)*
 
 
 

@@ -22,7 +22,7 @@
 
 
 
-*Defined in [safeDateChange.ts:23](https://github.com/Tokimon/vanillajs-helpers/blob/d56b968/safeDateChange.ts#L23)*
+*Defined in [safeDateChange.ts:23](https://github.com/Tokimon/vanillajs-helpers/blob/17062f0/safeDateChange.ts#L23)*
 
 
 

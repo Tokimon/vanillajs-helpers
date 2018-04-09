@@ -22,7 +22,7 @@
 
 
 
-*Defined in [randomHexColor.ts:15](https://github.com/Tokimon/vanillajs-helpers/blob/d56b968/randomHexColor.ts#L15)*
+*Defined in [randomHexColor.ts:15](https://github.com/Tokimon/vanillajs-helpers/blob/17062f0/randomHexColor.ts#L15)*
 
 
 
