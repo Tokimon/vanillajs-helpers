@@ -1,7 +1,7 @@
 /* tslint:disable:no-new-func, no-unused-expression */
 
 import expect from './assets/chai';
-import isGenerator, { isGeneratorLike } from '../isGenerator';
+import isGenerator, { isGeneratorLike } from '../ts/isGenerator';
 
 describe('"isGenerator"', () => {
   it('Should only return true for Generators', () => {

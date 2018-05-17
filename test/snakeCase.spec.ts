@@ -1,5 +1,5 @@
 import expect from './assets/chai';
-import snake from '../snakeCase';
+import snake from '../ts/snakeCase';
 
 describe('"snakeCase"', () => {
   it('Should transform a phrase into a snake_case phrase', () => {

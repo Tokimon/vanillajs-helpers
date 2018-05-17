@@ -1,7 +1,7 @@
 /* tslint:disable:no-new-func, no-unused-expression */
 
 import expect from './assets/chai';
-import isFunction from '../isFunction';
+import isFunction from '../ts/isFunction';
 
 describe('"isFunction"', () => {
   it('Should return true for Function values', () => {

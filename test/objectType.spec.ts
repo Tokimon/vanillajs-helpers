@@ -1,5 +1,5 @@
 import expect from './assets/chai';
-import objectType from '../objectType';
+import objectType from '../ts/objectType';
 
 describe('"objectType"', () => {
   it('Should return the name of the given object', () => {

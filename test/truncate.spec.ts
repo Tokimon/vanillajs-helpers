@@ -1,5 +1,5 @@
 import expect from './assets/chai';
-import truncate from '../truncate';
+import truncate from '../ts/truncate';
 
 describe('"truncate"', () => {
   it('Should return empty string when value is falsy', () => {

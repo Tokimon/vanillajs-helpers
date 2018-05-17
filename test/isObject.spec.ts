@@ -1,7 +1,7 @@
 /* tslint:disable:no-new-object, no-unused-expression */
 
 import expect from './assets/chai';
-import isObject from '../isObject';
+import isObject from '../ts/isObject';
 
 describe('"isObject"', () => {
   class TestObj {

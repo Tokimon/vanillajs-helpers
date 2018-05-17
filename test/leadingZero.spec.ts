@@ -1,5 +1,5 @@
 import expect from './assets/chai';
-import leadingZero from '../leadingZero';
+import leadingZero from '../ts/leadingZero';
 
 describe('"leadingZero"', () => {
   it('Should always return a string', () => {

@@ -2,7 +2,7 @@
 
 import * as sinon from 'sinon';
 import expect from './assets/chai';
-import indexLoop from '../indexLoop';
+import indexLoop from '../ts/indexLoop';
 
 describe('"indexLoop"', () => {
   it('Should indexLoop an array', () => {

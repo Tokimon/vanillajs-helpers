@@ -1,5 +1,5 @@
 import expect from './assets/chai';
-import limitDecimals from '../limitDecimals';
+import limitDecimals from '../ts/limitDecimals';
 
 describe('"limitDecimals"', () => {
   it('Should format the decimals to the default number of digits', () => {

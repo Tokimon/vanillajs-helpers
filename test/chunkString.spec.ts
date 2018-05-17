@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-expression strict-type-predicates */
 
 import expect from './assets/chai';
-import chunkString from '../chunkString';
+import chunkString from '../ts/chunkString';
 
 describe('"chunkString"', () => {
   it('Should return an array of strings', () => {

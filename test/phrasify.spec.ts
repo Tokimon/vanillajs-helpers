@@ -1,5 +1,5 @@
 import expect from './assets/chai';
-import phrasify from '../phrasify';
+import phrasify from '../ts/phrasify';
 
 describe('"phrasify"', () => {
   describe('- without defined settings', () => {

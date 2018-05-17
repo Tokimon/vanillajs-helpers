@@ -1,5 +1,5 @@
 import expect from './assets/chai';
-import pascalCase from '../pascalCase';
+import pascalCase from '../ts/pascalCase';
 
 describe('"pascalCase"', () => {
   describe('without defined settings', () => {

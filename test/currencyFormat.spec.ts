@@ -1,5 +1,5 @@
 import expect from './assets/chai';
-import currencyFormat from '../currencyFormat';
+import currencyFormat from '../ts/currencyFormat';
 
 describe('"currencyFormat"', () => {
   it('Should format number to default currency format', () => {

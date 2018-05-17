@@ -1,5 +1,5 @@
 import expect from './assets/chai';
-import numberToHex from '../numberToHex';
+import numberToHex from '../ts/numberToHex';
 
 describe('"numberToHex"', () => {
   it('Should generate a hexadecimal from a number', () => {

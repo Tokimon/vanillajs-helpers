@@ -1,5 +1,5 @@
 import expect from './assets/chai';
-import uniqueArray from '../uniqueArray';
+import uniqueArray from '../ts/uniqueArray';
 
 describe('"uniqueArray"', () => {
   it('Should filter out duplicate items in the array (Empty)', () => {

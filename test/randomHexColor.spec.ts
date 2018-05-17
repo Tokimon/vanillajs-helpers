@@ -1,7 +1,7 @@
 /* tslint:disable:no-new-func, no-unused-expression */
 
 import expect from './assets/chai';
-import randomHexColor from '../randomHexColor';
+import randomHexColor from '../ts/randomHexColor';
 
 describe('"randomHexColor"', () => {
   it('Should generate a random Hex color', () => {

@@ -1,7 +1,7 @@
 /* tslint:disable:no-new-func, no-unused-expression */
 
 import expect from './assets/chai';
-import promisefy from '../promisefy';
+import promisefy from '../ts/promisefy';
 
 describe('"promisefy"', () => {
   it('Should make the method return a promise', () => {

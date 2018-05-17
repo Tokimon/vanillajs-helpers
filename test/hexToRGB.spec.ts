@@ -1,5 +1,5 @@
 import expect from './assets/chai';
-import hexToRGB from '../hexToRGB';
+import hexToRGB from '../ts/hexToRGB';
 
 describe('"hexToRGB"', () => {
   it('Should generate a RGB array from falsy values', () => {

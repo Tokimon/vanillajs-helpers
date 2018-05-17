@@ -1,7 +1,7 @@
 /* tslint:disable:no-new-func, no-unused-expression */
 
 import expect from './assets/chai';
-import isNumber from '../isNumber';
+import isNumber from '../ts/isNumber';
 
 describe('"isNumber"', () => {
   it('Should return true for Numeric values', () => {

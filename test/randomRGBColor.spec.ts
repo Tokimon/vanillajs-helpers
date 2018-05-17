@@ -1,5 +1,5 @@
 import expect from './assets/chai';
-import randomRGBColor from '../randomRGBColor';
+import randomRGBColor from '../ts/randomRGBColor';
 
 describe('"randomRGBColor"', () => {
   it('Should generate a random RGB color', () => {

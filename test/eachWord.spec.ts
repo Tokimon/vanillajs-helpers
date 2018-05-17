@@ -2,7 +2,7 @@
 
 import * as sinon from 'sinon';
 import expect from './assets/chai';
-import eachWord from '../eachWord';
+import eachWord from '../ts/eachWord';
 
 describe('"eachWord"', () => {
   it('Should iterate a phrase with words separated by default characters ("_", "-" or " ")', () => {

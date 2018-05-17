@@ -1,5 +1,5 @@
 import expect from './assets/chai';
-import dashed from '../dashed';
+import dashed from '../ts/dashed';
 
 describe('"dashed"', () => {
   it('Should transform a phrase into a dashed phrase', () => {

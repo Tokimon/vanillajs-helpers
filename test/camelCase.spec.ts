@@ -1,5 +1,5 @@
 import expect from './assets/chai';
-import camelCase from '../camelCase';
+import camelCase from '../ts/camelCase';
 
 describe('"camelCase"', () => {
   describe('without defined settings', () => {

@@ -1,5 +1,5 @@
 import expect from './assets/chai';
-import capitalize from '../capitalize';
+import capitalize from '../ts/capitalize';
 
 describe('"capitalize"', () => {
   it('Should return empty string for falsy values', () => {

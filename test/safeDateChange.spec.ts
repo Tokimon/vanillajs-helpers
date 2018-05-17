@@ -1,5 +1,5 @@
 import expect from './assets/chai';
-import safeDateChange from '../safeDateChange';
+import safeDateChange from '../ts/safeDateChange';
 
 describe('"eachWord"', () => {
   it('Should not change date if it is within the bounds', () => {

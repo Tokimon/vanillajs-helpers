@@ -1,5 +1,5 @@
 import expect from './assets/chai';
-import RGBToHex from '../RGBToHex';
+import RGBToHex from '../ts/RGBToHex';
 
 describe('"RGBToHex"', () => {
   it('Should generate a hex color from a RGB array', () => {

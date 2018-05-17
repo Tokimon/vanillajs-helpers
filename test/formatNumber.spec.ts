@@ -1,5 +1,5 @@
 import expect from './assets/chai';
-import formatNumber from '../formatNumber';
+import formatNumber from '../ts/formatNumber';
 
 describe('"formatNumber"', () => {
   it('Should format number with a specific thousand seperator', () => {
