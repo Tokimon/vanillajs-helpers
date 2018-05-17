@@ -6,7 +6,7 @@
   },
   "cliOptions": {
       "include": [
-          "./test/*.spec.js"
+          "./test/*.ts"
       ]
   }
 }
