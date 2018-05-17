@@ -35,7 +35,7 @@
 
 
 
-*Defined in [phrasify.ts:55](https://github.com/Tokimon/vanillajs-helpers/blob/17062f0/phrasify.ts#L55)*
+*Defined in phrasify.ts:55*
 
 
 
@@ -63,7 +63,7 @@ Return a function that transform a string into a space separated phrase
 
 
 
-*Defined in [phrasify.ts:68](https://github.com/Tokimon/vanillajs-helpers/blob/17062f0/phrasify.ts#L68)*
+*Defined in phrasify.ts:68*
 
 
 
@@ -101,7 +101,7 @@ ___
 
 
 
-*Defined in [phrasify.ts:27](https://github.com/Tokimon/vanillajs-helpers/blob/17062f0/phrasify.ts#L27)*
+*Defined in phrasify.ts:27*
 
 
 
@@ -143,7 +143,7 @@ ___
 
 **●  numbers**:  *`false`*  = false
 
-*Defined in [phrasify.ts:12](https://github.com/Tokimon/vanillajs-helpers/blob/17062f0/phrasify.ts#L12)*
+*Defined in phrasify.ts:12*
 
 
 

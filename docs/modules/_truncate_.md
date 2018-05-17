@@ -27,7 +27,7 @@
 
 
 
-*Defined in [truncate.ts:26](https://github.com/Tokimon/vanillajs-helpers/blob/17062f0/truncate.ts#L26)*
+*Defined in truncate.ts:26*
 
 
 

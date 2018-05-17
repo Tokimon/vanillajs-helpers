@@ -25,7 +25,7 @@
 
 **Τ IndexLoopCallback**:  *`function`* 
 
-*Defined in [indexLoop.ts:5](https://github.com/Tokimon/vanillajs-helpers/blob/17062f0/indexLoop.ts#L5)*
+*Defined in indexLoop.ts:5*
 
 
 #### Type declaration
@@ -64,7 +64,7 @@ ___
 
 
 
-*Defined in [indexLoop.ts:25](https://github.com/Tokimon/vanillajs-helpers/blob/17062f0/indexLoop.ts#L25)*
+*Defined in indexLoop.ts:25*
 
 
 

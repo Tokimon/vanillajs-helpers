@@ -22,7 +22,7 @@
 
 
 
-*Defined in [promisefy.ts:22](https://github.com/Tokimon/vanillajs-helpers/blob/17062f0/promisefy.ts#L22)*
+*Defined in promisefy.ts:22*
 
 
 

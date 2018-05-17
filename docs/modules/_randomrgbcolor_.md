@@ -23,7 +23,7 @@
 
 
 
-*Defined in [randomRGBColor.ts:1](https://github.com/Tokimon/vanillajs-helpers/blob/17062f0/randomRGBColor.ts#L1)*
+*Defined in randomRGBColor.ts:1*
 
 
 
@@ -45,7 +45,7 @@ ___
 
 
 
-*Defined in [randomRGBColor.ts:14](https://github.com/Tokimon/vanillajs-helpers/blob/17062f0/randomRGBColor.ts#L14)*
+*Defined in randomRGBColor.ts:14*
 
 
 

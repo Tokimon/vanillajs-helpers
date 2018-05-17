@@ -22,7 +22,7 @@
 
 
 
-*Defined in [limitDecimals.ts:33](https://github.com/Tokimon/vanillajs-helpers/blob/17062f0/limitDecimals.ts#L33)*
+*Defined in limitDecimals.ts:33*
 
 
 

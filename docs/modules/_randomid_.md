@@ -22,7 +22,7 @@
 
 
 
-*Defined in [randomId.ts:11](https://github.com/Tokimon/vanillajs-helpers/blob/17062f0/randomId.ts#L11)*
+*Defined in randomId.ts:11*
 
 
 
