@@ -14,7 +14,7 @@
   },
 
   "include": [
-    "../*.ts"
+    "../ts/*.ts"
   ],
 
   "exclude": [

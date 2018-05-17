@@ -16,10 +16,10 @@
   "scripts": {
     "prepublishOnly": "npm run build",
     "test": "cross-env TS_NODE_PROJECT=./test/tsconfig.json nyc mocha --compilers ts:ts-node/register ./test/*.spec.ts",
-    "build": "tsc && tsc -p ./cjs && tsc -p ./es5",
+    "build": "tsc -p ./ts && tsc -p ./cjs && tsc -p ./es5",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "coveralls:win": "type ./coverage/lcov.info | node node_modules/.bin/coveralls",
-    "docs": "typedoc --options ./typedoc.json .",
+    "docs": "typedoc --options ./typedoc.json ./ts",
     "clean": "node ./tasks/clean.js",
     "lint": "tslint -p ."
   },
@@ -55,7 +55,7 @@
   },
   "nyc": {
     "include": [
-      "*.ts"
+      "./ts/*.ts"
     ],
     "extension": [
       ".ts"

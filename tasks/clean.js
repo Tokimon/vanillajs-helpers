@@ -2,7 +2,7 @@ const glob = require('globby');
 const fs = require('fs-extra');
 const nPath = require('path');
 
-glob('./*.ts')
+glob('./ts/*.ts')
   .then((files) => {
     const fileNames = files.map((file) => nPath.basename(file, '.ts'));
     return glob([`./@(${fileNames.join('|')}).js`, `./!(node_modules)/@(${fileNames.join('|')})?(.spec).js?(.map)`]);

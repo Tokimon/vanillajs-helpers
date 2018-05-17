@@ -1,6 +1,7 @@
 {
   "out": "./docs",
-  "exclude": ["**/vanillajs-helpers/*/**", "**/vanillajs-helpers/**/.*/**"],
+  "tsconfig": "./ts/tsconfig.json",
+  "exclude": ["**/vanillajs-helpers/!(ts)/**", "**/vanillajs-helpers/**/.*/**"],
   "mode": "modules",
   "theme": "markdown",
   "mdFlavour": "github",
