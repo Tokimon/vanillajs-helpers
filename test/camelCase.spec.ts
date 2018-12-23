@@ -21,23 +21,17 @@ describe('"camelCase"', () => {
     it('Should keep empty strings empty', () => {
       expect(camelCase('')).to.equal('');
     });
+
+    it('Should return empty string when null or undefined is passed', () => {
+      expect(camelCase()).to.equal('');
+      expect(camelCase(null)).to.equal('');
+    });
   });
 
   describe('with defined settings', () => {
-    it('Should return a function if no string was given', () => {
-      expect(typeof camelCase()).to.equal('function');
-    });
-
-    it('Should always turn inputs into strings', () => {
-      const caser = camelCase() as Function;
-      expect(caser(null)).to.equal('');
-      expect(caser('')).to.equal('');
-      expect(caser(undefined)).to.equal('');
-    });
-
     describe('{ "abbr" : false, "upper" : false, "numbers" : true } (default settings)', () => {
       it('Should use default settings when an empty settings object is given', () => {
-        const caser = camelCase() as Function;
+        const caser = camelCase({}) as Function;
         expect(caser('Convert PHRASE into Camel case')).to.equal('convertPhraseIntoCamelCase');
         expect(caser('ABBR phrase')).to.equal('abbrPhrase');
         expect(caser('HTMLElement')).to.equal('htmlElement');
