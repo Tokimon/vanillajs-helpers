@@ -36,7 +36,7 @@
 
 **Τ CamelCaseFunction**:  *`function`* 
 
-*Defined in camelCase.ts:12*
+*Defined in camelCase.ts:11*
 
 
 #### Type declaration
@@ -75,7 +75,7 @@ ___
 
 
 
-*Defined in camelCase.ts:61*
+*Defined in camelCase.ts:60*
 
 
 
@@ -103,7 +103,7 @@ Return a function that transforms a string into a camelCased word (eg. 'camel ca
 
 
 
-*Defined in camelCase.ts:74*
+*Defined in camelCase.ts:80*
 
 
 
@@ -111,6 +111,12 @@ Transform a string into a camelCased word (eg. 'camel case' -> 'camelCase')
 
     camelCase('data-value2-input'); // -> dataValue2input
     camelCase('XML data input'); // -> XmlDataInput
+    
+
+The Ruels of the camel casing can be changed by giving it an object
+
+    const camelCaseKeepAbbr = camelCase({ abbr: true });
+    camelCaseKeepAbbr('XML data input'); // -> XMLDataInput
 
 
 **Parameters:**
@@ -141,7 +147,7 @@ ___
 
 
 
-*Defined in camelCase.ts:34*
+*Defined in camelCase.ts:33*
 
 
 
@@ -183,7 +189,7 @@ ___
 
 **●  abbr**:  *`false`*  = false
 
-*Defined in camelCase.ts:18*
+*Defined in camelCase.ts:17*
 
 
 
@@ -196,7 +202,7 @@ ___
 
 **●  numbers**:  *`true`*  = true
 
-*Defined in camelCase.ts:19*
+*Defined in camelCase.ts:18*
 
 
 
@@ -209,7 +215,7 @@ ___
 
 **●  upper**:  *`false`*  = false
 
-*Defined in camelCase.ts:17*
+*Defined in camelCase.ts:16*
 
 
 

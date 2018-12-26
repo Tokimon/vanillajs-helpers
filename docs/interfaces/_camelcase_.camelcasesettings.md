@@ -25,7 +25,7 @@
 
 **●  abbr**:  *`undefined`⎮`true`⎮`false`* 
 
-*Defined in camelCase.ts:9*
+*Defined in camelCase.ts:8*
 
 
 
@@ -55,7 +55,7 @@ ___
 
 **●  upper**:  *`undefined`⎮`true`⎮`false`* 
 
-*Defined in camelCase.ts:8*
+*Defined in camelCase.ts:7*
 
 
 
