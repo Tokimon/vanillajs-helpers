@@ -1,6 +1,6 @@
 {
   "name": "vanillajs-helpers",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Collection of convenience code snippets (helpers) that aims to make it a little easier to work with vanilla JS",
   "author": "Toke Voltelen",
   "license": "MIT",
@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "prepublishOnly": "npm run build",
-    "test": "cross-env TS_NODE_PROJECT=./test/tsconfig.json nyc mocha --compilers ts:ts-node/register ./test/*.spec.ts",
+    "test": "cross-env TS_NODE_PROJECT=./test/tsconfig.json nyc mocha --require ts-node/register ./test/*.spec.ts",
     "build": "tsc -p ./ts && tsc -p ./cjs && tsc -p ./es5",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "coveralls:win": "type ./coverage/lcov.info | node node_modules/.bin/coveralls",
