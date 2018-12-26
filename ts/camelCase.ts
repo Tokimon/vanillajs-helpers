@@ -1,5 +1,4 @@
 import isObject from './isObject';
-import isString from './isString';
 import phrasify, { PhrasifySettings } from './phrasify';
 
 
@@ -68,12 +67,23 @@ export default function camelCase(input?: CamelCaseSettings): CamelCaseFunction;
  * camelCase('XML data input'); // -> XmlDataInput
  * ```
  *
+ * The Ruels of the camel casing can be changed by giving it an object
+ *
+ * ```ts
+ * const camelCaseKeepAbbr = camelCase({ abbr: true });
+ * camelCaseKeepAbbr('XML data input'); // -> XMLDataInput
+ * ```
+ *
  * @param input - The string to format
  * @return - The formatted string
  */
 export default function camelCase(input: string): string;
 
 export default function camelCase(input?: string | CamelCaseSettings): string | CamelCaseFunction {
-  const opts = isObject(input) ? Object.assign({}, defaultSettings, input) : defaultSettings;
-  return isString(input) ? caser(opts, input as string) : (str: string) => caser(opts, str);
+  if (!isObject(input)) {
+    return caser(defaultSettings, input as string || '');
+  }
+
+  const opts = Object.assign({}, defaultSettings, input);
+  return (str: string) => caser(opts, str);
 }
