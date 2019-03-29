@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/Tokimon/vanillajs-helpers.svg?branch=master)](https://travis-ci.org/Tokimon/vanillajs-helpers)
 [![Coverage](https://coveralls.io/repos/github/Tokimon/vanillajs-helpers/badge.svg?branch=master)](https://coveralls.io/github/Tokimon/vanillajs-helpers)
+[![codecov](https://codecov.io/gh/Tokimon/vanillajs-helpers/branch/master/graph/badge.svg)](https://codecov.io/gh/Tokimon/vanillajs-helpers)
+[![install size](https://packagephobia.now.sh/badge?p=vanillajs-helpers)](https://packagephobia.now.sh/result?p=vanillajs-helpers)
 
 This is a collection of simple, no dependency, vanilla JS snippets with the aim
 of making it easier to work with vanilla JS.
