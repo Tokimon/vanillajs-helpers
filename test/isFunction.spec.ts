@@ -6,7 +6,7 @@ import isFunction from '../ts/isFunction';
 describe('"isFunction"', () => {
   it('Should return true for Function values', () => {
     expect(isFunction(function() { void 0; })).to.be.true;
-    expect(isFunction(() => void 0)).to.be.true;
+    expect(isFunction(() => { void 0; })).to.be.true;
     expect(isFunction(new Function())).to.be.true;
   });
 
