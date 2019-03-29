@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "prepublishOnly": "npm run build",
-    "test": "cross-env TS_NODE_PROJECT=./test/tsconfig.json nyc mocha --require ts-node/register ./test/*.spec.ts",
+    "test": "cross-env TS_NODE_PROJECT=./test/tsconfig.json nyc mocha --require ts-node/register --reporter progress ./test/*.spec.ts",
     "build": "tsc -p ./ts && tsc -p ./cjs && tsc -p ./es5",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "coveralls:win": "type ./coverage/lcov.info | node node_modules/.bin/coveralls",
@@ -56,7 +56,7 @@
   },
   "nyc": {
     "include": [
-      "./ts/*.ts"
+      "ts/*.ts"
     ],
     "extension": [
       ".ts"
@@ -72,5 +72,6 @@
     "sourceMap": true,
     "instrument": true,
     "report-dir": "./coverage"
-  }
+  },
+  "dependencies": {}
 }
