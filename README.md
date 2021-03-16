@@ -8,12 +8,12 @@
 This is a collection of simple, no dependency, vanilla JS snippets with the aim
 of making it easier to work with vanilla JS.
 
-All snippets are written in TypeScript and converted into various JS versions suiting your use case:
+All helpers are written in TypeScript and converted into various JS versions suiting your use case:
 
-- `./`: ES 6+ syntax.
-- `./ts`: TypeScript (source files).
-- `./cjs`: ES 6 syntax but with CommonJS `require` imports
-- `./es5`: Good old ES 5 with CommonJS `require` imports
+- `.js`: ES 5+ syntax.
+- `.mjs`: ES 2020 syntax
+- `.cjs`: ES 2017 syntax + CommonJS `require` imports
+- `.d.ts`: TypeScript description files
 
 #### BROWSER SPECIFIC HELPERS
 
