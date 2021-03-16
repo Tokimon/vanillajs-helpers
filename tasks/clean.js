@@ -1,11 +1,21 @@
-const glob = require('globby');
+const getFileNames = require('./getFileNames');
+const { resolve } = require('path');
 const fs = require('fs-extra');
-const nPath = require('path');
 
-glob('./ts/*.ts')
-  .then((files) => {
-    const fileNames = files.map((file) => nPath.basename(file, '.ts'));
-    return glob([`./@(${fileNames.join('|')}).js`, `./!(node_modules)/@(${fileNames.join('|')})?(.spec).js?(.map)`]);
-  })
-  .then((files) => Promise.all(files.map((file) => fs.remove(file))))
-  .then(() => console.log('done'));
+
+getFileNames()
+  .then((names) => Promise.all(
+    names
+      .reduce((all, name) => {
+        all.push(
+          fs.remove(resolve(name + '.js')),
+          fs.remove(resolve(name + '.mjs')),
+          fs.remove(resolve(name + '.cjs')),
+          fs.remove(resolve(name + '.d.ts')),
+          fs.remove(resolve('mjs')),
+          fs.remove(resolve('cjs'))
+        );
+
+        return all;
+      }, [])
+  ));
