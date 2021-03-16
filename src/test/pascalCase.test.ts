@@ -22,13 +22,6 @@ describe('"pascalCase"', () => {
       expect(typeof pascalCase('')).to.equal('string');
     });
 
-    it('Should always turn inputs into strings', () => {
-      const caser = pascalCase();
-      expect(caser(null)).to.equal('');
-      expect(caser('')).to.equal('');
-      expect(caser(undefined)).to.equal('');
-    });
-
     describe('{ "abbr" : false, "numbers" : true } (default settings)', () => {
       it('Should use default settings when an empty settings object is given', () => {
         const caser = pascalCase();
