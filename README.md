@@ -45,13 +45,10 @@ Method | Description
 [chunkString](http://tokimon.github.io/vanillajs-helpers/modules/_chunkstring_) | Chop up a string into chunks of the desired length.
 [currencyFormat](http://tokimon.github.io/vanillajs-helpers/modules/_currencyformat_) | Format a number into a specific currency format like: $ 1.000,00.
 [dashed](http://tokimon.github.io/vanillajs-helpers/modules/_dashed_) | Turn a phrase or word with different casing into a `dashed-lowercase-phrase`.
-[eachWord](http://tokimon.github.io/vanillajs-helpers/modules/_eachword_) | Loop over each word in a phrase.
 [formatNumber](http://tokimon.github.io/vanillajs-helpers/modules/_formatnumber_) | Format a number according to a given template like: 1.000,00.
 [hash](http://tokimon.github.io/vanillajs-helpers/modules/_hash_) | Create a unique hash from a string.
 [hexToNumber](http://tokimon.github.io/vanillajs-helpers/modules/_hextonumber_) | Convert Hexadecimal into a number (eg. b4 => 180).
 [hexToRGB](http://tokimon.github.io/vanillajs-helpers/modules/_hextorgb_) | Converts a Hexadecimal color to a RGB(A) color array.
-[indexLoop](http://tokimon.github.io/vanillajs-helpers/modules/_indexloop_) | Iterate over indexes in an array like object (break out early with `return false`).
-[isArray](http://tokimon.github.io/vanillajs-helpers/modules/_isarray_) | Tests if a given object is an Array
 [isBoolean](http://tokimon.github.io/vanillajs-helpers/modules/_isboolean_) | Tests if a given object is a Boolean
 [isFunction](http://tokimon.github.io/vanillajs-helpers/modules/_isfunction_) | Tests if a given object is a Function
 [isGenerator](http://tokimon.github.io/vanillajs-helpers/modules/_isgenerator_) | Tests if a given object is a Generator function
