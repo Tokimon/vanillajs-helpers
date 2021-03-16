@@ -18,7 +18,7 @@
     "prepublishOnly": "npm run build",
     "postpublish": "npm run clean",
     "test": "cross-env TS_NODE_PROJECT=./tsconfig.test.json mocha --colors --require ts-node/register ./src/**/*.test.ts",
-    "coverage": "nyc npm test -- --reporter progress",
+    "test:coverage": "nyc npm test -- --reporter progress",
     "build": "node ./tasks/build.js",
     "clean": "node ./tasks/clean.js",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
