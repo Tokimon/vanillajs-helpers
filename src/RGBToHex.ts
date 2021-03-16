@@ -6,7 +6,6 @@ const hexStr = (color?: number) => color !== undefined ? hex(color) : '';
 
 
 
-
 /**
  * Converts a Array of R G B (A) colors into a hex color.
  *

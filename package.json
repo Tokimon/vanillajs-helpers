@@ -24,7 +24,7 @@
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "coveralls:win": "type ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "docs": "typedoc --options ./typedoc.json ./ts",
-    "lint": "eslint ."
+    "lint": "eslint ./src"
   },
   "repository": {
     "type": "git",

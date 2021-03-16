@@ -15,15 +15,15 @@ describe('"hashCode"', () => {
     expect(hashCode('same')).to.equal(hashCode('same'));
     expect(hashCode('#/!&?^1235[]()@$£¤*µù%èéàç')).to.equal(hashCode('#/!&?^1235[]()@$£¤*µù%èéàç'));
   });
-});
 
-describe('"hashString"', () => {
-  it('Should return an empty string on empty strings', () => {
-    expect(hash('')).to.equal('');
-  });
+  describe('"hashString"', () => {
+    it('Should return an empty string on empty strings', () => {
+      expect(hash('')).to.equal('');
+    });
 
-  it('Should always return a unique hash string', () => {
-    expect(hash('abcdefg!!')).to.not.equal(hash('abcdegf!!'));
-    expect(hash('abc/de/fg')).to.not.equal(hash('abc/d/efg'));
+    it('Should always return a unique hash string', () => {
+      expect(hash('abcdefg!!')).to.not.equal(hash('abcdegf!!'));
+      expect(hash('abc/de/fg')).to.not.equal(hash('abc/d/efg'));
+    });
   });
 });

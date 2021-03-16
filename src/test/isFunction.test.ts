@@ -5,8 +5,8 @@ import isFunction from '../isFunction';
 
 describe('"isFunction"', () => {
   it('Should return true for Function values', () => {
-    expect(isFunction(function() { void 0; })).to.be.true;
-    expect(isFunction(() => { void 0; })).to.be.true;
+    expect(isFunction(function() { return undefined; })).to.be.true;
+    expect(isFunction(() => undefined)).to.be.true;
     // eslint-disable-next-line no-new-func
     expect(isFunction(new Function())).to.be.true;
   });

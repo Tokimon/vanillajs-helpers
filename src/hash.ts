@@ -1,7 +1,3 @@
-import isString from './isString';
-
-
-
 /**
  * Generates a unique numeric hash (DJB2) code from a string
  *

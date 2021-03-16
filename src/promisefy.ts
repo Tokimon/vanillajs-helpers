@@ -1,9 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import isFunc from './isFunction';
-
-
-
 export type NodeLikeCallback = (err?: string | Error | null, data?: unknown) => unknown;
 type PromisefyCallback = (...args: any[]) => unknown;
 type PromisefiedFunction = (...args: any[]) => Promise<unknown>;

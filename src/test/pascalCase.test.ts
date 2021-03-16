@@ -23,7 +23,7 @@ describe('"pascalCase"', () => {
     });
 
     it('Should always turn inputs into strings', () => {
-      const caser = pascalCase() as Function;
+      const caser = pascalCase();
       expect(caser(null)).to.equal('');
       expect(caser('')).to.equal('');
       expect(caser(undefined)).to.equal('');
@@ -31,7 +31,7 @@ describe('"pascalCase"', () => {
 
     describe('{ "abbr" : false, "numbers" : true } (default settings)', () => {
       it('Should use default settings when an empty settings object is given', () => {
-        const caser = pascalCase() as Function;
+        const caser = pascalCase();
         expect(caser('Convert PHRASE into Pascal case')).to.equal('ConvertPhraseIntoPascalCase');
         expect(caser('ABBR phrase')).to.equal('AbbrPhrase');
         expect(caser('HTMLElement')).to.equal('HtmlElement');
@@ -48,7 +48,7 @@ describe('"pascalCase"', () => {
 
     describe('{ "abbr" : true }', () => {
       it('Should keep abbriviations', () => {
-        const caser = pascalCase({ abbr: true }) as Function;
+        const caser = pascalCase({ abbr: true });
         expect(caser('Convert PHRASE into Pascal case')).to.equal('ConvertPHRASEIntoPascalCase');
         expect(caser('ABBR phrase')).to.equal('ABBRPhrase');
         expect(caser('HTMLElement')).to.equal('HTMLElement');
@@ -57,7 +57,7 @@ describe('"pascalCase"', () => {
 
     describe('{ "numbers" : false }', () => {
       it('Should ignore numbers', () => {
-        const caser = pascalCase({ numbers: false }) as Function;
+        const caser = pascalCase({ numbers: false });
         expect(caser('LOOK! 99 air balloons')).to.equal('Look99AirBalloons');
         expect(caser('bool2str')).to.equal('Bool2str');
         expect(caser('L337caser')).to.equal('L337caser');
@@ -68,7 +68,7 @@ describe('"pascalCase"', () => {
 
     describe('{ "abbr" : true, "numbers" : false }', () => {
       it('Should keep abbrivations and ignore numbers', () => {
-        const caser = pascalCase({ numbers: false, abbr: true }) as Function;
+        const caser = pascalCase({ numbers: false, abbr: true });
         expect(caser('Convert PHRASE into Pascal case')).to.equal('ConvertPHRASEIntoPascalCase');
         expect(caser('ABBR phrase')).to.equal('ABBRPhrase');
         expect(caser('HTMLElement')).to.equal('HTMLElement');

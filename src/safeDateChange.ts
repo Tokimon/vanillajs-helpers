@@ -21,7 +21,7 @@
  * @param to - Date going to
  * @return - Altered "to" date
  */
-export default function safeDateChange(from: Date, to: Date) {
+export default function safeDateChange(from: Date, to: Date): Date {
   const d = from.getDate();
 
   // Compensate for going from the eg. 31st in a month

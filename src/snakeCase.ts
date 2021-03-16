@@ -17,6 +17,6 @@ import dashed from './dashed';
  * @param settings - Settings to pass to the phrasify function
  * @return - The string transformed to snake_case
  */
-export default function snakeCase(str: string, settings?: PhrasifySettings) {
+export default function snakeCase(str: string, settings?: PhrasifySettings): string {
   return dashed(str, settings).replace(/-+/g, '_');
 }
