@@ -40,8 +40,11 @@ jspm_packages
 .node_repl_history
 
 # custom
-specs
+_tests
 jsdoc
-cjs/*.js
-es5/*.js
+mjs
+cjs
 /*.js
+/*.mjs
+/*.cjs
+/*.d.ts

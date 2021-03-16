@@ -1,0 +1,22 @@
+{
+  "extension": [
+    ".ts"
+  ],
+  "include": [
+    "src/*.ts"
+  ],
+  "exclude": [
+    "src/test/**/*.ts"
+  ],
+  "reporter": [
+    "text",
+    "json",
+    "lcov"
+  ],
+  "report-dir": "./coverage",
+  "cache": false,
+  "check-coverage": false,
+  "sourceMap": true,
+  "all": true,
+  "instrument": true
+}
