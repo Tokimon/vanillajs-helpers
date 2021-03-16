@@ -1,12 +1,13 @@
 language: node_js
 node_js:
-  - '8'
+  - '14'
 install:
   - npm install
 script:
   - npm run build
-  - npm run test
+  - npm run clean
   - npm run lint
+  - npm run test:coverage
 after_success:
   - npm run coveralls
   - npx codecov
