@@ -14,6 +14,6 @@ import objectType from './objectType';
  * @param obj - Object to test
  * @return - Whether the object a string or not
  */
-export default function isString(obj: unknown): boolean {
+export default function isString(obj: unknown): obj is string {
   return typeof obj === 'string' || objectType(obj) === 'string';
 }

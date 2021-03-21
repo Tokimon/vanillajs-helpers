@@ -17,6 +17,6 @@ import objectType from './objectType';
  * @param obj - Object to test
  * @return - Whether the object a plain object or not
  */
-export default function isObject(obj: unknown): boolean {
+export default function isObject(obj: unknown): obj is object {
   return objectType(obj) === 'object' && Object(obj) === obj;
 }

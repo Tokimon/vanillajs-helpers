@@ -11,6 +11,6 @@
  * @param obj - Object to test
  * @return - Whether the object a finite number or not
  */
-export default function isNumber(num: unknown): boolean {
-  return (typeof num === 'number' || num instanceof Number) && Number.isFinite(num);
+export default function isNumber(obj: unknown): obj is number {
+  return (typeof obj === 'number' || obj instanceof Number) && Number.isFinite(obj);
 }

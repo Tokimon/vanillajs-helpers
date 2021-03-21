@@ -39,7 +39,7 @@ export function isGeneratorLike(obj: any): boolean {
  * @param obj - Object to test
  * @return - Whether the object a Generator or not
  */
-export default function isGenerator(obj: any): boolean {
+export default function isGenerator(obj: any): obj is GeneratorFunction {
   const { constructor } = obj;
 
   if (!isObject(constructor) && !isFunction(constructor)) {

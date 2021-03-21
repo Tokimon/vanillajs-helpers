@@ -10,6 +10,6 @@
  * @param obj - Object to test
  * @return - Whether the object a Boolean or not
  */
-export default function isBoolean(obj: unknown): boolean {
+export default function isBoolean(obj: unknown): obj is boolean {
   return obj === true || obj === false || obj instanceof Boolean;
 }
