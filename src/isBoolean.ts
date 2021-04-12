@@ -1,5 +1,5 @@
 /**
- * Is the given object a boolean
+ * Is the given argument a boolean
  *
  * @example
  * ```ts
@@ -7,9 +7,9 @@
  * isBoolean('string'); // -> false
  * ```
  *
- * @param obj - Object to test
- * @return - Whether the object a Boolean or not
+ * @param x - Argument to test
+ * @return - Whether the argument a Boolean or not
  */
-export default function isBoolean(obj: unknown): obj is boolean {
-  return obj === true || obj === false || obj instanceof Boolean;
+export default function isBoolean(x: unknown): x is boolean {
+  return x === true || x === false || x instanceof Boolean;
 }

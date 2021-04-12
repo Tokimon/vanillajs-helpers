@@ -1,54 +1,55 @@
-/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types */
-import isObject from './isObject';
 import isFunction from './isFunction';
 
 
 
 /**
- * Determine if the given object is a Generator(ish) object
+ * Determine if the given argument is a Generator object.
+ * (A generator is the one created when calling a generator function)
  *
  * @example
  * ```ts
  * function *gen() {}
  *
- * isGeneratorLike(gen); // -> true
- * isGeneratorLike({ next() {}, throw() {} }); // -> true
- * isGeneratorLike(() => {}); // -> false
+ * isGenerator(gen()); // -> true
+ * isGenerator({ next() {}, throw() {} return() {} [Symbol.iterator]() {} }); // -> true
+ * isGenerator(() => {}); // -> false
  * ```
  *
- * @param obj - Object to test
- * @return - Whether the object a Generator like function or not
+ * @param x - Argument to test
+ * @return - Whether the argument a Generator like function or not
  */
-export function isGeneratorLike(obj: any): boolean {
-  return isFunction(obj.next) && isFunction(obj.throw);
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/no-explicit-any
+export function isGenerator(x: any): x is Generator {
+  return x != null
+    && isFunction(x.next)
+    && isFunction(x.throw)
+    && isFunction(x.return);
+  // && isFunction(x[Symbol.iterator]);
 }
 
 
 
 /**
- * Determine if the given object is a Generator Function
+ * Determine if the given argument is a Generator Function
  *
  * @example
  * ```ts
  * function* gen() {}
  *
- * isGeneratorLike(gen); // -> true
- * isGeneratorLike(() => {}); // -> false
+ * isGeneratorFunction(gen); // -> true
+ * isGeneratorFunction(() => {}); // -> false
  * ```
  *
- * @param obj - Object to test
- * @return - Whether the object a Generator or not
+ * @param x - Argument to test
+ * @return - Whether the argument a Generator or not
  */
-export default function isGenerator(obj: any): obj is GeneratorFunction {
-  const { constructor } = obj;
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/no-explicit-any
+export default function isGeneratorFunction(x: any): x is GeneratorFunction {
+  if (!x || !x.constructor) { return false; }
 
-  if (!isObject(constructor) && !isFunction(constructor)) {
-    return false;
-  }
+  const { name, displayName, prototype } = x.constructor;
 
-  if (constructor.name === 'GeneratorFunction' || constructor.displayName === 'GeneratorFunction') {
-    return true;
-  }
-
-  return isGeneratorLike(constructor.prototype);
+  return name === 'GeneratorFunction'
+    || displayName === 'GeneratorFunction'
+    || isGenerator(prototype);
 }
