@@ -1,5 +1,5 @@
 /**
- * Is the given object a Function
+ * Is the given argument a Function
  *
  * @example
  * ```ts
@@ -7,9 +7,10 @@
  * isFunction('string'); // -> false
  * ```
  *
- * @param obj - Object to test
- * @return - Whether the object a Function or not
+ * @param obj - Argument to test
+ * @return - Whether the argument a Function or not
  */
-export default function isFunction(obj: unknown): obj is Function {
-  return typeof obj === 'function';
+// eslint-disable-next-line @typescript-eslint/ban-types
+export default function isFunction(x: unknown): x is Function {
+  return typeof x === 'function';
 }

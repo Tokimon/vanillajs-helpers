@@ -8,6 +8,8 @@ describe('"isNumber"', () => {
     expect(isNumber(9)).to.be.true;
     expect(isNumber(9.9)).to.be.true;
     expect(isNumber(Number('0'))).to.be.true;
+    // eslint-disable-next-line no-new-wrappers
+    expect(isNumber(new Number(9))).to.be.true;
   });
 
   it('Should return false for non Numeric values', () => {
@@ -18,8 +20,6 @@ describe('"isNumber"', () => {
     expect(isNumber('')).to.be.false;
     // eslint-disable-next-line no-new-wrappers
     expect(isNumber(new String(''))).to.be.false;
-    // eslint-disable-next-line no-new-wrappers
-    expect(isNumber(new Number(9))).to.be.false;
     expect(isNumber({})).to.be.false;
   });
 });
