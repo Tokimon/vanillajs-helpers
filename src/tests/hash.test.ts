@@ -3,7 +3,7 @@ import hash, { hashCode } from '../hash';
 
 describe('"hashCode"', () => {
   it('Should always return a positive hash code', () => {
-    expect(hashCode('')).to.equal(0);
+    expect(hashCode('')).toBe(0);
   });
 
   it('Should always return a unique hash code', () => {
@@ -12,13 +12,13 @@ describe('"hashCode"', () => {
   });
 
   it('Should always return a the same hash code', () => {
-    expect(hashCode('same')).to.equal(hashCode('same'));
-    expect(hashCode('#/!&?^1235[]()@$£¤*µù%èéàç')).to.equal(hashCode('#/!&?^1235[]()@$£¤*µù%èéàç'));
+    expect(hashCode('same')).toBe(hashCode('same'));
+    expect(hashCode('#/!&?^1235[]()@$£¤*µù%èéàç')).toBe(hashCode('#/!&?^1235[]()@$£¤*µù%èéàç'));
   });
 
   describe('"hashString"', () => {
     it('Should return an empty string on empty strings', () => {
-      expect(hash('')).to.equal('');
+      expect(hash('')).toBe('');
     });
 
     it('Should always return a unique hash string', () => {

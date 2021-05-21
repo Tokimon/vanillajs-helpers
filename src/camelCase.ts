@@ -12,7 +12,7 @@ export type CamelCaseFunction = (str: string) => string;
 
 
 
-const defaultSettings: CamelCaseSettings = {
+export const defaultSettings: CamelCaseSettings = {
   upper: false,
   abbr: false,
   numbers: true
@@ -24,7 +24,7 @@ const defaultSettings: CamelCaseSettings = {
  *
  * @example
  * ```ts
- * caser('data-value2-input'); // -> dataValue2input
+ * caser('data-value2-input'); // -> dataValue2Input
  * ```
  *
  * @param settings - The settings for the string formatting
@@ -36,9 +36,10 @@ function caser(settings: CamelCaseSettings, str: string): string {
 
   return phrasify({ numbers })(str)
     .replace(/(?:^|\s+)(\w+)/g, (all: string, word: string, index: number) => {
-      if (abbr && /^[A-Z]+$/.test(word)) { return word; }
-      if (index === 0 && !upper) { return word.toLowerCase(); }
-      return word[0].toUpperCase() + word.substr(1).toLowerCase();
+      if (index === 0 && !upper) { return abbr ? word : word.toLowerCase(); }
+
+      const restOfWord = word.substr(1);
+      return word[0].toUpperCase() + (abbr ? restOfWord : restOfWord.toLowerCase());
     });
 }
 

@@ -4,6 +4,7 @@
     "module": "CommonJS",
     "target": "ES2017",
     "outDir": "./cjs",
-    "declaration": false
+    "declaration": false,
+    "esModuleInterop": true
   }
 }
