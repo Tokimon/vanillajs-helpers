@@ -1,6 +1,3 @@
-/* eslint-disable no-unused-expressions */
-
-import expect from './assets/chai';
 import isObject from '../isObject';
 
 
@@ -18,19 +15,19 @@ describe('"isObject"', () => {
     const O = new Object();
     const Test = new TestObj('test');
 
-    expect(isObject({})).to.be.true;
-    expect(isObject(O)).to.be.true;
-    expect(isObject(Object.create({}))).to.be.true;
-    expect(isObject(Test)).to.be.true;
+    expect(isObject({})).toBe(true);
+    expect(isObject(O)).toBe(true);
+    expect(isObject(Object.create({}))).toBe(true);
+    expect(isObject(Test)).toBe(true);
   });
 
   it('Should return false for non Object values', () => {
-    expect(isObject(null)).to.be.false;
-    expect(isObject('Object')).to.be.false;
-    expect(isObject([])).to.be.false;
-    expect(isObject(123)).to.be.false;
-    expect(isObject(NaN)).to.be.false;
-    expect(isObject(undefined)).to.be.false;
-    expect(isObject(TestObj)).to.be.false;
+    expect(isObject(null)).toBe(false);
+    expect(isObject('Object')).toBe(false);
+    expect(isObject([])).toBe(false);
+    expect(isObject(123)).toBe(false);
+    expect(isObject(NaN)).toBe(false);
+    expect(isObject(undefined)).toBe(false);
+    expect(isObject(TestObj)).toBe(false);
   });
 });

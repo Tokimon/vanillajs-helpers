@@ -1,19 +1,22 @@
-/* eslint-disable no-unused-expressions */
-
-import expect from './assets/chai';
 import isFunction from '../isFunction';
 
+
+
 describe('"isFunction"', () => {
-  it('Should return true for Function values', () => {
-    expect(isFunction(function() { return undefined; })).to.be.true;
-    expect(isFunction(() => undefined)).to.be.true;
+  it.each([
+    function() { return undefined; },
+    () => undefined,
     // eslint-disable-next-line no-new-func
-    expect(isFunction(new Function())).to.be.true;
+    new Function()
+  ])('Returns `true` for Function values', (fn) => {
+    expect(isFunction(fn)).toBe(true);
   });
 
-  it('Should return false for non Function values', () => {
-    expect(isFunction(null)).to.be.false;
-    expect(isFunction('Function')).to.be.false;
-    expect(isFunction(undefined)).to.be.false;
+  it.each([
+    null,
+    'Function',
+    undefined
+  ])('Return `false` for non Function values', (nonFn) => {
+    expect(isFunction(nonFn)).toBe(false);
   });
 });

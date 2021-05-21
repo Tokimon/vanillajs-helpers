@@ -1,6 +1,3 @@
-/* eslint-disable no-unused-expressions */
-
-import expect from './assets/chai';
 import randomHexColor from '../randomHexColor';
 
 describe('"randomHexColor"', () => {

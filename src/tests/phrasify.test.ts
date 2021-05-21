@@ -1,4 +1,3 @@
-import expect from './assets/chai';
 import phrasify from '../phrasify';
 
 describe('"phrasify"', () => {

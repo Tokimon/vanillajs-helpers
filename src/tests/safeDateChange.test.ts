@@ -1,4 +1,3 @@
-import expect from './assets/chai';
 import safeDateChange from '../safeDateChange';
 
 describe('"safeDateChange"', () => {
@@ -8,21 +7,21 @@ describe('"safeDateChange"', () => {
     toDate.setMonth(2);
 
     safeDateChange(fromDate, toDate);
-    expect([toDate.getMonth(), toDate.getDate()]).to.be.have.members([2, 30]);
+    expect([toDate.getMonth(), toDate.getDate()]).toEqual([2, 30]);
 
     fromDate = new Date(2017, 0, 4);
     toDate = new Date(fromDate.getTime());
     toDate.setMonth(1);
 
     safeDateChange(fromDate, toDate);
-    expect([toDate.getMonth(), toDate.getDate()]).to.be.have.members([1, 4]);
+    expect([toDate.getMonth(), toDate.getDate()]).toEqual([1, 4]);
 
     fromDate = new Date(2017, 3, 30);
     toDate = new Date(fromDate.getTime());
     toDate.setMonth(4);
 
     safeDateChange(fromDate, toDate);
-    expect([toDate.getMonth(), toDate.getDate()]).to.be.have.members([4, 30]);
+    expect([toDate.getMonth(), toDate.getDate()]).toEqual([4, 30]);
   });
 
   it('Should change date if the month has skipped', () => {
@@ -31,20 +30,20 @@ describe('"safeDateChange"', () => {
     toDate.setMonth(1);
 
     safeDateChange(fromDate, toDate);
-    expect([toDate.getMonth(), toDate.getDate()]).to.be.have.members([1, 28]);
+    expect([toDate.getMonth(), toDate.getDate()]).toEqual([1, 28]);
 
     fromDate = new Date(2016, 0, 31);
     toDate = new Date(fromDate.getTime());
     toDate.setMonth(1);
 
     safeDateChange(fromDate, toDate);
-    expect([toDate.getMonth(), toDate.getDate()]).to.be.have.members([1, 29]);
+    expect([toDate.getMonth(), toDate.getDate()]).toEqual([1, 29]);
 
     fromDate = new Date(2017, 4, 31);
     toDate = new Date(fromDate.getTime());
     toDate.setMonth(3);
 
     safeDateChange(fromDate, toDate);
-    expect([toDate.getMonth(), toDate.getDate()]).to.be.have.members([3, 30]);
+    expect([toDate.getMonth(), toDate.getDate()]).toEqual([3, 30]);
   });
 });

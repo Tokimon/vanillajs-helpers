@@ -1,4 +1,3 @@
-import expect from './assets/chai';
 import snake from '../snakeCase';
 
 describe('"snakeCase"', () => {

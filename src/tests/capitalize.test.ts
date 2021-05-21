@@ -1,11 +1,15 @@
-import expect from './assets/chai';
 import capitalize from '../capitalize';
 
+
+
 describe('"capitalize"', () => {
-  it('Should return capitalized string', () => {
-    expect(capitalize('some string to capitalize')).toBe('Some String To Capitalize');
-    expect(capitalize('some string to-capitalize')).toBe('Some String To-Capitalize');
-    expect(capitalize('some string to_capitalize')).toBe('Some String To_capitalize');
-    expect(capitalize('some String TO capitalize')).toBe('Some String TO Capitalize');
+  it.each([
+    ['normal string', 'Normal String'],
+    ['with-dash', 'With-Dash'],
+    ['with_underscore', 'With_underscore'],
+    ['with ABBR', 'With ABBR'],
+    ['Already some Capitalized words', 'Already Some Capitalized Words']
+  ])('Returns string capitalized: "%s"', (input, output) => {
+    expect(capitalize(input)).toBe(output);
   });
 });

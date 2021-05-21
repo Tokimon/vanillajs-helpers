@@ -1,21 +1,24 @@
-import expect from './assets/chai';
 import dashed from '../dashed';
 
 describe('"dashed"', () => {
-  it('Should transform a phrase into a dashed phrase', () => {
-    expect(dashed('Convert PHRASE into Dashed')).toBe('convert-phrase-into-dashed');
-    expect(dashed('ABBR phrase')).toBe('abbr-phrase');
-    expect(dashed('HTMLElement')).toBe('html-element');
-    expect(dashed('LOOK! 99 air balloons')).toBe('look-99-air-balloons');
-    expect(dashed('bool2str')).toBe('bool2str');
-    expect(dashed('camelCase')).toBe('camel-case');
-    expect(dashed('snake_case')).toBe('snake-case');
-    expect(dashed('data-value25input')).toBe('data-value25input');
-    expect(dashed('/some/path/someWhere')).toBe('some-path-some-where');
+  it.each([
+    ['Convert PHRASE into Dashed', 'convert-phrase-into-dashed'],
+    ['ABBR phrase', 'abbr-phrase'],
+    ['HTMLElement', 'html-element'],
+    ['LOOK! 99 air balloons', 'look-99-air-balloons'],
+    ['bool2str', 'bool2str'],
+    ['camelCase', 'camel-case'],
+    ['snake_case', 'snake-case'],
+    ['data-value25input', 'data-value25input'],
+    ['/some/path/someWhere', 'some-path-some-where']
+  ])('Transforms a phrase into a dashed phrase: "%s"', (input, output) => {
+    expect(dashed(input)).toBe(output);
   });
 
-  it('Should add "-" around numbers', () => {
-    expect(dashed('LOOK! 99 air balloons', { numbers: true })).toBe('look-99-air-balloons');
-    expect(dashed('data-value25input', { numbers: true })).toBe('data-value-25-input');
+  it.each([
+    ['LOOK! 99 air balloons', 'look-99-air-balloons'],
+    ['data-value25input', 'data-value-25-input']
+  ])('Adds as dash ("-") around numbers: "%s"', (input, output) => {
+    expect(dashed(input, { numbers: true })).toBe(output);
   });
 });

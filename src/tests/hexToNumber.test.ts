@@ -1,12 +1,13 @@
-import expect from './assets/chai';
 import hexToNumber from '../hexToNumber';
 
+
+
 describe('"hexToNumber"', () => {
-  it('Should return 0 on empty strings', () => {
+  it('Returns 0 on empty strings', () => {
     expect(hexToNumber('')).toBe(0);
   });
 
-  it('Should generate a number from hexadecimal', () => {
-    expect(hexToNumber('fa')).toBe(250);
+  it('Generates a number from a hexadecimal', () => {
+    expect(hexToNumber(250.0.toString(16))).toBe(250);
   });
 });

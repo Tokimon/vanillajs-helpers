@@ -1,40 +1,71 @@
-import expect from './assets/chai';
 import limitDecimals from '../limitDecimals';
 
+
+
 describe('"limitDecimals"', () => {
-  it('Should format the decimals to the default number of digits', () => {
-    expect(limitDecimals(0.234)).toBe('0.23');
-    expect(limitDecimals(1)).toBe('1.00');
-  });
-
-  it('(n) should format the decimals to a specific number of digits', () => {
-    expect(limitDecimals(0.234, 1)).toBe('0.2');
-    expect(limitDecimals(0.234, 5)).toBe('0.23400');
-    expect(limitDecimals(0.5, 0)).toBe('1');
-    expect(limitDecimals(0.9999, 3)).toBe('1.000');
-  });
-
-  it('(>n) should format the decimals to a minimum number of digits', () => {
-    expect(limitDecimals(0.234, '>1')).toBe('0.234');
-    expect(limitDecimals(0.234, '>4')).toBe('0.2340');
-    expect(limitDecimals(1, '>4')).toBe('1.0000');
-  });
-
-  it('(<n) should format the decimals to a maximum number of digits', () => {
-    expect(limitDecimals(0.234, '<2')).toBe('0.23');
-    expect(limitDecimals(0.234, '<5')).toBe('0.234');
-    expect(limitDecimals(0.9999, '<3')).toBe('1');
-  });
-
-  it('Should be able to limit decimals of strings', () => {
-    expect(limitDecimals('9.678', '<2')).toBe('9.68');
-  });
-
-  it('Should cut decimals if decimal indication is not defined correctly', () => {
+  it('Cuts decimals completely when decimal indication is not defined correctly', () => {
     expect(limitDecimals(9.678, 'none')).toBe('10');
   });
 
-  it('Should format 0 when a non number is specified', () => {
-    expect(limitDecimals('Not A Number')).toBe('0.00');
+  describe('Format the decimals to the default number of digits (2)', () => {
+    it.each([
+      [1, '1.00'],
+      [0.234, '0.23'],
+      [0.5, '0.50'],
+      [0.9999, '1.00']
+    ])('%s => %s', (num, output) => {
+      expect(limitDecimals(num)).toBe(output);
+    });
+  });
+
+  describe('`n` (3) formats the decimals to a specific number of digits', () => {
+    it.each([
+      [1, '1.000'],
+      [0.234, '0.234'],
+      [0.5, '0.500'],
+      [0.9999, '1.000']
+    ])('%s => %s', (num, output) => {
+      expect(limitDecimals(num, 3)).toBe(output);
+    });
+  });
+
+  describe('`>n` (>2) formats the decimals to a minimum number of digits', () => {
+    it.each([
+      [1, '1.00'],
+      [0.234, '0.234'],
+      [0.5, '0.50'],
+      [0.9999, '0.9999']
+    ])('%s => %s', (num, output) => {
+      expect(limitDecimals(num, '>2')).toBe(output);
+    });
+  });
+
+  describe('`<n` (<2) format the decimals to a maximum number of digits', () => {
+    it.each([
+      [1, '1'],
+      [0.234, '0.23'],
+      [0.5, '0.5'],
+      [0.9999, '1']
+    ])('%s => %s', (num, output) => {
+      expect(limitDecimals(num, '<2')).toBe(output);
+    });
+  });
+
+  describe('`x,y` (2,4) defines a range for the number of digits', () => {
+    describe.each([
+      [1, '1.00'],
+      [0.234, '0.234'],
+      [0.5, '0.50'],
+      [0.9999, '0.9999'],
+      [0.334567, '0.3346']
+    ])('%s => %s', (num, output) => {
+      it('In correct order', () => {
+        expect(limitDecimals(num, '2,4')).toBe(output);
+      });
+
+      it('Auto corrects "min" and "max"', () => {
+        expect(limitDecimals(num, '4,2')).toBe(output);
+      });
+    });
   });
 });

@@ -4,6 +4,7 @@
     "target": "ESNext",
     "outDir": "./_tests",
     "declaration": false,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "sourceMap": true
   }
 }

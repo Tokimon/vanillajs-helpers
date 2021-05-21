@@ -1,4 +1,3 @@
-import expect from './assets/chai';
 import numberToHex from '../numberToHex';
 
 describe('"numberToHex"', () => {
