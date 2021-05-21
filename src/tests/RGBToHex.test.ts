@@ -1,4 +1,3 @@
-import expect from './assets/chai';
 import RGBToHex from '../RGBToHex';
 
 describe('"RGBToHex"', () => {

@@ -1,29 +1,36 @@
-import expect from './assets/chai';
 import hash, { hashCode } from '../hash';
 
-describe('"hashCode"', () => {
-  it('Should always return a positive hash code', () => {
-    expect(hashCode('')).toBe(0);
+describe('"hash"', () => {
+  describe('"hashCode"', () => {
+    it('Returns a positive hash code', () => {
+      expect(hashCode('')).toBe(0);
+    });
+
+    it.each([
+      'abcdefg!!',
+      '#/!&?^1235[]()@$£¤*µù%èéàç'
+    ])('Returns the same hash code, for the same string: %s', (str) => {
+      expect(hashCode(str)).toBe(hashCode(str));
+    });
+
+    it.each([
+      ['abcdefg!!', 'abcdegf!!'],
+      ['abc/de/fg', 'abc/d/efg']
+    ])('Returns a unique hash code for a given string: %s', (str, str2) => {
+      expect(hashCode(str)).not.toBe(hashCode(str2));
+    });
   });
 
-  it('Should always return a unique hash code', () => {
-    expect(hashCode('abcdefg!!')).to.not.equal(hashCode('abcdegf!!'));
-    expect(hashCode('abc/de/fg')).to.not.equal(hashCode('abc/d/efg'));
-  });
-
-  it('Should always return a the same hash code', () => {
-    expect(hashCode('same')).toBe(hashCode('same'));
-    expect(hashCode('#/!&?^1235[]()@$£¤*µù%èéàç')).toBe(hashCode('#/!&?^1235[]()@$£¤*µù%èéàç'));
-  });
-
-  describe('"hashString"', () => {
-    it('Should return an empty string on empty strings', () => {
+  describe('"hash (string)"', () => {
+    it('Returns an empty string when an empty string is given', () => {
       expect(hash('')).toBe('');
     });
 
-    it('Should always return a unique hash string', () => {
-      expect(hash('abcdefg!!')).to.not.equal(hash('abcdegf!!'));
-      expect(hash('abc/de/fg')).to.not.equal(hash('abc/d/efg'));
+    it.each([
+      ['abcdefg!!', 'abcdegf!!'],
+      ['abc/de/fg', 'abc/d/efg']
+    ])('Returns a unique hash code for a given string: %s', (str, str2) => {
+      expect(hash(str)).not.toBe(hash(str2));
     });
   });
 });

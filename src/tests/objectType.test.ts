@@ -1,4 +1,3 @@
-import expect from './assets/chai';
 import objectType from '../objectType';
 
 describe('"objectType"', () => {

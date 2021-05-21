@@ -1,4 +1,3 @@
-import expect from './assets/chai';
 import randomRGBColor from '../randomRGBColor';
 
 describe('"randomRGBColor"', () => {

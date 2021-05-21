@@ -1,4 +1,3 @@
-import expect from './assets/chai';
 import leadingZero from '../leadingZero';
 
 describe('"leadingZero"', () => {

@@ -1,30 +1,29 @@
-/* eslint-disable no-unused-expressions */
-
-import expect from './assets/chai';
 import chunkString from '../chunkString';
 
+
+
 describe('"chunkString"', () => {
-  it('Should return an array of strings', () => {
-    let chunks = chunkString('abcd');
-    expect(chunks).to.be.an('array').and.to.have.length(2);
-    expect(chunks.every((str) => typeof str === 'string')).to.be.true;
-
-    chunks = chunkString('123456789');
-    expect(chunks).to.be.an('array').and.to.have.length(5);
-    expect(chunks.every((str) => typeof str === 'string')).to.be.true;
+  it('Cuts up a string into chunks', () => {
+    const chunks = chunkString('abcdef');
+    expect(chunks).toEqual(['ab', 'cd', 'ef']);
   });
 
-  it('Should return an array of strings of a given length', () => {
-    let chunks = chunkString('abcd', 4);
-    expect(chunks).to.be.an('array').and.to.have.length(1);
-    expect(chunks.every((str) => typeof str === 'string')).to.be.true;
-
-    chunks = chunkString('123456789', 4);
-    expect(chunks).to.be.an('array').and.to.have.length(3);
-    expect(chunks.every((str) => typeof str === 'string')).to.be.true;
+  it('Cuts up a string into chunks with given length', () => {
+    const chunks = chunkString('abcdefghijkl', 4);
+    expect(chunks).toEqual(['abcd', 'efgh', 'ijkl']);
   });
 
-  it('Should return empty Array for empty values', () => {
-    expect(chunkString('')).to.be.an('array').and.to.have.length(0);
+  it('When the given chunk length is grater than the string length, only one entry will be returned containing the entire string', () => {
+    const chunks = chunkString('abcdef', 7);
+    expect(chunks).toEqual(['abcdef']);
+  });
+
+  it('When string length is not divisible by the chunk length, last entry will contain the remaining of the string', () => {
+    const chunks = chunkString('abcdefghijlkmn', 3);
+    expect(chunks).toEqual(['abc', 'def', 'ghi', 'jlk', 'mn']);
+  });
+
+  it('Returns empty Array for empty values', () => {
+    expect(chunkString('')).toHaveLength(0);
   });
 });

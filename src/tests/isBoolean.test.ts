@@ -1,27 +1,27 @@
-/* eslint-disable no-unused-expressions */
-
-import expect from './assets/chai';
 import isBoolean from '../isBoolean';
 
 describe('"isBoolean"', () => {
-  it('Should return true for Boolean values', () => {
-    expect(isBoolean(true)).to.be.true;
-    expect(isBoolean(false)).to.be.true;
-    expect(isBoolean(Boolean(1))).to.be.true;
-    expect(isBoolean(Boolean(0))).to.be.true;
-
+  it.each([
+    true,
+    false,
+    Boolean(1),
+    Boolean(0),
     // eslint-disable-next-line no-new-wrappers
-    expect(isBoolean(new Boolean(0))).to.be.true;
+    new Boolean(0),
     // eslint-disable-next-line no-new-wrappers
-    expect(isBoolean(new Boolean(1))).to.be.true;
+    new Boolean(1)
+  ])('Returns `true` for Boolean values: %s', (input, output) => {
+    expect(isBoolean(input)).toBe(output);
   });
 
-  it('Should return false for non Boolean values', () => {
-    expect(isBoolean('true')).to.be.false;
-    expect(isBoolean('false')).to.be.false;
-    expect(isBoolean(0)).to.be.false;
-    expect(isBoolean(1)).to.be.false;
-    expect(isBoolean(null)).to.be.false;
-    expect(isBoolean(undefined)).to.be.false;
+  it.each([
+    'true',
+    'false',
+    0,
+    1,
+    null,
+    undefined
+  ])('Returns `false` for non Boolean values: %s', (input, output) => {
+    expect(isBoolean(input)).toBe(output);
   });
 });

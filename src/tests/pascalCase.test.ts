@@ -1,4 +1,3 @@
-import expect from './assets/chai';
 import pascalCase from '../pascalCase';
 
 describe('"pascalCase"', () => {

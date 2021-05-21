@@ -1,6 +1,3 @@
-/* eslint-disable no-unused-expressions */
-
-import expect from './assets/chai';
 import promisefy, { NodeLikeCallback } from '../promisefy';
 
 describe('"promisefy"', () => {
@@ -15,10 +12,10 @@ describe('"promisefy"', () => {
     expect(promised).to.be.a('function');
 
     const success = promised(true);
-    expect(success instanceof Promise).to.be.true;
+    expect(success instanceof Promise).toBe(true);
 
     const fail = promised(false);
-    expect(fail instanceof Promise).to.be.true;
+    expect(fail instanceof Promise).toBe(true);
 
     return Promise.all([
       expect(success).to.not.be.rejected,

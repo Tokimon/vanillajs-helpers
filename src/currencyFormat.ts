@@ -6,6 +6,10 @@ export type CurrencyFomatter = (num: number) => string;
 
 
 
+const thousandRegExp = /^(\D*)1(\D*)000(\D*)(\d*)(\D*)$/;
+
+
+
 /**
  * Creates a function that formats a number to a given currency format (eg. 1000 -> 1.000,00 €)
  *
@@ -36,20 +40,18 @@ export type CurrencyFomatter = (num: number) => string;
  * @param thousand - The template for how to format a number, takes an example of 1000 in the desired curreny (eg. '1.000,00 €')
  * @return - Curried function to format a given number
  */
-export default function currencyFormat(thousand = '1.000,00 €'): CurrencyFomatter {
-  const m = /^(\D*)1(\D*)000(\D*)(\d*)(\D*)$/.exec(thousand);
+export function currencyFormat(thousandString = '1.000,00 €'): CurrencyFomatter {
+  let m = thousandRegExp.exec(thousandString);
 
-  if (m) {
-    const [, before, thousand, decimal, dec, after] = m;
-
-    const settings = {
-      decimals: dec.length,
-      thousand,
-      decimal
-    };
-
-    return (num: number) => `${before}${formatNumber(num, settings)}${after}`;
+  if (!m) {
+    m = thousandRegExp.exec('1.000,00 €') as RegExpExecArray;
   }
 
-  return currencyFormat('1.000,00 €');
+  const [before, thousand, decimal, dec, after] = m.slice(1);
+
+  const settings = { decimals: dec.length, thousand, decimal };
+
+  return (num: number) => `${before}${formatNumber(num, settings)}${after}`;
 }
+
+export default currencyFormat();

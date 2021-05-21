@@ -1,25 +1,24 @@
-import expect from './assets/chai';
 import formatNumber from '../formatNumber';
 
 describe('"formatNumber"', () => {
-  it('Should format number with default settings', () => {
-    expect(formatNumber(1100.234)).toBe('1.100,23');
+  const num = 1100.234;
+  it('Formats number with default settings', () => {
+    expect(formatNumber(num)).toBe('1.100,23');
   });
 
-  it('Should format number with a specific thousand seperator', () => {
-    expect(formatNumber(1100.234, { thousand: '|' })).toBe('1|100,23');
+  it.each([
+    [{ thousand: '|' }, '1|100,23'],
+    [{ decimal: '|' }, '1.100|23'],
+    [{ thousand: '-', decimal: '#' }, '1-100#23']
+  ])('Formats number with given separator configuration: %s', (config, output) => {
+    expect(formatNumber(1100.234, config)).toBe(output);
   });
 
-  it('Should format number with a specific decimal seperator', () => {
-    expect(formatNumber(1100.234, { thousand: '.', decimal: '|' })).toBe('1.100|23');
-  });
-
-  it('Should format the decimals', () => {
-    expect(formatNumber(1100.234, { decimals: 1 })).toBe('1.100,2');
-    expect(formatNumber(1100.234, { decimals: 5 })).toBe('1.100,23400');
-    expect(formatNumber(1100.234, { decimals: '>1' })).toBe('1.100,234');
-    expect(formatNumber(1100.234, { decimals: '>5' })).toBe('1.100,23400');
-    expect(formatNumber(1100.234, { decimals: '<2' })).toBe('1.100,23');
-    expect(formatNumber(1100.234, { decimals: '<5' })).toBe('1.100,234');
+  it.each([
+    [1, '1.100,2'],
+    ['>4', '1.100,2340'],
+    ['<2', '1.100,23']
+  ])('Format the decimals (using "limitDecimals" expressions): %s', (decimals, output) => {
+    expect(formatNumber(1100.234, { decimals })).toBe(output);
   });
 });
