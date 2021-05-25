@@ -15,7 +15,8 @@ import isString from './isString';
  * @return - Whether the given argument is a numeric value
  */
 export default function isNumeric(x: unknown): boolean {
-  if (isString(x) && x !== '') {
+  if (isString(x)) {
+    if (!x.length) { return false; }
     x = Number(x);
   }
 

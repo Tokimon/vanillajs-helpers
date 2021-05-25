@@ -1,56 +1,37 @@
 import isNumeric from '../isNumeric';
 
+
+
 describe('"isNumeric"', () => {
-  describe('Is `true` for', () => {
-    it('Integers', () => {
-      expect(isNumeric(9)).toBe(true);
-    });
-
-    it('Floats', () => {
-      expect(isNumeric(9.5)).toBe(true);
-    });
-
-    it('Integers as string', () => {
-      expect(isNumeric('9')).toBe(true);
-    });
-
-    it('Floats as string', () => {
-      expect(isNumeric('9.5')).toBe(true);
-    });
-
-    it('New Number object', () => {
+  describe('Returns `true` for numeric values', () => {
+    it.each([
+      8,
+      9.5,
+      Number('0'),
       // eslint-disable-next-line no-new-wrappers
-      expect(isNumeric(new Number(9))).toBe(true);
+      new Number('5'),
+      '7.4',
+      String('6'),
+      // eslint-disable-next-line no-new-wrappers
+      new String('3.4')
+    ])('"%s"', (n) => {
+      expect(isNumeric(n)).toBe(true);
     });
   });
 
-  describe('Is `false` for', () => {
-    it('null', () => {
-      expect(isNumeric(null)).toBe(false);
-    });
-
-    it('undefined', () => {
-      expect(isNumeric(undefined)).toBe(false);
-    });
-
-    it('Infinity', () => {
-      expect(isNumeric(Infinity)).toBe(false);
-    });
-
-    it('NaN', () => {
-      expect(isNumeric(NaN)).toBe(false);
-    });
-
-    it('Object (`{}`)', () => {
-      expect(isNumeric({})).toBe(false);
-    });
-
-    it('Empty Array', () => {
-      expect(isNumeric([])).toBe(false);
-    });
-
-    it('Empty string', () => {
-      expect(isNumeric('')).toBe(false);
+  describe('Returns `false` for non numeric values', () => {
+    it.each([
+      null,
+      undefined,
+      Infinity,
+      NaN,
+      '',
+      // eslint-disable-next-line no-new-wrappers
+      new String(''),
+      [],
+      {}
+    ])('"%s"', (n) => {
+      expect(isNumeric(n)).toBe(false);
     });
   });
 });
