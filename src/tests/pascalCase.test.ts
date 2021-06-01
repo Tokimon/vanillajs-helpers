@@ -1,76 +1,84 @@
-import pascalCase from '../pascalCase';
+import createBooleanSettings from './assets/createBooleanSettings';
+import firstUpper from './assets/firstUpper';
+
+import { defaultSettings } from '../camelCase';
+import pascalCase, { PascalCaseSettings } from '../pascalCase';
+
+
+
+type ResultCreator = (props: PascalCaseSettings) => string;
+type TestInput = [string, ResultCreator];
+
+
+
+const emptyObj = {};
+
+const defaultPascalSettings = { ...defaultSettings };
+delete defaultPascalSettings.upper;
+
+const settingsKeys = Object.keys(defaultSettings) as (keyof PascalCaseSettings)[];
+
+
+
+const afterNum = (str: string, numbers?: boolean) => {
+  str = str.toLowerCase();
+  return numbers ? firstUpper(str) : str;
+};
+
+const abbrev = (abbr?: boolean) => {
+  const str = 'ABBR';
+  return abbr ? str : firstUpper(str.toLowerCase());
+};
+
+
+
+const phrases: TestInput[] = [
+  ['', () => ''],
+
+  ['With ABBR in the middle', ({ abbr }) => `with${abbrev(abbr)}InTheMiddle`],
+  ['ABBR in the beginning', ({ abbr }) => `${abbrev(abbr)}InTheBeginning`],
+  ['ABBRInWord', ({ abbr }) => `${abbrev(abbr)}InWord`],
+
+  ['Num42in the middle', ({ numbers = true }) => `num42${afterNum('in', numbers)}TheMiddle`],
+  ['42in the beginning', ({ numbers = true }) => `42${afterNum('in', numbers)}TheBeginning`],
+  ['42 alone', () => '42Alone'],
+
+  ['camelCase', () => 'camelCase'],
+  ['PascalCase', () => 'pascalCase'],
+  ['snake_case', () => 'snakeCase'],
+  ['kebab-case', () => 'kebabCase'],
+  ['-kebab-case-', () => 'kebabCase'],
+
+  ['word', () => 'word'],
+  ['Name', () => 'name'],
+
+  ['data-ABBR42number space', ({ numbers = true, abbr }) => `data${abbrev(abbr)}42${afterNum('number', numbers)}Space`],
+  ['Look! 99 ? ABBR #Test', ({ abbr }) => `look99${abbrev(abbr)}Test`]
+];
+
+
 
 describe('"pascalCase"', () => {
-  describe('without defined settings', () => {
-    it('Should convert a phrase into a PascalCased word', () => {
-      expect(pascalCase('Convert PHRASE into Pascal case')).toBe('ConvertPhraseIntoPascalCase');
-      expect(pascalCase('ABBR phrase')).toBe('AbbrPhrase');
-      expect(pascalCase('HTMLElement')).toBe('HtmlElement');
-      expect(pascalCase('LOOK! 99 air balloons')).toBe('Look99AirBalloons');
-      expect(pascalCase('PascalCase')).toBe('PascalCase');
-      expect(pascalCase('snake_case')).toBe('SnakeCase');
-      expect(pascalCase('data-value25input')).toBe('DataValue25Input');
-      expect(pascalCase('/some/path/someWhere')).toBe('SomePathSomeWhere');
+  describe('Passing a string directly', () => {
+    describe('Convert a phrase into a lower PascalCased word (using default settings)', () => {
+      it.each(phrases)('"%s"', (input, output) => {
+        expect(pascalCase(input))
+          .toBe(firstUpper(output(defaultSettings)));
+      });
     });
   });
 
-  describe('with defined settings', () => {
-    it('Should return a function if no string was given', () => {
-      expect(typeof pascalCase()).toBe('function');
-      expect(typeof pascalCase(undefined)).toBe('function');
-      expect(typeof pascalCase('')).toBe('string');
-    });
+  describe('Passing a config object', () => {
+    describe.each([
+      emptyObj,
+      ...createBooleanSettings<PascalCaseSettings>(settingsKeys)
+    ] as PascalCaseSettings[])('%s', (conf) => {
+      const caser = pascalCase(conf);
+      const settings = emptyObj === conf ? defaultPascalSettings : conf;
 
-    describe('{ "abbr" : false, "numbers" : true } (default settings)', () => {
-      it('Should use default settings when an empty settings object is given', () => {
-        const caser = pascalCase();
-        expect(caser('Convert PHRASE into Pascal case')).toBe('ConvertPhraseIntoPascalCase');
-        expect(caser('ABBR phrase')).toBe('AbbrPhrase');
-        expect(caser('HTMLElement')).toBe('HtmlElement');
-        expect(caser('LOOK! 99 air balloons')).toBe('Look99AirBalloons');
-        expect(caser('bool2str')).toBe('Bool2Str');
-        expect(caser('L337caser')).toBe('L337Caser');
-        expect(caser('pascalCase')).toBe('PascalCase');
-        expect(caser('snake_case')).toBe('SnakeCase');
-        expect(caser('word')).toBe('Word');
-        expect(caser('Name')).toBe('Name');
-        expect(pascalCase('data-value25input')).toBe('DataValue25Input');
-      });
-    });
-
-    describe('{ "abbr" : true }', () => {
-      it('Should keep abbreviations', () => {
-        const caser = pascalCase({ abbr: true });
-        expect(caser('Convert PHRASE into Pascal case')).toBe('ConvertPHRASEIntoPascalCase');
-        expect(caser('ABBR phrase')).toBe('ABBRPhrase');
-        expect(caser('HTMLElement')).toBe('HTMLElement');
-      });
-    });
-
-    describe('{ "numbers" : false }', () => {
-      it('Should ignore numbers', () => {
-        const caser = pascalCase({ numbers: false });
-        expect(caser('LOOK! 99 air balloons')).toBe('Look99AirBalloons');
-        expect(caser('bool2str')).toBe('Bool2str');
-        expect(caser('L337caser')).toBe('L337caser');
-        expect(caser('007bond')).toBe('007bond');
-        expect(caser('data-value25input')).toBe('DataValue25input');
-      });
-    });
-
-    describe('{ "abbr" : true, "numbers" : false }', () => {
-      it('Should keep abbreviations and ignore numbers', () => {
-        const caser = pascalCase({ numbers: false, abbr: true });
-        expect(caser('Convert PHRASE into Pascal case')).toBe('ConvertPHRASEIntoPascalCase');
-        expect(caser('ABBR phrase')).toBe('ABBRPhrase');
-        expect(caser('HTMLElement')).toBe('HTMLElement');
-        expect(caser('LOOK! 99 air balloons')).toBe('LOOK99AirBalloons');
-        expect(caser('bool2str')).toBe('Bool2str');
-        expect(caser('L337caser')).toBe('L337caser');
-        expect(caser('pascalCase')).toBe('PascalCase');
-        expect(caser('snake_case')).toBe('SnakeCase');
-        expect(caser('word')).toBe('Word');
-        expect(caser('Name')).toBe('Name');
+      it.each(phrases)('"%s"', (input, output) => {
+        const out = firstUpper(output(settings));
+        expect(caser(input)).toBe(out);
       });
     });
   });

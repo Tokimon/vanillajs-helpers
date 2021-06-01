@@ -1,62 +1,72 @@
-import phrasify from '../phrasify';
+import phrasify, { PhrasifySettings } from '../phrasify';
+
+
+
+type ResultCreator = (props: PhrasifySettings) => string;
+type TestInput = [string, string | ResultCreator];
+
+
+
+const emptyObj = {};
+
+const spaceAround = (str: string, numbers?: boolean) => {
+  return numbers ? ` ${str} ` : str;
+};
+
+const result = (val: string | ResultCreator, settings?: PhrasifySettings) =>
+  typeof val === 'function'
+    ? val(settings || {})
+    : val;
+
+
+
+const phrases: TestInput[] = [
+  ['', () => ''],
+
+  ['Multiple   spaces   in  phrase', 'Multiple spaces in phrase'],
+  ['ABBR phrase', 'ABBR phrase'],
+  ['ABBRInWord', 'ABBR In Word'],
+  ['HTMLElement', 'HTML Element'],
+  ['Num42in the middle', ({ numbers }) => `Num${spaceAround('42', numbers)}in the middle`],
+  ['42in the beginning', ({ numbers }) => `${spaceAround('42', numbers).trimStart()}in the beginning`],
+  ['42 alone', '42 alone'],
+  ['word', 'word'],
+  ['Name', 'Name'],
+  ['/some/path/someWhere', 'some path some Where'],
+
+  ['camelCase', () => 'camel Case'],
+  ['PascalCase', () => 'Pascal Case'],
+  ['snake_case', () => 'snake case'],
+  ['kebab-case', () => 'kebab case'],
+  ['-kebab-case-', () => 'kebab case'],
+
+  ['word', () => 'word'],
+  ['Name', () => 'Name'],
+
+  ['data-ABBR42number space', ({ numbers }) => `data ABBR${spaceAround('42', numbers)}number space`],
+  ['Look! 99 ? ABBR #Test', 'Look 99 ABBR Test']
+];
 
 describe('"phrasify"', () => {
-  describe('- without defined settings', () => {
-    it('Should convert a word or phrase into a space separated phrase', () => {
-      expect(phrasify('Convert PHRASE into  normal phrase')).toBe('Convert PHRASE into normal phrase');
-      expect(phrasify('ABBR phrase')).toBe('ABBR phrase');
-      expect(phrasify('HTMLElement')).toBe('HTML Element');
-      expect(phrasify('LOOK! 99 air balloons')).toBe('LOOK 99 air balloons');
-      expect(phrasify('camelCase')).toBe('camel Case');
-      expect(phrasify('CamelCase')).toBe('Camel Case');
-      expect(phrasify('snake_case')).toBe('snake case');
-      expect(phrasify('bool2str')).toBe('bool2str');
-      expect(phrasify('word')).toBe('word');
-      expect(phrasify('Name')).toBe('Name');
-      expect(phrasify('data-value25input')).toBe('data value25input');
-      expect(phrasify('/some/path/someWhere')).toBe('some path some Where');
+  describe('Passing a string directly', () => {
+    describe('Convert a phrase into a lower PascalCased word (using default settings)', () => {
+      it.each(phrases)('"%s"', (input, output) => {
+        expect(phrasify(input))
+          .toBe(result(output));
+      });
     });
   });
 
-  describe('- with defined settings', () => {
-    it('Should return a function if no string was given', () => {
-      expect(typeof phrasify()).toBe('function');
-    });
+  describe('Passing a config object', () => {
+    describe.each([
+      emptyObj,
+      { numbers: true },
+      { numbers: false }
+    ] as PhrasifySettings[])('%s', (conf) => {
+      const phraser = phrasify(conf);
 
-    it('Should convert a word or phrase into a space separated phrase', () => {
-      const phraser = phrasify();
-      expect(phraser('Convert PHRASE  into normal phrase')).toBe('Convert PHRASE into normal phrase');
-      expect(phraser('ABBR phrase')).toBe('ABBR phrase');
-      expect(phraser('HTMLElement')).toBe('HTML Element');
-      expect(phraser('LOOK! 99 air balloons')).toBe('LOOK 99 air balloons');
-      expect(phraser('camelCase')).toBe('camel Case');
-      expect(phraser('CamelCase')).toBe('Camel Case');
-      expect(phraser('snake_case')).toBe('snake case');
-      expect(phraser('bool2str')).toBe('bool2str');
-      expect(phraser('word')).toBe('word');
-      expect(phraser('Name')).toBe('Name');
-    });
-
-    describe('{ "numbers" : false }', () => {
-      it('Should not treat numbers', () => {
-        const phraser = phrasify({ numbers: false });
-        expect(phraser('LOOK! 99 air balloons')).toBe('LOOK 99 air balloons');
-        expect(phraser('bool2str')).toBe('bool2str');
-        expect(phraser('L337phraser')).toBe('L337phraser');
-        expect(phraser('007')).toBe('007');
-        expect(phraser('007bond')).toBe('007bond');
-      });
-    });
-
-    describe('{ "numbers" : true }', () => {
-      it('Should make space around numbers', () => {
-        const phraser = phrasify({ numbers: true });
-        expect(phraser('LOOK! 99 air balloons')).toBe('LOOK 99 air balloons');
-        expect(phraser('bool2str')).toBe('bool 2 str');
-        expect(phraser('L337phraser')).toBe('L 337 phraser');
-        expect(phraser('007')).toBe('007');
-        expect(phraser('007bond')).toBe('007 bond');
-        expect(phraser('data-value25input')).toBe('data value 25 input');
+      it.each(phrases)('"%s"', (input, output) => {
+        expect(phraser(input)).toBe(result(output, conf));
       });
     });
   });

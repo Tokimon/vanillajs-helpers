@@ -3,6 +3,10 @@ import camelCase, { CamelCaseSettings, CamelCaseFunction } from './camelCase';
 
 
 
+export type PascalCaseSettings = Omit<CamelCaseSettings, 'upper'>;
+
+
+
 /**
  * Return a function that transforms a string into a PascalCased word
  * (eg. 'pascal case' -> 'PascalCase').
@@ -18,7 +22,7 @@ import camelCase, { CamelCaseSettings, CamelCaseFunction } from './camelCase';
  * @param input - The settings for the returned format method
  * @return - The method to perform the formatting
  */
-function pascalCase(input?: CamelCaseSettings): CamelCaseFunction;
+function pascalCase(input?: PascalCaseSettings): CamelCaseFunction;
 
 /**
  * Transform a string into a PascalCased word (eg. 'pascal case' -> 'PascalCase')
@@ -34,11 +38,11 @@ function pascalCase(input?: CamelCaseSettings): CamelCaseFunction;
  */
 function pascalCase(input: string): string;
 
-function pascalCase(input?: string | CamelCaseSettings): string | CamelCaseFunction {
+function pascalCase(input?: string | PascalCaseSettings): string | CamelCaseFunction {
   if (!input && input !== '') { input = {}; }
 
   return isObject(input)
-    ? camelCase(Object.assign({}, input, { upper: true }))
+    ? camelCase({ ...input, upper: true })
     : camelCase({ upper: true })(input as string);
 }
 
