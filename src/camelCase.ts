@@ -35,8 +35,12 @@ function caser(settings: CamelCaseSettings, str: string): string {
   const { upper, abbr, numbers } = settings;
 
   return phrasify({ numbers })(str)
-    .replace(/(?:^|\s+)(\w+)/g, (all: string, word: string, index: number) => {
-      if (index === 0 && !upper) { return abbr ? word : word.toLowerCase(); }
+    .replace(/(?:^|\s+)(\w+)/g, (_: string, word: string, index: number) => {
+      if (index === 0 && !upper) {
+        return abbr && word === word.toUpperCase()
+          ? word
+          : word.toLowerCase();
+      }
 
       const restOfWord = word.substr(1);
       return word[0].toUpperCase() + (abbr ? restOfWord : restOfWord.toLowerCase());

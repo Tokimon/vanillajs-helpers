@@ -14,5 +14,5 @@ import leadingZero from './leadingZero';
  * @return - Hex representation of the given number
  */
 export default function numberToHex(num: number): string {
-  return leadingZero(Math.round(num).toString(16));
+  return leadingZero(Math.round(num).toString(16), 2);
 }

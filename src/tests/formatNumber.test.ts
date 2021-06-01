@@ -1,5 +1,7 @@
 import formatNumber from '../formatNumber';
 
+
+
 describe('"formatNumber"', () => {
   const num = 1100.234;
   it('Formats number with default settings', () => {

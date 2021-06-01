@@ -1,3 +1,6 @@
+import createBooleanSettings from './assets/createBooleanSettings';
+import firstUpper from './assets/firstUpper';
+
 import camelCase, { CamelCaseSettings, defaultSettings } from '../camelCase';
 
 
@@ -12,31 +15,6 @@ const settingsKeys = Object.keys(defaultSettings) as (keyof CamelCaseSettings)[]
 
 
 
-function createSettings(keys: (keyof CamelCaseSettings)[], prev: CamelCaseSettings = {}): CamelCaseSettings[] {
-  const x: CamelCaseSettings[] = [];
-
-  // eslint-disable-next-line no-unmodified-loop-condition
-  while (keys) {
-    const key = keys.pop();
-    if (!key) { break; }
-
-    const _true = { ...prev, [key]: true };
-    const _false = { ...prev, [key]: false };
-
-    x.push(
-      _true,
-      _false,
-      ...createSettings([...keys], _true),
-      ...createSettings([...keys], _false)
-    );
-  }
-
-  return x;
-}
-
-
-
-const firstUpper = (str: string) => str && (str[0].toUpperCase() + str.slice(1));
 const afterNum = (str: string, numbers?: boolean) => {
   str = str.toLowerCase();
   return numbers ? firstUpper(str) : str;
@@ -79,7 +57,7 @@ const phrases: TestInput[] = [
 
 
 describe('"camelCase"', () => {
-  describe.skip('Passing a string directly', () => {
+  describe('Passing a string directly', () => {
     describe('Convert a phrase into a lower camelCased word (using default settings)', () => {
       it.each(phrases)('"%s"', (input, output) => {
         expect(camelCase(input)).toBe(output(defaultSettings));
@@ -90,7 +68,7 @@ describe('"camelCase"', () => {
   describe('Passing a config object', () => {
     describe.each([
       emptyObj,
-      ...createSettings(settingsKeys)
+      ...createBooleanSettings<CamelCaseSettings>(settingsKeys)
     ] as CamelCaseSettings[])('%s', (conf) => {
       const caser = camelCase(conf);
       const settings = emptyObj === conf ? defaultSettings : conf;

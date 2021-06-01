@@ -1,5 +1,7 @@
 import hash, { hashCode } from '../hash';
 
+
+
 describe('"hash"', () => {
   describe('"hashCode"', () => {
     it('Returns a positive hash code', () => {

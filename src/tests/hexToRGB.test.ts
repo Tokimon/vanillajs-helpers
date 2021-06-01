@@ -1,5 +1,7 @@
 import hexToRGB from '../hexToRGB';
 
+
+
 describe('"hexToRGB"', () => {
   it('Generates a RGB array from empty string', () => {
     expect(hexToRGB('')).toEqual([0, 0, 0]);
