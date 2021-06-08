@@ -1,5 +1,8 @@
-import { PhrasifySettings } from './phrasify';
-import dashed from './dashed';
+import phrasify, { PhrasifySettings } from './phrasify';
+
+
+
+export type SnakeCaseSettings = PhrasifySettings;
 
 
 
@@ -17,6 +20,8 @@ import dashed from './dashed';
  * @param settings - Settings to pass to the phrasify function
  * @return - The string transformed to snake_case
  */
-export default function snakeCase(str: string, settings?: PhrasifySettings): string {
-  return dashed(str, settings).replace(/-+/g, '_');
+export default function snakeCase(str: string, settings?: SnakeCaseSettings): string {
+  return phrasify(str, settings)
+    .toLowerCase()
+    .replace(/\s+/g, '_');
 }
