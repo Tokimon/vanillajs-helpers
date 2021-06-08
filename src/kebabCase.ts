@@ -1,5 +1,9 @@
 import phrasify, { PhrasifySettings } from './phrasify';
 
+
+export type KebabCaseSettings = PhrasifySettings;
+
+
 /**
  * Transform phrase into a dashed phrase
  * (eg. 'camelCase' -> 'camel-case' or 'spaced phrase' -> 'spaced-phrase')
@@ -14,8 +18,8 @@ import phrasify, { PhrasifySettings } from './phrasify';
  * @param settings - Settings to pass to the phrasify function
  * @return - The string with spaces replaced by a dash (-)
  */
-export default function dashed(str: string, settings?: PhrasifySettings): string {
-  return phrasify(settings)(str)
+export default function dashed(str: string, settings?: KebabCaseSettings): string {
+  return phrasify(str, settings)
     .toLowerCase()
     .replace(/\s+/g, '-');
 }
