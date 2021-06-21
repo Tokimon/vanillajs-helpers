@@ -1,10 +1,16 @@
 import randomHexColor from '../randomHexColor';
 
 describe('"randomHexColor"', () => {
-  it('Should generate a random Hex color', () => {
+  it('Generates a random Hex color', () => {
+    const spy = jest.spyOn(Math, 'random')
+      .mockReturnValueOnce(0)
+      .mockReturnValueOnce(0.5)
+      .mockReturnValueOnce(1);
+
     const hex = randomHexColor();
 
-    expect(typeof hex).toBe('string');
-    expect(hex).to.satisfy((h: string) => /[a-f0-9]{6}/.test(h));
+    expect(hex).toBe('#0080ff');
+
+    spy.mockRestore();
   });
 });

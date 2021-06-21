@@ -1,11 +1,15 @@
 import randomId from '../randomId';
 
 describe('"randomId"', () => {
-  it('Should generate a random id of default length', () => {
-    expect(/[a-z0-9]{10}/.test(randomId())).toBe(true);
+  it('Generates a random id of default length', () => {
+    expect(randomId()).toMatch(/[a-z0-9]{10}/);
   });
 
-  it('Should generate a random id of specific length', () => {
-    expect(/[a-z0-9]{100}/.test(randomId(100))).toBe(true);
+  it('Generates a random id of specific length', () => {
+    expect(randomId(100)).toMatch(/[a-z0-9]{100}/);
+  });
+
+  it('Generates an empty id when a negative length is given', () => {
+    expect(randomId(-100)).toBe('');
   });
 });
