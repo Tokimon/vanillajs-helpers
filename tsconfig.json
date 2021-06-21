@@ -14,7 +14,8 @@
     "strictNullChecks": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "downlevelIteration": true
   },
 
   "include": [
