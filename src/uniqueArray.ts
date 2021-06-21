@@ -11,5 +11,5 @@
  * @return - The truncated string
  */
 export default function uniqueArray(arr: unknown[]): unknown[] {
-  return arr.filter((item: unknown, i: number, a: unknown[]) => a.indexOf(item) === i);
+  return [...(new Set(arr))];
 }
