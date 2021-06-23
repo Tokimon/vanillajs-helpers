@@ -6,6 +6,7 @@
 .nyc_output
 .nycrc
 .vscode
+.github
 docs
 coverage
 tasks
