@@ -36,7 +36,7 @@ const defaultSettings: FormatNumberSettings = {
  * @return Formatted number as a string
  */
 export default function formatNumber(num: number, settings?: FormatNumberSettings): string {
-  const { decimals, thousand, decimal } = Object.assign({}, defaultSettings, settings);
+  const { decimals, thousand, decimal } = { ...defaultSettings, ...settings };
 
   // Format the number to the desired number of decimals and split.
   const parts = limitDecimals(num, decimals).split('.');

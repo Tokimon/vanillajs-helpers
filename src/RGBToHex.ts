@@ -1,8 +1,13 @@
+import minMax from './minMax';
 import hex from './numberToHex';
 
 
 
-const hexStr = (color?: number) => color !== undefined ? hex(color) : '';
+type RGBArray = [number, number, number] | [number, number, number, number];
+
+
+
+const hexStr = (color: number) => hex(minMax(color, 0, 255));
 
 
 
@@ -20,7 +25,7 @@ const hexStr = (color?: number) => color !== undefined ? hex(color) : '';
  * @param rgb - The R G B (A) color represented as an array
  * @return - A Hex representation of the given color
  */
-function RGBToHex(rgb: number[]): string;
+function RGBToHex(rgb: RGBArray): string;
 
 /**
  * Converts R G B (A) color arguments into a hex color.
@@ -42,16 +47,22 @@ function RGBToHex(rgb: number[]): string;
  */
 function RGBToHex(r: number, g: number, b: number, a?: number): string;
 
-function RGBToHex(r: number | number[], g?: number, b?: number, a?: number): string {
+function RGBToHex(r: number | RGBArray, g?: number, b?: number, a?: number): string {
   if (Array.isArray(r)) {
     [r, g, b, a] = r;
   }
 
-  return '#'
+  let hex = '#'
     + hexStr(r)
-    + hexStr(g)
-    + hexStr(b)
-    + hexStr(a && (a * 255));
+    + hexStr(g as number)
+    + hexStr(b as number);
+
+  if (a !== undefined && a < 1) {
+    if (a < 0) { a = 0; }
+    hex += hexStr(a * 255);
+  }
+
+  return hex;
 }
 
 export default RGBToHex;

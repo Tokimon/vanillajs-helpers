@@ -3,7 +3,7 @@ import objectType from './objectType';
 
 
 /**
- * Is the given object of type String
+ * Is the given argument of type String
  *
  * @example
  * ```ts
@@ -11,9 +11,9 @@ import objectType from './objectType';
  * isString(123); // -> false
  * ```
  *
- * @param obj - Object to test
- * @return - Whether the object a string or not
+ * @param obj - Argument to test
+ * @return - Whether the argument a string or not
  */
-export default function isString(obj: unknown): obj is string {
-  return typeof obj === 'string' || objectType(obj) === 'string';
+export default function isString(x: unknown): x is string {
+  return typeof x === 'string' || objectType(x) === 'string';
 }

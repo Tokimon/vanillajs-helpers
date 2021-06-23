@@ -1,7 +1,3 @@
-import isString from './isString';
-
-
-
 /**
  * Convert Hexadecimal into a number (eg. b4 => 180)
  *
@@ -14,5 +10,5 @@ import isString from './isString';
  * @return - Numeric representation of the hex code
  */
 export default function hexToNumber(hex: string): number {
-  return isString(hex) && hex ? parseInt(hex, 16) : 0;
+  return hex ? parseInt(hex, 16) : 0;
 }

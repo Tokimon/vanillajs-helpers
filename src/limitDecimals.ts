@@ -2,6 +2,21 @@ import isString from './isString';
 
 
 
+function maxDecimals(num: number, decimals: number): number {
+  const multiplier = 10 ** decimals;
+  // toFixed is to avoid decimal imprecision (eg. 3.4500000003)
+  return Number((Math.round(num * multiplier) / multiplier).toFixed(decimals));
+}
+
+function minDecimals(num: number, decimals: number): string {
+  const decLen = (String(num).split('.')[1] || '').length;
+  return decimals <= decLen
+    ? String(num)
+    : num.toFixed(decimals);
+}
+
+
+
 /**
  * Limit decimals of a floating number to specified length. The length depends on
  * `decimals` which can have the following settings (n = integer):
@@ -31,40 +46,28 @@ import isString from './isString';
  * @param decimals - Setting for how to handle the decimals
  * @return - String representation of the number with the decimals adjusted according to the decimal setting
  */
-export default function limitDecimals(num: number | string, decimals: number | string = 2): string {
-  num = isString(num)
-    ? parseFloat(num as string)
-    : num as number;
-
-  if (isNaN(num)) { num = 0; }
-
-  const countMatch = /^([<>])?(\d+)/.exec(decimals as string);
-  let parts = `${num}`.split('.');
-  let decLen = parts[1] ? parts[1].length : 0;
-  let decCount = 0;
-
-  if (countMatch) {
-    const indicator = countMatch[1];
-    decCount = Number(countMatch[2]);
-
-    // minimum number of decimals
-    if (indicator === '>' && decLen > decCount) {
-      decCount = decLen;
+export default function limitDecimals(num: number, decimals: number | string = 2): string {
+  if (isString(decimals)) {
+    if (decimals.startsWith('<')) {
+      return String(maxDecimals(num, Number(decimals.slice(1))));
     }
 
-    // maximum number of decimals
-    if (indicator === '<') {
-      if (decLen < decCount) {
-        decCount = decLen;
-      } else {
-        num = Number(num.toFixed(decCount));
-        parts = `${num}`.split('.');
-        decLen = parts[1] ? parts[1].length : 0;
-        decCount = decLen < decCount ? decLen : decCount;
-      }
+    if (decimals.startsWith('>')) {
+      return minDecimals(num, Number(decimals.slice(1)));
     }
+
+    if (decimals.includes(',')) {
+      const [minDec, maxDec] = decimals.split(/[, ]+/);
+      let min = Number(minDec);
+      let max = Number(maxDec);
+      if (max < min) { [min, max] = [max, min]; }
+
+      return minDecimals(maxDecimals(num, max), min);
+    }
+
+    decimals = Number(decimals) || 0;
   }
 
 
-  return num.toFixed(decCount);
+  return num.toFixed(decimals);
 }

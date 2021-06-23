@@ -10,17 +10,16 @@
     "es6": true,
     "browser": true,
     "node": true,
-    "mocha": true
+    "jest/globals": true
   },
   "extends": [
     "eslint:recommended",
     "standard",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:mocha/recommended"
+    "plugin:@typescript-eslint/recommended"
   ],
   "plugins": [
     "@typescript-eslint",
-    "mocha"
+    "jest"
   ],
   "rules": {
     "semi": [2, "always"],
@@ -51,9 +50,7 @@
     ],
     "curly": [2, "all"],
     "import/first": 0,
-    "quotes": [2, "single"],
-    "operator-linebreak": [2, "before"],
-
-    "mocha/no-mocha-arrows": 0
+    "quotes": [2, "single", { "avoidEscape": true }],
+    "operator-linebreak": [2, "before"]
   }
 }

@@ -3,7 +3,7 @@ import objectType from './objectType';
 
 
 /**
- * Is the given object of type String
+ * Is the given argument of type String
  *
  * @example
  * ```ts
@@ -14,10 +14,10 @@ import objectType from './objectType';
  * isObject('123'); // -> false
  * ```
  *
- * @param obj - Object to test
- * @return - Whether the object a plain object or not
+ * @param x - Argument to test
+ * @return - Whether the argument a plain object or not
  */
 // eslint-disable-next-line @typescript-eslint/ban-types
-export default function isObject(obj: unknown): obj is object {
-  return objectType(obj) === 'object' && Object(obj) === obj;
+export default function isObject(x: unknown): x is object {
+  return objectType(x) === 'object' && Object(x) === x;
 }
