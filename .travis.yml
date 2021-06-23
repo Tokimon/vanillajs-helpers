@@ -2,11 +2,11 @@ language: node_js
 node_js:
   - '16'
 install:
-  - npm install
+  - npm i
 script:
   - npm run build
   - npm run clean
   - npm run lint
-  - npm run test
+  - npm run test:coverage
 after_success:
   - npm run coveralls
