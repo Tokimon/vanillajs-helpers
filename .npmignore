@@ -5,10 +5,12 @@
 .eslintignore
 .nyc_output
 .nycrc
+.vscode
 docs
 coverage
 tasks
 src
+bin
 tsconfig.json
 tsconfig.cjs.json
 tsconfig.mjs.json
