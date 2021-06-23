@@ -1,7 +1,9 @@
 import phrasify, { PhrasifySettings } from './phrasify';
 
 
+
 export type KebabCaseSettings = PhrasifySettings;
+
 
 
 /**

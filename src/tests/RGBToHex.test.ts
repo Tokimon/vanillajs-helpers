@@ -1,5 +1,7 @@
 import RGBToHex from '../RGBToHex';
 
+
+
 describe('"RGBToHex"', () => {
   it('Generates a hex color from a RGB entries', () => {
     expect(RGBToHex(0, 0, 255)).toBe('#0000ff');

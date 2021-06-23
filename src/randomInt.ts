@@ -9,6 +9,7 @@ const range = (num: number, num2: number): number => {
 };
 
 
+
 /**
  * Returns a random integer from a base number or range of numbers
  *
