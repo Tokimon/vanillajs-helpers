@@ -22,5 +22,6 @@ jobs:
         node-version: 16.x
     - run: npm ci
     - run: npm run lint
-    - run: npm test
+    - run: npm run test:coverage
     - run: npm run build && npm run clean
+    - run: npm run coveralls
