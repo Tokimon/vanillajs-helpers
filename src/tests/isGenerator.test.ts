@@ -17,6 +17,7 @@ describe('"isGenerator"', () => {
 
     describe('Returns `false` for non Generator', () => {
       it.each([
+        ['Null', null],
         ['Normal Function', function() { return undefined; }],
         ['Generator Like', generatorMock],
         ['Object containing "next"', { next: (): void => undefined }],
@@ -40,6 +41,7 @@ describe('"isGenerator"', () => {
 
     describe('Returns `false` for non Generator Like Objects:', () => {
       it.each([
+        ['Null', null],
         ['Normal Function', function() { return undefined; }],
         ['Object containing "next"', { next: (): void => undefined }],
         ['Object containing "throw"', { throw: (): void => undefined }]
