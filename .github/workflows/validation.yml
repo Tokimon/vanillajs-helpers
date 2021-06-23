@@ -16,6 +16,7 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
+    
     - name: Validation
       uses: actions/setup-node@v2
       with:
@@ -24,4 +25,8 @@ jobs:
     - run: npm run lint
     - run: npm run test:coverage
     - run: npm run build && npm run clean
-    - run: npm run coveralls
+
+    - name: Coveralls report
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.github_token }}
