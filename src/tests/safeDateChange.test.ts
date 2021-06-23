@@ -1,6 +1,9 @@
 import safeDateChange from '../safeDateChange';
 
 
+const dateStr = (date: Date) => `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+
+
 
 describe('"safeDateChange"', () => {
   it('Does not change the from date', () => {
@@ -10,8 +13,8 @@ describe('"safeDateChange"', () => {
 
     safeDateChange(from, to);
 
-    expect(from.toLocaleDateString()).toBe('01/01/2021');
-    expect(to.toLocaleDateString()).toBe('01/02/2021');
+    expect(dateStr(from)).toBe('1/1/2021');
+    expect(dateStr(to)).toBe('1/2/2021');
   });
 
   describe('Does not change date when within the bounds of the new date month', () => {
@@ -22,7 +25,7 @@ describe('"safeDateChange"', () => {
 
       safeDateChange(from, to);
 
-      expect(to.toLocaleDateString()).toBe('30/05/2021');
+      expect(dateStr(to)).toBe('30/5/2021');
     });
 
     it('Going from 15th February to Marts', () => {
@@ -32,7 +35,7 @@ describe('"safeDateChange"', () => {
 
       safeDateChange(from, to);
 
-      expect(to.toLocaleDateString()).toBe('15/03/2021');
+      expect(dateStr(to)).toBe('15/3/2021');
     });
 
     it('Going from 31st Dec to January', () => {
@@ -43,7 +46,7 @@ describe('"safeDateChange"', () => {
 
       safeDateChange(from, to);
 
-      expect(to.toLocaleDateString()).toBe('31/01/2021');
+      expect(dateStr(to)).toBe('31/1/2021');
     });
 
     it('Going back several months', () => {
@@ -53,7 +56,7 @@ describe('"safeDateChange"', () => {
 
       safeDateChange(from, to);
 
-      expect(to.toLocaleDateString()).toBe('31/01/2021');
+      expect(dateStr(to)).toBe('31/1/2021');
     });
   });
 
@@ -65,7 +68,7 @@ describe('"safeDateChange"', () => {
 
       safeDateChange(from, to);
 
-      expect(to.toLocaleDateString()).toBe('30/04/2021');
+      expect(dateStr(to)).toBe('30/4/2021');
     });
 
     it('Going from January to February', () => {
@@ -75,7 +78,7 @@ describe('"safeDateChange"', () => {
 
       safeDateChange(from, to);
 
-      expect(to.toLocaleDateString()).toBe('28/02/2021');
+      expect(dateStr(to)).toBe('28/2/2021');
     });
 
     it('Going from January to February on a leap year', () => {
@@ -85,7 +88,7 @@ describe('"safeDateChange"', () => {
 
       safeDateChange(from, to);
 
-      expect(to.toLocaleDateString()).toBe('29/02/2020');
+      expect(dateStr(to)).toBe('29/2/2020');
     });
 
     it('Going to February from December', () => {
@@ -95,7 +98,7 @@ describe('"safeDateChange"', () => {
 
       safeDateChange(from, to);
 
-      expect(to.toLocaleDateString()).toBe('28/02/2021');
+      expect(dateStr(to)).toBe('28/2/2021');
     });
   });
 });
