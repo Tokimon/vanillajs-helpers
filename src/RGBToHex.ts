@@ -2,6 +2,7 @@ import minMax from './minMax';
 import hex from './numberToHex';
 
 
+
 type RGBArray = [number, number, number] | [number, number, number, number];
 
 

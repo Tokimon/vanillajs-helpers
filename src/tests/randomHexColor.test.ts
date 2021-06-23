@@ -1,5 +1,7 @@
 import randomHexColor from '../randomHexColor';
 
+
+
 describe('"randomHexColor"', () => {
   it('Generates a random Hex color', () => {
     const spy = jest.spyOn(Math, 'random')

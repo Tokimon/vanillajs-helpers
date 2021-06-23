@@ -1,5 +1,7 @@
 import promisefy, { NodeLikeCallback } from '../promisefy';
 
+
+
 describe('"promisefy"', () => {
   const err = new Error('error');
   const callback = (ok: boolean, cb: NodeLikeCallback) =>
