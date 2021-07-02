@@ -1,6 +1,6 @@
 # Vanilla JS helpers
 
-[![Build Status](https://github.com/Tokimon/vanillajs-helpers/actions/workflows/validation.yml/badge.svg)](https://travis-ci.org/Tokimon/vanillajs-helpers)
+[![Build Status](https://github.com/Tokimon/vanillajs-helpers/actions/workflows/validation.yml/badge.svg)](https://github.com/Tokimon/vanillajs-helpers/actions/workflows/validation.yml)
 [![Coverage](https://coveralls.io/repos/github/Tokimon/vanillajs-helpers/badge.svg?branch=master)](https://coveralls.io/github/Tokimon/vanillajs-helpers)
 [![install size](https://packagephobia.now.sh/badge?p=vanillajs-helpers)](https://packagephobia.now.sh/result?p=vanillajs-helpers)
 
