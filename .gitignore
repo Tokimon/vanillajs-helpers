@@ -44,3 +44,4 @@ mjs
 cjs
 _tests
 .vscode
+src/index.ts
