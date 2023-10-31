@@ -1,6 +1,4 @@
-<img src="./warning.png" width="40" />
-<img src="./warning.png" width="40" />
-<img src="./warning.png" width="40" />
+<img src="./warning.png" width="40" /><img src="./warning.png" width="40" /><img src="./warning.png" width="40" />
 <h1>
   This package has been moved to <a href="https://www.npmjs.com/package/@jsfns/core">@jsfns/core</a> and is no longer maintained in this repository.
 </h1>
